@@ -142,7 +142,7 @@ const BlogSection = ({all_blogs}) => {
               </div>
 
               <div className="p-6">
-                <Link to={`/blogs/${blog.slug}`}>
+                <Link to={`/blog/${blog.slug}`}>
                   <h3 className="text-xl font-semibold text-[#283e77] mb-3 line-clamp-2">
                     {blog.title}
                   </h3>
@@ -169,7 +169,7 @@ const BlogSection = ({all_blogs}) => {
                 </div>
 
                 <a
-                  href={`/blogs/${blog.slug}`}
+                  href={`/blog/${blog.slug}`}
                   className="inline-flex items-center px-6 py-3 bg-[#c3a25d] text-white font-medium rounded-full hover:bg-[#283e77] transition-colors"
                 >
                   Read More →

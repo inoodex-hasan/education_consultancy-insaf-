@@ -128,11 +128,14 @@ const BlogSection = ({all_blogs}) => {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                
+                   <img
                   src={blog?.image}
                   alt={blog?.title}
                   className="w-full h-full object-cover"
                 />
+              
+          
                 <div className="absolute inset-0 bg-gradient-to-t from-[#283e77]/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <span className="inline-block px-3 py-1 bg-[#c3a25d] text-sm font-medium rounded-full">
@@ -142,7 +145,7 @@ const BlogSection = ({all_blogs}) => {
               </div>
 
               <div className="p-6">
-                <Link to={`/blog/${blog.slug}`}>
+                <Link href={`/blog/${blog.slug}`}>
                   <h3 className="text-xl font-semibold text-[#283e77] mb-3 line-clamp-2">
                     {blog.title}
                   </h3>
@@ -180,14 +183,14 @@ const BlogSection = ({all_blogs}) => {
         </div>
 
         {/* Optional: View All Button */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <a
             href="/blogs"
             className="inline-flex items-center px-8 py-4 border-2 border-[#283e77] text-[#283e77] font-semibold text-lg rounded-full hover:bg-[#283e77] hover:text-white transition-all"
           >
             View All Blogs →
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
     </>

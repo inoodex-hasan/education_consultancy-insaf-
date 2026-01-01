@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 24, 2025 at 10:07 AM
+-- Generation Time: Dec 31, 2025 at 01:06 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -41,7 +41,8 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `title`, `description`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Who are we?', NULL, 1, '2025-12-20 06:22:24', '2025-12-20 06:48:34');
+(1, 'Who are we?', NULL, 1, '2025-12-20 06:22:24', '2025-12-20 06:48:34'),
+(2, 'Helping Students Achieve theirStudy Abroad Dreams with Expert Guidance', NULL, 1, '2025-12-31 01:11:50', '2025-12-31 01:11:50');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `about_items` (
 --
 
 INSERT INTO `about_items` (`id`, `about_id`, `description`, `images`, `created_at`, `updated_at`) VALUES
-(1, 1, '<div class=\"space-y-6 text-gray-700 text-lg leading-relaxed\"><p class=\"font-mont\">Our journey started with a single office in <span class=\"font-semibold text-blue\">2006 in Melbourne, Australia</span>and\n since then we have expanded to different geographies — Sydney, Adelaide\n and Perth in Australia, Dhaka and Chattogram offices in Bangladesh, and\n Ahmedabad &amp; Kolkata offices in India and Colombo office in Sri \nLanka.</p><p class=\"font-mont\">Our multiplied growth across these \nsegments is a testimony to our commitment to professionalism, persistent\n hard work, as well as efficient and effective teamwork.</p><div class=\"bg-blue-50 border-l-4 border-gold pl-6 py-4\"><p class=\"text-blue font-semibold text-xl font-mont\">At present, INSAF Immigration represents over<span class=\"text-gold\">550 educational institutions</span> globally.</p></div><div><p class=\"font-medium text-blue mb-3 font-mont\">Our partners include:</p><ul class=\"space-y-2 text-gray-700\"><li class=\"flex items-center gap-3\"><span class=\"w-2 h-2 bg-gold rounded-full\"></span>Renowned universities</li><li class=\"flex items-center gap-3\"><span class=\"w-2 h-2 bg-gold rounded-full\"></span>TAFEs</li><li class=\"flex items-center gap-3\"><span class=\"w-2 h-2 bg-gold rounded-full\"></span>Colleges and tertiary schools all across the world.</li></ul></div><p class=\"text-lg font-semibold text-blue font-mont\">Since 2006, PFEC Global has helped realize the dreams of <span class=\"text-gold\">22,000+ students</span> from different nationalities with the help of our partners.</p></div><p></p>', '[\"uploads/about_items/77438101-5c7c-469c-ab3b-7da5c0f73354.jpg\"]', '2025-12-20 06:36:16', '2025-12-20 06:46:47');
+(1, 1, '<p data-start=\"152\" data-end=\"429\">Insaf Education Consultancy is a trusted education guidance platform dedicated to helping students achieve their academic and career goals. We provide professional counseling and personalized support for students seeking higher education opportunities in Bangladesh and abroad.</p>\r\n<p data-start=\"431\" data-end=\"678\">Our services include university selection, admission processing, scholarship guidance, and visa assistance. With a student-centered approach, Insaf Education Consultancy focuses on transparency, integrity, and success at every step of the journey.</p>\r\n<p data-start=\"680\" data-end=\"837\">We aim to simplify the education process and empower students with the right information, expert advice, and continuous support to build a successful future.</p><br>', '[\"uploads/about_items/ea655672-1f3c-44d2-9148-a7077ee3c18b.jpg\"]', '2025-12-20 06:36:16', '2025-12-31 01:17:51');
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,8 @@ CREATE TABLE `accommodation_items` (
 --
 
 INSERT INTO `accommodation_items` (`id`, `accommodation_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 2, 'Choose from Reliable Accommodation Providers', '2025-12-18 00:25:20', '2025-12-18 00:25:20');
+(2, 2, 'Types of Student Accommodation', '2025-12-18 00:25:20', '2025-12-31 06:02:10'),
+(3, 2, 'Test', '2025-12-31 06:02:39', '2025-12-31 06:02:39');
 
 -- --------------------------------------------------------
 
@@ -128,7 +130,7 @@ CREATE TABLE `accommodation_item_sections` (
 --
 
 INSERT INTO `accommodation_item_sections` (`id`, `accommodation_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/accommodation_item_sections/2b0c2ae1-eda3-44c4-94cd-a08415c1e814.png\"]', '<div class=\"features\">\r\n      <div class=\"feature-item\"><i class=\"fas fa-city\"></i> Properties in 400+ Cities across 60+ Countries</div>\r\n      <div class=\"feature-item\"><i class=\"fas fa-tags\"></i> Low Price Guarantee</div>\r\n      <div class=\"feature-item\"><i class=\"fas fa-check-circle\"></i> 100% Verified Listings</div>\r\n      <div class=\"feature-item\"><i class=\"fas fa-headset\"></i> 24/7 Customer Support</div>\r\n    </div><p><br></p>', '2025-12-18 00:26:34', '2025-12-18 00:26:34');
+(2, 2, '[\"uploads/accommodation_item_sections/9ebee3c3-0929-44cf-9b73-acdef7d0f16c.jpg\"]', '<p data-start=\"124\" data-end=\"338\">Finding the right student accommodation is an important part of a successful study abroad journey. Comfortable and safe housing helps students focus on their studies and adjust to a new environment with confidence.</p>\r\n<p data-start=\"340\" data-end=\"377\"><strong data-start=\"340\" data-end=\"375\">Types of Student Accommodation:</strong></p>\r\n<ul data-start=\"378\" data-end=\"855\"><li data-start=\"378\" data-end=\"514\">\r\n<p data-start=\"380\" data-end=\"514\"><strong data-start=\"380\" data-end=\"414\">University Halls of Residence:</strong> On-campus or university-managed housing with modern facilities and student-friendly environments.</p>\r\n</li><li data-start=\"515\" data-end=\"637\">\r\n<p data-start=\"517\" data-end=\"637\"><strong data-start=\"517\" data-end=\"545\">Private Student Housing:</strong> Purpose-built accommodations offering flexibility, privacy, and shared or studio options.</p>\r\n</li><li data-start=\"638\" data-end=\"749\">\r\n<p data-start=\"640\" data-end=\"749\"><strong data-start=\"640\" data-end=\"653\">Homestay:</strong> Living with a local family for cultural experience, meals, and a supportive home environment.</p>\r\n</li><li data-start=\"750\" data-end=\"855\">\r\n<p data-start=\"752\" data-end=\"855\"><strong data-start=\"752\" data-end=\"774\">Shared Apartments:</strong> Cost-effective option for students who prefer independent living with roommates.</p>\r\n</li></ul>\r\n<p data-start=\"857\" data-end=\"904\"><strong data-start=\"857\" data-end=\"902\">How Insaf Education Consultancy Can Help:</strong></p>\r\n<ul data-start=\"905\" data-end=\"1110\"><li data-start=\"905\" data-end=\"978\">\r\n<p data-start=\"907\" data-end=\"978\">Assist in choosing accommodation that fits your budget and lifestyle.</p>\r\n</li><li data-start=\"979\" data-end=\"1038\">\r\n<p data-start=\"981\" data-end=\"1038\">Guide you through booking procedures and documentation.</p>\r\n</li><li data-start=\"1039\" data-end=\"1110\">\r\n<p data-start=\"1041\" data-end=\"1110\">Provide advice on location, safety, and proximity to your university.</p>\r\n</li></ul>\r\n<p data-start=\"1112\" data-end=\"1239\">With proper guidance, students can secure safe, affordable, and comfortable accommodation before starting their studies abroad.</p>', '2025-12-18 00:26:34', '2025-12-31 05:59:48');
 
 -- --------------------------------------------------------
 
@@ -194,7 +196,7 @@ CREATE TABLE `admission_items` (
 --
 
 INSERT INTO `admission_items` (`id`, `admission_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 3, 'Why Choose PFEC for Admission Support?', '2025-12-18 00:13:06', '2025-12-18 00:13:06');
+(2, 3, 'Why Choose INSAF for Admission Support?', '2025-12-18 00:13:06', '2025-12-31 04:22:45');
 
 -- --------------------------------------------------------
 
@@ -216,7 +218,7 @@ CREATE TABLE `admission_item_sections` (
 --
 
 INSERT INTO `admission_item_sections` (`id`, `admission_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/admission_item_sections/41a6f9a1-5561-4f36-a0b1-8de9f1126136.png\"]', '<div class=\"elementor-element elementor-element-7d82bdb elementor-widget elementor-widget-text-editor\" data-id=\"7d82bdb\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p>Receive&nbsp;an&nbsp;individual&nbsp;consultation&nbsp;with&nbsp;the&nbsp;best&nbsp;educational&nbsp;consultants&nbsp;in&nbsp;</p><p>Bangladesh&nbsp;to&nbsp;obtain&nbsp;a&nbsp;trouble-free&nbsp;experience&nbsp;and&nbsp;discover&nbsp;the&nbsp;right&nbsp;possibilities&nbsp;for&nbsp;overseas&nbsp;study.</p><p>Every\r\n year thousands of students in Bangladesh aim to start their careers \r\nabroad. In this respect, PFEC Global has established themselves as the \r\nbest admission consultants in Bangladesh. At PFEC Global, we perceive \r\nthat students often feel apprehensive about the surcharge of information\r\n available on the internet while preparing for a new journey. Hence, \r\nwith over a decade of experience and professional acknowledgment, our \r\ndedicated team can always make the entire admission and visa application\r\n process hassle-free for the students. Ultimately, we are the official \r\nrepresentative of over 550+ universities, colleges, and institutions \r\nthat have optimum prestige worldwide with phenomenal courses, ethos, \r\nculture, course delivery format, cost, international student support, \r\nwork opportunities, diversity, and location.</p>								</div>\r\n				</div><p><br></p>', '2025-12-18 00:15:22', '2025-12-18 00:15:22');
+(2, 2, '[\"uploads/admission_item_sections/805d75d0-84ff-408b-a5f3-339362bc8e8a.jpg\"]', '<li data-start=\"134\" data-end=\"257\"><p data-start=\"136\" data-end=\"257\"><strong data-start=\"136\" data-end=\"156\">Expert Guidance:</strong> Our certified counselors (QEAC D468) provide professional advice tailored to each student’s goals.</p>\r\n</li><li data-start=\"258\" data-end=\"376\">\r\n<p data-start=\"260\" data-end=\"376\"><strong data-start=\"260\" data-end=\"285\">Personalized Support:</strong> From university selection to application submission, we guide you every step of the way.</p>\r\n</li><li data-start=\"377\" data-end=\"498\">\r\n<p data-start=\"379\" data-end=\"498\"><strong data-start=\"379\" data-end=\"404\">Global Opportunities:</strong> Access a wide range of study abroad programs and scholarships to build a successful career.</p>\r\n</li><li data-start=\"499\" data-end=\"590\">\r\n<p data-start=\"501\" data-end=\"590\"><strong data-start=\"501\" data-end=\"525\">Transparent Process:</strong> We ensure clarity, honesty, and integrity in all our services.</p>\r\n</li><li data-start=\"591\" data-end=\"693\">\r\n<p data-start=\"593\" data-end=\"693\"><strong data-start=\"593\" data-end=\"612\">Proven Success:</strong> Hundreds of students have achieved their dreams with our guidance and support.</p></li><br>', '2025-12-18 00:15:22', '2025-12-31 04:34:45');
 
 -- --------------------------------------------------------
 
@@ -241,8 +243,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'How to Plan Your Child’s Study Abroad Journey: A Step-by-Step Guide for Parents', 'how-to-plan-your-childs-study-abroad-journey-a-step-by-step-guide-for-parents', 'uploads/blogs/1765370940-TEZBQU692t.jpg', '<div class=\"elementor-element elementor-element-fb309e1 elementor-widget elementor-widget-text-editor\" data-id=\"fb309e1\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									Summary								</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-e10710a elementor-widget elementor-widget-text-editor\" data-id=\"e10710a\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p>Planning your child’s international education is a \r\nmulti-year project. It needs money, discipline, clear milestones, and \r\nstrong family teamwork. The earlier you start, the easier it gets. Early\r\n planning helps students adapt faster, handle stress better, and meet \r\ngoals with confidence.<br>This guide walks Bangladeshi parents through a\r\n simple plan you can follow from middle school to university admission. \r\nYou’ll learn how to set savings targets, open a Student File with a \r\nBangladeshi bank for overseas payments, prepare documents on time, and \r\nchoose the right country and course.<br>By the end, you’ll have a timeline, checklists, and a cost model you can use today.</p>								</div>\r\n				</div>', '2025-12-10', 1, '2025-12-10 06:49:00', '2025-12-22 04:20:45'),
-(2, 'Age-Based Planning Framework', 'age-based-planning-framework', 'uploads/blogs/1766399924-p2FQzfkmex.jpg', '<div class=\"elementor-element elementor-element-0c1236c elementor-widget elementor-widget-text-editor\" data-id=\"0c1236c\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400\">Every year of early planning \r\nreduces loan stress and improves outcomes. Pick the band that fits your \r\nchild’s age and follow the actions.</span></p>								</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-74f1b5a elementor-widget elementor-widget-heading\" data-id=\"74f1b5a\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\r\n				<div class=\"elementor-widget-container\">\r\n					<h3 class=\"elementor-heading-title elementor-size-default\">A. Early Planning (child aged 10–12)</h3>				</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-6dfc399 elementor-widget elementor-widget-text-editor\" data-id=\"6dfc399\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<ul><li style=\"font-weight: 400\"><b>Goal:</b><span style=\"font-weight: 400\"> Build habits and a base corpus.</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><b>Do now:</b><b><br><br></b><ul><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Start a </span><b>monthly education savings plan</b><span style=\"font-weight: 400\"> (bank DPS/mutual fund per your risk comfort). Increase contributions </span><b>10–15%</b><span style=\"font-weight: 400\"> yearly to beat education inflation.</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Encourage </span><b>English</b><span style=\"font-weight: 400\"> and digital skills (typing, basic coding, presentations).</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Expose them to </span><b>global cultures</b><span style=\"font-weight: 400\"> through books, films, and online clubs.</span><span style=\"font-weight: 400\"><br><br></span></li></ul></li><li style=\"font-weight: 400\"><b>Why it works:</b><span style=\"font-weight: 400\"> Long runway for compounding and skills.</span><span style=\"font-weight: 400\"><br><br></span></li></ul>								</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-a32e144 elementor-widget elementor-widget-heading\" data-id=\"a32e144\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\r\n				<div class=\"elementor-widget-container\">\r\n					<h3 class=\"elementor-heading-title elementor-size-default\">B. Foundation (child aged 13–15)</h3>				</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-49e6780 elementor-widget elementor-widget-text-editor\" data-id=\"49e6780\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<ul><li style=\"font-weight: 400\"><b>Goal:</b><span style=\"font-weight: 400\"> Raise savings and map destinations.</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><b>Do now:</b><b><br><br></b><ul><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Increase monthly savings. Add a </span><b>separate emergency fund</b><span style=\"font-weight: 400\"> for travel/health.</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Shortlist </span><b>countries</b><span style=\"font-weight: 400\"> and </span><b>broad fields</b><span style=\"font-weight: 400\"> (STEM/Business/Health/Design).</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Plan </span><b>school subject choices</b><span style=\"font-weight: 400\"> to match target programs.</span><span style=\"font-weight: 400\"><br><br></span></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Begin </span><b>light test prep</b><span style=\"font-weight: 400\"> (English basics; math/logical reasoning).</span><span style=\"font-weight: 400\"><br><br></span></li></ul></li><li style=\"font-weight: 400\"><b>Watch out:</b><span style=\"font-weight: 400\"> Don’t lock a country too early—keep </span><b>2–3 options</b><span style=\"font-weight: 400\">.</span><span style=\"font-weight: 400\"><br><br></span></li></ul>								</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-1238790 elementor-widget elementor-widget-heading\" data-id=\"1238790\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\r\n				<div class=\"elementor-widget-container\">\r\n					<h3 class=\"elementor-heading-title elementor-size-default\">C. Preparation (child aged 16–17)</h3>				</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-5f656e3 elementor-widget elementor-widget-text-editor\" data-id=\"5f656e3\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<ul><li style=\"font-weight: 400\"><b>Goal:</b><span style=\"font-weight: 400\"> Move from ideas to applications.</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><b>Do now:</b><p>&nbsp;</p><ul><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Formal </span><b>IELTS/TOEFL</b><span style=\"font-weight: 400\"> prep timeline.</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Build a </span><b>university list</b><span style=\"font-weight: 400\"> (fees, intakes, entry requirements).</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Draft </span><b>SOP/CV</b><span style=\"font-weight: 400\">; plan </span><b>portfolio</b><span style=\"font-weight: 400\"> if required.</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Price total costs in </span><b>destination currency</b><span style=\"font-weight: 400\"> and in </span><b>BDT</b><span style=\"font-weight: 400\"> using your bank’s selling rate on the day you budget.</span><p>&nbsp;</p></li></ul></li><li style=\"font-weight: 400\"><b>Result:</b><span style=\"font-weight: 400\"> Realistic shortlist and a financial plan you can execute.</span></li></ul>								</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-8ce2788 elementor-widget elementor-widget-heading\" data-id=\"8ce2788\" data-element_type=\"widget\" data-widget_type=\"heading.default\">\r\n				<div class=\"elementor-widget-container\">\r\n					<h3 class=\"elementor-heading-title elementor-size-default\">D. Late/Crisis Planning (18+)</h3>				</div>\r\n				</div>\r\n				<div class=\"elementor-element elementor-element-6b237b1 elementor-widget elementor-widget-text-editor\" data-id=\"6b237b1\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<ul><li><b>Goal:</b><span style=\"font-weight: 400\"> Tighten timeline; reduce risk.</span></li><li style=\"list-style-type: none\"><ul><li style=\"font-weight: 400\"><b>Do now:</b><p>&nbsp;</p><ul><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Consider a </span><b>gap term/year</b><span style=\"font-weight: 400\"> to improve scores and funding.</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Focus on </span><b>value destinations</b><span style=\"font-weight: 400\"> and </span><b>1-year</b><span style=\"font-weight: 400\"> programs where feasible.</span><p>&nbsp;</p></li><li style=\"font-weight: 400\"><span style=\"font-weight: 400\">Use scholarships + on-campus jobs + careful city choice to control costs.</span><p>&nbsp;</p></li></ul></li><li style=\"font-weight: 400\"><b>Reality check:</b><span style=\"font-weight: 400\"> Late starts are possible—but need stricter discipline.</span></li></ul></li></ul></div></div><p><br></p>', '2025-12-22', 1, '2025-12-22 04:38:44', '2025-12-23 00:25:15');
+(1, 'How to Choose the Right University for Your Future', 'how-to-choose-the-right-university-for-your-future', 'uploads/blogs/1767163759-Rov9gVRK5S.jpg', 'Selecting a university requires careful consideration of academic programs, location, tuition fees, and future career opportunities. Students should research university rankings, course content, and campus facilities before applying. Consulting with education experts can help students make informed and confident decisions.', '2025-12-10', 1, '2025-12-10 06:49:00', '2025-12-31 00:49:19');
 
 -- --------------------------------------------------------
 
@@ -289,9 +290,7 @@ CREATE TABLE `contact_forms` (
 --
 
 INSERT INTO `contact_forms` (`id`, `Full_name`, `Email_address`, `Phone_number`, `Message`, `created_at`, `updated_at`) VALUES
-(1, 'Md', 'hasan@example.com', '012020202020', 'test', '2025-12-22 07:19:15', '2025-12-22 07:19:15'),
-(15, 'Brody Ruecker', 'your.email+fakedata89670@gmail.com', '842-881-0493', 'Aliquam asperiores optio velit voluptatibus non officia.', '2025-12-23 23:46:25', '2025-12-23 23:46:25'),
-(16, 'Elaina Effertz', 'your.email+fakedata32781@gmail.com', '793-078-9128', 'Molestiae in velit perspiciatis est eaque quod amet.', '2025-12-24 03:44:06', '2025-12-24 03:44:06');
+(1, 'Md', 'hasan@example.com', '012020202020', 'test', '2025-12-22 07:19:15', '2025-12-22 07:19:15');
 
 -- --------------------------------------------------------
 
@@ -318,8 +317,7 @@ CREATE TABLE `contact_us` (
 --
 
 INSERT INTO `contact_us` (`id`, `destination_id`, `office_id`, `first_name`, `last_name`, `email`, `phone`, `question_1`, `question_2`, `created_at`, `updated_at`) VALUES
-(6, 3, 2, 'Md', 'Hasan', 'hasan@example.com', '1234567890', 'Not taken yet', 'Self-funded', '2025-12-21 23:26:55', '2025-12-21 23:26:55'),
-(17, 3, 2, 'sdfghdfth', 'fshfh', 'a@mail.com', '123456789', 'IELTS', 'Scholarship', '2025-12-23 23:50:39', '2025-12-23 23:50:39');
+(18, 3, 2, 'Md', 'Hasan', 'email+fakedata39240@gmail.com', '0120202020', 'IELTS', 'Self-funded', '2025-12-31 06:23:18', '2025-12-31 06:23:18');
 
 -- --------------------------------------------------------
 
@@ -344,8 +342,8 @@ CREATE TABLE `destinations` (
 --
 
 INSERT INTO `destinations` (`id`, `title`, `image`, `slug`, `country`, `description`, `is_active`, `created_at`, `updated_at`) VALUES
-(3, 'Australia', 'uploads/destinations/1765776662-0vnqR3zKvd.jpg', 'australia', 'Australia', '<p>test</p>', 1, '2025-12-14 23:26:14', '2025-12-14 23:31:02'),
-(4, 'UK', 'uploads/destinations/1765947012-5HdsavRZVM.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-16 22:52:04');
+(3, 'Australia', 'uploads/destinations/1767158409-SdfJaVlQ56.jpg', 'australia', 'Australia', '<p>test</p>', 1, '2025-12-14 23:26:14', '2025-12-30 23:20:09'),
+(4, 'UK', 'uploads/destinations/1767158322-aiiY10xdaI.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-30 23:18:42');
 
 -- --------------------------------------------------------
 
@@ -368,7 +366,8 @@ CREATE TABLE `destination_items` (
 INSERT INTO `destination_items` (`id`, `destination_id`, `title`, `created_at`, `updated_at`) VALUES
 (9, 3, 'Why Study in Australia?', '2025-12-16 23:32:24', '2025-12-16 23:33:06'),
 (10, 4, 'Why Study in the UK?', '2025-12-16 23:33:29', '2025-12-16 23:33:29'),
-(11, 3, 'Cost of Studying in Australia', '2025-12-17 04:27:40', '2025-12-17 04:27:40');
+(11, 3, 'Cost of Studying in Australia', '2025-12-17 04:27:40', '2025-12-17 04:27:40'),
+(12, 4, 'Cost of Studying in UK', '2025-12-31 04:14:50', '2025-12-31 04:15:05');
 
 -- --------------------------------------------------------
 
@@ -391,8 +390,9 @@ CREATE TABLE `destination_item_sections` (
 
 INSERT INTO `destination_item_sections` (`id`, `destination_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
 (6, 10, '[]', '<div class=\"elementor-element elementor-element-124938e elementor-widget elementor-widget-text-editor\" data-id=\"124938e\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">The United Kingdom is \r\nrenowned for its longstanding tradition of high-quality education, \r\nattracting a significant number of international students each year. Its\r\n universities have established a strong reputation for nurturing \r\nacademic talent. One of the notable advantages of studying in the UK is \r\nthe wide range of degree programs available, complemented by relatively \r\naffordable tuition fees compared to many other countries.&nbsp;</span></p><p><span style=\"font-weight: 400;\">Moreover,\r\n the UK offers a post-study visa option, enabling graduates to seek \r\nemployment immediately after finishing their courses. Once students \r\nsecure a relevant job, they can apply for residency and become a citizen\r\n over time. The visa application and university admission processes are \r\ngenerally straightforward, making the UK an attractive destination for \r\nthose looking to further their education abroad.</span></p>								</div>\r\n				</div><p><br></p>', '2025-12-16 23:34:14', '2025-12-16 23:34:14'),
-(7, 9, '[\"uploads/destination_item_sections/a7aaca70-e95d-4069-b995-c4f10fd94d69.jpg\"]', '<p><span style=\"font-weight: 400;\">Australia is a top destination for \r\nstudents from Bangladesh who wish to study abroad and eventually settle \r\ndown. Many Bangladeshi students prefer to study in Australia due to its \r\nprestigious universities and international perspective, which provide a \r\nwide range of subjects. Now, you have the opportunity to do the same. \r\nPursuing your education in Australia will offer you the best learning \r\nexperience possible. The Australian education system is unique and \r\nattracts students from around the world. Additionally, the language of \r\ninstruction is English, making it easier for many Bangladeshi students \r\nto learn. Here are the primary reasons why Australia is a preferred \r\nchoice for education.</span></p>', '2025-12-16 23:34:37', '2025-12-17 04:29:43'),
-(8, 11, '[]', '<div class=\"elementor-element elementor-element-ddc01ea elementor-widget elementor-widget-text-editor\" data-id=\"ddc01ea\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">Australia offers a variety \r\nof degree programs tailored to the needs of Bangladeshi students. With \r\nnumerous scholarships available, the process of studying is made more \r\naccessible. The costs of accommodation, groceries, and transportation \r\nare also relatively low. Thus, Australia is an attractive destination \r\nfor education.</span></p><p><span style=\"font-weight: 400;\"><br></span></p><p><span style=\"font-weight: 400;\">Additionally,\r\n Bangladeshi students can obtain work permits while studying. Tuition \r\nfees for bachelor’s degrees start at AUD 20,000, while master’s degrees \r\ncan cost up to AUD 25,000. Doctoral programs are generally more \r\nexpensive, at around AUD 32,000; however, various scholarships are \r\navailable to help offset these costs. Overall, the cost of studying in \r\nAustralia is among the lowest compared to many other countries \r\nworldwide.<br><br><br></span></p>								</div>\r\n				</div><p><br></p>', '2025-12-17 04:28:24', '2025-12-17 04:38:12');
+(7, 9, '[\"uploads/destination_item_sections/a6d01d85-541a-4fd5-a6b2-f03667b528fa.jpg\"]', '<p><span style=\"font-weight: 400;\">Australia is a top destination for \r\nstudents from Bangladesh who wish to study abroad and eventually settle \r\ndown. Many Bangladeshi students prefer to study in Australia due to its \r\nprestigious universities and international perspective, which provide a \r\nwide range of subjects. Now, you have the opportunity to do the same. \r\nPursuing your education in Australia will offer you the best learning \r\nexperience possible. The Australian education system is unique and \r\nattracts students from around the world. Additionally, the language of \r\ninstruction is English, making it easier for many Bangladeshi students \r\nto learn. Here are the primary reasons why Australia is a preferred \r\nchoice for education.</span></p>', '2025-12-16 23:34:37', '2025-12-31 04:10:47'),
+(8, 11, '[]', '<div class=\"elementor-element elementor-element-ddc01ea elementor-widget elementor-widget-text-editor\" data-id=\"ddc01ea\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">Australia offers a variety \r\nof degree programs tailored to the needs of Bangladeshi students. With \r\nnumerous scholarships available, the process of studying is made more \r\naccessible. The costs of accommodation, groceries, and transportation \r\nare also relatively low. Thus, Australia is an attractive destination \r\nfor education.</span></p><p><span style=\"font-weight: 400;\"><br></span></p><p><span style=\"font-weight: 400;\">Additionally,\r\n Bangladeshi students can obtain work permits while studying. Tuition \r\nfees for bachelor’s degrees start at AUD 20,000, while master’s degrees \r\ncan cost up to AUD 25,000. Doctoral programs are generally more \r\nexpensive, at around AUD 32,000; however, various scholarships are \r\navailable to help offset these costs. Overall, the cost of studying in \r\nAustralia is among the lowest compared to many other countries \r\nworldwide.<br><br><br></span></p>								</div>\r\n				</div><p><br></p>', '2025-12-17 04:28:24', '2025-12-17 04:38:12'),
+(9, 12, '[\"uploads/destination_item_sections/db9e8d86-63ce-4318-bb31-9e9530cddc17.jpg\"]', '<div class=\"elementor-element elementor-element-23e434d elementor-widget elementor-widget-text-editor\" data-id=\"23e434d\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400\">The costs of studying in the \r\nUK can vary significantly, offering a unique opportunity to shape your \r\njourney. Choosing a vibrant city near the heart of the UK may come with \r\nhigher expenses, but it also provides a dynamic environment for growth. \r\nAlternatively, universities located further from the city center \r\ntypically present more affordable options. Your investment will depend \r\non the specific course you select, with research-based programs often \r\nreflecting the depth of knowledge they provide.&nbsp;</span></p><p><span style=\"font-weight: 400\">Generally,\r\n undergraduate programs cost around £12,000, with some inspiring \r\npathways reaching up to £35,000. Master’s degree courses fall within a \r\nsimilar range, while MBA programs offer a transformative experience for \r\nabout £60,000.&nbsp;</span></p>								</div>\r\n				</div><p><br></p>', '2025-12-31 04:15:51', '2025-12-31 04:15:51');
 
 -- --------------------------------------------------------
 
@@ -420,7 +420,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `description`, `photo_path`, `start_date`, `start_time`, `end_time`, `end_date`, `location`, `is_active`, `created_at`, `updated_at`) VALUES
-(5, 'PFEC Global: Australia Education Expo', '<p><br></p>', 'uploads/events/1766230746-X4qXA77OQK.jpg', '2025-12-20', '2025-12-22 10:00:00', '2025-12-22 11:00:00', '2025-12-26', 'Australia', 1, '2025-12-20 05:39:06', '2025-12-22 01:51:21');
+(5, 'Insaf Education Consultancy Seminar', '<p>Insaf Education Consultancy provides professional guidance for students seeking higher education opportunities both locally and internationally. The consultancy offers support in university selection, admission processing, scholarship guidance, and visa assistance. With a student-focused approach, Insaf Education Consultancy helps learners make confident and informed decisions for their academic and career goals.</p>', 'uploads/events/1767162091-h4V1HPHoqo.jpg', '2025-12-20', '2025-12-31 10:00:00', '2025-12-31 11:00:00', '2025-12-26', 'Dhaka', 1, '2025-12-20 05:39:06', '2025-12-31 00:24:13');
 
 -- --------------------------------------------------------
 
@@ -441,7 +441,7 @@ CREATE TABLE `event_items` (
 --
 
 INSERT INTO `event_items` (`id`, `event_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 5, 'Explore Your Future at PFEC Global Australia Education Expo 2026!', '2025-12-22 01:53:19', '2025-12-22 01:53:19');
+(2, 5, 'Explore Your Future at Insaf Global Australia Education Expo 2026!', '2025-12-22 01:53:19', '2025-12-31 00:25:20');
 
 -- --------------------------------------------------------
 
@@ -463,7 +463,7 @@ CREATE TABLE `event_item_sections` (
 --
 
 INSERT INTO `event_item_sections` (`id`, `event_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/event_item_sections/bb61567f-cc02-47d4-b1e6-4758583f744d.jpg\"]', '<p>\r\n     Join PFEC Global’s Australia Education Expo 2026 to meet top university representatives,<br>\r\n    explore your options, and take the first step toward your future!\r\n  </p>\r\n<p>\r\n    Meet directly with representatives from leading Australian universities to discuss your future<br>\r\n    and discover scholarship opportunities of up to 100%.\r\n  </p>\r\n<p>\r\n    Experience the Biggest Australia Education Expo and pave the way for a brighter future!\r\n  </p>\r\n<p>\r\n     <strong>Book your Seat Now:</strong><br>\r\n    <a href=\"https://forms.gle/9sJE4Lmby7huXC4V8\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n      https://forms.gle/9sJE4Lmby7huXC4V8<br>\r\n    </a>\r\n  </p>\r\n<h3>Event Highlights</h3>\r\n<ul><li> FREE Entry</li><li> Exciting Gifts for Each Attendee</li><li> Up to 5 years Post Study Work Rights</li><li> On-Spot Assessment</li><li> Application Fee Waiver*</li></ul>\r\n<h3>Join Us On</h3>\r\n<p>\r\n     <strong>Saturday, 10 January 2026</strong><br>\r\n     Time: 10.30 AM – 5.00 PM<br>\r\n     Venue: The Westin Dhaka\r\n  </p>\r\n<p>\r\n    &amp;\r\n  </p>\r\n<p>\r\n     <strong>Sunday, 11 January 2026</strong><br>\r\n     Time: 10.30 AM – 5.00 PM<br>\r\n     Venue: The Westin Dhaka\r\n  </p>\r\n<h3>More Offers for Event Attendees</h3>\r\n<ul><li> On-Spot Assessment</li><li> Free Admission &amp; Visa Assistance</li><li> Apply on the Spot to Desired Institution</li><li> Know about the Best Scholarship Options</li><li> Discuss your Post Study Work Rights and Career Options</li><li> Get any Study Abroad queries answered directly from university representatives</li></ul>\r\n<p>\r\n    To know more, visit our offices or book an appointment with our expert Student Counsellors –<br>\r\n    <a href=\"https://pfecglobal.com.bd/book-appointment\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n      pfecglobal.com.bd/book-appointment<br>\r\n    </a>\r\n  </p>\r\n<h3> Offices</h3>\r\n<ul><li>\r\n       Dhanmondi Office:<br>\r\n      <a href=\"https://cutt.ly/eT6XB1F\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n        https://cutt.ly/eT6XB1F<br>\r\n      </a>\r\n    </li><li>\r\n       Banani Office:<br>\r\n      <a href=\"https://cutt.ly/gZwv1vX\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n        https://cutt.ly/gZwv1vX<br>\r\n      </a>\r\n    </li><li>\r\n       Uttara Office:<br>\r\n      <a href=\"https://cutt.ly/ce6e9The\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n        https://cutt.ly/ce6e9The<br>\r\n      </a>\r\n    </li><li>\r\n       Chattogram Office:<br>\r\n      <a href=\"https://cutt.ly/mwayutLs\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n        https://cutt.ly/mwayutLs<br>\r\n      </a>\r\n    </li></ul>\r\n<h3> Call Us</h3>\r\n<ul><li>\r\n       Dhanmondi:<br>\r\n      <a href=\"tel:09609800300\">09609-800300</a>\r\n    </li><li>\r\n       Banani:<br>\r\n      <a href=\"tel:09609800700\">09609-800700</a>\r\n    </li><li>\r\n       Chattogram:<br>\r\n      <a href=\"tel:09609800400\">09609-800400</a>\r\n    </li><li>\r\n       Uttara:<br>\r\n      <a href=\"tel:09609800500\">09609-800500</a>\r\n    </li></ul><p>\r\n     Visit –<br><a href=\"https://www.pfecglobal.com.bd\" target=\"_blank\" rel=\"noopener noreferrer\"><br>\r\n      www.pfecglobal.com.bd</a></p>', '2025-12-22 01:57:32', '2025-12-22 01:57:32');
+(2, 2, '[\"uploads/event_item_sections/da08aeb4-fac0-45c6-9ef1-668962c1f893.jpg\"]', '<p data-start=\"109\" data-end=\"496\"><strong data-start=\"109\" data-end=\"131\">Event Description:</strong><br data-start=\"131\" data-end=\"134\">\r\nThis info session is organized by Insaf Education Consultancy to guide students and parents on higher education opportunities in Bangladesh and abroad. The session will cover university admissions, study abroad options, scholarship opportunities, and visa guidance. Participants will also get the chance to consult directly with experienced education counselors.</p>\r\n<p data-start=\"498\" data-end=\"523\"><strong data-start=\"498\" data-end=\"507\">Date:</strong><br data-start=\"507\" data-end=\"510\">\r\n15 March 2025</p>\r\n<p data-start=\"525\" data-end=\"555\"><strong data-start=\"525\" data-end=\"534\">Time:</strong><br data-start=\"534\" data-end=\"537\">\r\n10:00 AM – 4:00 PM</p>\r\n<p data-start=\"557\" data-end=\"614\"><strong data-start=\"557\" data-end=\"570\">Location:</strong><br data-start=\"570\" data-end=\"573\">\r\nInsaf Education Consultancy Office, Dhaka</p>\r\n<p data-start=\"616\" data-end=\"723\"><strong data-start=\"616\" data-end=\"636\">Target Audience:</strong><br data-start=\"636\" data-end=\"639\">\r\nStudents, parents, and guardians interested in higher education and career planning.</p>\r\n<p data-start=\"725\" data-end=\"753\"><strong data-start=\"725\" data-end=\"746\">Registration Fee:</strong><br data-start=\"746\" data-end=\"749\">\r\nFree</p>\r\n<p data-start=\"755\" data-end=\"838\"><strong data-start=\"755\" data-end=\"779\">Contact Information:</strong><br data-start=\"779\" data-end=\"782\">\r\nPhone: +880 1XXX-XXXXXX</p><br>', '2025-12-22 01:57:32', '2025-12-31 00:27:10');
 
 -- --------------------------------------------------------
 
@@ -565,7 +565,7 @@ CREATE TABLE `health_item_sections` (
 --
 
 INSERT INTO `health_item_sections` (`id`, `health_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/health_item_sections/79fd0584-a397-4b5f-ae92-64cf189e004b.jpg\"]', '<p>If you are contemplating studying abroad, you should be aware that some \r\ncountries may insist on student health insurance coverage. Even if they \r\ndon’t, considering the exorbitant medical costs in foreign countries, \r\nhaving student health cover is prudent to avoid financial burdens while \r\nstudying abroad. These health insurance plans typically cover pre and \r\npost-hospitalisation expenses, prescription medicines, and the cost of \r\nsurgeries. <br><br>Students who purchase health plans from foreign \r\ncountries while studying abroad will pay heavy premiums. Getting \r\ncoverage under the best health insurance plans in India can be more \r\neconomical. <br><br>So, students studying abroad or planning to study \r\nabroad should have a student health cover to avoid additional financial \r\nburdens.</p>', '2025-12-18 00:21:32', '2025-12-18 04:46:04');
+(2, 2, '[\"uploads/health_item_sections/13967350-6d7a-432c-aa0f-276754f884c7.jpeg\"]', '<p>If you are contemplating studying abroad, you should be aware that some \r\ncountries may insist on student health insurance coverage. Even if they \r\ndon’t, considering the exorbitant medical costs in foreign countries, \r\nhaving student health cover is prudent to avoid financial burdens while \r\nstudying abroad. These health insurance plans typically cover pre and \r\npost-hospitalisation expenses, prescription medicines, and the cost of \r\nsurgeries. <br><br>Students who purchase health plans from foreign \r\ncountries while studying abroad will pay heavy premiums. Getting \r\ncoverage under the best health insurance plans in India can be more \r\neconomical. <br><br>So, students studying abroad or planning to study \r\nabroad should have a student health cover to avoid additional financial \r\nburdens.</p><p><br></p><p><br></p>', '2025-12-18 00:21:32', '2025-12-31 04:56:15');
 
 -- --------------------------------------------------------
 
@@ -696,9 +696,9 @@ CREATE TABLE `offices` (
 --
 
 INSERT INTO `offices` (`id`, `location`, `country`, `address`, `phone`, `email`, `is_primary`, `created_at`, `updated_at`) VALUES
-(2, 'Dhanmondi', 'Bangladesh', '<p>SIMA Blossom (5th Floor) Plot 390 (Old), 03 (New), Road-27 (Old) 16, New, Dhaka 1209, Bangladesh</p>', '+880 9609 80 03 00', 'test@example.com', 0, '2025-12-21 00:40:02', '2025-12-22 23:41:54'),
-(3, 'Banani', 'Bangladesh', '<p>RSR Tower (7th Floor), House no. 50, Block C, Dhaka</p>', '+880 9609 80 07 00', 'test1@example.com', 1, '2025-12-22 05:04:38', '2025-12-23 00:23:28'),
-(4, 'Melborne', 'Australia', '<p>Level 8, RM Plaza, 20 Sonargaon Jonopath Road, Sector 11, Dhaka 1230</p>', '+880 9609 80 05 00', 'test@example.com', 0, '2025-12-22 23:43:22', '2025-12-22 23:43:22');
+(2, 'Dhanmondi', 'Bangladesh', '<p>&nbsp;Plot-390, Road-27</p>', '+880 9609 80 03 00', 'test@example.com', 0, '2025-12-21 00:40:02', '2025-12-31 06:18:51'),
+(3, 'Banani', 'Bangladesh', '<p>Road: 7, Block: E</p>', '+880 9609 80 07 00', 'test1@example.com', 1, '2025-12-22 05:04:38', '2025-12-31 06:18:12'),
+(4, 'Sydney', 'Australia', '<p><strong data-start=\"174\" data-end=\"196\"> </strong><span data-start=\"174\" data-end=\"196\">Level 5</span>, Pitt Street</p>', '+880 9609 80 05 00', 'test@example.com', 0, '2025-12-22 23:43:22', '2025-12-31 06:19:51');
 
 -- --------------------------------------------------------
 
@@ -827,7 +827,7 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `title`, `subtitle`, `content`, `image_path`, `is_active`, `created_at`, `updated_at`) VALUES
-(3, 'Review 1', NULL, NULL, 'uploads/reviews/1766401267-inxsgbBdmT.jpg', 1, '2025-12-22 05:01:07', '2025-12-22 05:01:07');
+(3, 'Review 1', NULL, NULL, 'uploads/reviews/1767163484-pUWnPvDATI.png', 1, '2025-12-22 05:01:07', '2025-12-31 00:44:44');
 
 -- --------------------------------------------------------
 
@@ -866,8 +866,8 @@ CREATE TABLE `scholarships` (
 --
 
 INSERT INTO `scholarships` (`id`, `title`, `slug`, `country`, `description`, `is_active`, `created_at`, `updated_at`, `image`) VALUES
-(3, 'uk', 'uk', 'UK', NULL, 1, '2025-12-17 06:34:49', '2025-12-24 00:54:21', 'uploads/scholarships/1766559261-HGVDrViYA6.jpg'),
-(4, 'Australia', 'australia', 'Australia', NULL, 1, '2025-12-24 00:54:04', '2025-12-24 00:54:04', 'uploads/scholarships/1766559244-VVFYC1Gu8P.jpg');
+(3, 'uk', 'uk', 'UK', NULL, 1, '2025-12-17 06:34:49', '2025-12-31 05:05:54', 'uploads/scholarships/1767179154-xEBhBoRYOj.jpg'),
+(4, 'Australia', 'australia', 'Australia', NULL, 1, '2025-12-24 00:54:04', '2025-12-31 05:05:39', 'uploads/scholarships/1767179139-QCV1LeQBKs.jpg');
 
 -- --------------------------------------------------------
 
@@ -888,7 +888,8 @@ CREATE TABLE `scholarship_items` (
 --
 
 INSERT INTO `scholarship_items` (`id`, `scholarship_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 3, 'Scholarships in the UK', '2025-12-17 06:37:42', '2025-12-17 06:50:54');
+(2, 3, 'Scholarships in the UK', '2025-12-17 06:37:42', '2025-12-17 06:50:54'),
+(3, 4, 'Scholarships in Australia', '2025-12-31 05:08:44', '2025-12-31 05:08:44');
 
 -- --------------------------------------------------------
 
@@ -910,7 +911,8 @@ CREATE TABLE `scholarship_item_sections` (
 --
 
 INSERT INTO `scholarship_item_sections` (`id`, `scholarship_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(8, 2, '[\"uploads/scholarship_item_sections/0313210a-5d09-4671-9e68-18f4e7a6defa.jpg\"]', '<div class=\"elementor-element elementor-element-40901d8 elementor-widget elementor-widget-text-editor\" data-id=\"40901d8\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">The United Kingdom remains \r\none of the world’s most prestigious study destinations, offering \r\nglobally recognized degrees, academic excellence, and a vibrant \r\nmulticultural environment. However, the cost of studying in the UK—with \r\ntuition fees ranging from £15,000–£40,000 per year and living expenses \r\nof £12,000–£15,000 annually—can be substantial. Scholarships play a \r\ncrucial role in making British higher education accessible and \r\naffordable for deserving Bangladeshi students.</span></p><p><span style=\"font-weight: 400;\">PFEC\r\n Bangladesh specializes in helping students navigate the complex UK \r\nscholarship landscape, connecting them with awards that can transform \r\ntheir academic aspirations into reality. With hundreds of scholarships \r\navailable from government sources, universities, and private \r\nfoundations, there are numerous opportunities for Bangladeshi students \r\nto fund their UK education dreams.</span></p>								</div>\r\n				</div><p><br></p>', '2025-12-17 06:38:07', '2025-12-17 06:38:07');
+(8, 2, '[\"uploads/scholarship_item_sections/00005a1f-6b0d-40fe-af48-560ec0d83821.jpg\"]', '<h5 data-start=\"99\" data-end=\"129\"><span style=\"font-weight: normal;\">Studying in the UK can be a life-changing opportunity, and scholarships can make it more affordable. UK universities offer a variety of scholarships for international students based on academic merit, financial need, and specific fields of study.</span></h5><h5 data-start=\"99\" data-end=\"129\"><span style=\"font-weight: normal;\"><br></span></h5>\r\n<p data-start=\"381\" data-end=\"411\"><strong data-start=\"381\" data-end=\"409\">Popular UK Scholarships:</strong></p>\r\n<ul data-start=\"412\" data-end=\"764\"><li data-start=\"412\" data-end=\"519\">\r\n<p data-start=\"414\" data-end=\"519\"><strong data-start=\"414\" data-end=\"441\">Chevening Scholarships:</strong> Fully-funded awards for future leaders pursuing a one-year master’s degree.</p>\r\n</li><li data-start=\"520\" data-end=\"628\">\r\n<p data-start=\"522\" data-end=\"628\"><strong data-start=\"522\" data-end=\"552\">Commonwealth Scholarships:</strong> Support students from developing countries for master’s and PhD programs.</p>\r\n</li><li data-start=\"629\" data-end=\"764\">\r\n<p data-start=\"631\" data-end=\"764\"><strong data-start=\"631\" data-end=\"668\">University-specific Scholarships:</strong> Many UK universities offer merit-based or need-based scholarships for international students.</p>\r\n</li></ul>\r\n<p data-start=\"766\" data-end=\"813\"><strong data-start=\"766\" data-end=\"811\">How Insaf Education Consultancy Can Help:</strong></p>\r\n<ul data-start=\"814\" data-end=\"999\"><li data-start=\"814\" data-end=\"864\">\r\n<p data-start=\"816\" data-end=\"864\">Identify scholarships that match your profile.</p>\r\n</li><li data-start=\"865\" data-end=\"911\">\r\n<p data-start=\"867\" data-end=\"911\">Guide you through the application process.</p>\r\n</li><li data-start=\"912\" data-end=\"999\">\r\n<p data-start=\"914\" data-end=\"999\">Help prepare strong personal statements, recommendation letters, and documentation.</p>\r\n</li></ul>\r\n<p data-start=\"1001\" data-end=\"1140\">With proper guidance, students can significantly reduce tuition costs and secure financial support for a successful UK education journey.</p><br>', '2025-12-17 06:38:07', '2025-12-31 05:09:43'),
+(9, 3, '[\"uploads/scholarship_item_sections/98a59b58-1786-45ab-be13-2fb04979e00e.jpg\"]', '<h5 data-start=\"137\" data-end=\"373\">Australia is a popular destination for international students, offering high-quality education and diverse opportunities. Scholarships help make studying in Australia more affordable by covering tuition fees, living expenses, or both.</h5>\r\n<p data-start=\"375\" data-end=\"413\"><strong data-start=\"375\" data-end=\"411\">Popular Australian Scholarships:</strong></p>\r\n<ul data-start=\"414\" data-end=\"836\"><li data-start=\"414\" data-end=\"566\">\r\n<p data-start=\"416\" data-end=\"566\"><strong data-start=\"416\" data-end=\"450\">Australia Awards Scholarships:</strong> Fully-funded scholarships for students from developing countries to pursue undergraduate or postgraduate degrees.</p>\r\n</li><li data-start=\"567\" data-end=\"681\">\r\n<p data-start=\"569\" data-end=\"681\"><strong data-start=\"569\" data-end=\"603\">Destination Australia Program:</strong> Supports students studying in regional Australia with financial assistance.</p>\r\n</li><li data-start=\"682\" data-end=\"836\">\r\n<p data-start=\"684\" data-end=\"836\"><strong data-start=\"684\" data-end=\"721\">University-specific Scholarships:</strong> Many Australian universities offer merit-based, need-based, or research scholarships for international students.</p>\r\n</li></ul>\r\n<p data-start=\"838\" data-end=\"885\"><strong data-start=\"838\" data-end=\"883\">How Insaf Education Consultancy Can Help:</strong></p>\r\n<ul data-start=\"886\" data-end=\"1117\"><li data-start=\"886\" data-end=\"954\">\r\n<p data-start=\"888\" data-end=\"954\">Identify scholarships suited to your academic profile and goals.</p>\r\n</li><li data-start=\"955\" data-end=\"1053\">\r\n<p data-start=\"957\" data-end=\"1053\">Assist with application preparation, including personal statements and recommendation letters.</p>\r\n</li><li data-start=\"1054\" data-end=\"1117\">\r\n<p data-start=\"1056\" data-end=\"1117\">Provide guidance on deadlines and eligibility requirements.</p>\r\n</li></ul>\r\n<p data-start=\"1119\" data-end=\"1263\">With the right guidance, students can maximize their chances of securing scholarships and enjoy a rewarding education experience in Australia.</p><p><br></p>', '2025-12-31 05:09:12', '2025-12-31 05:10:11');
 
 -- --------------------------------------------------------
 
@@ -932,7 +934,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('JKB2qQw4d3LMI9SCzA9BqXx8vbumbIt8AUkxK2qk', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicUM5aFhMQkNlcEQ3QVNNdnY5TXh6NVNYbGIxbTJTMnJWRVA0bVpxQyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1766570805);
+('A8t6ROgxnclvrUCLRwdmrQyIncL9N916oO2BMvCe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoickVuM09iZUt0WDV5NWFVcDlWRktjVXN0OWZ5YTYwaFJKTjhTVW9oOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zY2hvbGFyc2hpcCI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767185701),
+('zHi5r3nQK9Gt28MvcYfE9rCDecPBG7ixCAXId705', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNHJZR0NVVEpWUUk4YjB5YmZVQ29zdkRiS3RhWGdxb1FxNFZUZVNnTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767179962);
 
 -- --------------------------------------------------------
 
@@ -955,7 +958,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(4, 'Test 1', NULL, 'uploads/sliders/1766400522-WLGBuKZWrG.jpg', 1, '2025-12-22 04:48:42', '2025-12-22 04:48:42');
+(6, 'Test', NULL, 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2025-12-31 00:40:30');
 
 -- --------------------------------------------------------
 
@@ -979,7 +982,7 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `designation`, `photo_path`, `content`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Mohammad Sariful Islam', 'CEO', 'uploads/team/1766058557-tZwke8xQ9K.jpg', '<div class=\"team-card-body\">\n    <ul><li>Driven by a strong belief in the power of education and its ability to change lives.</li><li>Guided by certified expertise (QEAC D468) and a deep commitment to student success.</li><li>Focused on creating life-changing opportunities, high-paying careers, and brighter futures abroad.</li></ul>\n  </div><br>', 1, '2025-12-10 23:23:06', '2025-12-18 05:49:17');
+(1, 'Md kamruzzaman', 'CEO', 'uploads/team/1767171304-ChjeXJyYEC.jpg', 'Driven by a strong belief in the power of education to transform lives.<br><br>Guided by certified expertise (QEAC D468) and a strong commitment to student success.<br><br>Dedicated to creating life-changing opportunities, global careers, and brighter futures abroad.', 1, '2025-12-10 23:23:06', '2025-12-31 03:04:11');
 
 -- --------------------------------------------------------
 
@@ -1109,7 +1112,7 @@ CREATE TABLE `visa_items` (
 --
 
 INSERT INTO `visa_items` (`id`, `visa_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 2, 'Why Choose PFEC for Visa Services?', '2025-12-18 00:30:34', '2025-12-18 00:30:34');
+(2, 2, 'Why Choose INSAF for Visa Services?', '2025-12-18 00:30:34', '2025-12-31 04:25:20');
 
 -- --------------------------------------------------------
 
@@ -1131,7 +1134,7 @@ CREATE TABLE `visa_item_sections` (
 --
 
 INSERT INTO `visa_item_sections` (`id`, `visa_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/visa_item_sections/1a5e7b20-90b4-489b-99b9-ea8213e8d742.png\"]', '<p>PFEC Bangladesh provides comprehensive, expert visa services for \r\nstudents planning to study in the world’s top destinations. As one of \r\nthe most trusted international education consultancies, our dedicated \r\nteam guides Bangladeshi students smoothly through every step of the \r\nstudent visa process—maximizing approvals and minimizing stress.								<br></p>', '2025-12-18 00:31:26', '2025-12-18 04:05:45');
+(2, 2, '[\"uploads/visa_item_sections/07c54dab-bc3c-4886-9316-c373968d6a63.jpg\"]', '<li data-start=\"126\" data-end=\"267\"><p data-start=\"128\" data-end=\"267\"><strong data-start=\"128\" data-end=\"150\">Expert Assistance:</strong> Our certified consultants (QEAC D468) guide you through the visa application process with accuracy and confidence.</p>\r\n</li><li data-start=\"268\" data-end=\"382\">\r\n<p data-start=\"270\" data-end=\"382\"><strong data-start=\"270\" data-end=\"295\">Up-to-Date Knowledge:</strong> We stay updated on all visa regulations and requirements for top study destinations.</p>\r\n</li><li data-start=\"383\" data-end=\"495\">\r\n<p data-start=\"385\" data-end=\"495\"><strong data-start=\"385\" data-end=\"410\">Personalized Support:</strong> From document preparation to interview coaching, we provide step-by-step guidance.</p>\r\n</li><li data-start=\"496\" data-end=\"600\">\r\n<p data-start=\"498\" data-end=\"600\"><strong data-start=\"498\" data-end=\"520\">High Success Rate:</strong> Many students have successfully obtained visas with our professional support.</p>\r\n</li><li data-start=\"601\" data-end=\"707\">\r\n<p data-start=\"603\" data-end=\"707\"><strong data-start=\"603\" data-end=\"630\">Transparent &amp; Reliable:</strong> Clear communication and honest advice at every stage of your visa journey.</p></li><br>', '2025-12-18 00:31:26', '2025-12-31 04:57:26');
 
 -- --------------------------------------------------------
 
@@ -1509,13 +1512,13 @@ ALTER TABLE `why_choose_us`
 -- AUTO_INCREMENT for table `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `about_items`
 --
 ALTER TABLE `about_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `accommodations`
@@ -1527,13 +1530,13 @@ ALTER TABLE `accommodations`
 -- AUTO_INCREMENT for table `accommodation_items`
 --
 ALTER TABLE `accommodation_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `accommodation_item_sections`
 --
 ALTER TABLE `accommodation_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `achievements`
@@ -1575,7 +1578,7 @@ ALTER TABLE `contact_forms`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `destinations`
@@ -1587,13 +1590,13 @@ ALTER TABLE `destinations`
 -- AUTO_INCREMENT for table `destination_items`
 --
 ALTER TABLE `destination_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `destination_item_sections`
 --
 ALTER TABLE `destination_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -1695,7 +1698,7 @@ ALTER TABLE `privilege_role`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -1713,19 +1716,19 @@ ALTER TABLE `scholarships`
 -- AUTO_INCREMENT for table `scholarship_items`
 --
 ALTER TABLE `scholarship_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `scholarship_item_sections`
 --
 ALTER TABLE `scholarship_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `teams`

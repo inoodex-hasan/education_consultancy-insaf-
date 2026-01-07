@@ -27,7 +27,7 @@ const HeroSlider = ({ slider }) => {
                     }}
                     loop={true}
                     // autoplay={{ delay: 3000 }}
-                    autoplay={false}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
                     className="homeSlider"
                 >
                     {slider &&
@@ -68,7 +68,7 @@ const HeroSlider = ({ slider }) => {
                                                     </div>
                                                 </div>
                                                 <p className="text-center lg:text-left text-[19px]  font-body">
-                                                 {slide?.subtitle}
+                                                    {slide?.subtitle}
                                                 </p>
                                             </div>
                                             <div className="flex gap-5 justify-start items-center">

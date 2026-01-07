@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 31, 2025 at 01:06 PM
+-- Generation Time: Jan 07, 2026 at 08:08 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `education_consultancy_2`
+-- Database: `education_consultancy`
 --
 
 -- --------------------------------------------------------
@@ -153,7 +153,10 @@ CREATE TABLE `achievements` (
 --
 
 INSERT INTO `achievements` (`id`, `title`, `description`, `photo_path`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Image 1', 'Best Newcomer for 2024 - Gold', 'uploads/achievements/1765432882-ajqO2XTeEj.jpg', 1, '2025-12-10 23:57:41', '2025-12-18 05:27:02');
+(1, 'Best Newcomer - 2024', '<br>', 'uploads/achievements/1765432882-ajqO2XTeEj.jpg', 1, '2025-12-10 23:57:41', '2026-01-07 00:32:14'),
+(2, 'Best Emerging Partner - 2023', NULL, 'uploads/achievements/1767767730-ih3aZgqhYX.jpg', 1, '2026-01-07 00:31:19', '2026-01-07 00:35:30'),
+(3, 'Agent of the Year', NULL, 'uploads/achievements/1767767581-bGm76iDTdZ.jpg', 1, '2026-01-07 00:33:01', '2026-01-07 00:35:43'),
+(4, 'Rising Star Agent', NULL, 'uploads/achievements/1767767709-FD3PQ62tnw.jpg', 1, '2026-01-07 00:35:09', '2026-01-07 00:35:54');
 
 -- --------------------------------------------------------
 
@@ -243,7 +246,9 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'How to Choose the Right University for Your Future', 'how-to-choose-the-right-university-for-your-future', 'uploads/blogs/1767163759-Rov9gVRK5S.jpg', 'Selecting a university requires careful consideration of academic programs, location, tuition fees, and future career opportunities. Students should research university rankings, course content, and campus facilities before applying. Consulting with education experts can help students make informed and confident decisions.', '2025-12-10', 1, '2025-12-10 06:49:00', '2025-12-31 00:49:19');
+(1, 'How to Choose the Right University for Your Future', 'how-to-choose-the-right-university-for-your-future', 'uploads/blogs/1767163759-Rov9gVRK5S.jpg', 'Selecting a university requires careful consideration of academic programs, location, tuition fees, and future career opportunities. Students should research university rankings, course content, and campus facilities before applying. Consulting with education experts can help students make informed and confident decisions.', '2025-12-10', 1, '2025-12-10 06:49:00', '2025-12-31 00:49:19'),
+(3, 'How to Choose the Right University for Your Future - 2', 'how-to-choose-the-right-university-for-your-future-2', 'uploads/blogs/1767771027-nL2safAr14.jpg', '<p>Test</p>', '2026-01-07', 1, '2026-01-07 01:30:27', '2026-01-07 01:30:27'),
+(4, 'How to Choose the Right University for Your Future - 3', 'how-to-choose-the-right-university-for-your-future-3', 'uploads/blogs/1767771973-o1J6SnLDfQ.jpg', '<p>Test</p>', '2026-01-07', 1, '2026-01-07 01:46:13', '2026-01-07 01:46:13');
 
 -- --------------------------------------------------------
 
@@ -343,7 +348,11 @@ CREATE TABLE `destinations` (
 
 INSERT INTO `destinations` (`id`, `title`, `image`, `slug`, `country`, `description`, `is_active`, `created_at`, `updated_at`) VALUES
 (3, 'Australia', 'uploads/destinations/1767158409-SdfJaVlQ56.jpg', 'australia', 'Australia', '<p>test</p>', 1, '2025-12-14 23:26:14', '2025-12-30 23:20:09'),
-(4, 'UK', 'uploads/destinations/1767158322-aiiY10xdaI.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-30 23:18:42');
+(4, 'UK', 'uploads/destinations/1767158322-aiiY10xdaI.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-30 23:18:42'),
+(6, 'Canada', 'uploads/destinations/1767766575-qOA0jwIqrl.jpg', 'canada', 'Canada', NULL, 1, '2026-01-07 00:16:15', '2026-01-07 00:16:15'),
+(7, 'Europe', 'uploads/destinations/1767766729-k7Uq4tbcTs.jpg', 'europe', 'Europe', NULL, 1, '2026-01-07 00:18:49', '2026-01-07 00:18:49'),
+(8, 'USA', 'uploads/destinations/1767766994-rfabMWqm5G.jpg', 'usa', 'USA', NULL, 1, '2026-01-07 00:23:14', '2026-01-07 00:23:50'),
+(9, 'Japan', 'uploads/destinations/1767767096-mi4co9H2ta.jpg', 'japan', 'Japan', NULL, 1, '2026-01-07 00:24:56', '2026-01-07 00:24:56');
 
 -- --------------------------------------------------------
 
@@ -420,7 +429,11 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `description`, `photo_path`, `start_date`, `start_time`, `end_time`, `end_date`, `location`, `is_active`, `created_at`, `updated_at`) VALUES
-(5, 'Insaf Education Consultancy Seminar', '<p>Insaf Education Consultancy provides professional guidance for students seeking higher education opportunities both locally and internationally. The consultancy offers support in university selection, admission processing, scholarship guidance, and visa assistance. With a student-focused approach, Insaf Education Consultancy helps learners make confident and informed decisions for their academic and career goals.</p>', 'uploads/events/1767162091-h4V1HPHoqo.jpg', '2025-12-20', '2025-12-31 10:00:00', '2025-12-31 11:00:00', '2025-12-26', 'Dhaka', 1, '2025-12-20 05:39:06', '2025-12-31 00:24:13');
+(5, 'Insaf Education Consultancy Seminar', '<p>Insaf Education Consultancy provides professional guidance for students seeking higher education opportunities both locally and internationally. The consultancy offers support in university selection, admission processing, scholarship guidance, and visa assistance. With a student-focused approach, Insaf Education Consultancy helps learners make confident and informed decisions for their academic and career goals.</p>', 'uploads/events/1767769881-DIKhq3HW6A.jpg', '2025-12-20', '2026-01-07 10:00:00', '2026-01-07 11:00:00', '2025-12-26', 'Dhaka', 1, '2025-12-20 05:39:06', '2026-01-07 01:11:21'),
+(6, 'Insaf Education Consultancy Seminar - 2', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767769868-3SAjRxmHNv.jpg', '2026-08-01', '2026-01-07 10:00:00', '2026-01-07 12:00:00', '2026-10-01', 'Banani', 1, '2026-01-07 00:41:23', '2026-01-07 01:11:08'),
+(7, 'Insaf Education Consultancy Seminar - 3', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767768140-zzduIWdvG5.jpg', '2026-09-01', '2026-01-07 11:00:00', '2026-01-07 12:30:00', '2026-12-01', 'Gulshan', 1, '2026-01-07 00:42:20', '2026-01-07 00:50:34'),
+(9, 'Insaf Education Consultancy Seminar - 4', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767769378-p3elfdtyPP.jpg', '2026-01-12', '2026-01-07 17:00:00', '2026-01-07 20:00:00', '2026-01-16', 'Mirpur', 1, '2026-01-07 01:02:58', '2026-01-07 01:02:58'),
+(10, 'Insaf Education Consultancy Seminar - 5', NULL, 'uploads/events/1767770446-eqKX40rEpt.jpg', '2026-01-09', '2026-01-07 09:00:00', '2026-01-07 11:30:00', '2026-01-16', 'Dhanmondi', 1, '2026-01-07 01:20:46', '2026-01-07 01:20:46');
 
 -- --------------------------------------------------------
 
@@ -696,9 +709,9 @@ CREATE TABLE `offices` (
 --
 
 INSERT INTO `offices` (`id`, `location`, `country`, `address`, `phone`, `email`, `is_primary`, `created_at`, `updated_at`) VALUES
-(2, 'Dhanmondi', 'Bangladesh', '<p>&nbsp;Plot-390, Road-27</p>', '+880 9609 80 03 00', 'test@example.com', 0, '2025-12-21 00:40:02', '2025-12-31 06:18:51'),
-(3, 'Banani', 'Bangladesh', '<p>Road: 7, Block: E</p>', '+880 9609 80 07 00', 'test1@example.com', 1, '2025-12-22 05:04:38', '2025-12-31 06:18:12'),
-(4, 'Sydney', 'Australia', '<p><strong data-start=\"174\" data-end=\"196\"> </strong><span data-start=\"174\" data-end=\"196\">Level 5</span>, Pitt Street</p>', '+880 9609 80 05 00', 'test@example.com', 0, '2025-12-22 23:43:22', '2025-12-31 06:19:51');
+(2, '𝐂𝐡𝐚𝐭𝐭𝐨𝐠𝐫𝐚𝐦', 'Bangladesh', '<p>𝐑𝐢𝐝𝐢𝐦𝐚 𝐓𝐨𝐰𝐞𝐫 (𝐒𝐚𝐡𝐣𝐚𝐥𝐚𝐥 𝐈𝐬𝐥𝐚𝐦𝐢 𝐁𝐚𝐧𝐤 𝐁𝐮𝐢𝐥𝐝𝐢𝐧𝐠), 𝐋𝐞𝐯𝐞𝐥-𝟒, 𝐓𝐞𝐥𝐨𝐩𝐚𝐭𝐭𝐢 𝐌𝐨𝐚𝐫, 𝐂𝐡𝐚𝐰𝐤𝐛𝐚𝐳𝐚𝐫, 𝐂𝐡𝐚𝐭𝐭𝐨𝐠𝐫𝐚𝐦</p>', '+88𝟎𝟏𝟖𝟎𝟓-𝟎𝟐𝟎𝟐𝟕𝟑', 'test@example.com', 0, '2025-12-21 00:40:02', '2026-01-07 02:04:31'),
+(3, 'Dhaka', 'Bangladesh', '<p>𝐇𝐚𝐪ue 𝐓𝐨𝐰𝐞𝐫 (𝐎𝐩𝐩𝐨𝐬𝐢𝐭𝐞 𝐨𝐟 𝐁𝐑𝐁 𝐇𝐨𝐬𝐩𝐢𝐭𝐚𝐥), 𝐅𝐥𝐨𝐨𝐫 - 𝟔, 𝐏𝐚𝐧𝐭𝐡𝐚𝐩𝐚𝐭𝐡, 𝐃𝐡𝐚𝐤𝐚 - 𝟏𝟐𝟎𝟗</p>', '+88𝟎𝟏𝟖𝟎𝟓-𝟎𝟐𝟎𝟐𝟕𝟑', 'test1@example.com', 1, '2025-12-22 05:04:38', '2026-01-07 02:03:10'),
+(4, '𝗕𝗮𝗿𝗶𝘀𝗮𝗹', 'Bangladesh', '<p><strong data-start=\"174\" data-end=\"196\"></strong><span data-start=\"174\" data-end=\"196\">𝟳𝟮𝟯, 𝗧𝗵𝗮𝗻𝗮 𝗖𝗼𝘂𝗻𝗰𝗶𝗹, 𝗖&amp;𝗕 𝗥𝗼𝗮𝗱 𝗘𝗮𝘀𝘁 𝗦𝗶𝗱𝗲, 𝗪𝗮𝗿𝗱 𝗡𝗼:𝟭𝟰, 𝗕𝗖𝗖, 𝗕𝗮𝗿𝗶𝘀𝗵𝗮𝗹.</span></p>', '+88𝟎𝟏𝟔𝟎𝟒𝟏𝟐𝟑𝟖𝟏𝟔', 'test@example.com', 0, '2025-12-22 23:43:22', '2026-01-07 02:05:09');
 
 -- --------------------------------------------------------
 
@@ -827,7 +840,10 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `title`, `subtitle`, `content`, `image_path`, `is_active`, `created_at`, `updated_at`) VALUES
-(3, 'Review 1', NULL, NULL, 'uploads/reviews/1767163484-pUWnPvDATI.png', 1, '2025-12-22 05:01:07', '2025-12-31 00:44:44');
+(3, 'Review 1', NULL, NULL, 'uploads/reviews/1767163484-pUWnPvDATI.png', 1, '2025-12-22 05:01:07', '2025-12-31 00:44:44'),
+(5, 'Review 2', NULL, NULL, 'uploads/reviews/1767770890-fW0FNVBjvq.png', 1, '2026-01-07 01:28:10', '2026-01-07 01:28:10'),
+(6, 'Review 3', NULL, NULL, 'uploads/reviews/1767770906-Tv8KBktjii.png', 1, '2026-01-07 01:28:26', '2026-01-07 01:28:26'),
+(7, 'Review 4', NULL, NULL, 'uploads/reviews/1767770934-2YdanQQNjC.png', 1, '2026-01-07 01:28:54', '2026-01-07 01:28:54');
 
 -- --------------------------------------------------------
 
@@ -934,8 +950,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('A8t6ROgxnclvrUCLRwdmrQyIncL9N916oO2BMvCe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoickVuM09iZUt0WDV5NWFVcDlWRktjVXN0OWZ5YTYwaFJKTjhTVW9oOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zY2hvbGFyc2hpcCI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767185701),
-('zHi5r3nQK9Gt28MvcYfE9rCDecPBG7ixCAXId705', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNHJZR0NVVEpWUUk4YjB5YmZVQ29zdkRiS3RhWGdxb1FxNFZUZVNnTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767179962);
+('9k5e6BjzHKLukQuXDe4qmQOQJ8DPe2XuIfRyKB5B', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVG1FWVdVckFYMFJYR0RGejF3cHZuaUp0MU1INVlZOUVZa3hXTXFiWiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767765568),
+('n0FexiKfaDskCAAtktdXaaDQVHdceryzSeEOHEo0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiODVFQnphZDY0SmE3QTVzZElNUmZ2b3NEdFJvV1VoSFZUYnF0TWQ5VyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czoxNjoidHlyby1sb2dpbi5sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjE6e3M6NToibG9naW4iO2k6Nzt9fX0=', 1767765619),
+('N8sTHs1QtmO2JgVEWttPd8oGIGqRWFKpc8JqiFkB', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoieDdBbzVSODh0RDBLQXJhQ3h0ZGM5QlVQNTRieWIwUGFvcHViWEtZNSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1767773166),
+('Nzk5RYflHSLVyd0BR8FxSVZoWWMxjBORj1Fxj3Po', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSUNKN0Jua050TkNmZ2NMTWtTZGlQWDZQOFNHM2JWRk9xb2paVkw1byI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767765745);
 
 -- --------------------------------------------------------
 
@@ -958,7 +976,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(6, 'Test', NULL, 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2025-12-31 00:40:30');
+(6, 'Turning Global Education into Real Opportunities and Career Growth', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2026-01-07 00:26:54');
 
 -- --------------------------------------------------------
 
@@ -1055,7 +1073,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `suspended_at`, `suspension_reason`) VALUES
-(1, 'Inoodex', 'hello@inoodex.com', NULL, '$2y$12$WY3ZDqc79mI0dv9X6rkJhuuCKjhAUM0Kr.7FFQH.6Xoza22mM6.Za', 'CMO2hXV2ACla2xzyvRu2LyhDuqv42dQyg1WM9tMFlQPpSa5BEfIxv9B2P34k', '2025-12-09 23:03:03', '2025-12-09 23:03:03', NULL, NULL);
+(1, 'Inoodex', 'hello@inoodex.com', NULL, '$2y$12$WY3ZDqc79mI0dv9X6rkJhuuCKjhAUM0Kr.7FFQH.6Xoza22mM6.Za', 'sVwghh9MuEdIVYZpox6yjFO2X69y0TiXbxQKpdSJarxswj2DUtzEEM1Y3tm8', '2025-12-09 23:03:03', '2025-12-09 23:03:03', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1542,7 +1560,7 @@ ALTER TABLE `accommodation_item_sections`
 -- AUTO_INCREMENT for table `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `admissions`
@@ -1566,7 +1584,7 @@ ALTER TABLE `admission_item_sections`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contact_forms`
@@ -1584,7 +1602,7 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `destination_items`
@@ -1602,7 +1620,7 @@ ALTER TABLE `destination_item_sections`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `event_items`
@@ -1698,7 +1716,7 @@ ALTER TABLE `privilege_role`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`

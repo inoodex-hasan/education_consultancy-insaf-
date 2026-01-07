@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-B6lxdZy0.css",
+    "file": "assets/app-XpM75aOl.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,13 +9,13 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-pmjrh4BN.js",
+    "file": "assets/app-MYsetNwA.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-B6lxdZy0.css"
+      "assets/app-XpM75aOl.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
@@ -131,10 +131,6 @@
   "resources/js/assets/destinations/usa.png": {
     "file": "assets/usa-Bfy0j7AT.png",
     "src": "resources/js/assets/destinations/usa.png"
-  },
-  "resources/js/assets/events/event.jpg": {
-    "file": "assets/event-BtH3oYj7.jpg",
-    "src": "resources/js/assets/events/event.jpg"
   },
   "resources/js/assets/footer/footer-bg.png": {
     "file": "assets/footer-bg-B_AArpS3.png",

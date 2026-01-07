@@ -52,7 +52,7 @@ const SuccessGallery = ({ successcount }) => {
                 <div className="text-center mb-16">
                     <h2 className="text-6xl lg:text-5xl font-black text-blue mb-4">
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-gold via-[#d4b86b] to-gold">
-                            {successcount.students}+
+                            {successcount}+
                         </span>
                     </h2>
                     <p className="text-3xl lg:text-4xl font-bold text-blue/90">

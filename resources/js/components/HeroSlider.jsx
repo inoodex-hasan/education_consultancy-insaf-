@@ -68,13 +68,7 @@ const HeroSlider = ({ slider }) => {
                                                     </div>
                                                 </div>
                                                 <p className="text-center lg:text-left text-[19px]  font-body">
-                                                    Lorem ipsum dolor sit amet
-                                                    consectetur. Elementum massa
-                                                    risus euismod semper
-                                                    fringilla tristique viverra
-                                                    urna metus. Egestas eleifend
-                                                    ultrices lacus fringilla
-                                                    vivamus nisl diam auctor.
+                                                 {slide?.subtitle}
                                                 </p>
                                             </div>
                                             <div className="flex gap-5 justify-start items-center">

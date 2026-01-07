@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Create Event')
+@section('title', 'Edit Event')
 
 @section('content')
     <section class="section">
@@ -8,7 +8,7 @@
             <h1>Events</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.events.index') }}">Events</a></div>
-                <div class="breadcrumb-item">Create</div>
+                <div class="breadcrumb-item">Edit</div>
             </div>
         </div>
 
@@ -17,7 +17,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Create New Event</h4>
+                            <h4>Edit Event: {{ $event->title }} </h4>
                             <div class="card-header-action">
                                 <a href="{{ route('admin.events.index') }}" class="btn btn-primary">
                                     Back to List
@@ -122,12 +122,16 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label>Status</label>
                                         <select name="is_active" class="form-control">
-                                            <option value="1" {{ old('is_active', 1) == 1 ? 'selected' : '' }}>Active
+                                            <option value="1"
+                                                {{ old('is_active', $event->is_active) == 1 ? 'selected' : '' }}>
+                                                Active
                                             </option>
-                                            <option value="0" {{ old('is_active') == 0 ? 'selected' : '' }}>Inactive
+                                            <option value="0"
+                                                {{ old('is_active', $event->is_active) == 0 ? 'selected' : '' }}>
+                                                Inactive
                                             </option>
                                         </select>
                                     </div>

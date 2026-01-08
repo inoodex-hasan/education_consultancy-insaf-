@@ -125,7 +125,8 @@
                       <li class="dropdown">
                           <a href="#" class="has-dropdown">Item Sections</a>
                           <ul class="dropdown-menu">
-                              <li><a class="nav-link" href="{{ route('admin.destination_item_sections.create') }}">Add
+                              <li><a class="nav-link"
+                                      href="{{ route('admin.destination_item_sections.create') }}">Add
                                   </a></li>
                               <li><a class="nav-link"
                                       href="{{ route('admin.destination_item_sections.index') }}">Manage </a>
@@ -342,6 +343,14 @@
               <ul class="dropdown-menu">
                   <li><a class="nav-link" href={{ route('admin.blogs.create') }}>Add</a></li>
                   <li><a class="nav-link" href={{ route('admin.blogs.index') }}>Manage</a></li>
+              </ul>
+          </li>
+          <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i>
+                  <span>Documents</span></a>
+              <ul class="dropdown-menu">
+                  <li><a class="nav-link" href={{ route('admin.documents.create') }}>Add</a></li>
+                  <li><a class="nav-link" href={{ route('admin.documents.index') }}>Manage</a></li>
               </ul>
           </li>
           <li class="dropdown">

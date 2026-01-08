@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2026 at 11:52 AM
+-- Generation Time: Jan 08, 2026 at 01:28 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -409,6 +409,32 @@ INSERT INTO `destination_item_sections` (`id`, `destination_item_id`, `images`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `documents`
+--
+
+CREATE TABLE `documents` (
+  `id` bigint UNSIGNED NOT NULL,
+  `destination_id` bigint UNSIGNED DEFAULT NULL,
+  `scholarship_id` bigint UNSIGNED DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mime_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'application/pdf',
+  `file_size` bigint NOT NULL DEFAULT '0',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`id`, `destination_id`, `scholarship_id`, `name`, `file_path`, `mime_type`, `file_size`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, 'Test', 'uploads/documents/1767878498_sample.pdf', 'application/pdf', 18630, 1, '2026-01-08 07:21:38', '2026-01-08 07:21:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -689,7 +715,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (52, '2025_12_23_053511_add_country_to_offices_table', 40),
 (53, '2025_12_24_063228_add_image_to_scholarship_table', 41),
 (54, '2026_01_08_050116_add_url_to_sliders_table', 42),
-(55, '2026_01_08_061347_add_fields_to_contact_us_table', 43);
+(55, '2026_01_08_061347_add_fields_to_contact_us_table', 43),
+(56, '2026_01_08_124934_create_documents_table', 44);
 
 -- --------------------------------------------------------
 
@@ -955,10 +982,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('3zOPJ46fCVY9getZNG5zdm7IAH0uVOAMs1XLOLKE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia0J2Um1oYmp1ZmlhUGpyd1k1ZnFVajVTRUY0dHBxektJZ3ZzMXAxUiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767866618),
-('BqOhEjNslJt3XLaiIrmuE6Hxrhd0x406SKnG8pGJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYzFtRFEzVkFOTVduWkxYT054emRKTDFrbk5UQWxaNldLNzY2dWFRZSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zY2hvbGFyc2hpcC91ayI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767868832),
-('ejNJMAUpdV67Qva8c5XiOBDwLwgevsJOg3x7HEEq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWnpsbDI0aVk2MFB2Zm9DTmRSbzRDZ3JibW9GdlZXdmJKcHI5OG9TZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hY2NvbW9kYXRpb24iO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767872237),
-('qumKLvPW8xWOFBhbHOPBr6QngaqlvohBPODQGrhJ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia3NhVWNtMzNMek1iaWVQVkRyV21wRklvdzBDTnFPdnhCNEJkaGxHUSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1767856879);
+('ejNJMAUpdV67Qva8c5XiOBDwLwgevsJOg3x7HEEq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWnpsbDI0aVk2MFB2Zm9DTmRSbzRDZ3JibW9GdlZXdmJKcHI5OG9TZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kb2N1bWVudHMiO3M6NToicm91dGUiO3M6MjE6ImFkbWluLmRvY3VtZW50cy5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767878741);
 
 -- --------------------------------------------------------
 
@@ -1303,6 +1327,14 @@ ALTER TABLE `destination_item_sections`
   ADD KEY `destination_item_sections_destination_item_id_foreign` (`destination_item_id`);
 
 --
+-- Indexes for table `documents`
+--
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `documents_destination_id_index` (`destination_id`),
+  ADD KEY `documents_scholarship_id_index` (`scholarship_id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -1624,6 +1656,12 @@ ALTER TABLE `destination_item_sections`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `documents`
+--
+ALTER TABLE `documents`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
@@ -1681,7 +1719,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `offices`

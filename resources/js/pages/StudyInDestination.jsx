@@ -1,6 +1,9 @@
 import { ArrowRight, Phone, GraduationCap, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import destinationImg from "../assets/destination.png";
+import Modal from "../components/Modal";
+import Form from "../components/form/Form";
+import FormTwo from "../components/form/FormTwo";
 
 export default function StudyInDestination({
     destination,
@@ -9,6 +12,7 @@ export default function StudyInDestination({
 }) {
     const [activeId, setActiveId] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const scrollToId = (id) => {
         const element = document.getElementById(`section-${id}`);
@@ -50,11 +54,17 @@ export default function StudyInDestination({
     return (
         <>
             <section className="relative pt-36 py-24 overflow-hidden bg-linear-to-br from-blue via-blue/95 to-[#1e2d5c]">
+                <Modal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                >
+                    <FormTwo />
+                </Modal>{" "}
+                *
                 <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-20 left-10 w-96 h-96 bg-gold rounded-full blur-3xl" />
                     <div className="absolute bottom-10 right-20 w-80 h-80 bg-gold/30 rounded-full blur-3xl" />
                 </div>
-
                 <div className="relative max-w-7xl mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="text-white space-y-8">
@@ -132,6 +142,14 @@ export default function StudyInDestination({
             <div className="max-w-7xl mx-auto px-6 pt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <aside className="lg:col-span-4">
+                        <div>
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="text-white bg-blue hover:bg-blue-500 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium font-mont capitalize  rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-full"
+                            >
+                                download guideline
+                            </button>
+                        </div>
                         <div className="lg:hidden mb-4">
                             <button
                                 onClick={() => setMobileOpen(!mobileOpen)}

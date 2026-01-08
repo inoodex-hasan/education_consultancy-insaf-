@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\{Auth, Route};
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\Frontend\{AboutUsController, BlogController as FrontendBlogController, ContactController, ContactFormController, EventController as FrontendEventController, HomeController, ReviewController as FrontendReviewController, ServicesController, StudyDestinationController};
-use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DestinationController, DestinationItemController, DestinationItemSectionController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
+use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DcoumentController, DestinationController, DestinationItemController, DestinationItemSectionController, DocumentController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
 use Inertia\Inertia;
 
 
@@ -219,4 +219,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('about_items', AboutItemController::class)->names('admin.about_items');
+});
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::resource('documents', controller: DocumentController::class)->names('admin.documents');
 });

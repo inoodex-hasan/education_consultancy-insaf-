@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { usePage, useForm } from "@inertiajs/react";
 import { CheckCircle } from "lucide-react";
 
-const Form = () => {
+const FormTwo = () => {
     const { destinations = [], offices = [] } = usePage().props;
 
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -10,12 +10,8 @@ const Form = () => {
         last_name: "",
         email: "",
         phone: "",
-        office_id: "",
-        destination_id: "",
         district: "",
         address: "",
-        question_1: "",
-        question_2: "",
         terms: false,
     });
 
@@ -216,139 +212,6 @@ const Form = () => {
                     )}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    {/* Office & Destination */}
-                    <div className="mt-2">
-                        <label className="block text-sm font-medium text-gray-700  mb-2 font-mont">
-                            Your Nearest INSAF Office{" "}
-                            <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            value={data.office_id}
-                            onChange={(e) =>
-                                setData("office_id", e.target.value)
-                            }
-                            className={`w-full px-4 py-1.5 border ${
-                                errors.office_id
-                                    ? "border-red-500"
-                                    : "border-gray-300"
-                            } rounded-lg text-blue font-mont focus:ring-2 focus:ring-blue-500 transition`}
-                            required
-                        >
-                            <option value="">Select office</option>
-                            {offices.map((office) => (
-                                <option key={office.id} value={office.id}>
-                                    {office.location}
-                                </option>
-                            ))}
-                        </select>
-                        {errors.office_id && (
-                            <p className="text-red-500 text-sm mt-1">
-                                {errors.office_id}
-                            </p>
-                        )}
-                    </div>
-
-                    <div className="mt-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                            Your Preferred Study Destination{" "}
-                            <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            value={data.destination_id}
-                            onChange={(e) =>
-                                setData("destination_id", e.target.value)
-                            }
-                            className={`w-full px-4 py-1.5 border ${
-                                errors.destination_id
-                                    ? "border-red-500"
-                                    : "border-gray-300"
-                            } rounded-lg text-blue font-mont focus:ring-2 focus:ring-blue-500 transition`}
-                            required
-                        >
-                            <option value="">Select destination</option>
-                            {destinations.map((destination) => (
-                                <option
-                                    key={destination.id}
-                                    value={destination.id}
-                                >
-                                    {destination.country}
-                                </option>
-                            ))}
-                        </select>
-                        {errors.destination_id && (
-                            <p className="text-red-500 text-sm mt-1">
-                                {errors.destination_id}
-                            </p>
-                        )}
-                    </div>
-
-                    {/* Question 1 & 2 - NOW REQUIRED */}
-                    <div className="mt-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                            English Language Test Status{" "}
-                            <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            value={data.question_1}
-                            onChange={(e) =>
-                                setData("question_1", e.target.value)
-                            }
-                            className={`w-full px-4 py-1.5 border ${
-                                errors.question_1
-                                    ? "border-red-500"
-                                    : "border-gray-300"
-                            } rounded-lg text-blue font-mont focus:ring-2 focus:ring-blue-500 transition`}
-                            required
-                        >
-                            <option value="">Select</option>
-                            <option value="Not taken yet">Not taken yet</option>
-                            <option value="IELTS">IELTS</option>
-                            <option value="PTE">PTE</option>
-                            <option value="TOEFL">TOEFL</option>
-                        </select>
-                        {errors.question_1 && (
-                            <p className="text-red-500 text-sm mt-1">
-                                {errors.question_1}
-                            </p>
-                        )}
-                    </div>
-
-                    <div className="mt-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                            How do you plan to fund your studies{" "}
-                            <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                            value={data.question_2}
-                            onChange={(e) =>
-                                setData("question_2", e.target.value)
-                            }
-                            className={`w-full px-4 py-1.5 border ${
-                                errors.question_2
-                                    ? "border-red-500"
-                                    : "border-gray-300"
-                            } rounded-lg text-blue font-mont focus:ring-2 focus:ring-blue-500 transition`}
-                            required
-                        >
-                            <option value="">Select</option>
-                            <option value="Self-funded">Self-funded</option>
-                            <option value="Scholarship">Scholarship</option>
-                            <option value="Education Loan">
-                                Education Loan
-                            </option>
-                            <option value="Family Support">
-                                Family Support
-                            </option>
-                        </select>
-                        {errors.question_2 && (
-                            <p className="text-red-500 text-sm mt-1">
-                                {errors.question_2}
-                            </p>
-                        )}
-                    </div>
-                </div>
-
                 {/* Terms Checkbox */}
                 <div className="mt-4 flex items-center">
                     <input
@@ -407,4 +270,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default FormTwo;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 07, 2026 at 08:23 AM
+-- Generation Time: Jan 08, 2026 at 11:52 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -153,10 +153,10 @@ CREATE TABLE `achievements` (
 --
 
 INSERT INTO `achievements` (`id`, `title`, `description`, `photo_path`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Best Newcomer - 2024', '<br>', 'uploads/achievements/1765432882-ajqO2XTeEj.jpg', 1, '2025-12-10 23:57:41', '2026-01-07 00:32:14'),
-(2, 'Best Emerging Partner - 2023', NULL, 'uploads/achievements/1767767730-ih3aZgqhYX.jpg', 1, '2026-01-07 00:31:19', '2026-01-07 00:35:30'),
-(3, 'Agent of the Year', NULL, 'uploads/achievements/1767767581-bGm76iDTdZ.jpg', 1, '2026-01-07 00:33:01', '2026-01-07 00:35:43'),
-(4, 'Rising Star Agent', NULL, 'uploads/achievements/1767767709-FD3PQ62tnw.jpg', 1, '2026-01-07 00:35:09', '2026-01-07 00:35:54');
+(1, 'Best Newcomer', 'Best Newcomer', 'uploads/achievements/1765432882-ajqO2XTeEj.jpg', 1, '2025-12-10 23:57:41', '2026-01-08 00:37:02'),
+(2, 'Best Emerging Partner', '<p>Best Emerging Partner</p>', 'uploads/achievements/1767767730-ih3aZgqhYX.jpg', 1, '2026-01-07 00:31:19', '2026-01-08 00:36:50'),
+(3, 'Agent of the Year', '<p>Agent of the Year</p>', 'uploads/achievements/1767767581-bGm76iDTdZ.jpg', 1, '2026-01-07 00:33:01', '2026-01-08 00:29:43'),
+(4, 'Rising Star Agent', 'Rising Star Agent', 'uploads/achievements/1767767709-FD3PQ62tnw.jpg', 1, '2026-01-07 00:35:09', '2026-01-08 00:29:31');
 
 -- --------------------------------------------------------
 
@@ -314,15 +314,18 @@ CREATE TABLE `contact_us` (
   `question_1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `question_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `contact_us`
 --
 
-INSERT INTO `contact_us` (`id`, `destination_id`, `office_id`, `first_name`, `last_name`, `email`, `phone`, `question_1`, `question_2`, `created_at`, `updated_at`) VALUES
-(18, 3, 2, 'Md', 'Hasan', 'email+fakedata39240@gmail.com', '0120202020', 'IELTS', 'Self-funded', '2025-12-31 06:23:18', '2025-12-31 06:23:18');
+INSERT INTO `contact_us` (`id`, `destination_id`, `office_id`, `first_name`, `last_name`, `email`, `phone`, `question_1`, `question_2`, `created_at`, `updated_at`, `district`, `address`) VALUES
+(18, 3, 2, 'Md', 'Hasan', 'email+fakedata39240@gmail.com', '0120202020', 'IELTS', 'Self-funded', '2025-12-31 06:23:18', '2025-12-31 06:23:18', '', ''),
+(19, 7, 2, 'Corine', 'Dickinson', 'your.email+fakedata17969@gmail.com', '257-985-8458', 'IELTS', 'Scholarship', '2026-01-08 00:19:42', '2026-01-08 00:19:42', 'Howell', '6561 Mittie Expressway');
 
 -- --------------------------------------------------------
 
@@ -684,7 +687,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (50, '2025_12_22_121502_create_contact_forms_table', 38),
 (51, '2025_12_22_193408_add_is_primary_to_offices_table', 39),
 (52, '2025_12_23_053511_add_country_to_offices_table', 40),
-(53, '2025_12_24_063228_add_image_to_scholarship_table', 41);
+(53, '2025_12_24_063228_add_image_to_scholarship_table', 41),
+(54, '2026_01_08_050116_add_url_to_sliders_table', 42),
+(55, '2026_01_08_061347_add_fields_to_contact_us_table', 43);
 
 -- --------------------------------------------------------
 
@@ -709,9 +714,9 @@ CREATE TABLE `offices` (
 --
 
 INSERT INTO `offices` (`id`, `location`, `country`, `address`, `phone`, `email`, `is_primary`, `created_at`, `updated_at`) VALUES
-(2, '𝐂𝐡𝐚𝐭𝐭𝐨𝐠𝐫𝐚𝐦', 'Bangladesh', '<p>𝐑𝐢𝐝𝐢𝐦𝐚 𝐓𝐨𝐰𝐞𝐫 (𝐒𝐚𝐡𝐣𝐚𝐥𝐚𝐥 𝐈𝐬𝐥𝐚𝐦𝐢 𝐁𝐚𝐧𝐤 𝐁𝐮𝐢𝐥𝐝𝐢𝐧𝐠), 𝐋𝐞𝐯𝐞𝐥-𝟒, 𝐓𝐞𝐥𝐨𝐩𝐚𝐭𝐭𝐢 𝐌𝐨𝐚𝐫, 𝐂𝐡𝐚𝐰𝐤𝐛𝐚𝐳𝐚𝐫, 𝐂𝐡𝐚𝐭𝐭𝐨𝐠𝐫𝐚𝐦</p>', '+88𝟎𝟏𝟖𝟎𝟓-𝟎𝟐𝟎𝟐𝟕𝟑', 'test@example.com', 0, '2025-12-21 00:40:02', '2026-01-07 02:04:31'),
-(3, 'Dhaka', 'Bangladesh', '<p>𝐇𝐚𝐪ue 𝐓𝐨𝐰𝐞𝐫 (𝐎𝐩𝐩𝐨𝐬𝐢𝐭𝐞 𝐨𝐟 𝐁𝐑𝐁 𝐇𝐨𝐬𝐩𝐢𝐭𝐚𝐥), 𝐅𝐥𝐨𝐨𝐫 - 𝟔, 𝐏𝐚𝐧𝐭𝐡𝐚𝐩𝐚𝐭𝐡, 𝐃𝐡𝐚𝐤𝐚 - 𝟏𝟐𝟎𝟗</p>', '+88𝟎𝟏𝟖𝟎𝟓-𝟎𝟐𝟎𝟐𝟕𝟑', 'test1@example.com', 1, '2025-12-22 05:04:38', '2026-01-07 02:03:10'),
-(4, '𝗕𝗮𝗿𝗶𝘀𝗮𝗹', 'Bangladesh', '<p><strong data-start=\"174\" data-end=\"196\"></strong><span data-start=\"174\" data-end=\"196\">𝟳𝟮𝟯, 𝗧𝗵𝗮𝗻𝗮 𝗖𝗼𝘂𝗻𝗰𝗶𝗹, 𝗖&amp;𝗕 𝗥𝗼𝗮𝗱 𝗘𝗮𝘀𝘁 𝗦𝗶𝗱𝗲, 𝗪𝗮𝗿𝗱 𝗡𝗼:𝟭𝟰, 𝗕𝗖𝗖, 𝗕𝗮𝗿𝗶𝘀𝗵𝗮𝗹.</span></p>', '+88𝟎𝟏𝟔𝟎𝟒𝟏𝟐𝟑𝟖𝟏𝟔', 'test@example.com', 0, '2025-12-22 23:43:22', '2026-01-07 02:05:09');
+(2, 'Chattogram', 'Bangladesh', '<p>Ridima Tower (Shahjalal Islami Bank Building), Level-4, Telopatti Moar, Chawkbazar, Chattogram</p>', '+8801805-020273', 'test@example.com', 0, '2025-12-21 00:40:02', '2026-01-08 00:23:34'),
+(3, 'Dhaka', 'Bangladesh', '<p>Haque Tower (Opposite of BRB Hospital), Floor - 6, Panthapath, Dhaka - 1209</p>', '+8801805-020273', 'test1@example.com', 1, '2025-12-22 05:04:38', '2026-01-08 00:21:29'),
+(4, 'Barisal', 'Bangladesh', '<p><strong data-start=\"174\" data-end=\"196\"></strong>723, Thana Council, C&amp;B Road East Side, Ward No:14, BCC, Barishal</p>', '+8801604-123816', 'test@example.com', 0, '2025-12-22 23:43:22', '2026-01-08 00:22:26');
 
 -- --------------------------------------------------------
 
@@ -950,10 +955,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('9k5e6BjzHKLukQuXDe4qmQOQJ8DPe2XuIfRyKB5B', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVG1FWVdVckFYMFJYR0RGejF3cHZuaUp0MU1INVlZOUVZa3hXTXFiWiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767765568),
-('n0FexiKfaDskCAAtktdXaaDQVHdceryzSeEOHEo0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiODVFQnphZDY0SmE3QTVzZElNUmZ2b3NEdFJvV1VoSFZUYnF0TWQ5VyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czoxNjoidHlyby1sb2dpbi5sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjE6e3M6NToibG9naW4iO2k6Nzt9fX0=', 1767765619),
-('N8sTHs1QtmO2JgVEWttPd8oGIGqRWFKpc8JqiFkB', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoieDdBbzVSODh0RDBLQXJhQ3h0ZGM5QlVQNTRieWIwUGFvcHViWEtZNSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjk6Il9wcmV2aW91cyI7YToyOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1767773977),
-('Nzk5RYflHSLVyd0BR8FxSVZoWWMxjBORj1Fxj3Po', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSUNKN0Jua050TkNmZ2NMTWtTZGlQWDZQOFNHM2JWRk9xb2paVkw1byI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767765745);
+('3zOPJ46fCVY9getZNG5zdm7IAH0uVOAMs1XLOLKE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoia0J2Um1oYmp1ZmlhUGpyd1k1ZnFVajVTRUY0dHBxektJZ3ZzMXAxUiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767866618),
+('BqOhEjNslJt3XLaiIrmuE6Hxrhd0x406SKnG8pGJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYzFtRFEzVkFOTVduWkxYT054emRKTDFrbk5UQWxaNldLNzY2dWFRZSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zY2hvbGFyc2hpcC91ayI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1767868832),
+('ejNJMAUpdV67Qva8c5XiOBDwLwgevsJOg3x7HEEq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWnpsbDI0aVk2MFB2Zm9DTmRSbzRDZ3JibW9GdlZXdmJKcHI5OG9TZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hY2NvbW9kYXRpb24iO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767872237),
+('qumKLvPW8xWOFBhbHOPBr6QngaqlvohBPODQGrhJ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia3NhVWNtMzNMek1iaWVQVkRyV21wRklvdzBDTnFPdnhCNEJkaGxHUSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1767856879);
 
 -- --------------------------------------------------------
 
@@ -968,15 +973,17 @@ CREATE TABLE `sliders` (
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sliders`
 --
 
-INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(6, 'Turning Global Education into Real Opportunities and Career Growth', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2026-01-07 00:26:54');
+INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`, `url`) VALUES
+(6, 'Turning Global Education into Real Opportunities and Career Growth', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2026-01-07 23:23:56', 'https://insafimmigration.com/destination/uk'),
+(8, 'Test', 'Testing', 'uploads/sliders/1767871952-4n9PT6X2Hh.jpg', 1, '2026-01-07 23:06:50', '2026-01-08 05:32:32', 'http://127.0.0.1:8000/destination/europe');
 
 -- --------------------------------------------------------
 
@@ -1596,7 +1603,7 @@ ALTER TABLE `contact_forms`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `destinations`
@@ -1674,7 +1681,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `offices`
@@ -1746,7 +1753,7 @@ ALTER TABLE `scholarship_item_sections`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `teams`

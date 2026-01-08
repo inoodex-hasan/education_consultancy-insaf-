@@ -13,6 +13,8 @@ class ContactUs extends Model
         'last_name',
         'email',
         'phone',
+        'district',
+        'address',
         'question_1',
         'question_2',
 

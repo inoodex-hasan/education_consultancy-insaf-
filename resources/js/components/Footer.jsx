@@ -11,7 +11,7 @@ import OfficeLocations from "./OfficeLocations";
 import { Facebook, Linkedin, Send, Twitter, Youtube } from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
 const Footer = () => {
-       const navItems = [
+    const navItems = [
         {
             id: 1,
             title: "About us",
@@ -21,25 +21,22 @@ const Footer = () => {
             id: 2,
             title: "Destination",
             url: "/study_destinations",
-       
         },
         {
             id: 3,
             title: "Our Services",
             url: "/",
-       
         },
         {
             id: 4,
-            title: "blogs",
-            url: "/blogs", 
+            title: "Blogs",
+            url: "/blogs",
         },
 
         {
             id: 5,
             title: "Scholarships",
             url: "/scholarship",
-      
         },
 
         {
@@ -49,47 +46,47 @@ const Footer = () => {
         },
     ];
 
-    const services =      [
-                {
-                    id: 31,
-                    title: "Admission Support",
-                    url: "/admission-support",
-                },
-                { id: 32, title: "Health Insurance", url: "/health-insurance" },
-                {
-                    id: 33,
-                    title: "Student Accommodation",
-                    url: "/accomodation",
-                },
-                { id: 34, title: "Visa Service", url: "/visa-service" },
-            ]
-        const {offices} = usePage().props;
-        // console.log(offices);
+    const services = [
+        {
+            id: 31,
+            title: "Admission Support",
+            url: "/admission-support",
+        },
+        { id: 32, title: "Health Insurance", url: "/health-insurance" },
+        {
+            id: 33,
+            title: "Student Accommodation",
+            url: "/accomodation",
+        },
+        { id: 34, title: "Visa Service", url: "/visa-service" },
+        { id: 34, title: "Privacy Policy", url: "/pricacy-policy" },
+        { id: 34, title: "Terms and Conditions", url: "/terms-and-conditions" },
+    ];
+    const { offices } = usePage().props;
+    // console.log(offices);
     return (
         <footer>
-          <div className="fixed bottom-6 right-6 z-50">
-  <a
-    href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#25D366] p-4 shadow-lg transition-all duration-300 ease-out hover:scale-110 hover:shadow-2xl"
-  >
-    {/* Pulse animation ring */}
-    <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-75"></span>
-    
-    {/* Main button content */}
-    <div className="relative flex items-center gap-3 px-2 py-0 leading-none">
-      <FaWhatsapp className="text-white text-3xl" />
-      
-      {/* Text visible on larger screens */}
-      <span className="hidden text-white font-medium tracking-wide sm:inline-block">
-        Chat 
-      </span>
-    </div>
-    
-    
-  </a>
-</div>
+            <div className="fixed bottom-6 right-6 z-50">
+                <a
+                    href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#25D366] p-4 shadow-lg transition-all duration-300 ease-out hover:scale-110 hover:shadow-2xl"
+                >
+                    {/* Pulse animation ring */}
+                    <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-75"></span>
+
+                    {/* Main button content */}
+                    <div className="relative flex items-center gap-3 px-2 py-0 leading-none">
+                        <FaWhatsapp className="text-white text-3xl" />
+
+                        {/* Text visible on larger screens */}
+                        <span className="hidden text-white font-medium tracking-wide sm:inline-block">
+                            Chat
+                        </span>
+                    </div>
+                </a>
+            </div>
             <OfficeLocations offices={offices} />
             <div className="relative bg-cover w-full h-full bg-center bg-no-repeat  bg-[#EEEEEE] ">
                 <div className="container py-[50px]">

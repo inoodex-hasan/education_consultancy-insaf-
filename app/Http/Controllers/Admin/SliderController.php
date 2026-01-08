@@ -26,7 +26,8 @@ class SliderController extends Controller
             'title'       => 'required|string|max:255',
             'image'       => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'subtitle'    => 'nullable|string',
-            'is_active'   => 'required|boolean'
+            'is_active'   => 'required|boolean',
+            'url'         => 'nullable|url'
         ]);
 
         $data = $request->all();
@@ -55,7 +56,8 @@ class SliderController extends Controller
             'title'       => 'required|string|max:255',
             'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'subtitle'    => 'nullable|string',
-            'is_active'   => 'required|boolean'
+            'is_active'   => 'required|boolean',
+            'url'         => 'nullable|url'
         ]);
 
         $data = $request->all();

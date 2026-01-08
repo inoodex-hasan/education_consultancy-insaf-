@@ -10,48 +10,57 @@ const WhyChooseUs = ({ Why_Choose_Us }) => {
         years: 0,
     });
 
-useEffect(() => {
-    if (!Why_Choose_Us || Why_Choose_Us.length === 0) return;
+    useEffect(() => {
+        if (!Why_Choose_Us || Why_Choose_Us.length === 0) return;
 
-    const item = Why_Choose_Us[0];
-    const targets = {
-        students: Number(item.students) || 0,
-        institutions: Number(item.partners) || 0,
-        visaRate: Number(item.visa_grants) || 0,
-        years: Number(item.years) || 0,
-    };
+        const item = Why_Choose_Us[0];
+        const targets = {
+            students: Number(item.students) || 0,
+            institutions: Number(item.partners) || 0,
+            visaRate: Number(item.visa_grants) || 0,
+            years: Number(item.years) || 0,
+        };
 
-    const duration = 2000;
-    const frameRate = 60;
-    const totalFrames = (duration / 1000) * frameRate;
+        const duration = 2000;
+        const frameRate = 60;
+        const totalFrames = (duration / 1000) * frameRate;
 
-    let frame = 0;
+        let frame = 0;
 
-    const timer = setInterval(() => {
-        frame++;
-        const progress = frame / totalFrames;
+        const timer = setInterval(() => {
+            frame++;
+            const progress = frame / totalFrames;
 
-        setCounters({
-            students: Math.min(Math.floor(targets.students * progress), targets.students),
-            institutions: Math.min(Math.floor(targets.institutions * progress), targets.institutions),
-            years: Math.min(Math.floor(targets.years * progress), targets.years),
-            visaRate: Number((targets.visaRate * progress).toFixed(1)),
-        });
-
-        if (frame >= totalFrames) {
-            // Final exact values
             setCounters({
-                students: targets.students,
-                institutions: targets.institutions,
-                visaRate: targets.visaRate,
-                years: targets.years,
+                students: Math.min(
+                    Math.floor(targets.students * progress),
+                    targets.students
+                ),
+                institutions: Math.min(
+                    Math.floor(targets.institutions * progress),
+                    targets.institutions
+                ),
+                years: Math.min(
+                    Math.floor(targets.years * progress),
+                    targets.years
+                ),
+                visaRate: Number((targets.visaRate * progress).toFixed(1)),
             });
-            clearInterval(timer);
-        }
-    }, 1000 / frameRate);
 
-    return () => clearInterval(timer);
-}, [Why_Choose_Us]);
+            if (frame >= totalFrames) {
+                // Final exact values
+                setCounters({
+                    students: targets.students,
+                    institutions: targets.institutions,
+                    visaRate: targets.visaRate,
+                    years: targets.years,
+                });
+                clearInterval(timer);
+            }
+        }, 1000 / frameRate);
+
+        return () => clearInterval(timer);
+    }, [Why_Choose_Us]);
 
     const stats = [
         {
@@ -136,14 +145,13 @@ useEffect(() => {
                 </div>
 
                 {/* Globe Icon + Country Dots */}
-                <div className="mt-16 flex justify-center">
+                {/* <div className="mt-16 flex justify-center">
                     <div className="relative">
                         <Globe
                             className="w-32 h-32 lg:w-40 lg:h-40 text-blue/10"
                             strokeWidth={1}
                         />
 
-                        {/* Animated Dots for Offices */}
                         {["Bangladesh", "India", "Sri Lanka", "Australia"].map(
                             (country, i) => (
                                 <div
@@ -160,9 +168,9 @@ useEffect(() => {
                             )
                         )}
                     </div>
-                </div>
+                </div> */}
 
-                <div className="text-center mt-10">
+                {/* <div className="text-center mt-10">
                     <p className="text-lg text-blue/80 font-medium">
                         Offices in{" "}
                         <span className="text-gold font-mont font-bold">
@@ -173,7 +181,7 @@ useEffect(() => {
                             30+ Nations
                         </span>
                     </p>
-                </div>
+                </div> */}
             </div>
         </section>
     );

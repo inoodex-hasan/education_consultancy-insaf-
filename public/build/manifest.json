@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-XpM75aOl.css",
+    "file": "assets/app-CjiH2oET.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,13 +9,13 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-BEdvlKYj.js",
+    "file": "assets/app-VQzoUV1c.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-XpM75aOl.css"
+      "assets/app-CjiH2oET.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
@@ -26,6 +26,7 @@
       "assets/sliderSvg-D7FIsUv9.svg",
       "assets/team1-ClHwgjiG.jpg",
       "assets/destination-BD2i-3W3.png",
+      "assets/map-ByUo239v.png",
       "assets/living-cost-BWbmgmzj.png",
       "assets/1-DKGC1VRq.png",
       "assets/2-DrrEN3lJ.png",
@@ -37,7 +38,6 @@
       "assets/8-CuyW0DxK.png",
       "assets/9-s4Xh2-zj.png",
       "assets/10-CDisC0qW.png",
-      "assets/map-ByUo239v.png",
       "assets/accomodation-CV2m2_pl.webp",
       "assets/service1-w87tQBeH.png",
       "assets/service2-yt_b_NeU.jpg",

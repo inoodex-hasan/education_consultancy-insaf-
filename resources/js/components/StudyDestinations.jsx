@@ -36,6 +36,7 @@ const destinations = [
 ];
 
 const StudyDestinations = ({ destinations }) => {
+    // console.log(destinations);
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
@@ -99,7 +100,8 @@ const StudyDestinations = ({ destinations }) => {
                                         </p>
 
                                         <Link
-                                            href="#"
+                                            // href={route("destinations/slug")}
+                                            href={`/destination/${dest.slug}`}
                                             className="inline-flex items-center gap-2 text-white font-medium border-b-2 border-gold pb-1 hover:gap-4 transition-all duration-300"
                                         >
                                             Learn More
@@ -128,8 +130,9 @@ const StudyDestinations = ({ destinations }) => {
 
                     {/* CTA Button */}
                     <div className="text-center mt-16">
-                        <a href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
-                                target="_blank"
+                        <a
+                            href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                            target="_blank"
                             // onClick={() => setIsModalOpen(true)}
                             className="inline-flex items-center gap-3 cursor-pointer bg-blue text-white px-10 py-5 rounded-full font-semibold text-lg shadow-lg hover:bg-[#1e2d5a] hover:shadow-xl transition-all duration-300 hover:scale-105"
                         >

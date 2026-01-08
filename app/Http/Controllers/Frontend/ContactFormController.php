@@ -19,6 +19,8 @@ class ContactFormController extends Controller
         'last_name'      => 'required|string|max:255',
         'email'          => 'required|email|max:255|unique:contact_us,email',
         'phone'          => 'required|string|max:20',
+        'district'       => 'required|string|max:255',
+        'address'        => 'required|string|max:255',
         'question_1'     => 'required|string',
         'question_2'     => 'required|string',
         'terms'          => 'accepted',

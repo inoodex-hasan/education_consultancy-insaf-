@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="card-body">
-                                @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -39,8 +39,9 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th>Image</th>
-                                            <th>Title</th>
+                                            <th class="width: 20px">Title</th>
                                             <th>Subtitle</th>
+                                            <th>Url</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -54,14 +55,14 @@
                                                         style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
                                                 </td>
                                                 <td>
-                                                    <strong>{{ $slider->title }}</strong>
-                                                    @if ($slider->button_text)
+                                                    <strong>{{ Str::limit($slider->title ?? 'N/A', 30) }}
+                                                    {{-- @if ($slider->button_text)
                                                         <br><small class="text-primary">Button:
                                                             {{ $slider->button_text }}</small>
-                                                    @endif
+                                                    @endif --}}
                                                 </td>
-                                                <td>{{ Str::limit($slider->subtitle ?? 'N/A', 50) }}</td>
-
+                                                <td>{{ Str::limit($slider->subtitle ?? 'N/A', 30) }}</td>
+                                                <td>{{ Str::limit($slider->url ?? 'N/A', 30) }}</td>
                                                 <td>
                                                     @if ($slider->is_active)
                                                         <span class="badge badge-success">Active</span>

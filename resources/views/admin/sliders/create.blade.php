@@ -68,6 +68,17 @@
                                         @enderror
                                     </div>
 
+                                    <div class="form-group col-md-9">
+                                        <label>Url <span class="text-danger">*</span></label>
+                                        <input type="text" name="url"
+                                            class="form-control @error('url') is-invalid @enderror"
+                                            value="{{ old('url') }}">
+
+                                        @error('url')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
                                 </div>
 
                                 <div class="mt-4">

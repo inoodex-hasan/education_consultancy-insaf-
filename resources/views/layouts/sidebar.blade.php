@@ -21,6 +21,8 @@
                   <ul class="dropdown-menu">
                       <li><a class="nav-link" href={{ route('admin.contact_us.index') }}>Contact Us</a></li>
                       <li><a class="nav-link" href={{ route('admin.contact_form.index') }}>Contact Form</a></li>
+                      <li><a class="nav-link" href={{ route('admin.document_download_form.index') }}>Document
+                              Download</a></li>
                   </ul>
               </li>
               <li class="menu-header">Home</li>

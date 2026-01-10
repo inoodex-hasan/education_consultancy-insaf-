@@ -55,8 +55,8 @@
                                             <th>#</th>
                                             <th>Preview</th>
                                             <th>File Name</th>
-                                            <th>Destination ID</th>
-                                            <th>Scholarship ID</th>
+                                            <th>Destination</th>
+                                            <th>Scholarship</th>
                                             <th>Size</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -93,8 +93,8 @@
                                                     <strong>{{ $doc->name }}</strong><br>
                                                     <small class="text-muted">{{ $doc->mime_type }}</small>
                                                 </td>
-                                                <td>{{ $doc->destination_id ?? 'N/A' }}</td>
-                                                <td>{{ $doc->scholarship_id ?? 'N/A' }}</td>
+                                                <td>{{ $doc->destination->country ?? 'N/A' }}</td>
+                                                <td>{{ $doc->scholarship->country ?? 'N/A' }}</td>
                                                 <td>{{ number_format($doc->file_size / 1024, 2) }} KB</td>
                                                 <td>
                                                     <div class="badge badge-{{ $doc->is_active ? 'success' : 'danger' }}">

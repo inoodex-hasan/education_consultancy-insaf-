@@ -24,7 +24,7 @@ public function create()
 
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::with('destination', 'scholarship')->get();
         return view('admin.documents.index', compact('documents'));
     }
 

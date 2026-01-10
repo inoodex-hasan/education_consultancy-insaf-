@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { usePage, useForm } from "@inertiajs/react";
 import { CheckCircle } from "lucide-react";
 
 const FormTwo = ({ destinationId }) => {
-    const { flash } = usePage().props;
+    console.log(destinationId);
+    const { destinations = [], offices = [] } = usePage().props;
 
     const { data, setData, post, processing, errors, reset } = useForm({
         first_name: "",
@@ -18,41 +19,23 @@ const FormTwo = ({ destinationId }) => {
 
     const [showToast, setShowToast] = useState(false);
 
-    useEffect(() => {
-        if (flash?.download_url) {
-            console.log("Downloading from:", flash.download_url); // Check this in console
-            const link = document.createElement("a");
-            link.href = flash.download_url;
-            link.setAttribute("download", flash.file_name || "Guideline.pdf");
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-
-            setShowToast(true);
-        }
-    }, [flash]);
-
-    const { props } = usePage();
-
     const submit = (e) => {
         e.preventDefault();
         post(route("document_download.store"), {
-            onSuccess: () => {
-                console.log("Global Props Flash:", props.flash);
-
-                const flash = props.flash;
-
-                if (flash?.download_url) {
+            onSuccess: (page) => {
+                reset();
+                // Check if flash data exists
+                const url = page.props.flash?.download_url;
+                if (url) {
                     const link = document.createElement("a");
-                    link.href = flash.download_url;
+                    link.href = url;
                     link.setAttribute(
                         "download",
-                        flash.file_name || "Guideline.pdf"
+                        page.props.flash.file_name || "Guideline.pdf"
                     );
                     document.body.appendChild(link);
                     link.click();
                     link.remove();
-                    reset();
                 }
             },
         });
@@ -60,26 +43,26 @@ const FormTwo = ({ destinationId }) => {
 
     return (
         <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100">
-            <h3 className="text-2xl font-bold text-blue-900 mb-4 text-center font-mont">
+            <h3 className="text-2xl font-bold text-blue mb-4 text-center font-mont">
                 Fill up the form to download guideline
             </h3>
 
             {/* Success Toast */}
             {showToast && (
-                <div className="fixed inset-x-0 bottom-24 z-[9999] flex justify-center pointer-events-none">
+                <div className="fixed inset-x-0 bottom-24 z-50 flex justify-center pointer-events-none">
                     <div className="bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 min-w-[320px] animate-slide-in">
                         <CheckCircle size={24} />
                         <div>
                             <p className="font-semibold">Success!</p>
                             <p className="text-sm opacity-90">
-                                Your download has started successfully!
+                                Your form has been submitted successfully!
                             </p>
                         </div>
                     </div>
                 </div>
             )}
 
-            <form onSubmit={submit} className="space-y-4">
+            <form onSubmit={submit} className="space-y-0">
                 {/* First & Last Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
@@ -92,7 +75,7 @@ const FormTwo = ({ destinationId }) => {
                             onChange={(e) =>
                                 setData("first_name", e.target.value)
                             }
-                            className={`w-full px-4 py-2 border ${
+                            className={`w-full px-4 py-1.5 border ${
                                 errors.first_name
                                     ? "border-red-500"
                                     : "border-gray-300"
@@ -101,7 +84,7 @@ const FormTwo = ({ destinationId }) => {
                             required
                         />
                         {errors.first_name && (
-                            <p className="text-red-500 text-xs mt-1">
+                            <p className="text-red-500 text-sm mt-1">
                                 {errors.first_name}
                             </p>
                         )}
@@ -116,7 +99,7 @@ const FormTwo = ({ destinationId }) => {
                             onChange={(e) =>
                                 setData("last_name", e.target.value)
                             }
-                            className={`w-full px-4 py-2 border ${
+                            className={`w-full px-4 py-1.5 border ${
                                 errors.last_name
                                     ? "border-red-500"
                                     : "border-gray-300"
@@ -125,7 +108,7 @@ const FormTwo = ({ destinationId }) => {
                             required
                         />
                         {errors.last_name && (
-                            <p className="text-red-500 text-xs mt-1">
+                            <p className="text-red-500 text-sm mt-1">
                                 {errors.last_name}
                             </p>
                         )}
@@ -133,7 +116,7 @@ const FormTwo = ({ destinationId }) => {
                 </div>
 
                 {/* Email */}
-                <div>
+                <div className="mt-2">
                     <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
                         Email <span className="text-red-500">*</span>
                     </label>
@@ -141,33 +124,33 @@ const FormTwo = ({ destinationId }) => {
                         type="email"
                         value={data.email}
                         onChange={(e) => setData("email", e.target.value)}
-                        className={`w-full px-4 py-2 border ${
+                        className={`w-full px-4 py-1.5 border ${
                             errors.email ? "border-red-500" : "border-gray-300"
                         } rounded-lg text-black font-mont focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
                         placeholder="your@email.com"
                         required
                     />
                     {errors.email && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-red-500 text-sm mt-1">
                             {errors.email}
                         </p>
                     )}
                 </div>
 
                 {/* Phone */}
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+                <div className="mt-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
                         Mobile Number <span className="text-red-500">*</span>
                     </label>
                     <div className="flex">
-                        <span className="inline-flex items-center px-4 py-2 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg text-gray-600 font-mont">
+                        <span className="inline-flex items-center px-4 py-1.5 bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg text-gray-600 font-mont">
                             +880
                         </span>
                         <input
                             type="tel"
                             value={data.phone}
                             onChange={(e) => setData("phone", e.target.value)}
-                            className={`flex-1 px-4 py-2 border ${
+                            className={`flex-1 px-4 py-1.5 border ${
                                 errors.phone
                                     ? "border-red-500"
                                     : "border-gray-300"
@@ -177,70 +160,76 @@ const FormTwo = ({ destinationId }) => {
                         />
                     </div>
                     {errors.phone && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-red-500 text-sm mt-1">
                             {errors.phone}
                         </p>
                     )}
                 </div>
 
-                {/* District */}
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+                <div className="mt-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
                         District <span className="text-red-500">*</span>
                     </label>
-                    <input
-                        type="text"
-                        value={data.district}
-                        onChange={(e) => setData("district", e.target.value)}
-                        className={`w-full px-4 py-2 border ${
-                            errors.district
-                                ? "border-red-500"
-                                : "border-gray-300"
-                        } rounded-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
-                        placeholder="Enter your district name"
-                        required
-                    />
+                    <div className="flex">
+                        <input
+                            type="text"
+                            value={data.district}
+                            onChange={(e) =>
+                                setData("district", e.target.value)
+                            }
+                            className={`flex-1 px-4 py-1.5 border ${
+                                errors.district
+                                    ? "border-red-500"
+                                    : "border-gray-300"
+                            } rounded-r-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
+                            placeholder="Enter your district name"
+                            required
+                        />
+                    </div>
                     {errors.district && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-red-500 text-sm mt-1">
                             {errors.district}
                         </p>
                     )}
                 </div>
 
-                {/* Address */}
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1 font-mont">
+                <div className="mt-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
                         Address <span className="text-red-500">*</span>
                     </label>
-                    <input
-                        type="text"
-                        value={data.address}
-                        onChange={(e) => setData("address", e.target.value)}
-                        className={`w-full px-4 py-2 border ${
-                            errors.address
-                                ? "border-red-500"
-                                : "border-gray-300"
-                        } rounded-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
-                        placeholder="Enter your detailed address"
-                        required
-                    />
+                    <div className="flex">
+                        <input
+                            type="text"
+                            value={data.address}
+                            onChange={(e) => setData("address", e.target.value)}
+                            className={`flex-1 px-4 py-1.5 border ${
+                                errors.address
+                                    ? "border-red-500"
+                                    : "border-gray-300"
+                            } rounded-r-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
+                            placeholder="Enter yout detail address"
+                            required
+                        />
+                    </div>
                     {errors.address && (
-                        <p className="text-red-500 text-xs mt-1">
+                        <p className="text-red-500 text-sm mt-1">
                             {errors.address}
                         </p>
                     )}
                 </div>
 
                 {/* Terms Checkbox */}
-                <div className="flex items-start gap-3">
+                <div className="mt-4 flex items-center">
                     <input
                         type="checkbox"
+                        name="terms"
+                        value="1"
                         checked={data.terms}
                         onChange={(e) => setData("terms", e.target.checked)}
-                        className="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        className="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                         required
                     />
-                    <label className="text-sm text-gray-600 font-mont leading-tight">
+                    <label className="ml-3 text-sm text-gray-600 font-mont">
                         By clicking, you agree to our{" "}
                         <a href="/privacy" className="text-blue-600 underline">
                             Privacy Policy
@@ -252,21 +241,19 @@ const FormTwo = ({ destinationId }) => {
                         <span className="text-red-500">*</span>
                     </label>
                 </div>
-
-                {/* Error handling for file missing */}
-                {flash?.error && (
-                    <div className="p-3 bg-red-100 text-red-700 rounded-lg text-sm">
-                        {flash.error}
-                    </div>
+                {errors.terms && (
+                    <p className="text-red-500 text-sm mt-1 ml-8">
+                        {errors.terms}
+                    </p>
                 )}
 
                 {/* Submit Button */}
                 <button
                     type="submit"
                     disabled={processing}
-                    className="w-full bg-gradient-to-r from-blue-600 to-[#1e2d5a] text-white font-bold py-4 rounded-lg hover:opacity-90 transition disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="mt-8 w-full bg-gradient-to-r from-blue-600 to-[#1e2d5a] text-white font-bold py-4 rounded-lg hover:from-blue-700 hover:to-[#182550] transition disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                    {processing ? "Submitting..." : "Submit to Download"}
+                    {processing ? "Submitting..." : "Submit"}
                 </button>
             </form>
 

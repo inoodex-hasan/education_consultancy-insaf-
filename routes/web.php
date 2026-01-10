@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\{Auth, Route};
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DestinationController, DestinationItemController, DestinationItemSectionController, DocumentController, DocumentDownloadController, DocumentDownloadFormController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
 use App\Http\Controllers\Frontend\{AboutUsController, BlogController as FrontendBlogController, ContactController, ContactFormController, EventController as FrontendEventController, HomeController, ReviewController as FrontendReviewController, ServicesController, StudyDestinationController};
-use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DcoumentController, DestinationController, DestinationItemController, DestinationItemSectionController, DocumentController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
 use Inertia\Inertia;
 
 
@@ -45,6 +45,8 @@ Route::get('/about-insaf', [App\Http\Controllers\Frontend\AboutInsafController::
 Route::post('/contact-form', [App\Http\Controllers\Frontend\ContactForm2Controller::class, 'store'])->name('contact.store');
 
 Route::post('/register_form', [App\Http\Controllers\Frontend\ContactFormController::class, 'store'])->name('register_form.store');
+
+Route::post('/process-download', [DocumentDownloadController::class, 'store'])->name('document_download.store');
 
 
 // Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
@@ -223,4 +225,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('documents', controller: DocumentController::class)->names('admin.documents');
+});
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::resource('document_download_form', controller: DocumentDownloadController::class)->names('admin.document_download_form');        
 });

@@ -38,7 +38,7 @@
                                     @foreach ($destinations as $destination)
                                         <option value="{{ $destination->id }}"
                                             {{ $document->destination_id == $destination->id ? 'selected' : '' }}>
-                                            {{ $destination->title }}
+                                            {{ $destination->country }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -53,7 +53,7 @@
                                     @foreach ($scholarships as $scholarship)
                                         <option value="{{ $scholarship->id }}"
                                             {{ $document->scholarship_id == $scholarship->id ? 'selected' : '' }}>
-                                            {{ $scholarship->title }}
+                                            {{ $scholarship->country }}
                                         </option>
                                     @endforeach
                                 </select>

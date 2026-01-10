@@ -19,8 +19,8 @@ public function share(Request $request): array
 {
     return array_merge(parent::share($request), [
         'flash' => [
-            // Use 'fn () =>' to ensure the session is read at the right time
             'success' => fn () => $request->session()->get('success'),
+            'download_url' => fn () => $request->session()->get('download_url'),
             'error'   => fn () => $request->session()->get('error'),
         ],
     ]);

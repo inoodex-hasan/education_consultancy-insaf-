@@ -18,5 +18,9 @@ class Scholarship extends Model
     {
         return $this->hasMany(ScholarshipItem::class, 'scholarship_id', 'id');
     }
+    public function documents()
+    {
+        return $this->hasMany(Document::class)->where('is_active', 1);
+    }
 
 }

@@ -10,9 +10,14 @@ class Destination extends Model
     use HasFactory;
     protected $fillable = ['title', 'image', 'slug', 'country', 'description', 'is_active'];
 
-   public function items()
-{
-    return $this->hasMany(DestinationItem::class, 'destination_id', 'id');
-}
+    public function items()
+    {
+        return $this->hasMany(DestinationItem::class, 'destination_id', 'id');
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class)->where('is_active', 1);
+    }
 
 }

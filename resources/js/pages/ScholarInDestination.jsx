@@ -16,9 +16,8 @@ export default function ScholarInDestination({
 
     return (
         <div className="min-h-screen bg-[#f8fafc] font-mont">
-            <Head title={`Study in ${scholarship.title}`} />
+            {/* <Head title={`Study in ${scholarship.title}`} /> */}
 
-            {/* --- 1. HERO SECTION --- */}
             {/* --- HERO SECTION --- */}
             <header className="relative pt-40 pb-24 overflow-hidden bg-[#1e2d5c]">
                 {/* Background Glow */}
@@ -50,7 +49,12 @@ export default function ScholarInDestination({
                             </span>
                         </div>
 
-                        <button className="px-10 py-5 bg-[#c3a25d] hover:bg-white hover:text-[#1e2d5c] text-white font-bold rounded-2xl transition-all shadow-xl shadow-[#c3a25d]/20 flex items-center gap-3">
+                        <button
+                            href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-10 py-5 bg-[#c3a25d] hover:bg-white hover:text-[#1e2d5c] text-white font-bold rounded-2xl transition-all shadow-xl shadow-[#c3a25d]/20 flex items-center gap-3"
+                        >
                             Book Free Consultation{" "}
                             <ArrowRight className="w-5 h-5" />
                         </button>
@@ -108,7 +112,7 @@ export default function ScholarInDestination({
                     {/* RIGHT: DYNAMIC CONTENT */}
                     <div className="lg:col-span-8">
                         {/* Main Scholarship Description */}
-                        <section className="mb-20">
+                        {/* <section className="mb-20">
                             <h2 className="text-4xl font-bold text-[#1e2d5c] mb-8">
                                 About this Destination
                             </h2>
@@ -118,7 +122,7 @@ export default function ScholarInDestination({
                                     __html: scholarship.description,
                                 }}
                             />
-                        </section>
+                        </section> */}
 
                         {/* Dynamic Items & Sections */}
                         <div className="space-y-24">

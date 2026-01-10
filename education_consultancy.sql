@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 08, 2026 at 01:28 PM
+-- Generation Time: Jan 10, 2026 at 01:14 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -430,7 +430,36 @@ CREATE TABLE `documents` (
 --
 
 INSERT INTO `documents` (`id`, `destination_id`, `scholarship_id`, `name`, `file_path`, `mime_type`, `file_size`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'Test', 'uploads/documents/1767878498_sample.pdf', 'application/pdf', 18630, 1, '2026-01-08 07:21:38', '2026-01-08 07:21:38');
+(1, 3, NULL, 'Test', 'uploads/documents/1767878498_sample.pdf', 'application/pdf', 18630, 1, '2026-01-08 07:21:38', '2026-01-09 22:43:59'),
+(2, 7, NULL, 'Demo', 'uploads/documents/1768027699_sample.pdf', 'application/pdf', 18630, 1, '2026-01-10 00:48:19', '2026-01-10 00:48:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document_download_contact_forms`
+--
+
+CREATE TABLE `document_download_contact_forms` (
+  `id` bigint UNSIGNED NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `destination_id` bigint UNSIGNED DEFAULT NULL,
+  `scholarship_id` bigint UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `document_download_contact_forms`
+--
+
+INSERT INTO `document_download_contact_forms` (`id`, `first_name`, `last_name`, `email`, `phone`, `district`, `address`, `destination_id`, `scholarship_id`, `created_at`, `updated_at`) VALUES
+(16, 'Brandi', 'Stroman', 'your.email+fakedata49127@gmail.com', '715-085-2169', 'Hilll', '731 Arnoldo Manor', 7, NULL, '2026-01-10 00:47:24', '2026-01-10 00:47:24'),
+(18, 'Theron', 'Hettinger', 'your.email+fakedata76671@gmail.com', '680-312-4033', 'Bosco', '100 Legros Meadows', 3, NULL, '2026-01-10 02:20:06', '2026-01-10 02:20:06');
 
 -- --------------------------------------------------------
 
@@ -716,7 +745,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (53, '2025_12_24_063228_add_image_to_scholarship_table', 41),
 (54, '2026_01_08_050116_add_url_to_sliders_table', 42),
 (55, '2026_01_08_061347_add_fields_to_contact_us_table', 43),
-(56, '2026_01_08_124934_create_documents_table', 44);
+(56, '2026_01_08_124934_create_documents_table', 44),
+(57, '2026_01_10_052359_create_document_download_contact_forms_table', 45);
 
 -- --------------------------------------------------------
 
@@ -982,7 +1012,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('ejNJMAUpdV67Qva8c5XiOBDwLwgevsJOg3x7HEEq', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWnpsbDI0aVk2MFB2Zm9DTmRSbzRDZ3JibW9GdlZXdmJKcHI5OG9TZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kb2N1bWVudHMiO3M6NToicm91dGUiO3M6MjE6ImFkbWluLmRvY3VtZW50cy5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1767878741);
+('SEc1pXIqAU38a3NEXDhR7bnU2Wg9CrMSyWwUqYXr', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoielhFa3dKTkttRFlZVmdXZG9mSzhUaGNUcUtPSTB1bFU0YUJBNG91MiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvc2Nob2xhcnNoaXAvYXVzdHJhbGlhIjtzOjU6InJvdXRlIjtOO31zOjEwOiJ0eXJvLWxvZ2luIjthOjE6e3M6NzoiY2FwdGNoYSI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768040540);
 
 -- --------------------------------------------------------
 
@@ -1007,7 +1037,7 @@ CREATE TABLE `sliders` (
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`, `url`) VALUES
 (6, 'Turning Global Education into Real Opportunities and Career Growth', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2026-01-07 23:23:56', 'https://insafimmigration.com/destination/uk'),
-(8, 'Test', 'Testing', 'uploads/sliders/1767871952-4n9PT6X2Hh.jpg', 1, '2026-01-07 23:06:50', '2026-01-08 05:32:32', 'http://127.0.0.1:8000/destination/europe');
+(8, 'Turning Global Education into Real Opportunities', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767871952-4n9PT6X2Hh.jpg', 1, '2026-01-07 23:06:50', '2026-01-09 22:33:46', 'http://127.0.0.1:8000/destination/europe');
 
 -- --------------------------------------------------------
 
@@ -1335,6 +1365,14 @@ ALTER TABLE `documents`
   ADD KEY `documents_scholarship_id_index` (`scholarship_id`);
 
 --
+-- Indexes for table `document_download_contact_forms`
+--
+ALTER TABLE `document_download_contact_forms`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `document_download_contact_forms_destination_id_foreign` (`destination_id`),
+  ADD KEY `document_download_contact_forms_scholarship_id_foreign` (`scholarship_id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -1659,7 +1697,13 @@ ALTER TABLE `destination_item_sections`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `document_download_contact_forms`
+--
+ALTER TABLE `document_download_contact_forms`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -1719,7 +1763,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `offices`
@@ -1892,6 +1936,13 @@ ALTER TABLE `destination_items`
 --
 ALTER TABLE `destination_item_sections`
   ADD CONSTRAINT `destination_item_sections_destination_item_id_foreign` FOREIGN KEY (`destination_item_id`) REFERENCES `destination_items` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `document_download_contact_forms`
+--
+ALTER TABLE `document_download_contact_forms`
+  ADD CONSTRAINT `document_download_contact_forms_destination_id_foreign` FOREIGN KEY (`destination_id`) REFERENCES `destinations` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `document_download_contact_forms_scholarship_id_foreign` FOREIGN KEY (`scholarship_id`) REFERENCES `scholarships` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `event_items`

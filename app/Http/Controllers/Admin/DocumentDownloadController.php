@@ -25,16 +25,16 @@ public function store(Request $request)
         'destination_id' => 'nullable|integer',
     ]);
 
-    // 1. Save the student's info
     DocumentDownloadContactForm::create($validated);
 
-    // 2. Find the PDF path for Australia (ID: 3)
     $document = Document::where('destination_id', $request->destination_id)->first();
 
-    // DEBUG: If you want to see if the document was found without stopping the app
-    if (!$document) {
-        return back()->with('error', 'Database error: No document found for destination ID ' . $request->destination_id);
-    }
+if (! $document) {
+    return back()->with(
+        'error',
+        'Thank you for your interest. The requested document is currently unavailable. We will work on it. Please try again later.'
+    );
+}
 
     return back()->with([
         'success' => 'Download starting...',

@@ -35,6 +35,8 @@ class ContactFormController extends Controller
             'Email_address' => 'required|email|max:255',
             'Phone_number'  => 'required|string|max:20',
             'Message'       => 'required|string',
+            'address'       => 'required|string',
+            'preferred_office' => 'required|string',
         ]);
 
         ContactForm::create($validated);

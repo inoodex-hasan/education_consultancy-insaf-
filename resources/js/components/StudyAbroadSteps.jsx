@@ -56,8 +56,8 @@ const StudyAbroadSteps = () => {
                         Study Abroad in Just 5 Simple Steps
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        With Insaf Immigration by your side, you can make the
-                        whole process a breeze!
+                        With Insaf Immigration Global by your side, you can make
+                        the whole process a breeze!
                     </p>
                 </div>
 

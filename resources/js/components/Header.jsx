@@ -138,7 +138,7 @@ const Header = () => {
                     {/* Desktop Button */}
                     <div className="hidden lg:block">
                         <a
-                            href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                            href="https://wa.me/8801880942457?"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-6 py-3 bg-blue hover:bg-gold text-white font-medium rounded-lg transition-colors inline-block"

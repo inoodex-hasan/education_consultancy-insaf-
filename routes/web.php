@@ -108,16 +108,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
+    // Resources
     Route::resource('destinations', DestinationController::class)->names('admin.destinations');
-});
-
-Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('destination_items', DestinationItemController::class)->names('admin.destination_items');
-});
-
-Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('destination_item_sections', DestinationItemSectionController::class)->names('admin.destination_item_sections');
-}); 
+
+    // Your AJAX Route (Inside the group for security)
+    Route::get('/get-items-by-destination/{destination_id}', [DestinationItemSectionController::class, 'getItems'])
+         ->name('admin.get_items_by_destination');
+});
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('contact_us', ContactUsController::class)->names('admin.contact_us');

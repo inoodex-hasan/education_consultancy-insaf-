@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 10, 2026 at 01:14 PM
+-- Generation Time: Jan 14, 2026 at 01:24 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -153,10 +153,25 @@ CREATE TABLE `achievements` (
 --
 
 INSERT INTO `achievements` (`id`, `title`, `description`, `photo_path`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Best Newcomer', 'Best Newcomer', 'uploads/achievements/1765432882-ajqO2XTeEj.jpg', 1, '2025-12-10 23:57:41', '2026-01-08 00:37:02'),
-(2, 'Best Emerging Partner', '<p>Best Emerging Partner</p>', 'uploads/achievements/1767767730-ih3aZgqhYX.jpg', 1, '2026-01-07 00:31:19', '2026-01-08 00:36:50'),
-(3, 'Agent of the Year', '<p>Agent of the Year</p>', 'uploads/achievements/1767767581-bGm76iDTdZ.jpg', 1, '2026-01-07 00:33:01', '2026-01-08 00:29:43'),
-(4, 'Rising Star Agent', 'Rising Star Agent', 'uploads/achievements/1767767709-FD3PQ62tnw.jpg', 1, '2026-01-07 00:35:09', '2026-01-08 00:29:31');
+(1, '4', '<br>', 'uploads/achievements/1768368770-P73iG9rRGY.png', 1, '2025-12-10 23:57:41', '2026-01-13 23:32:50'),
+(2, '3', '<br>', 'uploads/achievements/1768368754-PO7bE2C0hl.png', 1, '2026-01-07 00:31:19', '2026-01-13 23:32:34'),
+(3, '2', '<br>', 'uploads/achievements/1768368737-3Rbk9IAItZ.png', 1, '2026-01-07 00:33:01', '2026-01-13 23:32:17'),
+(4, '1', '<br>', 'uploads/achievements/1768368721-Q3N8CmVYZV.png', 1, '2026-01-07 00:35:09', '2026-01-13 23:32:01'),
+(6, '5', '<br>', 'uploads/achievements/1768368820-wLx7TbPppI.png', 1, '2026-01-13 23:33:40', '2026-01-13 23:34:15'),
+(7, '6', NULL, 'uploads/achievements/1768368872-cIOKrS32I6.png', 1, '2026-01-13 23:34:32', '2026-01-13 23:34:32'),
+(8, '7', NULL, 'uploads/achievements/1768368931-NN1H2xsn1w.png', 1, '2026-01-13 23:35:31', '2026-01-13 23:35:31'),
+(9, '8', NULL, 'uploads/achievements/1768368944-CVcM7zFp3r.png', 1, '2026-01-13 23:35:44', '2026-01-13 23:35:44'),
+(10, '9', NULL, 'uploads/achievements/1768368958-a64KYs92f8.png', 1, '2026-01-13 23:35:58', '2026-01-13 23:35:58'),
+(11, '10', NULL, 'uploads/achievements/1768368973-QFwl4CoaGQ.png', 1, '2026-01-13 23:36:13', '2026-01-13 23:36:13'),
+(12, '11', NULL, 'uploads/achievements/1768368987-hBw92S5tna.png', 1, '2026-01-13 23:36:27', '2026-01-13 23:36:27'),
+(13, '12', NULL, 'uploads/achievements/1768369002-PoMCdCWU1S.png', 1, '2026-01-13 23:36:42', '2026-01-13 23:36:42'),
+(14, '13', NULL, 'uploads/achievements/1768369016-GL32WHTyWv.png', 1, '2026-01-13 23:36:56', '2026-01-13 23:36:56'),
+(15, '14', NULL, 'uploads/achievements/1768369030-vxRHK9b21a.png', 1, '2026-01-13 23:37:10', '2026-01-13 23:37:10'),
+(16, '15', NULL, 'uploads/achievements/1768369046-OzFI1zoByS.png', 1, '2026-01-13 23:37:26', '2026-01-13 23:37:26'),
+(17, '16', NULL, 'uploads/achievements/1768369061-Wvvy5WCxbK.png', 1, '2026-01-13 23:37:41', '2026-01-13 23:37:41'),
+(18, '17', NULL, 'uploads/achievements/1768369076-5PmIEF9ARv.png', 1, '2026-01-13 23:37:56', '2026-01-13 23:37:56'),
+(19, '18', NULL, 'uploads/achievements/1768369097-oTfp5xib3W.png', 1, '2026-01-13 23:38:17', '2026-01-13 23:38:17'),
+(20, '19', NULL, 'uploads/achievements/1768369110-hraBm8g567.png', 1, '2026-01-13 23:38:30', '2026-01-13 23:38:30');
 
 -- --------------------------------------------------------
 
@@ -246,9 +261,9 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'How to Choose the Right University for Your Future', 'how-to-choose-the-right-university-for-your-future', 'uploads/blogs/1767163759-Rov9gVRK5S.jpg', 'Selecting a university requires careful consideration of academic programs, location, tuition fees, and future career opportunities. Students should research university rankings, course content, and campus facilities before applying. Consulting with education experts can help students make informed and confident decisions.', '2025-12-10', 1, '2025-12-10 06:49:00', '2025-12-31 00:49:19'),
-(3, 'How to Choose the Right University for Your Future - 2', 'how-to-choose-the-right-university-for-your-future-2', 'uploads/blogs/1767771027-nL2safAr14.jpg', '<p>Test</p>', '2026-01-07', 1, '2026-01-07 01:30:27', '2026-01-07 01:30:27'),
-(4, 'How to Choose the Right University for Your Future - 3', 'how-to-choose-the-right-university-for-your-future-3', 'uploads/blogs/1767771973-o1J6SnLDfQ.jpg', '<p>Test</p>', '2026-01-07', 1, '2026-01-07 01:46:13', '2026-01-07 01:46:13');
+(1, 'How to Plan Your Child’s Study Abroad Journey: A StepbyStep Guide for Parents', 'how-to-plan-your-childs-study-abroad-journey-a-stepbystep-guide-for-parents', 'uploads/blogs/1768374345-UsyHOsxFj9.png', 'Summary<br>Sending your child abroad for higher education is one of the most important decisions a parent<br>can make. For Bangladeshi parents, the process can feel overwhelming due to visa<br>requirements, country selection, financial planning, and safety concerns.<br>This step-by-step guide will help you plan your child’s study abroad journey confidently, while<br>avoiding common mistakes. With the right planning and guidance from a trusted student visa<br>agency in Bangladesh, your child’s international education dream can become a successful<br>reality.<br>Step 1: Understand Your Child’s Goals and Strengths<br>Before choosing a country or university, parents must clearly understand:<br>• Your child’s academic background<br>• Career goals<br>• English proficiency (IELTS or non-IELTS options)<br>• Budget and financial capability<br>Different countries offer different advantages. For example:<br>• Malaysia &amp; Malta offer affordable education• Australia, UK, and Canada offer strong post-study work opportunities<br>• Europe &amp; Russia provide quality education at lower costs<br>A professional education consultant can help align your child’s goals with the right destination.<br>Step 2: Choose the Right Country and University<br>Choosing the wrong country or institution is one of the biggest mistakes parents make.<br>When selecting a study destination, consider:<br>• Tuition fees and living costs<br>• Student visa success rate<br>• Part-time work opportunities<br>• Safety and Bangladeshi student community<br>• Post-study career opportunities<br>At Insaf Immigration, we help parents select recognized universities with high visa approval<br>rates, ensuring a safe and secure future for students.<br>Step 3: Plan Your Budget Smartly<br>Financial planning is crucial for studying abroad.<br>Costs usually include:<br>• Tuition fees<br>• Visa processing fees<br>• Accommodation<br>• Health insurance<br>• Air ticket and travel expenses<br>Many parents worry about paying large amounts before visa approval. That’s why choosing a<br>trusted student visa agency in Bangladesh is important.<br>Insaf Immigration offers transparent pricing and flexible payment options, including programs<br>where payment is required after visa approval for selected countries.<br>Step 4: Prepare Documents Carefully<br>Proper documentation plays a major role in visa success.Common required documents include:<br>• Academic certificates and transcripts<br>• Passport<br>• Bank statements<br>• Sponsor documents<br>• Statement of Purpose (SOP)<br>• Offer letter from the university<br>Even a small mistake can lead to visa rejection. Our experienced visa experts at Insaf<br>Immigration carefully review and prepare every document to minimize risks.<br>Step 5: Understand Student Visa Requirements<br>Each country has different student visa rules.<br>Some key considerations:<br>• IELTS vs non-IELTS visa options<br>• Financial proof requirements<br>• Interview preparation<br>• Medical and police clearance<br>For Bangladeshi students, visa success depends heavily on proper counseling and application<br>strategy. Working with a professional student visa consultant significantly increases approval<br>chances.<br>Step 6: Focus on Safety, Accommodation, and Support<br>Parents are naturally concerned about their child’s safety abroad.<br>Before departure, ensure:<br>• Confirmed accommodation<br>• Airport pickup arrangements<br>• Health insurance coverage<br>• Local student supportInsaf Immigration provides pre-departure guidance, air ticket support, and airport pickup<br>services, so students can settle smoothly in a new country.<br>Step 7: Choose a Trusted Student Visa Agency in Bangladesh<br>The most important step is choosing the right education consultancy.<br>A reliable agency should offer:<br>• Honest counseling<br>• University and country transparency<br>• High visa success rate<br>• Post-visa support<br>• Clear communication with parents<br>Insaf Immigration is a trusted student visa agency in Bangladesh, helping students study in<br>Australia, UK, Canada, Malaysia, Europe, Russia, Malta, Cyprus, and more.<br>Our mission is simple: to turn your child’s global education dream into reality with integrity and<br>expertise.<br>Final Thoughts for Parents<br>Planning your child’s study abroad journey requires patience, knowledge, and expert guidance.<br>With the right preparation and a trusted partner, you can ensure a smooth and successful future<br>for your child.<br>If you are a parent looking for safe, affordable, and successful study abroad options, Insaf<br>Immigration is here to guide you every step of the way.', '2025-12-10', 1, '2025-12-10 06:49:00', '2026-01-14 01:05:45'),
+(3, 'Cost of Living in Malaysia for Bangladeshi Students', 'cost-of-living-in-malaysia-for-bangladeshi-students', 'uploads/blogs/1768373926-hxM5F5ELFK.png', '<p><span style=\"font-weight: normal;\">Summary</span><br><span style=\"font-weight: normal;\">Malaysia is a popular choice for Bangladeshi students due to its reputable universities,</span><br><span style=\"font-weight: normal;\">affordable tuition, and diverse culture. Understanding living costs enables students and families</span><br><span style=\"font-weight: normal;\">to budget effectively. This guide offers an up-to-date overview of typical expenses to help</span><br><span style=\"font-weight: normal;\">Bangladeshi students plan their finances confidently.</span></p><p><span style=\"font-weight: normal;\"></span><br>Overall Monthly and Yearly Cost of Living in Malaysia for Bangladeshi Students</p><p><span style=\"font-weight: normal;\">Malaysia offers Bangladeshi students a lower cost of living than most Western countries.</span><br><span style=\"font-weight: normal;\">Monthly expenses typically range from BDT 15000 to 20000, depending on lifestyle, city, and</span><br><span style=\"font-weight: normal;\">accommodation. Excluding tuition, annual living costs are usually BDT 160000 to 250000.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Accommodation Costs for Bangladeshi Students in Malaysia</span></p><p><span style=\"font-weight: normal;\">Accommodation is a major expense for students in Malaysia. Options include on-campus</span><br><span style=\"font-weight: normal;\">hostels, off-campus shared apartments, and homestays. On-campus hostels cost MYR 300–800</span><br><span style=\"font-weight: normal;\">(BDT 7,000–18,500) per month and offer basic amenities and security. Off-campus shared flats</span><br><span style=\"font-weight: normal;\">range from MYR 600–1,500 (BDT 13,500–34,500) monthly, with higher rents in cities like Kuala</span><br><span style=\"font-weight: normal;\">Lumpur. Homestays, costing MYR 800–1,200 (BDT 18,500–27,600) per month, often include</span><br><span style=\"font-weight: normal;\">meals and provide a valuable cultural experience.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Food and Groceries Expenses for Bangladeshi Students<br></span><br><span style=\"font-weight: normal;\">Malaysia offers affordable and diverse cuisine. Campus canteens and street food stalls serve</span><br><span style=\"font-weight: normal;\">meals for MYR 5–12 (BDT 115–275) each. A typical monthly food budget, including groceries, is</span><br><span style=\"font-weight: normal;\">MYR 400–800 (BDT 9,200–18,400). Cooking at home, especially in shared apartments, helps</span><br><span style=\"font-weight: normal;\">reduce costs, though dining out is also economical. Grocery staples are moderately priced, halal</span><br><span style=\"font-weight: normal;\">options are common, and Bangladeshi grocers are present in most university cities.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Transportation Costs for Students<br></span><br><span style=\"font-weight: normal;\">Public transport in Malaysia is affordable and convenient. Bus and metro rides cost MYR 1–4</span><br><span style=\"font-weight: normal;\">(BDT 23–92) one-way. Most students allocate MYR 100–150 (BDT 2,300–3,500) per month for</span><br><span style=\"font-weight: normal;\">travel, covering daily commutes and occasional city trips. Students in cities like Kuala Lumpur</span><br><span style=\"font-weight: normal;\">and Penang can access discounts and season passes. Ride-hailing apps such as Grab are</span><br><span style=\"font-weight: normal;\">available for short trips, though frequent use raises monthly expenses.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Utility Bills, Mobile, and Internet Expenses<br></span><br><span style=\"font-weight: normal;\">Monthly utility bills—including electricity, water, and internet—typically add up to MYR 150–</span><br><span style=\"font-weight: normal;\">250 (BDT 3,500–5,800). Most rented rooms and campus accommodations include basic utility</span><br><span style=\"font-weight: normal;\">costs in the rent, though air conditioning and high-speed broadband may be charged extra.</span><br><span style=\"font-weight: normal;\">Prepaid mobile phone plans in Malaysia are budget-friendly: data and calling packages start at</span><br><span style=\"font-weight: normal;\">MYR 30 (BDT 690) per month, with WhatsApp and local calls widely used. Broadband internet at</span><br><span style=\"font-weight: normal;\">residences can cost another MYR 60–120 (BDT 1,400–2,800) per month, depending on speed</span><br><span style=\"font-weight: normal;\">and package.</span></p><p><span style=\"font-weight: normal;\"></span><br><span style=\"font-weight: normal;\">Health Insurance, Medical, and Personal Expenses<br></span><br><span style=\"font-weight: normal;\">Health insurance is mandatory for international students and costs MYR 400–500 (BDT 9,000–</span><br><span style=\"font-weight: normal;\">11,500) per year. Routine doctor visits are MYR 40–80 (BDT 900–1,800) per appointment. Most</span><br><span style=\"font-weight: normal;\">universities offer on-campus clinics and emergency support. Personal expenses, including</span><br><span style=\"font-weight: normal;\">clothing, haircuts, entertainment, and social activities, average MYR 200–400 (BDT 4,600–9,200)</span><br><span style=\"font-weight: normal;\">per month, depending on lifestyle.<br></span><br><span style=\"font-weight: normal;\">Additional Costs: Books, Supplies, and Recreation</span></p><p><span style=\"font-weight: normal;\">Students should budget MYR 500–1,000 annually (BDT 11,500–23,000) for textbooks and</span><br><span style=\"font-weight: normal;\">academic supplies. Recreational activities, such as movies, gym memberships, and short trips,</span><br><span style=\"font-weight: normal;\">may add MYR 100–300 (BDT 2,300–7,000) per month. Participating in clubs and campus events</span><br><span style=\"font-weight: normal;\">enhances the study abroad experience.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Tips for Bangladeshi Students to Manage Living Costs in Malaysia<br></span><br><span style=\"font-weight: normal;\">• Share accommodation with classmates to split rent and utilities.</span><br><span style=\"font-weight: normal;\">• Use your student ID for discounts on transport, entertainment, and shopping.</span><br><span style=\"font-weight: normal;\">• Cook at home and buy groceries in bulk from local or Bangladeshi markets.</span><br><span style=\"font-weight: normal;\">• Take advantage of free campus facilities: libraries, study spaces, and sometimes sports</span><br><span style=\"font-weight: normal;\">centers.</span><br><span style=\"font-weight: normal;\">• Plan monthly budgets and record spending to avoid surprises.<br></span><br><span style=\"font-weight: normal;\">Conclusion: Budgeting for Your Study Life in Malaysia<br></span><br><span style=\"font-weight: normal;\">The cost of living in Malaysia for Bangladeshi students in 2025 is significantly lower compared to</span><br><span style=\"font-weight: normal;\">many other top study-abroad countries. With careful planning and lifestyle adjustments, most</span><br><span style=\"font-weight: normal;\">students find their monthly budget between MYR 1,500 and MYR 2,600 (BDT 35,000–60,000)</span><br><span style=\"font-weight: normal;\">covers all essentials. Malaysia remains one of the smartest destinations for Bangladeshi</span><br><span style=\"font-weight: normal;\">students wishing to combine affordability, quality education, and a multicultural experience in</span><br><span style=\"font-weight: normal;\">Southeast Asia.</span></p>', '2026-01-14', 1, '2026-01-07 01:30:27', '2026-01-14 00:58:46'),
+(4, 'Smart Financial Planning Tips to Fund Your Study Abroad Dreams', 'smart-financial-planning-tips-to-fund-your-study-abroad-dreams', 'uploads/blogs/1768374286-9Wp7UPhoRN.png', '<p>Summary<br>Studying abroad feels big and expensive. It is also possible with a clear plan.<br>Most families get stuck because they don’t know where to start. They also miss many costs<br>beyond tuition.<br>We’ve guided hundreds of Bangladeshi families through this. In this guide, you’ll learn how toprice the full budget, choose the right funding mix, and time money decisions so you study with<br>confidence, not stress.<br>Understanding the Real Cost — Why This Matters<br>Know the full bill—tuition, living (often 40–50%), setup, and “hidden” extras—before you apply.<br>When you see the true total and add a 20–25% buffer, you prevent mid-study money shocks<br>and protect your visa plan.<br>Your full study budget includes:<br>Academic costs<br>Tuition and mandatory university fees. Application fees ($50–$200 per university). Student<br>services and lab or studio fees where needed.<br>Living costs<br>Housing, food, transport, phone, utilities, and simple leisure. For most students, living costs are<br>40–50% of the total budget.<br>One-time setup<br>Visa and related fees. Health insurance (usually compulsory). Flights. Initial housing deposits.<br>Basic items for your room. A laptop if you need one.<br>Hidden costs<br>Currency swings (plan +10–15%). Medical expenses not fully covered by your plan. Urgent trips<br>home. Extra certifications or licensing.<br>What it means in real numbers<br>• Bachelor’s (3 years): about BDT 25–60 lakhs total, depending on country and city.<br>• Master’s (1–2 years): about BDT 15–40 lakhs total for most fields.<br>Counsellor Advice: Add a 20–25% buffer to whatever total you calculate. This protects your plan<br>from exchange rate moves and surprise costs.<br>Build a Budget the Right Way<br>Price everything in the university’s currency from official pages, then convert to BDT at your<br>bank’s selling rate. Recheck before each payment and compare cities, because location and<br>timing can change totals by lakhs<br>When to Start (age-wise plan you can follow)Your timeline decides what’s realistic: how much to save, which tests to take, and when to<br>apply. With age-specific actions, each year moves you closer to the goal without last-minute<br>pressure.<br>Class 6–8 (ages 12–14)<br>Begin a small, regular education saving. Even BDT 5,000–10,000/month helps. Build English and<br>digital skills. Explore countries and subjects together.<br>Class 9–10 (ages 15–16)<br>Increase monthly savings and make it automatic. Map IELTS/SAT timelines. Shortlist universities<br>and programs. Build a profile with projects and volunteering<br>Class 11–12 (ages 17–18)<br>Maximise savings and target scholarships. Compare value cities and 1-year vs 2-year programs.<br>Explore education loans early if needed. Pick universities with strong international student<br>support.<br>Already graduated<br>A gap term/year can help. Improve test scores, gain experience, and save more. Look for rolling<br>intakes and pathway routes if you need a smoother start.<br>Counsellor Advice: Early planners often keep loans to 30–40% of total costs. Late planners still<br>succeed with a strict budget and smart picks.<br>Create a Funding Mix that Fits Your Family<br>One source is risky; a balanced mix spreads pressure and keeps cash flow steady. You’ll size<br>savings, scholarships, part-time work, and a gap loan so EMIs stay comfortable after graduation.<br>Family savings<br>This is the base. Every taka saved now reduces future debt.<br>Scholarships<br>Best value because they don’t need repayment. Full awards are rare, but partial awards (BDT 1–<br>5 lakhs) reduce stress in a big way.<br>Education loan<br>Use it to cover the real gap after savings and scholarships. Borrow with a clear post-study<br>repayment plan.Part-time work<br>Most countries allow part-time work. Treat it as support for living costs, not tuition.<br>Build Your Education Fund (simple systems that work)<br>Big totals feel heavy, but systems make saving light. A dedicated account, auto-transfers, small<br>yearly increases, and occasional windfalls grow the fund without straining monthly life.<br>• Start small, grow yearly. Regular saving beats short bursts.<br>• Use a dedicated account. Keep education money separate and visible.<br>• Automate transfers. Same day each month.<br>• Invite family support. Grandparents and relatives can contribute during festivals instead<br>of gifts.<br>• Add windfalls. Bonuses and Eid funds go straight to the education account.<br>• Consider safe places. Term deposits or government savings schemes help the fund grow<br>with low risk.<br>• Track progress. A simple chart keeps everyone motivated.<br>Example: Saving BDT 15,000/month for 8 years builds about BDT 14.4 lakhs even without<br>investment returns. If you start with BDT 10,000 and add BDT 1,000 each year, you’ll reach more<br>with the same family budget.<br>Expert Tip: Increase your savings 10–15% each year. Small annual jumps protect you from<br>education inflation.<br>Scholarships: raise your odds with a clean system<br>Scholarships directly cut what you pay and how much you borrow. Starting 12–18 months early<br>with a tracker, strong grades, and a focused SOP lifts your success rate fast.<br>Where to look<br>University entrance and department awards (often best odds). Country-specific options for<br>Bangladeshi students. Field-based awards (engineering, health, design). Local or private awards<br>with lighter competition.<br>How to apply well<br>Start 12–18 months early. Keep grades strong and collect proof of projects, internships, and<br>leadership. Write a focused SOP that links your story and goals to the program. Ask referees<br>early and share your draft SOP/CV with them.Tracking sheet (use this)<br>• Scholarship name and link<br>• Award value<br>• Eligibility and key criteria<br>• Required documents<br>• Deadline and status<br>Counsellor Advice: Even BDT 2–5 lakhs in partial awards makes a real difference. Apply broadly.<br>Rejections are normal—keep going.<br>Education Loans Without Fear<br>Loans bridge the gap, but unclear terms create long stress. When you know rate, tenure, EMI<br>start, and prepayment rules, you borrow only what you need and keep EMIs within 15–20% of<br>income.<br>When a loan makes sense<br>You have a clear career path with decent starting salaries. Savings and scholarships are not<br>enough. You understand interest, tenure, and start of EMI.<br>Questions to ask any lender<br>What is the interest rate and how is it calculated? When do repayments start? What is<br>the maximum tenure? Are there early payment penalties? Do you need a guarantor or<br>collateral?<br>Smart borrowing rules<br>• Borrow only for the gap.<br>• Keep EMIs within 15–20% of expected starting income.<br>• Check the total payback over the full tenure.<br>• File every loan document neatly.<br>Illustration: A BDT 10 lakh loan at 12% for 10 years costs about BDT 17.4 lakhs in total. Shorter<br>tenures reduce interest.<br>Expert Tip: If possible, repay a little early. Even small extra payments cut total interest.<br>When a loan makes senseGood timing turns into real savings. Paying in tranches near due dates and scheduling fees and<br>scholarships early reduces FX risk and avoids rush penalties.<br>Currency exchange<br>Do not convert everything at once. Pay in planned tranches near due dates. Keep your 20–25%<br>buffer for rate swings.<br>Payment timing<br>Pay application fees early. Follow tuition deadlines closely. Set aside visa fees in advance.<br>Budget pre-departure costs 2–3 months before travel.<br>Scholarship timing<br>Research 12–18 months ahead. Start applications 6–9 months before deadlines. Aim to<br>submit 2–4 weeks early.<br>Counsellor Advice: Keep one shared family calendar with all money dates, document dates, and<br>exam dates.<br>Common Mistakes (and quick fixes)<br>Most plans fail from the same faults: budgeting only tuition, over-borrowing, or ignoring<br>exchange swings. Spot them early, add a buffer, pay in tranches, and keep documents clean to<br>stay on track.<br>• Budgeting only tuition → Add living, insurance, visa, flights, and a 20–25% buffer.<br>• Starting late → Start now, even with small monthly amounts.<br>• Relying on one scholarship → Apply to many; partials add up.<br>• Borrowing too much → Match EMIs to realistic salaries.<br>• Ignoring exchange risk → Pay in tranches.<br>• Poor records → Keep every invoice, receipt, and SWIFT copy.<br>• Choosing costly cities without reason → Pick value locations that still match your goals.<br>• No emergency fund → Keep 3–6 months of living costs aside.<br>Practical Implementation (step-by-step you can use today)<br>Advice works only when it becomes dated tasks. A shared family calendar for savings, tests,<br>fees, and visas keeps everyone aligned and turns plans into steady progress.This month<br>• Calculate a full budget for three destinations (with buffer).<br>• Open a dedicated education savings account and set an auto transfer.<br>• List 5–10 scholarships with links and deadlines.<br>• Hold a family meeting to agree roles and monthly amounts.<br>Next 3 months<br>• Keep savings regular; increase if possible.<br>• Improve English seriously.<br>• Deep-dive on programs and entry rules.<br>• Plan IELTS/SAT dates.<br>• Line up referees for future applications.<br>Next 6–12 months<br>• Raise savings step by step.<br>• Take required tests.<br>• Submit early-deadline scholarships.<br>• Compare loan options only for the gap.<br>12+ months before departure<br>• Send university applications.<br>• Apply for remaining scholarships.<br>• Secure a loan if needed.<br>• Plan currency tranches with your bank.<br>• Start the visa process on time.<br>Strong ConclusionYou can fund an overseas degree with calm planning and steady action. Start with a full budget,<br>pick a funding mix that fits your family, save every month, and keep documents clean.<br>If you want a personalized roadmap—with dates, duties, and budgets—Insaf Immigration can<br>build it with you. Book a session and let’s turn your plan into a clear, step-by-step path you can<br>follow with confidence.</p>', '2026-01-07', 1, '2026-01-07 01:46:13', '2026-01-14 01:04:46');
 
 -- --------------------------------------------------------
 
@@ -285,6 +300,8 @@ CREATE TABLE `contact_forms` (
   `Full_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `Email_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `Phone_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district_id` bigint UNSIGNED NOT NULL,
+  `office_id` bigint UNSIGNED NOT NULL,
   `Message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -294,8 +311,9 @@ CREATE TABLE `contact_forms` (
 -- Dumping data for table `contact_forms`
 --
 
-INSERT INTO `contact_forms` (`id`, `Full_name`, `Email_address`, `Phone_number`, `Message`, `created_at`, `updated_at`) VALUES
-(1, 'Md', 'hasan@example.com', '012020202020', 'test', '2025-12-22 07:19:15', '2025-12-22 07:19:15');
+INSERT INTO `contact_forms` (`id`, `Full_name`, `Email_address`, `Phone_number`, `district_id`, `office_id`, `Message`, `created_at`, `updated_at`) VALUES
+(1, 'Md', 'hasan@example.com', '012020202020', 0, 0, 'test', '2025-12-22 07:19:15', '2025-12-22 07:19:15'),
+(17, 'Donnell Kuvalis', 'your.email+fakedata93998@gmail.com', '776-375-8374', 40, 4, 'dftjr', '2026-01-14 02:22:29', '2026-01-14 02:22:29');
 
 -- --------------------------------------------------------
 
@@ -315,8 +333,8 @@ CREATE TABLE `contact_us` (
   `question_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `district` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -355,7 +373,13 @@ INSERT INTO `destinations` (`id`, `title`, `image`, `slug`, `country`, `descript
 (6, 'Canada', 'uploads/destinations/1767766575-qOA0jwIqrl.jpg', 'canada', 'Canada', NULL, 1, '2026-01-07 00:16:15', '2026-01-07 00:16:15'),
 (7, 'Europe', 'uploads/destinations/1767766729-k7Uq4tbcTs.jpg', 'europe', 'Europe', NULL, 1, '2026-01-07 00:18:49', '2026-01-07 00:18:49'),
 (8, 'USA', 'uploads/destinations/1767766994-rfabMWqm5G.jpg', 'usa', 'USA', NULL, 1, '2026-01-07 00:23:14', '2026-01-07 00:23:50'),
-(9, 'Japan', 'uploads/destinations/1767767096-mi4co9H2ta.jpg', 'japan', 'Japan', NULL, 1, '2026-01-07 00:24:56', '2026-01-07 00:24:56');
+(9, 'Japan', 'uploads/destinations/1767767096-mi4co9H2ta.jpg', 'japan', 'Japan', NULL, 1, '2026-01-07 00:24:56', '2026-01-07 00:24:56'),
+(10, 'Malta', 'uploads/destinations/1768368264-l27vw3AsKP.png', 'malta', 'Malta', NULL, 1, '2026-01-13 23:24:24', '2026-01-13 23:24:24'),
+(11, 'Malaysia', 'uploads/destinations/1768368333-E8BgOG4LYB.jpg', 'malaysia', 'Malaysia', NULL, 1, '2026-01-13 23:25:33', '2026-01-13 23:25:33'),
+(12, 'Russia', 'uploads/destinations/1768368365-dL00KkLylV.jpg', 'russia', 'Russia', NULL, 1, '2026-01-13 23:26:05', '2026-01-13 23:26:05'),
+(13, 'Cyprus', 'uploads/destinations/1768368457-gVdcrqMONO.jpg', 'cyprus', 'Cyprus', NULL, 1, '2026-01-13 23:27:37', '2026-01-13 23:27:37'),
+(14, 'Lithuania', 'uploads/destinations/1768368497-wLpKUwDaGo.jpg', 'lithuania', 'Lithuania', NULL, 1, '2026-01-13 23:28:17', '2026-01-13 23:28:17'),
+(15, 'South Korea', 'uploads/destinations/1768368592-ePVIXOPNEG.png', 'south-korea', 'South Korea', NULL, 1, '2026-01-13 23:29:52', '2026-01-13 23:29:52');
 
 -- --------------------------------------------------------
 
@@ -378,8 +402,22 @@ CREATE TABLE `destination_items` (
 INSERT INTO `destination_items` (`id`, `destination_id`, `title`, `created_at`, `updated_at`) VALUES
 (9, 3, 'Why Study in Australia?', '2025-12-16 23:32:24', '2025-12-16 23:33:06'),
 (10, 4, 'Why Study in the UK?', '2025-12-16 23:33:29', '2025-12-16 23:33:29'),
-(11, 3, 'Cost of Studying in Australia', '2025-12-17 04:27:40', '2025-12-17 04:27:40'),
-(12, 4, 'Cost of Studying in UK', '2025-12-31 04:14:50', '2025-12-31 04:15:05');
+(11, 3, 'Popular Courses to Study in Australia', '2025-12-17 04:27:40', '2026-01-14 06:29:29'),
+(13, 3, 'Australian Student Visa Requirements for Bangladeshi Students', '2026-01-14 06:31:25', '2026-01-14 06:31:25'),
+(14, 3, 'IELTS Requirement for Australia Study Visa', '2026-01-14 06:32:51', '2026-01-14 06:32:51'),
+(15, 3, 'Cost of Studying in Australia', '2026-01-14 06:33:37', '2026-01-14 06:33:37'),
+(16, 3, 'Work Opportunities for International Students', '2026-01-14 06:34:37', '2026-01-14 06:34:37'),
+(17, 3, 'Why Choose Insaf Immigration for Australia Study Visa?', '2026-01-14 06:35:41', '2026-01-14 06:35:41'),
+(18, 3, 'Start Your Australia Study Journey Today', '2026-01-14 06:36:42', '2026-01-14 06:36:42'),
+(19, 4, 'About', '2026-01-14 06:42:19', '2026-01-14 06:42:19'),
+(20, 4, 'Popular Courses to Study in the UK', '2026-01-14 06:44:09', '2026-01-14 06:44:09'),
+(21, 4, 'UK Student Visa Requirements for Bangladeshi Students', '2026-01-14 06:45:01', '2026-01-14 06:45:01'),
+(22, 4, 'IELTS Requirement for UK Study Visa', '2026-01-14 06:46:06', '2026-01-14 06:46:06'),
+(23, 4, 'Cost of Studying in the UK', '2026-01-14 06:46:53', '2026-01-14 06:46:53'),
+(24, 4, 'Work Opportunities in the UK', '2026-01-14 06:49:25', '2026-01-14 06:49:25'),
+(25, 4, 'Why Choose Insaf Immigration for UK Study Visa?', '2026-01-14 06:50:37', '2026-01-14 06:50:37'),
+(26, 4, 'Start Your UK Study Journey with Insaf Immigration', '2026-01-14 06:51:19', '2026-01-14 06:51:19'),
+(27, 6, 'About', '2026-01-14 07:14:46', '2026-01-14 07:14:46');
 
 -- --------------------------------------------------------
 
@@ -401,10 +439,125 @@ CREATE TABLE `destination_item_sections` (
 --
 
 INSERT INTO `destination_item_sections` (`id`, `destination_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(6, 10, '[]', '<div class=\"elementor-element elementor-element-124938e elementor-widget elementor-widget-text-editor\" data-id=\"124938e\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">The United Kingdom is \r\nrenowned for its longstanding tradition of high-quality education, \r\nattracting a significant number of international students each year. Its\r\n universities have established a strong reputation for nurturing \r\nacademic talent. One of the notable advantages of studying in the UK is \r\nthe wide range of degree programs available, complemented by relatively \r\naffordable tuition fees compared to many other countries.&nbsp;</span></p><p><span style=\"font-weight: 400;\">Moreover,\r\n the UK offers a post-study visa option, enabling graduates to seek \r\nemployment immediately after finishing their courses. Once students \r\nsecure a relevant job, they can apply for residency and become a citizen\r\n over time. The visa application and university admission processes are \r\ngenerally straightforward, making the UK an attractive destination for \r\nthose looking to further their education abroad.</span></p>								</div>\r\n				</div><p><br></p>', '2025-12-16 23:34:14', '2025-12-16 23:34:14'),
-(7, 9, '[\"uploads/destination_item_sections/a6d01d85-541a-4fd5-a6b2-f03667b528fa.jpg\"]', '<p><span style=\"font-weight: 400;\">Australia is a top destination for \r\nstudents from Bangladesh who wish to study abroad and eventually settle \r\ndown. Many Bangladeshi students prefer to study in Australia due to its \r\nprestigious universities and international perspective, which provide a \r\nwide range of subjects. Now, you have the opportunity to do the same. \r\nPursuing your education in Australia will offer you the best learning \r\nexperience possible. The Australian education system is unique and \r\nattracts students from around the world. Additionally, the language of \r\ninstruction is English, making it easier for many Bangladeshi students \r\nto learn. Here are the primary reasons why Australia is a preferred \r\nchoice for education.</span></p>', '2025-12-16 23:34:37', '2025-12-31 04:10:47'),
-(8, 11, '[]', '<div class=\"elementor-element elementor-element-ddc01ea elementor-widget elementor-widget-text-editor\" data-id=\"ddc01ea\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400;\">Australia offers a variety \r\nof degree programs tailored to the needs of Bangladeshi students. With \r\nnumerous scholarships available, the process of studying is made more \r\naccessible. The costs of accommodation, groceries, and transportation \r\nare also relatively low. Thus, Australia is an attractive destination \r\nfor education.</span></p><p><span style=\"font-weight: 400;\"><br></span></p><p><span style=\"font-weight: 400;\">Additionally,\r\n Bangladeshi students can obtain work permits while studying. Tuition \r\nfees for bachelor’s degrees start at AUD 20,000, while master’s degrees \r\ncan cost up to AUD 25,000. Doctoral programs are generally more \r\nexpensive, at around AUD 32,000; however, various scholarships are \r\navailable to help offset these costs. Overall, the cost of studying in \r\nAustralia is among the lowest compared to many other countries \r\nworldwide.<br><br><br></span></p>								</div>\r\n				</div><p><br></p>', '2025-12-17 04:28:24', '2025-12-17 04:38:12'),
-(9, 12, '[\"uploads/destination_item_sections/db9e8d86-63ce-4318-bb31-9e9530cddc17.jpg\"]', '<div class=\"elementor-element elementor-element-23e434d elementor-widget elementor-widget-text-editor\" data-id=\"23e434d\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\">\r\n				<div class=\"elementor-widget-container\">\r\n									<p><span style=\"font-weight: 400\">The costs of studying in the \r\nUK can vary significantly, offering a unique opportunity to shape your \r\njourney. Choosing a vibrant city near the heart of the UK may come with \r\nhigher expenses, but it also provides a dynamic environment for growth. \r\nAlternatively, universities located further from the city center \r\ntypically present more affordable options. Your investment will depend \r\non the specific course you select, with research-based programs often \r\nreflecting the depth of knowledge they provide.&nbsp;</span></p><p><span style=\"font-weight: 400\">Generally,\r\n undergraduate programs cost around £12,000, with some inspiring \r\npathways reaching up to £35,000. Master’s degree courses fall within a \r\nsimilar range, while MBA programs offer a transformative experience for \r\nabout £60,000.&nbsp;</span></p>								</div>\r\n				</div><p><br></p>', '2025-12-31 04:15:51', '2025-12-31 04:15:51');
+(7, 9, '[\"uploads/destination_item_sections/a6d01d85-541a-4fd5-a6b2-f03667b528fa.jpg\"]', 'Australia consistently ranks among the top study abroad destinations for international<br>students. Here’s why Bangladeshi students choose Australia:<br>• Globally recognized universities and qualifications<br>• High-quality education with practical learning<br>• Part-time work opportunities during study<br>• Attractive post-study work rights<br>• Safe, student-friendly, and multicultural society<br>• Strong Bangladeshi student community<br>Australian degrees are accepted worldwide, making graduates highly employable both<br>internationally and in Bangladesh.', '2025-12-16 23:34:37', '2026-01-14 06:28:57'),
+(8, 11, '[]', '<div class=\"elementor-element elementor-element-ddc01ea elementor-widget elementor-widget-text-editor\" data-id=\"ddc01ea\" data-element_type=\"widget\" data-widget_type=\"text-editor.default\"><div class=\"elementor-widget-container\"><p><span style=\"font-weight: 400;\">Bangladeshi students can choose from a wide range of in-demand programs, including:<br>• Business &amp; Management<br>• Information Technology (IT)<br>• Engineering<br>• Health Sciences &amp; Nursing<br>• Hospitality &amp; Tourism Management<br>• Accounting &amp; Finance<br>• Data Science &amp; Artificial Intelligence</span></p><p><span style=\"font-weight: 400;\"><br>Our expert counselors at <b>Insaf Immigration</b> help you select the right course and university<br>based on your academic background, career goals, and budget.<br><br><br></span></p>								</div>\r\n				</div><p><br></p>', '2025-12-17 04:28:24', '2026-01-14 06:30:05'),
+(10, 13, '[]', '<p>To apply for an Australia student visa (Subclass 500), students generally need:<br>• Valid passport</p><p>• Offer letter from an Australian institution<br>• Academic certificates and transcripts<br>• Proof of financial capacity<br>• English proficiency (IELTS / alternative options)<br>• Genuine Student (GS) statement<br>• Health and character documents<br></p><p><br>A small mistake can cause visa rejection. That’s why choosing a trusted student visa agency inBangladesh is critical.</p>', '2026-01-14 06:32:30', '2026-01-14 06:32:30'),
+(11, 14, '[]', '<p>Most Australian institutions require IELTS, but scores may vary depending on the course and<br>university.<br>Typical requirement:<br>• IELTS overall 6.0 – 6.5<br>Our counselors guide you on IELTS preparation, waivers (if applicable), and alternative<br>pathways to maximize your visa success.</p>', '2026-01-14 06:33:16', '2026-01-14 06:33:16'),
+(12, 15, '[]', '<p>The cost depends on the course, university, and city.<br>Approximate costs:<br>• Tuition fees: AUD 18,000 – 35,000 per year<br>• Living cost: AUD 21,000 per year (as per visa guidelines)<br>At <span style=\"font-weight: normal;\">Insaf Immigration</span>, we help students find budget-friendly universities, scholarships, and smart financial planning options.</p>', '2026-01-14 06:34:13', '2026-01-14 06:34:13'),
+(13, 16, '[]', '<p>Australia allows international students to work part-time during study and full-time during<br>holidays.<br>Benefits include:<br>• Earning while studying<br>• Gaining local work experience<br>• Supporting living expenses</p><p>After graduation, eligible students can apply for post-study work visas, making Australia an excellent long-term career destination.</p>', '2026-01-14 06:35:20', '2026-01-14 06:35:20'),
+(14, 17, '[]', '<p>Insaf Immigration is a trusted student visa consultancy in Bangladesh with a strong focus on<br>Australia.<br>We offer:<br>• Honest and professional counseling<br>• University and course selection support<br>• Strong visa documentation &amp; GS statement preparation<br>• High student visa success rate<br>• Transparent process with no hidden costs<br>• Pre-departure briefing, air ticket, and airport pickup support<br>We don’t give false promises — we deliver results</p>', '2026-01-14 06:36:27', '2026-01-14 06:36:27'),
+(15, 18, '[]', '<p>If you are planning to study in Australia from Bangladesh, now is the right time to take action.With proper guidance and expert support, your Australian education dream is achievable.<br></p><p><br>Contact <span style=\"font-weight: normal;\">Insaf Immigration</span> today for a free consultation and take the first step toward your global future.</p>', '2026-01-14 06:37:20', '2026-01-14 06:37:20'),
+(16, 19, '[]', '<p>The United Kingdom is one of the most prestigious and trusted study destinations for Bangladeshi students. With world-renowned universities, shorter course durations, globally<br>recognized degrees, and strong post-study work opportunities, studying in the UK offers exceptional value and career growth.<br></p><p><br>At Insaf Immigration, we provide complete support for UK student visas from Bangladesh, ensuring a smooth, transparent, and successful application process.</p>', '2026-01-14 06:42:58', '2026-01-14 06:42:58'),
+(17, 10, '[]', '<p>The UK has been a top choice for international students for decades. Bangladeshi students<br>choose the UK because of:<br>• World-class universities with global rankings<br>• Shorter course duration (save time &amp; cost)<br>• One-year Master’s programs<br>• Strong Graduate Route (Post-Study Work)<br>• High academic standards and quality education<br>• Multicultural and student-friendly environment<br>A UK degree significantly increases global employability.</p>', '2026-01-14 06:43:50', '2026-01-14 06:43:50'),
+(18, 20, '[]', '<p>UK universities offer a wide range of career-focused programs, including:<br>• Business &amp; Management<br>• Accounting &amp; Finance<br>• Computer Science &amp; IT<br>• Engineering<br>• Law<br>• Health &amp; Public Health• Data Science &amp; Artificial Intelligence<br>Insaf Immigration helps students choose the right course and university based on academic<br>profile, budget, and future career goals.</p>', '2026-01-14 06:44:37', '2026-01-14 06:44:37'),
+(19, 21, '[]', '<p>To apply for a UK Student Visa, students typically need:<br>• Valid passport<br>• CAS (Confirmation of Acceptance for Studies)<br>• Academic certificates and transcripts<br>• Proof of funds (bank statement)<br>• English language proficiency (IELTS or alternatives)<br>• Tuberculosis (TB) test report<br>Our experienced visa team ensures 100% accurate documentation, reducing the risk of refusal.</p>', '2026-01-14 06:45:44', '2026-01-14 06:45:44'),
+(20, 22, '[]', '<p>Most UK universities require IELTS, but score requirements vary.<br>Typical IELTS requirement:<br>• IELTS 6.0 – 6.5 overall<br>Some universities accept IELTS waiver or alternative tests depending on academic<br>background. Our counselors will guide you with the best option.</p>', '2026-01-14 06:46:38', '2026-01-14 06:46:38'),
+(21, 23, '[]', '<p>The UK offers excellent value due to shorter course duration.<br>Estimated costs:<br>• Tuition fees: GBP 10,000 – 18,000 per year<br>• Living cost: GBP 9,000 – 12,000 per year<br>At <span style=\"font-weight: normal;\">Insaf Immigration</span>, we help students find affordable UK universities, scholarships, and smart<br>financial planning options.</p>', '2026-01-14 06:49:09', '2026-01-14 06:49:09'),
+(22, 24, '[]', '<p>International students in the UK can work</p><p>• 20 hours per week during term time<br>• Full-time during holidays<br>After graduation, students can apply for the UK Graduate Route, allowing them to work in the<br>UK for up to 2 years (3 years for PhD).</p>', '2026-01-14 06:50:08', '2026-01-14 06:50:08'),
+(23, 25, '[]', '<p>Insaf Immigration is a trusted student visa agency in Bangladesh, specializing in UK education.<br>We provide:<br>• Honest and expert counseling<br>• University &amp; course selection assistance<br>• Strong SOP and visa file preparation<br>• High UK student visa success rate<br>• Transparent pricing with no hidden costs<br>• Pre-departure briefing, air ticket, and airport pickup support<br>We guide students with integrity and results — not false promises.</p>', '2026-01-14 06:51:00', '2026-01-14 06:51:00'),
+(24, 26, '[]', '<p>If you are planning to study in the UK from Bangladesh, now is the right time to apply. With expert guidance and proper planning, your UK education dream is fully achievable.<br>Contact Insaf Immigration today for a free consultation and secure your future in the UK.</p>', '2026-01-14 06:51:56', '2026-01-14 06:51:56'),
+(25, 27, '[]', '<p>Canada is one of the most preferred study destinations for Bangladeshi students due to its world-class education system, affordable tuition options, excellent work opportunities, and<br>strong pathways to permanent residency. With globally recognized degrees and a high quality of life, studying in Canada is a smart long-term investment for your future.<br></p><p><br>At Insaf Immigration, we provide complete and professional support for Canada student visas from Bangladesh, ensuring accuracy, transparency, and high success rates.</p>', '2026-01-14 07:15:28', '2026-01-14 07:15:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `id` bigint UNSIGNED NOT NULL,
+  `division_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bn_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`id`, `division_id`, `name`, `bn_name`, `lat`, `lon`, `url`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Comilla', 'কুমিল্লা', '23.4682747', '91.1788135', 'www.comilla.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(2, 1, 'Feni', 'ফেনী', '23.023231', '91.3840844', 'www.feni.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(3, 1, 'Brahmanbaria', 'ব্রাহ্মণবাড়িয়া', '23.9570904', '91.1119286', 'www.brahmanbaria.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(4, 1, 'Rangamati', 'রাঙ্গামাটি', '22.65561018', '92.17541121', 'www.rangamati.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(5, 1, 'Noakhali', 'নোয়াখালী', '22.869563', '91.099398', 'www.noakhali.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(6, 1, 'Chandpur', 'চাঁদপুর', '23.2332585', '90.6712912', 'www.chandpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(7, 1, 'Lakshmipur', 'লক্ষ্মীপুর', '22.942477', '90.841184', 'www.lakshmipur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(8, 1, 'Chattogram', 'চট্টগ্রাম', '22.335109', '91.834073', 'www.chittagong.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(9, 1, 'Coxsbazar', 'কক্সবাজার', '21.44315751', '91.97381741', 'www.coxsbazar.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(10, 1, 'Khagrachhari', 'খাগড়াছড়ি', '23.119285', '91.984663', 'www.khagrachhari.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(11, 1, 'Bandarban', 'বান্দরবান', '22.1953275', '92.2183773', 'www.bandarban.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(12, 2, 'Sirajganj', 'সিরাজগঞ্জ', '24.4533978', '89.7006815', 'www.sirajganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(13, 2, 'Pabna', 'পাবনা', '23.998524', '89.233645', 'www.pabna.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(14, 2, 'Bogura', 'বগুড়া', '24.8465228', '89.377755', 'www.bogra.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(15, 2, 'Rajshahi', 'রাজশাহী', '24.37230298', '88.56307623', 'www.rajshahi.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(16, 2, 'Natore', 'নাটোর', '24.420556', '89.000282', 'www.natore.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(17, 2, 'Joypurhat', 'জয়পুরহাট', '25.09636876', '89.04004280', 'www.joypurhat.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(18, 2, 'Chapainawabganj', 'চাঁপাইনবাবগঞ্জ', '24.5965034', '88.2775122', 'www.chapainawabganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(19, 2, 'Naogaon', 'নওগাঁ', '24.83256191', '88.92485205', 'www.naogaon.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(20, 3, 'Jashore', 'যশোর', '23.16643', '89.2081126', 'www.jessore.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(21, 3, 'Satkhira', 'সাতক্ষীরা', '22.7180905', '89.0687033', 'www.satkhira.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(22, 3, 'Meherpur', 'মেহেরপুর', '23.762213', '88.631821', 'www.meherpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(23, 3, 'Narail', 'নড়াইল', '23.172534', '89.512672', 'www.narail.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(24, 3, 'Chuadanga', 'চুয়াডাঙ্গা', '23.6401961', '88.841841', 'www.chuadanga.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(25, 3, 'Kushtia', 'কুষ্টিয়া', '23.901258', '89.120482', 'www.kushtia.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(26, 3, 'Magura', 'মাগুরা', '23.487337', '89.419956', 'www.magura.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(27, 3, 'Khulna', 'খুলনা', '22.815774', '89.568679', 'www.khulna.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(28, 3, 'Bagerhat', 'বাগেরহাট', '22.651568', '89.785938', 'www.bagerhat.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(29, 3, 'Jhenaidah', 'ঝিনাইদহ', '23.5448176', '89.1539213', 'www.jhenaidah.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(30, 4, 'Jhalakathi', 'ঝালকাঠি', '22.6422689', '90.2003932', 'www.jhalakathi.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(31, 4, 'Patuakhali', 'পটুয়াখালী', '22.3596316', '90.3298712', 'www.patuakhali.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(32, 4, 'Pirojpur', 'পিরোজপুর', '22.5781398', '89.9983909', 'www.pirojpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(33, 4, 'Barisal', 'বরিশাল', '22.7004179', '90.3731568', 'www.barisal.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(34, 4, 'Bhola', 'ভোলা', '22.685923', '90.648179', 'www.bhola.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(35, 4, 'Barguna', 'বরগুনা', '22.159182', '90.125581', 'www.barguna.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(36, 5, 'Sylhet', 'সিলেট', '24.8897956', '91.8697894', 'www.sylhet.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(37, 5, 'Moulvibazar', 'মৌলভীবাজার', '24.482934', '91.777417', 'www.moulvibazar.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(38, 5, 'Habiganj', 'হবিগঞ্জ', '24.374945', '91.41553', 'www.habiganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(39, 5, 'Sunamganj', 'সুনামগঞ্জ', '25.0658042', '91.3950115', 'www.sunamganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(40, 6, 'Narsingdi', 'নরসিংদী', '23.932233', '90.71541', 'www.narsingdi.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(41, 6, 'Gazipur', 'গাজীপুর', '24.0022858', '90.4264283', 'www.gazipur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(42, 6, 'Shariatpur', 'শরীয়তপুর', '23.2060195', '90.3477725', 'www.shariatpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(43, 6, 'Narayanganj', 'নারায়ণগঞ্জ', '23.63366', '90.496482', 'www.narayanganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(44, 6, 'Tangail', 'টাঙ্গাইল', '24.264145', '89.918029', 'www.tangail.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(45, 6, 'Kishoreganj', 'কিশোরগঞ্জ', '24.444937', '90.776575', 'www.kishoreganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(46, 6, 'Manikganj', 'মানিকগঞ্জ', '23.8602262', '90.0018293', 'www.manikganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(47, 6, 'Dhaka', 'ঢাকা', '23.7115253', '90.4111451', 'www.dhaka.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(48, 6, 'Munshiganj', 'মুন্সিগঞ্জ', '23.5435742', '90.5354327', 'www.munshiganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(49, 6, 'Rajbari', 'রাজবাড়ী', '23.7574305', '89.6444665', 'www.rajbari.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(50, 6, 'Madaripur', 'মাদারীপুর', '23.164102', '90.1896805', 'www.madaripur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(51, 6, 'Gopalganj', 'গোপালগঞ্জ', '23.0050857', '89.8266059', 'www.gopalganj.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(52, 6, 'Faridpur', 'ফরিদপুর', '23.6070822', '89.8429406', 'www.faridpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(53, 7, 'Panchagarh', 'পঞ্চগড়', '26.3411', '88.5541606', 'www.panchagarh.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(54, 7, 'Dinajpur', 'দিনাজপুর', '25.6217061', '88.6354504', 'www.dinajpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(55, 7, 'Lalmonirhat', 'লালমনিরহাট', '25.9165451', '89.4532409', 'www.lalmonirhat.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(56, 7, 'Nilphamari', 'নীলফামারী', '25.931794', '88.856006', 'www.nilphamari.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(57, 7, 'Gaibandha', 'গাইবান্ধা', '25.328751', '89.528088', 'www.gaibandha.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(58, 7, 'Thakurgaon', 'ঠাকুরগাঁও', '26.0336945', '88.4616834', 'www.thakurgaon.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(59, 7, 'Rangpur', 'রংপুর', '25.7558096', '89.244462', 'www.rangpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(60, 7, 'Kurigram', 'কুড়িগ্রাম', '25.805445', '89.636174', 'www.kurigram.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(61, 8, 'Sherpur', 'শেরপুর', '25.0204933', '90.0152966', 'www.sherpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(62, 8, 'Mymensingh', 'ময়মনসিংহ', '24.7465670', '90.4072093', 'www.mymensingh.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(63, 8, 'Jamalpur', 'জামালপুর', '24.937533', '89.937775', 'www.jamalpur.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16'),
+(64, 8, 'Netrokona', 'নেত্রকোণা', '24.870955', '90.727887', 'www.netrokona.gov.bd', '2026-01-14 01:50:16', '2026-01-14 01:50:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `divisions`
+--
+
+CREATE TABLE `divisions` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -416,9 +569,9 @@ CREATE TABLE `documents` (
   `id` bigint UNSIGNED NOT NULL,
   `destination_id` bigint UNSIGNED DEFAULT NULL,
   `scholarship_id` bigint UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mime_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'application/pdf',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mime_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'application/pdf',
   `file_size` bigint NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -441,12 +594,12 @@ INSERT INTO `documents` (`id`, `destination_id`, `scholarship_id`, `name`, `file
 
 CREATE TABLE `document_download_contact_forms` (
   `id` bigint UNSIGNED NOT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `destination_id` bigint UNSIGNED DEFAULT NULL,
   `scholarship_id` bigint UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -487,11 +640,10 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `description`, `photo_path`, `start_date`, `start_time`, `end_time`, `end_date`, `location`, `is_active`, `created_at`, `updated_at`) VALUES
-(5, 'Insaf Education Consultancy Seminar', '<p>Insaf Education Consultancy provides professional guidance for students seeking higher education opportunities both locally and internationally. The consultancy offers support in university selection, admission processing, scholarship guidance, and visa assistance. With a student-focused approach, Insaf Education Consultancy helps learners make confident and informed decisions for their academic and career goals.</p>', 'uploads/events/1767769881-DIKhq3HW6A.jpg', '2025-12-20', '2026-01-07 10:00:00', '2026-01-07 11:00:00', '2025-12-26', 'Dhaka', 1, '2025-12-20 05:39:06', '2026-01-07 01:11:21'),
+(5, 'Insaf Immigration: Education Fair 2026', '<br>', 'uploads/events/1768369352-kMmghv9L6j.png', '2026-02-01', '2026-01-14 10:00:00', NULL, NULL, 'Dhaka', 1, '2025-12-20 05:39:06', '2026-01-13 23:42:32'),
 (6, 'Insaf Education Consultancy Seminar - 2', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767769868-3SAjRxmHNv.jpg', '2026-08-01', '2026-01-07 10:00:00', '2026-01-07 12:00:00', '2026-10-01', 'Banani', 1, '2026-01-07 00:41:23', '2026-01-07 01:11:08'),
 (7, 'Insaf Education Consultancy Seminar - 3', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767768140-zzduIWdvG5.jpg', '2026-09-01', '2026-01-07 11:00:00', '2026-01-07 12:30:00', '2026-12-01', 'Gulshan', 1, '2026-01-07 00:42:20', '2026-01-07 00:50:34'),
-(9, 'Insaf Education Consultancy Seminar - 4', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767769378-p3elfdtyPP.jpg', '2026-01-12', '2026-01-07 17:00:00', '2026-01-07 20:00:00', '2026-01-16', 'Mirpur', 1, '2026-01-07 01:02:58', '2026-01-07 01:02:58'),
-(10, 'Insaf Education Consultancy Seminar - 5', NULL, 'uploads/events/1767770446-eqKX40rEpt.jpg', '2026-01-09', '2026-01-07 09:00:00', '2026-01-07 11:30:00', '2026-01-16', 'Dhanmondi', 1, '2026-01-07 01:20:46', '2026-01-07 01:20:46');
+(9, 'Insaf Education Consultancy Seminar - 4', '<p>Insaf Education Consultancy provides professional guidance for students \r\nseeking higher education opportunities both locally and internationally.\r\n The consultancy offers support in university selection, admission \r\nprocessing, scholarship guidance, and visa assistance. With a \r\nstudent-focused approach, Insaf Education Consultancy helps learners \r\nmake confident and informed decisions for their academic and career \r\ngoals.</p>', 'uploads/events/1767769378-p3elfdtyPP.jpg', '2026-01-12', '2026-01-07 17:00:00', '2026-01-07 20:00:00', '2026-01-16', 'Mirpur', 1, '2026-01-07 01:02:58', '2026-01-07 01:02:58');
 
 -- --------------------------------------------------------
 
@@ -512,7 +664,7 @@ CREATE TABLE `event_items` (
 --
 
 INSERT INTO `event_items` (`id`, `event_id`, `title`, `created_at`, `updated_at`) VALUES
-(2, 5, 'Explore Your Future at Insaf Global Australia Education Expo 2026!', '2025-12-22 01:53:19', '2025-12-31 00:25:20');
+(2, 5, 'EDUCATION FAIR 2026 – DON’T MISS OUT!', '2025-12-22 01:53:19', '2026-01-13 23:46:02');
 
 -- --------------------------------------------------------
 
@@ -534,7 +686,7 @@ CREATE TABLE `event_item_sections` (
 --
 
 INSERT INTO `event_item_sections` (`id`, `event_item_id`, `images`, `description`, `created_at`, `updated_at`) VALUES
-(2, 2, '[\"uploads/event_item_sections/da08aeb4-fac0-45c6-9ef1-668962c1f893.jpg\"]', '<p data-start=\"109\" data-end=\"496\"><strong data-start=\"109\" data-end=\"131\">Event Description:</strong><br data-start=\"131\" data-end=\"134\">\r\nThis info session is organized by Insaf Education Consultancy to guide students and parents on higher education opportunities in Bangladesh and abroad. The session will cover university admissions, study abroad options, scholarship opportunities, and visa guidance. Participants will also get the chance to consult directly with experienced education counselors.</p>\r\n<p data-start=\"498\" data-end=\"523\"><strong data-start=\"498\" data-end=\"507\">Date:</strong><br data-start=\"507\" data-end=\"510\">\r\n15 March 2025</p>\r\n<p data-start=\"525\" data-end=\"555\"><strong data-start=\"525\" data-end=\"534\">Time:</strong><br data-start=\"534\" data-end=\"537\">\r\n10:00 AM – 4:00 PM</p>\r\n<p data-start=\"557\" data-end=\"614\"><strong data-start=\"557\" data-end=\"570\">Location:</strong><br data-start=\"570\" data-end=\"573\">\r\nInsaf Education Consultancy Office, Dhaka</p>\r\n<p data-start=\"616\" data-end=\"723\"><strong data-start=\"616\" data-end=\"636\">Target Audience:</strong><br data-start=\"636\" data-end=\"639\">\r\nStudents, parents, and guardians interested in higher education and career planning.</p>\r\n<p data-start=\"725\" data-end=\"753\"><strong data-start=\"725\" data-end=\"746\">Registration Fee:</strong><br data-start=\"746\" data-end=\"749\">\r\nFree</p>\r\n<p data-start=\"755\" data-end=\"838\"><strong data-start=\"755\" data-end=\"779\">Contact Information:</strong><br data-start=\"779\" data-end=\"782\">\r\nPhone: +880 1XXX-XXXXXX</p><br>', '2025-12-22 01:57:32', '2025-12-31 00:27:10');
+(2, 2, '[\"uploads/event_item_sections/4c05512f-1c6b-4437-a8cf-994f69c6a6f3.png\"]', '<p style=\"\"><b>EDUCATION FAIR 2026 – DON’T MISS OUT!</b></p><p><span style=\"font-weight: normal;\">Still confused about where to study, how to apply, or how to get a student visa? This is your ONE-DAY OPPORTUNITY to meet experts, get real answers, and secure your future FASTER. </span></p><p><span style=\"font-weight: normal;\">Insaf Immigration presents Education Fair 2026 — built for students who are serious about studying abroad.</span></p><p><span style=\"font-weight: normal;\"><br></span><b>WHAT MAKES THIS FAIR DIFFERENT</b></p><ul><li style=\"margin-left: 50px;\"><b>Direct Student Visa Guidance – No agents, no confusion</b></li><li style=\"margin-left: 50px;\"><b>On-the-Spot Profile Evaluation</b></li><li style=\"margin-left: 50px;\"><b>Affordable Study Options with Scholarships</b></li><li style=\"margin-left: 50px;\"><b>Without IELTS Options Available</b></li><li style=\"margin-left: 50px;\"><b>100% Transparent Process&nbsp; No Hidden Charges</b></li><li style=\"margin-left: 50px;\"><b>Limited Seats | High Demand | First Come First Served</b></li></ul><p><b><br></b></p><p><b>STUDY DESTINATIONS YOU CAN APPLY FOR</b></p><p><b>Malaysia • UK • Australia • Europe • Canada • USA • New Zealand &amp; More</b></p><p><b><br></b></p><p style=\"\"><span style=\"font-weight: normal;\"><b>EVENT DETAILS</b><br><b>Sunday | 01 February 2026<br>From 10:00 AM<br>Hoque Tower, Panthapath, Dhaka</b></span></p><p style=\"\"><span style=\"font-weight: normal;\"><b><br></b></span></p><p style=\"\"><span style=\"font-weight: normal;\">ACT NOW – SEATS ARE LIMITED<br>Delaying today can cost you another year of your career.<br>REGISTER NOW<br>Call: 01617-926681<br>www.insafimmigration.com</span></p>', '2025-12-22 01:57:32', '2026-01-14 00:42:20');
 
 -- --------------------------------------------------------
 
@@ -746,7 +898,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (54, '2026_01_08_050116_add_url_to_sliders_table', 42),
 (55, '2026_01_08_061347_add_fields_to_contact_us_table', 43),
 (56, '2026_01_08_124934_create_documents_table', 44),
-(57, '2026_01_10_052359_create_document_download_contact_forms_table', 45);
+(57, '2026_01_10_052359_create_document_download_contact_forms_table', 45),
+(58, '2026_01_14_071531_add_fields_to_contact_forms_table', 46),
+(59, '2026_01_14_073705_create_districts_table', 47),
+(60, '2026_01_14_074204_create_divisions_table', 48),
+(61, '2026_01_14_075210_create_districts_table', 49),
+(62, '2026_01_14_075531_add_fields_to_contact_forms_table', 50);
 
 -- --------------------------------------------------------
 
@@ -757,7 +914,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `offices` (
   `id` bigint UNSIGNED NOT NULL,
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -772,8 +929,8 @@ CREATE TABLE `offices` (
 
 INSERT INTO `offices` (`id`, `location`, `country`, `address`, `phone`, `email`, `is_primary`, `created_at`, `updated_at`) VALUES
 (2, 'Chattogram', 'Bangladesh', '<p>Ridima Tower (Shahjalal Islami Bank Building), Level-4, Telopatti Moar, Chawkbazar, Chattogram</p>', '+8801805-020273', 'test@example.com', 0, '2025-12-21 00:40:02', '2026-01-08 00:23:34'),
-(3, 'Dhaka', 'Bangladesh', '<p>Haque Tower (Opposite of BRB Hospital), Floor - 6, Panthapath, Dhaka - 1209</p>', '+8801805-020273', 'test1@example.com', 1, '2025-12-22 05:04:38', '2026-01-08 00:21:29'),
-(4, 'Barisal', 'Bangladesh', '<p><strong data-start=\"174\" data-end=\"196\"></strong>723, Thana Council, C&amp;B Road East Side, Ward No:14, BCC, Barishal</p>', '+8801604-123816', 'test@example.com', 0, '2025-12-22 23:43:22', '2026-01-08 00:22:26');
+(3, 'Dhaka', 'Bangladesh', '<p>Haque Tower (Opposite of BRB Hospital), Floor - 6, Panthapath, Dhaka - 1205</p>', '+8801880-942457', 'test1@example.com', 1, '2025-12-22 05:04:38', '2026-01-14 02:29:29'),
+(4, 'Barisal', 'Bangladesh', '<p>723, Thana Council, C&amp;B Road East Side, Ward No:14, BCC, Barishal&nbsp;</p><p><br></p>', '+8801604-123816', 'test@example.com', 0, '2025-12-22 23:43:22', '2026-01-14 05:18:19');
 
 -- --------------------------------------------------------
 
@@ -902,10 +1059,23 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `title`, `subtitle`, `content`, `image_path`, `is_active`, `created_at`, `updated_at`) VALUES
-(3, 'Review 1', NULL, NULL, 'uploads/reviews/1767163484-pUWnPvDATI.png', 1, '2025-12-22 05:01:07', '2025-12-31 00:44:44'),
-(5, 'Review 2', NULL, NULL, 'uploads/reviews/1767770890-fW0FNVBjvq.png', 1, '2026-01-07 01:28:10', '2026-01-07 01:28:10'),
-(6, 'Review 3', NULL, NULL, 'uploads/reviews/1767770906-Tv8KBktjii.png', 1, '2026-01-07 01:28:26', '2026-01-07 01:28:26'),
-(7, 'Review 4', NULL, NULL, 'uploads/reviews/1767770934-2YdanQQNjC.png', 1, '2026-01-07 01:28:54', '2026-01-07 01:28:54');
+(3, '4', NULL, NULL, 'uploads/reviews/1768373100-RHeNKTiQMl.png', 1, '2025-12-22 05:01:07', '2026-01-14 00:45:00'),
+(5, '3', NULL, NULL, 'uploads/reviews/1768373084-eWBi5tC7JU.png', 1, '2026-01-07 01:28:10', '2026-01-14 00:44:44'),
+(6, '2', NULL, NULL, 'uploads/reviews/1768373042-q6sW5PMIOi.png', 1, '2026-01-07 01:28:26', '2026-01-14 00:44:27'),
+(7, '1', NULL, NULL, 'uploads/reviews/1768373023-lUi1gEwwxH.png', 1, '2026-01-07 01:28:54', '2026-01-14 00:44:16'),
+(8, '5', NULL, NULL, 'uploads/reviews/1768373125-gjGc38Mfqn.png', 1, '2026-01-14 00:45:25', '2026-01-14 00:45:25'),
+(9, '6', NULL, NULL, 'uploads/reviews/1768373144-qpQUrLXCm3.png', 1, '2026-01-14 00:45:44', '2026-01-14 00:45:44'),
+(10, '7', NULL, NULL, 'uploads/reviews/1768373165-YxHSqiMGwY.png', 1, '2026-01-14 00:46:05', '2026-01-14 00:46:05'),
+(11, '8', NULL, NULL, 'uploads/reviews/1768373190-yFn4ET8N0R.png', 1, '2026-01-14 00:46:30', '2026-01-14 00:46:30'),
+(12, '9', NULL, NULL, 'uploads/reviews/1768373206-YDWV6wiu2N.png', 1, '2026-01-14 00:46:46', '2026-01-14 00:46:46'),
+(13, '10', NULL, '<br>', 'uploads/reviews/1768373226-Ny4zXsAQVU.png', 1, '2026-01-14 00:47:06', '2026-01-14 00:47:06'),
+(14, '11', NULL, NULL, 'uploads/reviews/1768373242-oSBlVGjmzn.png', 1, '2026-01-14 00:47:22', '2026-01-14 00:47:22'),
+(15, '12', NULL, NULL, 'uploads/reviews/1768373263-Zl97nlyiZ9.png', 1, '2026-01-14 00:47:43', '2026-01-14 00:47:43'),
+(16, '13', NULL, NULL, 'uploads/reviews/1768373297-JfD2Xm4l8X.png', 1, '2026-01-14 00:48:17', '2026-01-14 00:48:17'),
+(17, '14', NULL, NULL, 'uploads/reviews/1768373312-5BsNkjmzKj.png', 1, '2026-01-14 00:48:32', '2026-01-14 00:48:32'),
+(18, '15', NULL, NULL, 'uploads/reviews/1768373332-1I4KANPedG.png', 1, '2026-01-14 00:48:52', '2026-01-14 00:48:52'),
+(19, '16', NULL, NULL, 'uploads/reviews/1768373348-5nCaBQOCuc.png', 1, '2026-01-14 00:49:08', '2026-01-14 00:49:08'),
+(20, '17', NULL, NULL, 'uploads/reviews/1768373368-h7Lw47O8zz.png', 1, '2026-01-14 00:49:28', '2026-01-14 00:49:28');
 
 -- --------------------------------------------------------
 
@@ -936,7 +1106,7 @@ CREATE TABLE `scholarships` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -967,7 +1137,8 @@ CREATE TABLE `scholarship_items` (
 
 INSERT INTO `scholarship_items` (`id`, `scholarship_id`, `title`, `created_at`, `updated_at`) VALUES
 (2, 3, 'Scholarships in the UK', '2025-12-17 06:37:42', '2025-12-17 06:50:54'),
-(3, 4, 'Scholarships in Australia', '2025-12-31 05:08:44', '2025-12-31 05:08:44');
+(3, 4, 'Scholarships in Australia', '2025-12-31 05:08:44', '2025-12-31 05:08:44'),
+(4, 4, 'Australian Student Visa Requirements for Bangladeshi Students', '2026-01-14 06:30:26', '2026-01-14 06:30:26');
 
 -- --------------------------------------------------------
 
@@ -1012,7 +1183,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('SEc1pXIqAU38a3NEXDhR7bnU2Wg9CrMSyWwUqYXr', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoielhFa3dKTkttRFlZVmdXZG9mSzhUaGNUcUtPSTB1bFU0YUJBNG91MiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvc2Nob2xhcnNoaXAvYXVzdHJhbGlhIjtzOjU6InJvdXRlIjtOO31zOjEwOiJ0eXJvLWxvZ2luIjthOjE6e3M6NzoiY2FwdGNoYSI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768040540);
+('GO6JX9H0uTQqdKDM1eTo18Zu4JuXesxLqp3LC2ZQ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVU1ZZ1gwNjJmRGg3WngyYjBMZkNlM1N1UFhyc2NraDkwWG9LdU1VMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kZXN0aW5hdGlvbl9pdGVtX3NlY3Rpb25zIjtzOjU6InJvdXRlIjtzOjM3OiJhZG1pbi5kZXN0aW5hdGlvbl9pdGVtX3NlY3Rpb25zLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1768397001);
 
 -- --------------------------------------------------------
 
@@ -1028,7 +1199,7 @@ CREATE TABLE `sliders` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1036,8 +1207,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created_at`, `updated_at`, `url`) VALUES
-(6, 'Turning Global Education into Real Opportunities and Career Growth', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767159164-vspLHdGwLb.jpg', 1, '2025-12-30 23:32:44', '2026-01-07 23:23:56', 'https://insafimmigration.com/destination/uk'),
-(8, 'Turning Global Education into Real Opportunities', 'We provide expert guidance in global education, helping students achieve academic excellence and long-term career success.', 'uploads/sliders/1767871952-4n9PT6X2Hh.jpg', 1, '2026-01-07 23:06:50', '2026-01-09 22:33:46', 'http://127.0.0.1:8000/destination/europe');
+(6, 'Your Passport to a Brighter Future Starts Here!', 'Study in top countries like USA, UK, Canada, Malaysia, and Europe. Expert visa guidance, airport pickup, and all support from day one', 'uploads/sliders/1768367060-6GT1erTHIX.webp', 1, '2025-12-30 23:32:44', '2026-01-13 23:14:52', NULL),
+(8, 'Thousands of Dreams Turned into Reality!', 'Join hundreds of students who got their visas through Insaf Immigration. Fast, reliable, and 100% resultoriented service!', 'uploads/sliders/1768367679-3dcCYQbyXV.png', 1, '2026-01-07 23:06:50', '2026-01-13 23:14:39', NULL),
+(9, 'Study Abroad + Earn While You Learn!', 'Exclusive programs in Malaysia & Europe with work opportunities. Minimal investment, maximum income. Pay only after visa approval!', 'uploads/sliders/1768367959-ij1LsKX7KB.webp', 1, '2026-01-13 23:19:19', '2026-01-13 23:19:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -1061,7 +1233,10 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `designation`, `photo_path`, `content`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Md kamruzzaman', 'CEO', 'uploads/team/1767171304-ChjeXJyYEC.jpg', 'Driven by a strong belief in the power of education to transform lives.<br><br>Guided by certified expertise (QEAC D468) and a strong commitment to student success.<br><br>Dedicated to creating life-changing opportunities, global careers, and brighter futures abroad.', 1, '2025-12-10 23:23:06', '2025-12-31 03:04:11');
+(1, 'Asraful Islam Sakib', 'Chief Executive Officer', 'uploads/team/1768390605-faCy7eDsVV.png', 'Founded Insaf Immigration with a strong belief that global education should be transparent, affordable, and accessible for every student.<br>Recognized by international universities and partners for ethical consultancy and outstanding student recruitment performance.<br>Committed to building long-term student success through honest guidance, strategic planning, and global partnerships.', 1, '2025-12-10 23:23:06', '2026-01-14 05:36:45'),
+(2, 'Mohammad Faisal', 'Chief Accountant', 'uploads/team/1768390654-C1EWD6PZVv.png', '<p>Oversees all financial operations of Insaf Immigration with accuracy, integrity, and full regulatory compliance.<br>Ensures transparent handling of student payments, university fees, and international transactions.<br>Maintains strict compliance with tax regulations, audit requirements, and financial governance standards.</p>', 1, '2026-01-14 05:37:34', '2026-01-14 05:37:34'),
+(3, 'Lutfur Kabir Rana', 'Senior Consultant (HRM)', 'uploads/team/1768390704-MMbGyE1pFG.png', '<p>Provides strategic HR leadership, policy development, and workforce planning aligned with organizational goals.<br>Brings strong expertise in recruitment, talent management, employee relations, and performance management systems<br>Acts as a trusted advisor to leadership on employee engagement, retention, and HR strategy.</p>', 1, '2026-01-14 05:38:24', '2026-01-14 05:38:24'),
+(4, 'Rasel Shikder', 'Senior Country Director (Bangladesh)', 'uploads/team/1768390769-AlkVTYOK0f.png', '<p>Brings extensive experience in international education management, student recruitment, and partner relations.</p><p>Oversees university partnerships, visa processing standards, and local compliance requirements.<br>Ensures service excellence, brand integrity, and consistent student success across the country.</p>', 1, '2026-01-14 05:39:29', '2026-01-14 05:39:29');
 
 -- --------------------------------------------------------
 
@@ -1108,7 +1283,9 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `quote`, `student_name`, `designation`, `image_path`, `video_url`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Test', 'Md Shahin', 'Student', NULL, 'https://youtu.be/MwMJJtIie_I', 1, '2025-12-10 22:58:09', '2025-12-18 06:24:48');
+(1, '<h6 class=\"style-scope ytd-watch-metadata\">Russia Study Visa Success</h6><h1 class=\"style-scope ytd-watch-metadata\"></h1><br>', 'Ashraful Islam', 'Student', NULL, 'https://www.youtube.com/watch?v=t9wQtZFGtWQ&list=PL9z8CWGR3i2wuecMmPOhH0jX8rJRxvEhk&index=1', 1, '2025-12-10 22:58:09', '2026-01-14 05:45:35'),
+(2, '<p>test</p>', 'Others', 'Student', NULL, 'https://www.youtube.com/watch?v=OMuWbdyWAAI&list=PL9z8CWGR3i2wuecMmPOhH0jX8rJRxvEhk&index=2', 1, '2026-01-14 05:43:09', '2026-01-14 05:43:09'),
+(3, '<p>𝐌𝐚𝐥𝐚𝐲𝐬𝐢𝐚 𝐒𝐭𝐮𝐝𝐲 𝐕𝐢𝐬𝐚</p>', 'Others 2', 'Student', NULL, 'https://www.youtube.com/watch?v=lflqkk9lym8', 1, '2026-01-14 05:44:44', '2026-01-14 05:44:44');
 
 -- --------------------------------------------------------
 
@@ -1238,7 +1415,7 @@ CREATE TABLE `why_choose_us` (
 --
 
 INSERT INTO `why_choose_us` (`id`, `students`, `partners`, `visa_grants`, `years`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(4, 2000, 15, 96, 15, NULL, 1, '2025-12-21 00:31:49', '2025-12-21 00:37:23');
+(4, 2000, 15, 96, 8, NULL, 1, '2025-12-21 00:31:49', '2026-01-14 00:50:25');
 
 --
 -- Indexes for dumped tables
@@ -1355,6 +1532,18 @@ ALTER TABLE `destination_items`
 ALTER TABLE `destination_item_sections`
   ADD PRIMARY KEY (`id`),
   ADD KEY `destination_item_sections_destination_item_id_foreign` (`destination_item_id`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `divisions`
+--
+ALTER TABLE `divisions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `documents`
@@ -1637,7 +1826,7 @@ ALTER TABLE `accommodation_item_sections`
 -- AUTO_INCREMENT for table `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `admissions`
@@ -1667,31 +1856,43 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `contact_forms`
 --
 ALTER TABLE `contact_forms`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `destination_items`
 --
 ALTER TABLE `destination_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `destination_item_sections`
 --
 ALTER TABLE `destination_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+
+--
+-- AUTO_INCREMENT for table `divisions`
+--
+ALTER TABLE `divisions`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `documents`
@@ -1763,7 +1964,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `offices`
@@ -1805,7 +2006,7 @@ ALTER TABLE `privilege_role`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -1823,7 +2024,7 @@ ALTER TABLE `scholarships`
 -- AUTO_INCREMENT for table `scholarship_items`
 --
 ALTER TABLE `scholarship_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `scholarship_item_sections`
@@ -1835,13 +2036,13 @@ ALTER TABLE `scholarship_item_sections`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `terms_conditions`
@@ -1853,7 +2054,7 @@ ALTER TABLE `terms_conditions`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

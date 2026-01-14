@@ -33,8 +33,15 @@ class AppServiceProvider extends ServiceProvider
                 ->get(),
 
         'offices' => fn () =>
-            Office::select('id', 'location', 'address', 'phone', 'email', 'country')
-                ->get(),
+            Office::orderByRaw("
+    CASE 
+        WHEN location = 'Dhaka' THEN 0 
+        WHEN location = 'Chattogram' THEN 1 
+        ELSE 2 
+    END ASC
+")
+->orderBy('location', 'asc') // This sorts the "rest" (the ELSE 2 group) alphabetically
+->get(),
 
         'reviews' => fn () =>
             Review::where('is_active', 1)

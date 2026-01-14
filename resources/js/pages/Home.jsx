@@ -20,7 +20,6 @@ const Home = ({
     successcount,
     whyChooseUs,
     events,
-    
 }) => {
     return (
         // console.log(successcount),
@@ -30,7 +29,7 @@ const Home = ({
             <StudyDestinations destinations={dest} />
             <StudyAbroadSteps />
             <AwardsSection achievement={achievements} />
-            <UpcomingEvents events={events}/>
+            <UpcomingEvents events={events} />
             <SuccessGallery successcount={successcount} />
             <WhyChooseUs Why_Choose_Us={whyChooseUs} />
             <HomeBlogs blogs={blogs} />

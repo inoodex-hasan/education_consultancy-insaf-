@@ -2,30 +2,57 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\DestinationItem;
-use App\Models\DestinationItemSection;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use App\Models\{Destination, DestinationItem, DestinationItemSection};
+use App\Http\Controllers\Controller;
 
 class DestinationItemSectionController extends Controller
 {
 
-    public function index()
-    {
-        $sections = DestinationItemSection::with('destinationItem')
-            ->orderBy('destination_item_id') 
-            ->get();
+    // public function index()
+    // {
+    //     $sections = DestinationItemSection::with('destinationItem')
+    //         ->orderBy('destination_item_id') 
+    //         ->get();
 
-        return view('admin.destination_item_sections.index', compact('sections'));
-    }
+    //     return view('admin.destination_item_sections.index', compact('sections'));
+    // }
+
+public function index()
+{
+    // Eager load destinationItem and its parent destination
+    $sections = DestinationItemSection::with('destinationItem.destination')->get();
+
+    $groupedByDestination = $sections->groupBy(function($section) {
+        return $section->destinationItem->destination->title ?? 'No Destination';
+    });
+
+    return view('admin.destination_item_sections.index', compact('groupedByDestination'));
+}
+
+    // public function create()
+    // {
+    //     $destinationItems = DestinationItem::orderBy('title', 'asc')->get();
+
+    //     return view('admin.destination_item_sections.create', compact('destinationItems'));
+    // }
 
     public function create()
     {
-        $destinationItems = DestinationItem::orderBy('title', 'asc')->get();
+        $destinations = Destination::orderBy('title')->get();
+        // We don't need to pass all items anymore, as we'll fetch them dynamically
+        return view('admin.destination_item_sections.create', compact('destinations'));
+    }
 
-        return view('admin.destination_item_sections.create', compact('destinationItems'));
+    public function getItems($destination_id)
+    {
+        $items = DestinationItem::where('destination_id', $destination_id)
+            ->orderBy('title', 'asc')
+            ->get(['id', 'title']);
+
+        return response()->json($items);
     }
 
     public function store(Request $request)

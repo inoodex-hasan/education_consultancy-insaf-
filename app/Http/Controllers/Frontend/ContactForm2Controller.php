@@ -26,6 +26,8 @@ class ContactForm2Controller extends Controller
             'Email_address' => 'required|email|max:255',
             'Phone_number'  => 'required|string|max:20',
             'Message'       => 'required|string',
+            'district_id'       => 'required|string',
+            'office_id' => 'required|string',
         ]);
 
         ContactForm::create($validated);

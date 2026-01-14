@@ -6,10 +6,14 @@ import SuccessGallery from "../components/SuccessGallery";
 import Form from "../components/form/Form";
 import ContactSection from "../components/ContactSection";
 
-const ContactPage = ({ primaryOffice, offices, successcount }) => {
+const ContactPage = ({ primaryOffice, offices, successcount, districts }) => {
     return (
         <>
-            <ContactSection primaryOffice={primaryOffice} />
+            <ContactSection
+                primaryOffice={primaryOffice}
+                offices={offices}
+                districts={districts}
+            />
             <AppointmentStepsSection />
             <GlobalOfficesSection offices={offices} />
             <StudyAbroadSteps />

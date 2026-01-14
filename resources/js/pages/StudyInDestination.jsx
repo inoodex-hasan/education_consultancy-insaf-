@@ -59,7 +59,6 @@ export default function StudyInDestination({
                 >
                     <FormTwo destinationId={destination.id} />
                 </Modal>{" "}
-                *
                 <div className="absolute inset-0 opacity-20">
                     <div className="absolute top-20 left-10 w-96 h-96 bg-gold rounded-full blur-3xl" />
                     <div className="absolute bottom-10 right-20 w-80 h-80 bg-gold/30 rounded-full blur-3xl" />
@@ -80,9 +79,10 @@ export default function StudyInDestination({
                                     {destination.title}
                                 </span>
                                 <br />
-                                with{" "}
+                                from Bangladesh
+                                <br /> Student Visa Guide by{" "}
                                 <span className="text-[#c3a25d]">
-                                    Expert Guidance
+                                    Insaf Immigration
                                 </span>
                             </h2>
 
@@ -96,7 +96,7 @@ export default function StudyInDestination({
 
                             <div className="flex flex-col sm:flex-row gap-6 pt-6">
                                 <a
-                                    href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                                    href="https://wa.me/01880-942457?text=Hi!"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#c3a25d] hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"

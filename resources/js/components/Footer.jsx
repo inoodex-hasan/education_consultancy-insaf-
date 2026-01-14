@@ -8,7 +8,14 @@ import title3 from "../assets/footer/title3.svg";
 import title4 from "../assets/footer/title4.svg";
 import footerbg from "../assets/footer/footer-bg.png";
 import OfficeLocations from "./OfficeLocations";
-import { Facebook, Linkedin, Send, Twitter, Youtube } from "lucide-react";
+import {
+    Facebook,
+    Instagram,
+    Linkedin,
+    Send,
+    Twitter,
+    Youtube,
+} from "lucide-react";
 import { Link, usePage } from "@inertiajs/react";
 const Footer = () => {
     const navItems = [
@@ -119,12 +126,18 @@ const Footer = () => {
                                     />
                                 </div>
                                 <p className="max-w-[280px] text-black/70 text-lg">
-                                    Urna vitae facilisis at amet interdum
-                                    maecenas ullamcorper. Maecenas at volutpat
-                                    vitae aliquam. Eu tellus proin nisi id
-                                    aenean laoreet mattis pretium. Gravida eget
-                                    venenatis massa libero integer sed ut
-                                    pharetra nunc.
+                                    Insaf Immigration is a results-driven
+                                    student visa agency built to dominate the
+                                    study abroad space. We don’t sell dreams, we
+                                    deliver approved visas for top global
+                                    destinations. Our expert team handles
+                                    everything from course selection to visa
+                                    approval with precision and speed. With
+                                    transparent processes, strong university
+                                    networks, and proven success, we lead where
+                                    others follow. If you are serious about
+                                    studying abroad, Insaf Immigration is the
+                                    only name you need to trust.
                                 </p>
                                 <div className="flex justify-start items-center gap-[30px]">
                                     <a href="https://www.facebook.com/">
@@ -220,13 +233,25 @@ const Footer = () => {
                                 <div>
                                     <ul className="flex gap-4 items-center">
                                         <li>
-                                            <Facebook className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            <a
+                                                href="https://www.facebook.com/profile.php?id=61561538790400"
+                                                target="_blank"
+                                            >
+                                                <Facebook className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            </a>
                                         </li>
                                         <li>
-                                            <Youtube className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            <a href="https://www.youtube.com/@InsafImmigration">
+                                                <Youtube className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            </a>
                                         </li>
                                         <li>
-                                            <Twitter className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            <a
+                                                href="https://www.instagram.com/insaf_immigration/"
+                                                target="_blank"
+                                            >
+                                                <Instagram className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
+                                            </a>
                                         </li>
                                         <li>
                                             <Linkedin className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />

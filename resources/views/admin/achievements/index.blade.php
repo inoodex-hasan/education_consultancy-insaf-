@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="card-body">
-                               @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -72,7 +72,7 @@
                                                 <td><strong>{{ $achievement->title }}</strong></td>
                                                 <td style="max-width:50px;">
                                                     <div class="limit-html">
-                                                        {!! $achievement->description !!}
+                                                        {!! $achievement->description ?? 'N/A' !!}
                                                     </div>
                                                 </td>
                                                 <td>

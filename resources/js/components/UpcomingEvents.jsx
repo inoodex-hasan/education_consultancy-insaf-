@@ -95,7 +95,7 @@ const UpcomingEvents = ({ events }) => {
                             >
                                 {/* Banner Image */}
                                 <div
-                                    className="relative h-64 bg-cover bg-center"
+                                    className="relative h-64 bg-contain bg-no-repeat bg-center"
                                     style={{
                                         backgroundImage: `url(${
                                             event.photo_path ||
@@ -119,8 +119,9 @@ const UpcomingEvents = ({ events }) => {
                                             <span className="text-blue-800 font-medium">
                                                 🕒
                                             </span>
-                                            {formatAMPM(event.start_time)} –{" "}
-                                            {formatAMPM(event.end_time)}
+                                            {formatAMPM(event.start_time)}
+                                            {/* –{" "}
+                                            {formatAMPM(event.end_time)} */}
                                         </p>
                                         <p className="flex items-center gap-2">
                                             <span className="text-blue-800 font-medium">

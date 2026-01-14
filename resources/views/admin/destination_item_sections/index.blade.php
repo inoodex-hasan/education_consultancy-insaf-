@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="card-body">
-                               @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -57,42 +57,52 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($sections as $section)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
+                                        @forelse ($groupedByDestination as $destinationTitle => $sections)
+                                            @php $slugId = Str::slug($destinationTitle); @endphp
 
-                                                <td><strong>{{ $section->destinationItem->title ?? 'N/A' }}</strong></td>
-
-                                                <td style="max-width:200px;">
-                                                    <div class="limit-html">
-                                                        {!! $section->description !!}
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-info">{{ count($section->images ?? []) }}
-                                                        Images</span>
-                                                </td>
-                                                <td>{{ $section->created_at->format('M d, Y') }}</td>
-
-                                                <td>
-                                                    <a href="{{ route('admin.destination_item_sections.edit', $section) }}"
-                                                        class="btn btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-
-                                                    <form
-                                                        action="{{ route('admin.destination_item_sections.destroy', $section) }}"
-                                                        method="POST" class="d-inline"
-                                                        onsubmit="return confirm('Are you sure you want to delete this section and all associated images?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
+                                            <tr class="table-info" style="cursor: pointer;" data-toggle="collapse"
+                                                data-target=".dest-{{ $slugId }}" aria-expanded="true">
+                                                <td colspan="6" style="font-weight: bold;">
+                                                    <i class="fas fa-chevron-down mr-2"></i> {{ $destinationTitle }}
+                                                    <span class="badge badge-primary ml-2">{{ $sections->count() }}
+                                                        Sections</span>
+                                                    <small class="text-muted float-right">(Click to toggle)</small>
                                                 </td>
                                             </tr>
 
+                                            @foreach ($sections as $section)
+                                                <tr class="collapse show dest-{{ $slugId }}">
+                                                    <td>{{ $loop->parent->iteration }}.{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <span class="font-weight-600">
+                                                            {{ $section->destinationItem->title ?? 'N/A' }}
+                                                        </span>
+                                                    </td>
+                                                    <td style="max-width:200px;">
+                                                        <div class="limit-html">{!! $section->description !!}</div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-info">{{ count($section->images ?? []) }}
+                                                            Images</span>
+                                                    </td>
+                                                    <td>{{ $section->created_at->format('M d, Y') }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.destination_item_sections.edit', $section) }}"
+                                                            class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        <form
+                                                            action="{{ route('admin.destination_item_sections.destroy', $section) }}"
+                                                            method="POST" class="d-inline"
+                                                            onsubmit="return confirm('Delete this section?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-sm btn-danger"><i
+                                                                    class="fas fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @empty
                                             <tr>
                                                 <td colspan="6" class="text-center">No content sections found.</td>

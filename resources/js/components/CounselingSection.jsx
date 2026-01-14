@@ -15,10 +15,11 @@ export default function CounselingSection() {
 
                             <div className="space-y-6">
                                 {[
-                                    "High school graduates planning to start their tertiary education in Australia.",
-                                    "University students seeking course or provider changes",
-                                    "Diploma/TAFE students looking to pathway into university degrees",
-                                    "Parents and guardians seeking professional guidance for their children's future",
+                                    "Students planning to study abroad",
+                                    "Unsure about country, course, or university selection",
+                                    "Students without IELTS",
+                                    "Fresh SSC/HSC graduates planning their first international education step",
+                                    "Students who faced visa rejection before",
                                 ].map((item, index) => (
                                     <div key={index} className="flex gap-4">
                                         <div className="shrink-0 w-10 h-10 bg-linear-to-br from-gold to-[#b8934e]  rounded-lg flex items-center justify-center">

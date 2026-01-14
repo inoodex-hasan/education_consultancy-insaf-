@@ -2,19 +2,29 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Destination;
-use App\Models\DestinationItem;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\{Destination, DestinationItem};
 
 class DestinationItemController extends Controller
 {
 
+    // public function index()
+    // {
+    //     $items = DestinationItem::with('destination')->get();
+    //     return view('admin.destination_items.index', compact('items'));
+    // }
+
     public function index()
-    {
-        $items = DestinationItem::with('destination')->get();
-        return view('admin.destination_items.index', compact('items'));
-    }
+{
+    $groupedItems = DestinationItem::with('destination')
+        ->get()
+        ->groupBy(function($item) {
+            return $item->destination->title;
+        });
+
+    return view('admin.destination_items.index', compact('groupedItems'));
+}
 
     public function create()
     {

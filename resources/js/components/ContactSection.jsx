@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import { useForm, usePage } from '@inertiajs/react';
+import React, { useState } from "react";
+import { useForm, usePage } from "@inertiajs/react";
 import { MapPin, Phone, Mail, Send, CheckCircle } from "lucide-react";
 
-const ContactSection = ({ primaryOffice }) => {
+const ContactSection = ({ primaryOffice, offices, districts }) => {
+    // console.log(offices);
     const { flash } = usePage().props;
 
     const { data, setData, post, processing, errors, reset } = useForm({
-        Full_name: '',
-        Email_address: '',
-        Phone_number: '',
-        Message: '',
+        Full_name: "",
+        Email_address: "",
+        Phone_number: "",
+        Message: "",
     });
 
     const [showToast, setShowToast] = useState(false);
@@ -18,7 +19,7 @@ const ContactSection = ({ primaryOffice }) => {
         e.preventDefault();
 
         console.log(data);
-        post(route('contact.store'), {
+        post(route("contact.store"), {
             onSuccess: () => {
                 reset();
                 setShowToast(true);
@@ -39,7 +40,9 @@ const ContactSection = ({ primaryOffice }) => {
                         <CheckCircle size={24} />
                         <div>
                             <p className="font-semibold">Success!</p>
-                            <p className="text-sm opacity-90">Your message has been sent successfully.</p>
+                            <p className="text-sm opacity-90">
+                                Your message has been sent successfully.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -48,9 +51,12 @@ const ContactSection = ({ primaryOffice }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl font-bold mb-4 text-[#283e77]">Get In Touch</h1>
+                    <h1 className="text-5xl font-bold mb-4 text-[#283e77]">
+                        Get In Touch
+                    </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Have questions? Send us a message and we'll get back to you shortly.
+                        Have questions? Send us a message and we'll get back to
+                        you shortly.
                     </p>
                 </div>
 
@@ -62,12 +68,18 @@ const ContactSection = ({ primaryOffice }) => {
                                 <MapPin size={28} className="text-[#283e77]" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">Visit Us</h3>
+                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">
+                                    Visit Us
+                                </h3>
                                 <p className="text-gray-600 text-sm">
                                     {primaryOffice?.address ? (
-                                        <span dangerouslySetInnerHTML={{ __html: primaryOffice.address }} />
+                                        <span
+                                            dangerouslySetInnerHTML={{
+                                                __html: primaryOffice.address,
+                                            }}
+                                        />
                                     ) : (
-                                        'The Westin Dhaka, Gulshan-2, Dhaka'
+                                        "The Westin Dhaka, Gulshan-2, Dhaka"
                                     )}
                                 </p>
                             </div>
@@ -78,12 +90,19 @@ const ContactSection = ({ primaryOffice }) => {
                                 <Phone size={28} className="text-[#283e77]" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">Call Us</h3>
+                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">
+                                    Call Us
+                                </h3>
                                 <a
-                                    href={`tel:${primaryOffice?.phone?.replace(/\s+/g, '') || '+8801711222333'}`}
+                                    href={`tel:${
+                                        primaryOffice?.phone?.replace(
+                                            /\s+/g,
+                                            ""
+                                        ) || "+8801711222333"
+                                    }`}
                                     className="text-gray-600 text-sm hover:text-[#283e77] transition"
                                 >
-                                    {primaryOffice?.phone || '+880 1711-222333'}
+                                    {primaryOffice?.phone || "+880 1711-222333"}
                                 </a>
                             </div>
                         </div>
@@ -93,12 +112,16 @@ const ContactSection = ({ primaryOffice }) => {
                                 <Mail size={28} className="text-[#283e77]" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">Email Us</h3>
+                                <h3 className="text-xl font-bold mb-2 text-[#283e77]">
+                                    Email Us
+                                </h3>
                                 <a
-                                    href={`mailto:${primaryOffice?.email || 'info@insaf.com'}`}
+                                    href={`mailto:${
+                                        primaryOffice?.email || "info@insaf.com"
+                                    }`}
                                     className="text-gray-600 text-sm hover:text-[#283e77] transition"
                                 >
-                                    {primaryOffice?.email || 'info@insaf.com'}
+                                    {primaryOffice?.email || "info@insaf.com"}
                                 </a>
                             </div>
                         </div>
@@ -106,55 +129,185 @@ const ContactSection = ({ primaryOffice }) => {
 
                     {/* Right - Contact Form */}
                     <div className="lg:col-span-2">
-                        <form onSubmit={submit} className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100">
+                        <form
+                            onSubmit={submit}
+                            className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
+                        >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <div>
-                                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Full Name</label>
+                                    <label className="block text-gray-700 font-semibold mb-2 text-sm">
+                                        Full Name
+                                    </label>
                                     <input
                                         type="text"
                                         value={data.Full_name}
-                                        onChange={(e) => setData('Full_name', e.target.value)}
-                                        className={`w-full px-5 py-3 border ${errors.Full_name ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition`}
+                                        onChange={(e) =>
+                                            setData("Full_name", e.target.value)
+                                        }
+                                        className={`w-full px-5 py-3 border ${
+                                            errors.Full_name
+                                                ? "border-red-500"
+                                                : "border-gray-300"
+                                        } rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition`}
                                         placeholder="Your name"
                                     />
-                                    {errors.Full_name && <p className="text-red-500 text-xs mt-1">{errors.Full_name}</p>}
+                                    {errors.Full_name && (
+                                        <p className="text-red-500 text-xs mt-1">
+                                            {errors.Full_name}
+                                        </p>
+                                    )}
                                 </div>
 
                                 <div>
-                                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Email Address</label>
+                                    <label className="block text-gray-700 font-semibold mb-2 text-sm">
+                                        Email Address
+                                    </label>
                                     <input
                                         type="email"
                                         value={data.Email_address}
-                                        onChange={(e) => setData('Email_address', e.target.value)}
-                                        className={`w-full px-5 py-3 border ${errors.Email_address ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition`}
+                                        onChange={(e) =>
+                                            setData(
+                                                "Email_address",
+                                                e.target.value
+                                            )
+                                        }
+                                        className={`w-full px-5 py-3 border ${
+                                            errors.Email_address
+                                                ? "border-red-500"
+                                                : "border-gray-300"
+                                        } rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition`}
                                         placeholder="your@email.com"
                                     />
-                                    {errors.Email_address && <p className="text-red-500 text-xs mt-1">{errors.Email_address}</p>}
+                                    {errors.Email_address && (
+                                        <p className="text-red-500 text-xs mt-1">
+                                            {errors.Email_address}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
 
                             <div className="mb-8">
-                                <label className="block text-gray-700 font-semibold mb-2 text-sm">Phone Number</label>
+                                <label className="block text-gray-700 font-semibold mb-2 text-sm">
+                                    Phone Number
+                                </label>
                                 <input
                                     type="tel"
                                     value={data.Phone_number}
-                                    onChange={(e) => setData('Phone_number', e.target.value)}
+                                    onChange={(e) =>
+                                        setData("Phone_number", e.target.value)
+                                    }
                                     className="w-full px-5 py-3 border border-gray-300 rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition"
                                     placeholder="+880 1XXXXXXXXX"
                                 />
-                                {errors.Phone_number && <p className="text-red-500 text-xs mt-1">{errors.Phone_number}</p>}
+                                {errors.Phone_number && (
+                                    <p className="text-red-500 text-xs mt-1">
+                                        {errors.Phone_number}
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                {/* Office & Destination */}
+                                <div className="mt-2">
+                                    <label className="block text-sm font-medium text-gray-700  mb-2 font-mont">
+                                        Your Nearest INSAF Office{" "}
+                                        <span className="text-red-500">*</span>
+                                    </label>
+                                    <select
+                                        value={data.office_id}
+                                        onChange={(e) =>
+                                            setData("office_id", e.target.value)
+                                        }
+                                        className={`w-full px-4 py-1.5 border ${
+                                            errors.office_id
+                                                ? "border-red-500"
+                                                : "border-gray-300"
+                                        } rounded-lg text-blue font-mont focus:ring-2 focus:ring-blue-500 transition`}
+                                        required
+                                    >
+                                        <option value="">Select office</option>
+                                        {offices.map((office) => (
+                                            <option
+                                                key={office.id}
+                                                value={office.id}
+                                            >
+                                                {office.location}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    {errors.office_id && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.office_id}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className="mt-4">
+                                {/* --- District Selection --- */}
+                                <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
+                                    District{" "}
+                                    <span className="text-red-500">*</span>
+                                </label>
+                                <div className="flex">
+                                    <select
+                                        value={data.district_id}
+                                        onChange={(e) =>
+                                            setData(
+                                                "district_id",
+                                                e.target.value
+                                            )
+                                        }
+                                        className={`flex-1 px-4 py-1.5 border ${
+                                            errors.district_id
+                                                ? "border-red-500"
+                                                : "border-gray-300"
+                                        } rounded-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
+                                        required
+                                    >
+                                        <option value="">
+                                            Select District
+                                        </option>
+                                        {districts.map((district) => (
+                                            <option
+                                                key={district.id}
+                                                value={district.id}
+                                            >
+                                                {district.name} (
+                                                {district.bn_name})
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                {errors.district_id && (
+                                    <p className="text-red-500 text-sm mt-1">
+                                        {errors.district_id}
+                                    </p>
+                                )}
                             </div>
 
                             <div className="mb-8">
-                                <label className="block text-gray-700 font-semibold mb-2 text-sm">Your Message</label>
+                                <label className="block text-gray-700 font-semibold mb-2 text-sm">
+                                    Your Message
+                                </label>
                                 <textarea
                                     rows={5}
                                     value={data.Message}
-                                    onChange={(e) => setData('Message', e.target.value)}
-                                    className={`w-full px-5 py-3 border ${errors.Message ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition resize-none`}
+                                    onChange={(e) =>
+                                        setData("Message", e.target.value)
+                                    }
+                                    className={`w-full px-5 py-3 border ${
+                                        errors.Message
+                                            ? "border-red-500"
+                                            : "border-gray-300"
+                                    } rounded-lg text-gray-900 bg-white outline-none focus:ring-2 focus:ring-blue-500 transition resize-none`}
                                     placeholder="How can we help?"
                                 />
-                                {errors.Message && <p className="text-red-500 text-xs mt-1">{errors.Message}</p>}
+                                {errors.Message && (
+                                    <p className="text-red-500 text-xs mt-1">
+                                        {errors.Message}
+                                    </p>
+                                )}
                             </div>
 
                             <button
@@ -163,7 +316,7 @@ const ContactSection = ({ primaryOffice }) => {
                                 className="w-full md:w-auto px-12 py-4 bg-[#283e77] text-white font-bold rounded-lg hover:bg-[#1e2f5a] transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <Send size={20} />
-                                {processing ? 'Sending...' : 'Send Message'}
+                                {processing ? "Sending..." : "Send Message"}
                             </button>
                         </form>
                     </div>

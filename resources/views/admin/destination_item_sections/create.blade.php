@@ -32,19 +32,22 @@
                                 @csrf
 
                                 <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Select Destination <span class="text-danger">*</span></label>
+                                        <select id="destination_select" class="form-control select2" required>
+                                            <option value="">-- Choose Destination --</option>
+                                            @foreach ($destinations as $dest)
+                                                <option value="{{ $dest->id }}">{{ $dest->title }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="form-group col-md-6">
                                         <label>Destination Item <span class="text-danger">*</span></label>
-                                        <select name="destination_item_id"
+                                        <select name="destination_item_id" id="item_select"
                                             class="form-control @error('destination_item_id') is-invalid @enderror"
                                             required>
-                                            <option value="">-- Select Item --</option>
-                                            @foreach ($destinationItems as $item)
-                                                <option value="{{ $item->id }}"
-                                                    {{ old('destination_item_id') == $item->id ? 'selected' : '' }}>
-                                                    {{ $item->title }}
-                                                </option>
-                                            @endforeach
+                                            <option value="">-- Select Destination First --</option>
                                         </select>
                                         @error('destination_item_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -63,22 +66,16 @@
                                         <label>Images</label>
                                         <input type="file" name="images[]"
                                             class="form-control-file @error('images') is-invalid @enderror" multiple>
-
                                         @error('images.*')
                                             <div class="invalid-feedback d-block">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                 </div>
 
                                 <div class="mt-4">
-                                    <button type="submit" class="btn btn-primary btn-lg">
-                                        Save Section
-                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Save Section</button>
                                     <a href="{{ route('admin.destination_item_sections.index') }}"
-                                        class="btn btn-secondary btn-lg ml-2">
-                                        Cancel
-                                    </a>
+                                        class="btn btn-secondary btn-lg ml-2">Cancel</a>
                                 </div>
                             </form>
                         </div>
@@ -88,3 +85,46 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#destination_select').on('change', function() {
+                var destinationId = $(this).val();
+                var itemSelect = $('#item_select');
+
+                itemSelect.html('<option value="">-- Loading Items... --</option>');
+
+                if (destinationId) {
+                    $.ajax({
+                        // Using replacement to avoid the "Missing Parameter" error
+                        url: "{{ route('admin.get_items_by_destination', ['destination_id' => ':id']) }}"
+                            .replace(':id', destinationId),
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            itemSelect.empty();
+                            itemSelect.append('<option value="">-- Select Item --</option>');
+
+                            if (data.length > 0) {
+                                $.each(data, function(key, value) {
+                                    itemSelect.append('<option value="' + value.id +
+                                        '">' + value.title + '</option>');
+                                });
+                            } else {
+                                itemSelect.append('<option value="">No items found</option>');
+                            }
+                        },
+                        error: function(xhr) {
+                            console.error("Error Detail:", xhr.responseText);
+                            itemSelect.html(
+                                '<option value="">-- Error fetching data --</option>');
+                        }
+                    });
+                } else {
+                    itemSelect.html('<option value="">-- Select Destination First --</option>');
+                }
+            });
+        });
+    </script>
+@endpush

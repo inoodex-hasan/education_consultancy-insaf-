@@ -51,7 +51,7 @@ const StudyDestinations = ({ destinations }) => {
                             INSAF Immigration is a partner of renowned
                             institutions across{" "}
                             <span className="font-semibold text-gold">
-                                {destinations.length} countries
+                                25 countries
                             </span>
                             .
                             <br className="hidden sm:block" />

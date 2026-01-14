@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="card-body">
-                                 @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -48,35 +48,44 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($items as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
+                                        @forelse ($groupedItems as $destinationTitle => $items)
+                                            @php
+                                                // Generate a unique ID for each collapse group (removing spaces)
+                                                $slugId = Str::slug($destinationTitle);
+                                            @endphp
 
-                                                <td>
-                                                    <strong>{{ $item->destination->title }}</strong>
-                                                </td>
-
-                                                <td>{{ $item->title }}</td>
-                                                <td>{{ $item->created_at->format('M d, Y') }}</td>
-
-                                                <td>
-                                                    <a href="{{ route('admin.destination_items.edit', $item) }}"
-                                                        class="btn btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-
-                                                    <form action="{{ route('admin.destination_items.destroy', $item) }}"
-                                                        method="POST" class="d-inline"
-                                                        onsubmit="return confirm('Are you sure you want to delete this item?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
+                                            <tr class="table-info" style="cursor: pointer;" data-toggle="collapse"
+                                                data-target=".group-{{ $slugId }}" aria-expanded="true">
+                                                <td colspan="5" style="font-weight: bold;">
+                                                    <i class="fas fa-chevron-down mr-2"></i> {{ $destinationTitle }}
+                                                    <span class="badge badge-primary ml-2">{{ $items->count() }}
+                                                        Items</span>
+                                                    <small class="text-muted float-right">(Click to toggle)</small>
                                                 </td>
                                             </tr>
 
+                                            @foreach ($items as $item)
+                                                <tr class="collapse show group-{{ $slugId }}">
+                                                    <td>{{ $loop->parent->iteration }}.{{ $loop->iteration }}</td>
+                                                    <td><span class="text-muted">Item of {{ $destinationTitle }}</span></td>
+                                                    <td>{{ $item->title }}</td>
+                                                    <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.destination_items.edit', $item) }}"
+                                                            class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        <form
+                                                            action="{{ route('admin.destination_items.destroy', $item) }}"
+                                                            method="POST" class="d-inline">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-sm btn-danger"><i
+                                                                    class="fas fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @empty
                                             <tr>
                                                 <td colspan="5" class="text-center">No destination items found.</td>

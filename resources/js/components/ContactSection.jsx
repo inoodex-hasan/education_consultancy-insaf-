@@ -188,7 +188,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
 
                             <div className="mb-8">
                                 <label className="block text-gray-700 font-semibold mb-2 text-sm">
-                                    Phone Number
+                                    Phone Number (Whatsapp)
                                 </label>
                                 <input
                                     type="tel"

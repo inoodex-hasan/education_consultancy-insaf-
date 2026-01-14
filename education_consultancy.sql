@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 14, 2026 at 01:24 PM
+-- Generation Time: Jan 14, 2026 at 02:17 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -360,26 +360,27 @@ CREATE TABLE `destinations` (
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `cover_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `destinations`
 --
 
-INSERT INTO `destinations` (`id`, `title`, `image`, `slug`, `country`, `description`, `is_active`, `created_at`, `updated_at`) VALUES
-(3, 'Australia', 'uploads/destinations/1767158409-SdfJaVlQ56.jpg', 'australia', 'Australia', '<p>test</p>', 1, '2025-12-14 23:26:14', '2025-12-30 23:20:09'),
-(4, 'UK', 'uploads/destinations/1767158322-aiiY10xdaI.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-30 23:18:42'),
-(6, 'Canada', 'uploads/destinations/1767766575-qOA0jwIqrl.jpg', 'canada', 'Canada', NULL, 1, '2026-01-07 00:16:15', '2026-01-07 00:16:15'),
-(7, 'Europe', 'uploads/destinations/1767766729-k7Uq4tbcTs.jpg', 'europe', 'Europe', NULL, 1, '2026-01-07 00:18:49', '2026-01-07 00:18:49'),
-(8, 'USA', 'uploads/destinations/1767766994-rfabMWqm5G.jpg', 'usa', 'USA', NULL, 1, '2026-01-07 00:23:14', '2026-01-07 00:23:50'),
-(9, 'Japan', 'uploads/destinations/1767767096-mi4co9H2ta.jpg', 'japan', 'Japan', NULL, 1, '2026-01-07 00:24:56', '2026-01-07 00:24:56'),
-(10, 'Malta', 'uploads/destinations/1768368264-l27vw3AsKP.png', 'malta', 'Malta', NULL, 1, '2026-01-13 23:24:24', '2026-01-13 23:24:24'),
-(11, 'Malaysia', 'uploads/destinations/1768368333-E8BgOG4LYB.jpg', 'malaysia', 'Malaysia', NULL, 1, '2026-01-13 23:25:33', '2026-01-13 23:25:33'),
-(12, 'Russia', 'uploads/destinations/1768368365-dL00KkLylV.jpg', 'russia', 'Russia', NULL, 1, '2026-01-13 23:26:05', '2026-01-13 23:26:05'),
-(13, 'Cyprus', 'uploads/destinations/1768368457-gVdcrqMONO.jpg', 'cyprus', 'Cyprus', NULL, 1, '2026-01-13 23:27:37', '2026-01-13 23:27:37'),
-(14, 'Lithuania', 'uploads/destinations/1768368497-wLpKUwDaGo.jpg', 'lithuania', 'Lithuania', NULL, 1, '2026-01-13 23:28:17', '2026-01-13 23:28:17'),
-(15, 'South Korea', 'uploads/destinations/1768368592-ePVIXOPNEG.png', 'south-korea', 'South Korea', NULL, 1, '2026-01-13 23:29:52', '2026-01-13 23:29:52');
+INSERT INTO `destinations` (`id`, `title`, `image`, `slug`, `country`, `description`, `is_active`, `created_at`, `updated_at`, `cover_photo`) VALUES
+(3, 'Australia', 'uploads/destinations/1767158409-SdfJaVlQ56.jpg', 'australia', 'Australia', '<p>test</p>', 1, '2025-12-14 23:26:14', '2025-12-30 23:20:09', NULL),
+(4, 'UK', 'uploads/destinations/1767158322-aiiY10xdaI.jpg', 'uk', 'UK', '<p>Test</p>', 1, '2025-12-16 22:50:12', '2025-12-30 23:18:42', NULL),
+(6, 'Canada', 'uploads/destinations/1767766575-qOA0jwIqrl.jpg', 'canada', 'Canada', NULL, 1, '2026-01-07 00:16:15', '2026-01-07 00:16:15', NULL),
+(7, 'Europe', 'uploads/destinations/1767766729-k7Uq4tbcTs.jpg', 'europe', 'Europe', NULL, 1, '2026-01-07 00:18:49', '2026-01-07 00:18:49', NULL),
+(8, 'USA', 'uploads/destinations/1767766994-rfabMWqm5G.jpg', 'usa', 'USA', NULL, 1, '2026-01-07 00:23:14', '2026-01-07 00:23:50', NULL),
+(9, 'Japan', 'uploads/destinations/1767767096-mi4co9H2ta.jpg', 'japan', 'Japan', NULL, 1, '2026-01-07 00:24:56', '2026-01-07 00:24:56', NULL),
+(10, 'Malta', 'uploads/destinations/1768368264-l27vw3AsKP.png', 'malta', 'Malta', NULL, 1, '2026-01-13 23:24:24', '2026-01-13 23:24:24', NULL),
+(11, 'Malaysia', 'uploads/destinations/1768368333-E8BgOG4LYB.jpg', 'malaysia', 'Malaysia', NULL, 1, '2026-01-13 23:25:33', '2026-01-13 23:25:33', NULL),
+(12, 'Russia', 'uploads/destinations/1768368365-dL00KkLylV.jpg', 'russia', 'Russia', NULL, 1, '2026-01-13 23:26:05', '2026-01-13 23:26:05', NULL),
+(13, 'Cyprus', 'uploads/destinations/1768368457-gVdcrqMONO.jpg', 'cyprus', 'Cyprus', NULL, 1, '2026-01-13 23:27:37', '2026-01-13 23:27:37', NULL),
+(14, 'Lithuania', 'uploads/destinations/1768368497-wLpKUwDaGo.jpg', 'lithuania', 'Lithuania', NULL, 1, '2026-01-13 23:28:17', '2026-01-13 23:28:17', NULL),
+(15, 'South Korea', 'uploads/destinations/1768368592-ePVIXOPNEG.png', 'south-korea', 'South Korea', NULL, 1, '2026-01-13 23:29:52', '2026-01-13 23:29:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -417,7 +418,8 @@ INSERT INTO `destination_items` (`id`, `destination_id`, `title`, `created_at`, 
 (24, 4, 'Work Opportunities in the UK', '2026-01-14 06:49:25', '2026-01-14 06:49:25'),
 (25, 4, 'Why Choose Insaf Immigration for UK Study Visa?', '2026-01-14 06:50:37', '2026-01-14 06:50:37'),
 (26, 4, 'Start Your UK Study Journey with Insaf Immigration', '2026-01-14 06:51:19', '2026-01-14 06:51:19'),
-(27, 6, 'About', '2026-01-14 07:14:46', '2026-01-14 07:14:46');
+(27, 6, 'About', '2026-01-14 07:14:46', '2026-01-14 07:14:46'),
+(28, 3, 'About', '2026-01-14 07:44:30', '2026-01-14 07:44:30');
 
 -- --------------------------------------------------------
 
@@ -456,7 +458,8 @@ INSERT INTO `destination_item_sections` (`id`, `destination_item_id`, `images`, 
 (22, 24, '[]', '<p>International students in the UK can work</p><p>• 20 hours per week during term time<br>• Full-time during holidays<br>After graduation, students can apply for the UK Graduate Route, allowing them to work in the<br>UK for up to 2 years (3 years for PhD).</p>', '2026-01-14 06:50:08', '2026-01-14 06:50:08'),
 (23, 25, '[]', '<p>Insaf Immigration is a trusted student visa agency in Bangladesh, specializing in UK education.<br>We provide:<br>• Honest and expert counseling<br>• University &amp; course selection assistance<br>• Strong SOP and visa file preparation<br>• High UK student visa success rate<br>• Transparent pricing with no hidden costs<br>• Pre-departure briefing, air ticket, and airport pickup support<br>We guide students with integrity and results — not false promises.</p>', '2026-01-14 06:51:00', '2026-01-14 06:51:00'),
 (24, 26, '[]', '<p>If you are planning to study in the UK from Bangladesh, now is the right time to apply. With expert guidance and proper planning, your UK education dream is fully achievable.<br>Contact Insaf Immigration today for a free consultation and secure your future in the UK.</p>', '2026-01-14 06:51:56', '2026-01-14 06:51:56'),
-(25, 27, '[]', '<p>Canada is one of the most preferred study destinations for Bangladeshi students due to its world-class education system, affordable tuition options, excellent work opportunities, and<br>strong pathways to permanent residency. With globally recognized degrees and a high quality of life, studying in Canada is a smart long-term investment for your future.<br></p><p><br>At Insaf Immigration, we provide complete and professional support for Canada student visas from Bangladesh, ensuring accuracy, transparency, and high success rates.</p>', '2026-01-14 07:15:28', '2026-01-14 07:15:28');
+(25, 27, '[]', '<p>Canada is one of the most preferred study destinations for Bangladeshi students due to its world-class education system, affordable tuition options, excellent work opportunities, and<br>strong pathways to permanent residency. With globally recognized degrees and a high quality of life, studying in Canada is a smart long-term investment for your future.<br></p><p><br>At Insaf Immigration, we provide complete and professional support for Canada student visas from Bangladesh, ensuring accuracy, transparency, and high success rates.</p>', '2026-01-14 07:15:28', '2026-01-14 07:15:28'),
+(26, 28, '[\"uploads/destination_item_sections/1d307076-546e-4359-9d04-bf5dbba9cb2a.jpg\"]', '<p><strong data-start=\"177\" data-end=\"281\">Australia is one of the most respected and sought-after study destinations for Bangladeshi students.</strong> With world-class universities, globally recognized qualifications, flexible work opportunities during study, extensive post-study work rights, and strong pathways to future careers, studying in Australia offers remarkable academic and professional growth. <span class=\"\" data-state=\"closed\"><br></span></p><p><span class=\"\" data-state=\"closed\"><br></span>At <em data-start=\"580\" data-end=\"599\">Insaf Immigration</em>, we provide <strong data-start=\"612\" data-end=\"677\">complete support for Australian student visas from Bangladesh</strong>, helping you through each step with clarity, reliability, and a high success rate — from university applications and documentation to visa submission and pre-departure guidance.</p>', '2026-01-14 07:48:38', '2026-01-14 07:48:38');
 
 -- --------------------------------------------------------
 
@@ -903,7 +906,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (59, '2026_01_14_073705_create_districts_table', 47),
 (60, '2026_01_14_074204_create_divisions_table', 48),
 (61, '2026_01_14_075210_create_districts_table', 49),
-(62, '2026_01_14_075531_add_fields_to_contact_forms_table', 50);
+(62, '2026_01_14_075531_add_fields_to_contact_forms_table', 50),
+(63, '2026_01_14_140114_add_cover_photo_to_destinations_table', 51);
 
 -- --------------------------------------------------------
 
@@ -1183,7 +1187,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GO6JX9H0uTQqdKDM1eTo18Zu4JuXesxLqp3LC2ZQ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVU1ZZ1gwNjJmRGg3WngyYjBMZkNlM1N1UFhyc2NraDkwWG9LdU1VMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kZXN0aW5hdGlvbl9pdGVtX3NlY3Rpb25zIjtzOjU6InJvdXRlIjtzOjM3OiJhZG1pbi5kZXN0aW5hdGlvbl9pdGVtX3NlY3Rpb25zLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1768397001);
+('GO6JX9H0uTQqdKDM1eTo18Zu4JuXesxLqp3LC2ZQ', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiVU1ZZ1gwNjJmRGg3WngyYjBMZkNlM1N1UFhyc2NraDkwWG9LdU1VMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kZXN0aW5hdGlvbi9hdXN0cmFsaWEiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768400224);
 
 -- --------------------------------------------------------
 
@@ -1868,19 +1872,19 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `destination_items`
 --
 ALTER TABLE `destination_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `destination_item_sections`
 --
 ALTER TABLE `destination_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -1964,7 +1968,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `offices`

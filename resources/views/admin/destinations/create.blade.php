@@ -63,11 +63,22 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label> Image <span class="text-danger">*</span></label>
+                                        <label> Image (for Home Page) <span class="text-danger">*</span></label>
                                         <input type="file" name="image"
                                             class="form-control @error('image') is-invalid @enderror" accept="image/*"
                                             required>
                                         @error('image')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label> Cover Photo (for Destination Header) <span
+                                                class="text-danger">*</span></label>
+                                        <input type="file" name="cover_photo"
+                                            class="form-control @error('cover_photo') is-invalid @enderror" accept="image/*"
+                                            required>
+                                        @error('cover_photo')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>

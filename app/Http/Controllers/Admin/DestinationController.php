@@ -23,39 +23,94 @@ class DestinationController extends Controller
         return view('admin.destinations.create');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title'        => 'required|string|max:255|unique:destinations,title',
-            'image'        => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
-            'slug'          => 'nullable|string|unique:destinations,slug|max:255',
-            'country'     => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'is_active'   => 'boolean',
-        ]);
+public function store(Request $request)
+{
+    // 1. Validation
+    $request->validate([
+        'title'       => 'required|string|max:255|unique:destinations,title',
+        'image'       => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+        'cover_photo' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+        'country'     => 'required|string|max:255',
+        'description' => 'nullable|string',
+        'is_active'   => 'nullable',
+    ]);
 
-        $data = $request->all();
+    $data = $request->except(['image', 'cover_photo']);
 
-        $data['slug'] = Str::slug($request->title);
-        $originalSlug = $data['slug'];
-        $i = 1;
-        while (Destination::where('slug', $data['slug'])->exists()) {
-            $data['slug'] = $originalSlug . '-' . $i++;
-        }
-
-         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/destinations'), $filename);
-            $data['image'] = 'uploads/destinations/' . $filename;
-        }
-
-        $data['is_active'] = $request->has('is_active');
-
-        Destination::create($data);
-
-        return redirect()->route('admin.destinations.index')->with('success', 'Destination created successfully!');
+    // 2. Slug Generation
+    $slug = Str::slug($request->title);
+    $originalSlug = $slug;
+    $i = 1;
+    while (Destination::where('slug', $slug)->exists()) {
+        $slug = $originalSlug . '-' . $i++;
     }
+    $data['slug'] = $slug;
+
+    // Path Configuration
+    $destinationPath = public_path('uploads/destinations');
+    if (!file_exists($destinationPath)) {
+        mkdir($destinationPath, 0777, true);
+    }
+
+    // 3. Handle Regular Image (Standard Name)
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $filename = time() . '-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $file->move($destinationPath, $filename);
+        $data['image'] = 'uploads/destinations/' . $filename;
+    }
+
+    // 4. Handle Cover Photo (With cover_ prefix)
+    if ($request->hasFile('cover_photo')) {
+        $file = $request->file('cover_photo');
+        $filename = 'cover_' . time() . '-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+        $file->move($destinationPath, $filename);
+        $data['cover_photo'] = 'uploads/destinations/' . $filename;
+    }
+
+    // 5. Handle Status
+    $data['is_active'] = $request->has('is_active');
+
+    // 6. Create Record
+    Destination::create($data);
+
+    return redirect()->route('admin.destinations.index')
+        ->with('success', 'Destination created with both images!');
+}
+
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'title'        => 'required|string|max:255|unique:destinations,title',
+    //         'image'        => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+    //         'slug'          => 'nullable|string|unique:destinations,slug|max:255',
+    //         'country'     => 'required|string|max:255',
+    //         'description' => 'nullable|string',
+    //         'is_active'   => 'boolean',
+    //     ]);
+
+    //     $data = $request->all();
+
+    //     $data['slug'] = Str::slug($request->title);
+    //     $originalSlug = $data['slug'];
+    //     $i = 1;
+    //     while (Destination::where('slug', $data['slug'])->exists()) {
+    //         $data['slug'] = $originalSlug . '-' . $i++;
+    //     }
+
+    //      if ($request->hasFile('image')) {
+    //         $file = $request->file('image');
+    //         $filename = time() . '-' . Str::random(10) . '.' . $file->getClientOriginalExtension();
+    //         $file->move(public_path('uploads/destinations'), $filename);
+    //         $data['image'] = 'uploads/destinations/' . $filename;
+    //     }
+
+    //     $data['is_active'] = $request->has('is_active');
+
+    //     Destination::create($data);
+
+    //     return redirect()->route('admin.destinations.index')->with('success', 'Destination created successfully!');
+    // }
 
     public function edit(Destination $destination)
     {

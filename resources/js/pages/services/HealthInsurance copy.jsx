@@ -103,9 +103,9 @@ const HealthInsurance = ({ service }) => {
 
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 pt-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                        {/* LEFT CONTENT – scrolls normally */}
-                        <div className="lg:pr-6 order-2 lg:order-1">
+                    <div className="grid grid-cols-2 gap-4">
+                        {/* LEFT CONTENT */}
+                        <div>
                             {/* Service Title */}
                             <h4 className="text-blue text-3xl font-mont font-semibold">
                                 {service?.title}
@@ -113,26 +113,27 @@ const HealthInsurance = ({ service }) => {
 
                             {/* Loop items */}
                             {service?.items?.map((item) => (
-                                <div key={item.id} className="mt-8">
+                                <div key={item.id} className="mt-4">
                                     {/* Item title */}
-                                    <h5 className="text-black font-semibold font-mont mt-6 text-xl">
+                                    <h5 className="text-black font-semibold font-mont mt-4">
                                         {item.title}
                                     </h5>
 
                                     {/* Item sections */}
                                     {item.sections?.map((section) => (
-                                        <div key={section.id} className="mt-5">
-                                            {/* First image only (keeping your original logic) */}
+                                        <div key={section.id} className="mt-3">
+                                            {/* First image only (to keep design same) */}
                                             {section.images?.[0] && (
                                                 <img
                                                     src={`/${section.images[0]}`}
                                                     alt=""
-                                                    className="mt-4 rounded-lg w-full"
+                                                    className="mt-3 rounded-lg"
                                                 />
                                             )}
-                                            {/* Description */}
+
+                                            {/* Description (HTML safe) */}
                                             <div
-                                                className="text-black font-normal font-mont mt-4 space-y-3 text-[1.05rem] leading-relaxed"
+                                                className="text-sm text-black font-normal font-mont mt-3 space-y-2"
                                                 dangerouslySetInnerHTML={{
                                                     __html: section.description,
                                                 }}
@@ -143,23 +144,21 @@ const HealthInsurance = ({ service }) => {
                             ))}
                         </div>
 
-                        {/* RIGHT FORM – becomes sticky on lg+ screens */}
-                        <div className="lg:sticky lg:top-8 lg:h-fit order-1 lg:order-2">
-                            <div className="bg-white rounded-xl border-gray-200/70 p-6 lg:p-8">
-                                <Form />
-                            </div>
+                        {/* RIGHT FORM */}
+                        <div>
+                            <Form />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* <HealthInsuranceTypes /> */}
+            <HealthInsuranceTypes />
             <OSHCBenefitsAccordion />
-            {/* <WhyStudentHealthCover /> */}
+            <WhyStudentHealthCover />
 
-            {/* <HowToChooseHealthPlan /> */}
+            <HowToChooseHealthPlan />
             {/* <SuccessGallery /> */}
-            {/* <FAQAccordion /> */}
+            <FAQAccordion />
         </>
     );
 };

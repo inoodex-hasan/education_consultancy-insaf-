@@ -75,7 +75,7 @@ const Footer = () => {
         <footer>
             <div className="fixed bottom-6 right-6 z-50">
                 <a
-                    href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                    href="https://wa.me/8801880942457?"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#25D366] p-4 shadow-lg transition-all duration-300 ease-out hover:scale-110 hover:shadow-2xl"

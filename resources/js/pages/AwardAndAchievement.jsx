@@ -39,10 +39,15 @@ const AwardAndAchievement = ({ awards }) => {
                             </p>
                             {/* CTA Button */}
                             <div className="flex flex-col sm:flex-row gap-6 pt-6">
-                                <button className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#c3a25d] hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300">
+                                <a
+                                    href="https://wa.me/8801880942457?"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#c3a25d] hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                >
                                     Book a FREE Consultation Now
                                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                                </button>
+                                </a>
                             </div>
                         </div>
 

@@ -4,8 +4,8 @@ import { usePage } from "@inertiajs/react";
 
 const FAQAccordion = () => {
     const { faqs } = usePage().props;
-        // console.log(faqs);
-    const [openIndex, setOpenIndex] = useState(0); 
+    // console.log(faqs);
+    const [openIndex, setOpenIndex] = useState(0);
     // const faqs = [
     //     {
     //         question: "How much do you charge for the file processing?",
@@ -83,10 +83,15 @@ const FAQAccordion = () => {
                         Our experts are waiting to help you take the next steps
                         towards your dream.
                     </p>
-                    <button className="bg-red-600 font-mont hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto">
+                    <a
+                        href="https://wa.me/8801880942457?"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-red-600 font-mont hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto"
+                    >
                         Book a Free Consultation
                         <span className="text-2xl">→</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

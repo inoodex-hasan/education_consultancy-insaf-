@@ -10,6 +10,7 @@ export default function StudyInDestination({
     whyChoose,
     destination_items,
 }) {
+    console.log(destination);
     const [activeId, setActiveId] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -123,16 +124,31 @@ export default function StudyInDestination({
                         </div>
 
                         <div className="relative">
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                                <img
-                                    src={destinationImg}
-                                    alt="Study Destination"
-                                    className="w-full h-auto object-cover"
-                                />
-                                <div className="absolute top-0 left-0 w-32 h-32 border-l-8 border-t-8 border-[#c3a25d] rounded-tl-3xl" />
-                                <div className="absolute top-0 right-0 w-32 h-32 border-r-8 border-t-8 border-[#c3a25d] rounded-tr-3xl" />
-                                <div className="absolute bottom-0 left-0 w-32 h-32 border-l-8 border-b-8 border-[#c3a25d] rounded-bl-3xl" />
-                                <div className="absolute bottom-0 right-0 w-32 h-32 border-r-8 border-b-8 border-[#c3a25d] rounded-br-3xl" />
+                            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-800 min-h-[300px] flex items-center justify-center">
+                                {destination.cover_photo ? (
+                                    <img
+                                        /* Adding the leading slash ensures it loads from the public directory */
+                                        src={`/${destination.cover_photo}`}
+                                        alt={`${destination.title} Cover`}
+                                        className="w-full h-full object-cover"
+                                        // Adding an error handler helps debug if the file is actually missing
+                                        onError={(e) => {
+                                            e.target.src = destinationImg;
+                                        }}
+                                    />
+                                ) : (
+                                    <img
+                                        src={destinationImg}
+                                        alt="Default"
+                                        className="w-full h-auto object-cover"
+                                    />
+                                )}
+
+                                {/* Decorative Corners */}
+                                <div className="absolute top-0 left-0 w-32 h-32 border-l-8 border-t-8 border-[#c3a25d] rounded-tl-3xl pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-32 h-32 border-r-8 border-t-8 border-[#c3a25d] rounded-tr-3xl pointer-events-none" />
+                                <div className="absolute bottom-0 left-0 w-32 h-32 border-l-8 border-b-8 border-[#c3a25d] rounded-bl-3xl pointer-events-none" />
+                                <div className="absolute bottom-0 right-0 w-32 h-32 border-r-8 border-b-8 border-[#c3a25d] rounded-br-3xl pointer-events-none" />
                             </div>
                         </div>
                     </div>
@@ -226,7 +242,7 @@ export default function StudyInDestination({
                                         className="mt-4 p-4 border rounded-lg bg-white"
                                     >
                                         <p
-                                            className="text-black/80 font-mont text-sm"
+                                            className="text-black/80 font-mont text-m"
                                             dangerouslySetInnerHTML={{
                                                 __html: section.description,
                                             }}

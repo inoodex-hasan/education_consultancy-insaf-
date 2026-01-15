@@ -207,9 +207,9 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                             </div>
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                {/* Office & Destination */}
+                                {/* Office Selection */}
                                 <div className="mt-2">
-                                    <label className="block text-sm font-medium text-gray-700  mb-2 font-mont">
+                                    <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
                                         Your Nearest INSAF Office{" "}
                                         <span className="text-red-500">*</span>
                                     </label>
@@ -236,20 +236,18 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                         ))}
                                     </select>
                                     {errors.office_id && (
-                                        <p className="text-red-500 text-sm mt-1">
+                                        <p className="text-red-500 text-sm mt-1 font-mont">
                                             {errors.office_id}
                                         </p>
                                     )}
                                 </div>
-                            </div>
 
-                            <div className="mt-4">
-                                {/* --- District Selection --- */}
-                                <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                                    District{" "}
-                                    <span className="text-red-500">*</span>
-                                </label>
-                                <div className="flex">
+                                {/* District Selection - Now matching the Office design */}
+                                <div className="mt-2">
+                                    <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
+                                        District{" "}
+                                        <span className="text-red-500">*</span>
+                                    </label>
                                     <select
                                         value={data.district_id}
                                         onChange={(e) =>
@@ -258,11 +256,11 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                                 e.target.value
                                             )
                                         }
-                                        className={`flex-1 px-4 py-1.5 border ${
+                                        className={`w-full px-4 py-1.5 border ${
                                             errors.district_id
                                                 ? "border-red-500"
                                                 : "border-gray-300"
-                                        } rounded-lg font-mont text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition`}
+                                        } rounded-lg text-black font-mont focus:ring-2 focus:ring-blue-500 transition`}
                                         required
                                     >
                                         <option value="">
@@ -278,12 +276,12 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                             </option>
                                         ))}
                                     </select>
+                                    {errors.district_id && (
+                                        <p className="text-red-500 text-sm mt-1 font-mont">
+                                            {errors.district_id}
+                                        </p>
+                                    )}
                                 </div>
-                                {errors.district_id && (
-                                    <p className="text-red-500 text-sm mt-1">
-                                        {errors.district_id}
-                                    </p>
-                                )}
                             </div>
 
                             <div className="mb-8">

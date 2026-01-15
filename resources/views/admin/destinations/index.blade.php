@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="card-body">
-                                @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -52,7 +52,7 @@
                                             <th>Name</th>
                                             <th>Country</th>
                                             <th>Image</th>
-                                            <th>Description</th>
+                                            <th>Cover Photo</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -65,16 +65,21 @@
                                                 <td>{{ $destination->country ?? 'N/A' }}</td>
                                                 <td>
                                                     @if ($destination->image)
-                                                        <img src="{{ asset($destination->image) }}" alt="{{ $destination->title }} Image"
+                                                        <img src="{{ asset($destination->image) }}"
+                                                            alt="{{ $destination->title }} Image"
                                                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
                                                     @else
                                                         N/A
                                                     @endif
                                                 </td>
-                                                <td style="max-width:50px;">
-                                                    <div class="limit-html">
-                                                        {!! $destination->description !!}
-                                                    </div>
+                                                <td>
+                                                    @if ($destination->cover_photo)
+                                                        <img src="{{ asset($destination->cover_photo) }}"
+                                                            alt="{{ $destination->title }} Image"
+                                                            style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+                                                    @else
+                                                        N/A
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     @if ($destination->is_active)

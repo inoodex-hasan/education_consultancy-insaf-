@@ -1,35 +1,44 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import accimg from "../../assets/services/health_insurance.jpg";
+import accimg from "../../assets/services/student_accommodation.jpg";
 
 const OSHCBenefitsAccordion = () => {
     const [openIndex, setOpenIndex] = useState(0);
 
     const faqs = [
         {
-            question: "Is health insurance mandatory for all countries?",
-            answer: "Yes, most countries including Australia, Canada, Malaysia, Malta, and European nations require proof of health insurance for student visa approval.",
+            question:
+                "Do you provide accommodation before the semester starts?",
+            answer: "Yes, we provide pre-arrival support and ensure your accommodation is ready before your arrival",
             imageId: 0,
             imageCaption:
                 "Professional health consultation for international students",
         },
         {
-            question: " Can I get insurance for short-term courses?",
-            answer: "Yes, we provide flexible plans for both short-term and long-term courses abroad.",
+            question: "Can I choose between private rooms and shared housing",
+            answer: "Absolutely! We provide options for both private rooms and shared apartments based on your preference and budget.",
             imageId: 10,
             imageCaption: "Understanding your health cover options",
         },
         {
-            question:
-                "How do I start my health insurance process with Insaf Immigration?",
-            answer: "Contact our office or fill out our online form. Our experts will assess your needs and guide you step by step.",
-            imageId: 4, // Happy med students/group
+            question: "Are meals included in the accommodation options?",
+            answer: "Some options, like homestays and select university hostels, include meals. Other apartments may require selt-catering.",
+            imageId: 4,
             imageCaption: "Expert guidance every step of the way",
         },
         {
-            question: "Do you assist with insurance claims abroad?",
-            answer: "Yes, our 24/7 customer support ensures you get guidance and help with claims wherever you are.",
-            imageId: 7, // Relevant to Bangladeshi students health insurance
+            question: "Is accommodation support available in all countries?",
+            answer: "Yes, we assist students in all major study destinations including Australia, Malaysia, Malta, Russia, Europe, South Korea, and New Zealand.",
+            imageId: 7,
+            imageCaption:
+                "Tailored health insurance solutions for Bangladeshi students",
+        },
+
+        {
+            question:
+                "What if I face issues in my accommodation after arrival?",
+            answer: "Our 24/7 support ensures that any accommodation-related issues are addressed promptly, even after you move in.",
+            imageId: 8,
             imageCaption:
                 "Tailored health insurance solutions for Bangladeshi students",
         },
@@ -43,8 +52,7 @@ const OSHCBenefitsAccordion = () => {
                 </h2>
 
                 <p className="text-center text-md text-gray-700 font-mont  max-w-3xl mx-auto mb-12 leading-relaxed">
-                    Here are some frequently asked questions about our Overseas
-                    Student Health Cover (OSHC) plans.
+                    Here are some frequently asked questions about accommodation
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

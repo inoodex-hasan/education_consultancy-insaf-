@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BYaGU5jz.css",
+    "file": "assets/app-DCMPxI0f.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,39 +9,25 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DcVgp1Ah.js",
+    "file": "assets/app-D2qKr0DV.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-BYaGU5jz.css"
+      "assets/app-DCMPxI0f.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
       "assets/destination-Dd2pusNt.webp",
-      "assets/steps-DEjOuUJP.png",
-      "assets/study-CdxRYwQC.webp",
-      "assets/detials1-DwssdaJc.webp",
+      "assets/steps-O7R3fM6H.png",
+      "assets/study-BXyPNztG.png",
       "assets/sliderSvg-D7FIsUv9.svg",
       "assets/team1-ClHwgjiG.jpg",
       "assets/destination-BD2i-3W3.png",
-      "assets/map-ByUo239v.png",
-      "assets/living-cost-BWbmgmzj.png",
-      "assets/1-DKGC1VRq.png",
-      "assets/2-DrrEN3lJ.png",
-      "assets/3-C43FDX39.png",
-      "assets/4-6G0Fy-Af.png",
-      "assets/5-C_FqiJdk.png",
-      "assets/6-C8C04rQI.png",
-      "assets/7-DxqrWN6e.png",
-      "assets/8-CuyW0DxK.png",
-      "assets/9-s4Xh2-zj.png",
-      "assets/10-CDisC0qW.png",
-      "assets/accomodation-CV2m2_pl.webp",
-      "assets/service1-w87tQBeH.png",
-      "assets/service2-yt_b_NeU.jpg",
-      "assets/service3-Bx4OYxYC.jpg",
+      "assets/map-DmJlcsId.jpg",
+      "assets/accommodation-hLn_EoGV.jpg",
+      "assets/student_accommodation-BMya2YLx.jpg",
       "assets/1-L6OXDcdL.png",
       "assets/2-BC2xcs7O.png",
       "assets/3-CGRNJwTs.png",
@@ -50,6 +36,7 @@
       "assets/6-CE_HX638.png",
       "assets/7-CZEeQBjG.png",
       "assets/8-DJZmKoVS.png",
+      "assets/health_insurance-DeiQsVYa.jpg",
       "assets/1-fjeOhUIY.png",
       "assets/2-Q6IzvHYc.png",
       "assets/3-k-QzbsKG.png",
@@ -72,9 +59,17 @@
     "file": "assets/cover-BeBC8b2A.jpg",
     "src": "resources/js/assets/about/cover.jpg"
   },
-  "resources/js/assets/about/map.png": {
-    "file": "assets/map-ByUo239v.png",
-    "src": "resources/js/assets/about/map.png"
+  "resources/js/assets/about/map.jpg": {
+    "file": "assets/map-DmJlcsId.jpg",
+    "src": "resources/js/assets/about/map.jpg"
+  },
+  "resources/js/assets/accommodation.jpg": {
+    "file": "assets/accommodation-hLn_EoGV.jpg",
+    "src": "resources/js/assets/accommodation.jpg"
+  },
+  "resources/js/assets/admission_support.jpg": {
+    "file": "assets/admission_support-DOOaJ8gA.jpg",
+    "src": "resources/js/assets/admission_support.jpg"
   },
   "resources/js/assets/blog/blog1.png": {
     "file": "assets/blog1-le7p_3uO.png",
@@ -120,10 +115,6 @@
     "file": "assets/ireland-DhnexLZM.png",
     "src": "resources/js/assets/destinations/ireland.png"
   },
-  "resources/js/assets/destinations/living-cost.png": {
-    "file": "assets/living-cost-BWbmgmzj.png",
-    "src": "resources/js/assets/destinations/living-cost.png"
-  },
   "resources/js/assets/destinations/uk.png": {
     "file": "assets/uk-BDRXHOjj.png",
     "src": "resources/js/assets/destinations/uk.png"
@@ -160,46 +151,6 @@
     "file": "assets/logo-Ds-gZrzH.png",
     "src": "resources/js/assets/logo/logo.png"
   },
-  "resources/js/assets/partner/1.png": {
-    "file": "assets/1-DKGC1VRq.png",
-    "src": "resources/js/assets/partner/1.png"
-  },
-  "resources/js/assets/partner/10.png": {
-    "file": "assets/10-CDisC0qW.png",
-    "src": "resources/js/assets/partner/10.png"
-  },
-  "resources/js/assets/partner/2.png": {
-    "file": "assets/2-DrrEN3lJ.png",
-    "src": "resources/js/assets/partner/2.png"
-  },
-  "resources/js/assets/partner/3.png": {
-    "file": "assets/3-C43FDX39.png",
-    "src": "resources/js/assets/partner/3.png"
-  },
-  "resources/js/assets/partner/4.png": {
-    "file": "assets/4-6G0Fy-Af.png",
-    "src": "resources/js/assets/partner/4.png"
-  },
-  "resources/js/assets/partner/5.png": {
-    "file": "assets/5-C_FqiJdk.png",
-    "src": "resources/js/assets/partner/5.png"
-  },
-  "resources/js/assets/partner/6.png": {
-    "file": "assets/6-C8C04rQI.png",
-    "src": "resources/js/assets/partner/6.png"
-  },
-  "resources/js/assets/partner/7.png": {
-    "file": "assets/7-DxqrWN6e.png",
-    "src": "resources/js/assets/partner/7.png"
-  },
-  "resources/js/assets/partner/8.png": {
-    "file": "assets/8-CuyW0DxK.png",
-    "src": "resources/js/assets/partner/8.png"
-  },
-  "resources/js/assets/partner/9.png": {
-    "file": "assets/9-s4Xh2-zj.png",
-    "src": "resources/js/assets/partner/9.png"
-  },
   "resources/js/assets/services/accomodation.webp": {
     "file": "assets/accomodation-CV2m2_pl.webp",
     "src": "resources/js/assets/services/accomodation.webp"
@@ -207,6 +158,10 @@
   "resources/js/assets/services/accordion.webp": {
     "file": "assets/accordion-Cv4bzX14.webp",
     "src": "resources/js/assets/services/accordion.webp"
+  },
+  "resources/js/assets/services/health_insurance.jpg": {
+    "file": "assets/health_insurance-DeiQsVYa.jpg",
+    "src": "resources/js/assets/services/health_insurance.jpg"
   },
   "resources/js/assets/services/partner/1.png": {
     "file": "assets/1-fjeOhUIY.png",
@@ -280,12 +235,16 @@
     "file": "assets/8-DJZmKoVS.png",
     "src": "resources/js/assets/services/slider/8.png"
   },
+  "resources/js/assets/services/student_accommodation.jpg": {
+    "file": "assets/student_accommodation-BMya2YLx.jpg",
+    "src": "resources/js/assets/services/student_accommodation.jpg"
+  },
   "resources/js/assets/slider/sliderSvg.svg": {
     "file": "assets/sliderSvg-D7FIsUv9.svg",
     "src": "resources/js/assets/slider/sliderSvg.svg"
   },
   "resources/js/assets/steps.png": {
-    "file": "assets/steps-DEjOuUJP.png",
+    "file": "assets/steps-O7R3fM6H.png",
     "src": "resources/js/assets/steps.png"
   },
   "resources/js/assets/stories/1.webp": {
@@ -304,9 +263,9 @@
     "file": "assets/4-DH3Wid8V.webp",
     "src": "resources/js/assets/stories/4.webp"
   },
-  "resources/js/assets/study.webp": {
-    "file": "assets/study-CdxRYwQC.webp",
-    "src": "resources/js/assets/study.webp"
+  "resources/js/assets/study.png": {
+    "file": "assets/study-BXyPNztG.png",
+    "src": "resources/js/assets/study.png"
   },
   "resources/js/assets/team/team1.jpg": {
     "file": "assets/team1-ClHwgjiG.jpg",

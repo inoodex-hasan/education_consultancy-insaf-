@@ -12,7 +12,7 @@ const OfficeAddress = ({ address }) => {
 };
 
 const OfficeLocations = ({ offices }) => {
-    console.log(offices);
+    // console.log(offices);
     // Filter only Bangladesh offices
 
     // Optional: If no offices in Bangladesh, show a message

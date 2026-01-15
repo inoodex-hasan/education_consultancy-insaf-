@@ -1,8 +1,8 @@
 import React from "react";
-import destinationImg from "../../assets/destination.png";
+import destinationImg from "../../assets/accommodation.jpg";
 import { ArrowRight, GraduationCap } from "lucide-react";
 import accimg from "../../assets/services/accomodation.webp";
-
+import OSHCBenefitsAccordionTwo from "../../components/srvices/OSHCBenefitsAccordionTwo";
 import FAQAccordion from "../../components/FAQAccordion";
 import AccommodationProvidersSection from "../../components/srvices/AccommodationProvidersSection";
 import FactorsSection from "../../components/srvices/FactorsSection";
@@ -77,15 +77,16 @@ const Accomodation = ({ service }) => {
 
                             {/* Subtext */}
                             <p className="text-xl text-gray-200 max-w-lg">
-                                Unlock global opportunities with seamless
-                                guidance from application to acceptance.
+                                Safe, Comfortable & Affordable Housing for
+                                Students Abroad
                             </p>
 
                             {/* CTA Button */}
                             <div className="flex flex-col sm:flex-row gap-6 pt-6">
                                 <a
-                                    href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
+                                    href="https://wa.me/8801880942457?"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-gold hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                                 >
                                     Book a FREE Consultation Now
@@ -144,9 +145,9 @@ const Accomodation = ({ service }) => {
                         {service?.items?.map((item) => (
                             <div key={item.id} className="mt-4">
                                 {/* Item title */}
-                                <h5 className="text-black font-semibold font-mont mt-4">
+                                {/* <h5 className="text-black font-semibold font-mont mt-4">
                                     {item.title}
-                                </h5>
+                                </h5> */}
 
                                 {/* Item sections */}
                                 {item.sections?.map((section) => (
@@ -162,7 +163,7 @@ const Accomodation = ({ service }) => {
 
                                         {/* Description (HTML safe) */}
                                         <div
-                                            className="text-sm text-black font-normal font-mont mt-3 space-y-2"
+                                            className="text-sm text-black text-xl font-normal font-mont mt-3 space-y-2"
                                             dangerouslySetInnerHTML={{
                                                 __html: section.description,
                                             }}
@@ -177,86 +178,9 @@ const Accomodation = ({ service }) => {
 
             {/* provider  */}
             {/* <AccommodationProvidersSection /> */}
-
+            <OSHCBenefitsAccordionTwo />
             {/* factors  */}
             {/* <FactorsSection /> */}
-
-            {/* about insaf immigration  */}
-            <section className="py-20 bg-linear-to-b from-gray-50 to-white">
-                <div className="container mx-auto px-4">
-                    {/* Title */}
-
-                    {/* Text and Images Grid */}
-                    <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                        {/* Left: Description */}
-                        <div className="order-2 lg:order-1">
-                            <h2 className="text-3xl md:text-4xl font-bold text-left text-gold mb-8">
-                                About INSAF Immigration
-                            </h2>
-                            <p className="text-lg text-gray-700 leading-relaxed text-center lg:text-left">
-                                Beginning in 2006, INSAF Immigration's expertise
-                                in student migration consultancy evolved from a
-                                single Melbourne office to a multinational
-                                presence, spanning Australia, Bangladesh, Sri
-                                Lanka, and India. We now proudly represent
-                                international educational institutions,
-                                consistently turning students' dreams into their
-                                reality.
-                            </p>
-                        </div>
-
-                        {/* Right: Image Carousel/Collage */}
-                        <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-                            <img
-                                src="https://media.istockphoto.com/id/1202957911/photo/group-of-international-students-having-fun-after-studying.jpg?s=612x612&w=0&k=20&c=Nz4A5MY22X1ABm4klo1Qp0a42vQ6J5vpOvX080ADdFg="
-                                alt="Group of happy international students studying together"
-                                className="rounded-2xl shadow-lg object-cover h-64 w-full"
-                            />
-                            <img
-                                src="https://media.gettyimages.com/id/1400784609/photo/happy-and-smiling-group-of-multiracial-college-student-friends-looking-at-camera-sitting-on.jpg?s=612x612&w=gi&k=20&c=rpEGaEtfY5HumfoIsw25Pfy_Dptu3OW_c_IzNhg_XCA="
-                                alt="Diverse group of smiling college students"
-                                className="rounded-2xl shadow-lg object-cover h-64 w-full mt-8"
-                            />
-                            <img
-                                src="https://newlandchase.com/wp-content/uploads/2025/05/students-1.webp"
-                                alt="Education consultant team assisting students"
-                                className="rounded-2xl shadow-lg object-cover h-64 w-full"
-                            />
-                            <img
-                                src="https://media.istockphoto.com/id/1365580581/vector/set-flags-south-asia-on-glossy-sphere-with-shadow-with-names.jpg?s=612x612&w=0&k=20&c=LZ63FUJm8jIhoFcnv6Xla8QJlJCt9jkQDeWG9r37ZsI="
-                                alt="Flags representing countries we operate in"
-                                className="rounded-2xl shadow-lg object-cover h-64 w-full mt-8"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Stats */}
-                    {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div
-                  className="text-5xl font-bold"
-                  style={{ color: stat.color }}
-                >
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 mt-2">{stat.label}</div>
-              </div>
-            ))}
-          </div> */}
-
-                    {/* CTA Button */}
-                    <div className="text-center">
-                        <a
-                            href="https://wa.me/8801531385988?text=I%20would%20like%20to%20book%20an%20event"
-                            target="_blank"
-                            className="inline-flex items-center px-10 py-4 bg-[#c3a25d] text-white font-semibold text-lg rounded-full hover:bg-[#283e77] transition-all shadow-xl"
-                        >
-                            Book a Free Consultation →
-                        </a>
-                    </div>
-                </div>
-            </section>
 
             {/* <FAQAccordion /> */}
         </>

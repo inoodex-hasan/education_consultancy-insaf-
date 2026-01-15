@@ -6,7 +6,13 @@ import Achievements from "../components/about/Achievements";
 import SuccessGallery from "../components/SuccessGallery";
 import CounselingSection from "../components/CounselingSection";
 
-const Testimonials = ({ testimonials, reviews, awards, whyChooseUs, successcount }) => {   
+const Testimonials = ({
+    testimonials,
+    reviews,
+    awards,
+    whyChooseUs,
+    successcount,
+}) => {
     // console.log(whyChooseUs[0].students);
     return (
         <>
@@ -29,7 +35,8 @@ const Testimonials = ({ testimonials, reviews, awards, whyChooseUs, successcount
                             </div>
 
                             <h2 className="text-5xl md:text-4xl font-bold leading-tight">
-                               {whyChooseUs[0]?.students}+  Happy Clients, Worldwide!
+                                {whyChooseUs[0]?.students}+ Happy Clients,
+                                Worldwide!
                             </h2>
 
                             <p className="text-lg text-center text-gray-200">

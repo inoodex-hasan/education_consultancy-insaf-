@@ -40,7 +40,7 @@ Route::get('/contact-us', [ContactController::class, 'contact_us']);
 
 Route::get('/study_destinations', [App\Http\Controllers\Frontend\DestinationController::class, 'destination']);
 
-Route::get('/about-insaf', [App\Http\Controllers\Frontend\AboutInsafController::class, 'abouts']);
+Route::get('/about-Insaf', [App\Http\Controllers\Frontend\AboutInsafController::class, 'abouts']);
 
 Route::post('/contact-form', [App\Http\Controllers\Frontend\ContactForm2Controller::class, 'store'])->name('contact.store');
 

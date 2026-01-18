@@ -48,7 +48,7 @@ const StudyDestinations = ({ destinations }) => {
                             Gain Access to Top Institutions across the Globe
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            INSAF Immigration is a partner of renowned
+                            Insaf Immigration is a partner of renowned
                             institutions across{" "}
                             <span className="font-semibold text-gold">
                                 25 countries

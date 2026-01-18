@@ -10,7 +10,7 @@ export default function StudyInDestination({
     whyChoose,
     destination_items,
 }) {
-    console.log(destination);
+    console.log(destination_items);
     const [activeId, setActiveId] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -259,7 +259,7 @@ export default function StudyInDestination({
                                                         }`}
                                                         className="w-auto h-auto object-cover rounded"
                                                     />
-                                                )
+                                                ),
                                             )}
                                         </div>
                                     </div>

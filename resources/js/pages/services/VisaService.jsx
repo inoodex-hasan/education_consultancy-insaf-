@@ -1,5 +1,5 @@
 import React from "react";
-import destinationImg from "../../assets/destination.png";
+import visaImg from "../../assets/visa.png";
 import { ArrowRight, GraduationCap } from "lucide-react";
 import Form from "../../components/form/Form";
 import service1 from "../../assets/services/service1.png";
@@ -34,14 +34,13 @@ const VisaService = ({ service }) => {
 
                             {/* Main Heading */}
                             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                                Hassle-Free Visa Services for Your Study Abroad
-                                Journey
+                                Visa Service for Study Abroad from Bangladesh
                             </h2>
 
                             {/* Subtext */}
                             <p className="text-xl text-gray-200 max-w-lg">
-                                Get expert guidance and seamless support for
-                                your student visa application and approval.
+                                Professional Student Visa Support by Insaf
+                                Immigration
                             </p>
 
                             {/* CTA Button */}
@@ -63,8 +62,8 @@ const VisaService = ({ service }) => {
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                                 {/* Replace with actual Sydney Opera House image */}
                                 <img
-                                    src={destinationImg}
-                                    alt="Study in Australia - Sydney Opera House"
+                                    src={visaImg}
+                                    alt="visa_img"
                                     className="w-full h-auto object-cover"
                                 />
 
@@ -95,13 +94,13 @@ const VisaService = ({ service }) => {
             {/* Why Choose PFEC for Admission Support? */}
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 pt-4">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         {/* LEFT CONTENT */}
                         <div>
                             {/* MAIN TITLE */}
-                            <h4 className="text-blue text-3xl font-mont font-semibold">
+                            {/* <h4 className="text-blue text-3xl font-mont font-semibold">
                                 {service?.title}
-                            </h4>
+                            </h4> */}
 
                             {/* OPTIONAL IMAGE */}
                             {/* {service[0]?.image && (
@@ -112,7 +111,7 @@ const VisaService = ({ service }) => {
                             {service?.items?.map((item) => (
                                 <div key={item.id} className="mt-4">
                                     {/* BLUE HEADING */}
-                                    <h4 className="text-blue text-lg font-mont font-semibold">
+                                    <h4 className="text-blue text-xl font-mont font-semibold">
                                         {item.title}
                                     </h4>
 
@@ -129,7 +128,7 @@ const VisaService = ({ service }) => {
                                     {item.sections?.map((section) => (
                                         <div
                                             key={section.id}
-                                            className="text-sm text-black font-normal font-mont mt-3"
+                                            className="text-sm text-black text-lg font-normal font-mont mt-3"
                                             dangerouslySetInnerHTML={{
                                                 __html: section.description,
                                             }}
@@ -139,9 +138,12 @@ const VisaService = ({ service }) => {
                             ))}
                         </div>
 
-                        {/* RIGHT FORM */}
-                        <div>
-                            <Form />
+                        {/* RIGHT FORM – make it sticky */}
+                        <div className="relative lg:sticky lg:top-8 lg:h-fit">
+                            {/* Optional: give some visual separation / shadow on large screens */}
+                            <div className="bg-white rounded-xl  lg:p-8">
+                                <Form />
+                            </div>
                         </div>
                     </div>
                 </div>

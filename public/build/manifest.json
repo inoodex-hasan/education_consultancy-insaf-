@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DCMPxI0f.css",
+    "file": "assets/app-UDBIZ848.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,13 +9,13 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-D2qKr0DV.js",
+    "file": "assets/app-Dc3yLQxM.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-DCMPxI0f.css"
+      "assets/app-UDBIZ848.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
@@ -28,6 +28,7 @@
       "assets/map-DmJlcsId.jpg",
       "assets/accommodation-hLn_EoGV.jpg",
       "assets/student_accommodation-BMya2YLx.jpg",
+      "assets/admission_support-DOOaJ8gA.jpg",
       "assets/1-L6OXDcdL.png",
       "assets/2-BC2xcs7O.png",
       "assets/3-CGRNJwTs.png",
@@ -45,6 +46,7 @@
       "assets/6-CZtFNZGd.png",
       "assets/7-_Sy8Tjej.png",
       "assets/accordion-Cv4bzX14.webp",
+      "assets/visa-DVJRK5QG.png",
       "assets/logo-Ds-gZrzH.png",
       "assets/underlogo-BBSGv-T_.svg",
       "assets/title1-CP9rSlUE.svg",
@@ -270,5 +272,9 @@
   "resources/js/assets/team/team1.jpg": {
     "file": "assets/team1-ClHwgjiG.jpg",
     "src": "resources/js/assets/team/team1.jpg"
+  },
+  "resources/js/assets/visa.png": {
+    "file": "assets/visa-DVJRK5QG.png",
+    "src": "resources/js/assets/visa.png"
   }
 }

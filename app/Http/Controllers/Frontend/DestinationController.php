@@ -11,7 +11,7 @@ class DestinationController extends Controller
 {
        public function destination()
     {
-        $d = Destination::all();
+       $d = Destination::orderBy('order_list', 'asc')->get();
         return Inertia::render('Destination', [
             'destinaton_study_abroad' => $d
         ]);

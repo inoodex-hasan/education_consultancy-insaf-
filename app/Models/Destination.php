@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Destination extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'image', 'slug', 'country', 'description', 'is_active', 'cover_photo'];
+    protected $fillable = ['title', 'image', 'slug', 'country', 'description', 'is_active', 'cover_photo', 'order_list'];
 
     public function items()
     {

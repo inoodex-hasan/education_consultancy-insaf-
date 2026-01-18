@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Slider extends Model
 {
-    protected $fillable = ['title', 'subtitle', 'image', 'is_active', 'url'];
+    protected $fillable = ['title', 'subtitle', 'image', 'is_active', 'url', 'cta_button'];
 
     protected $casts = [
         'is_active' => 'boolean',

@@ -5,7 +5,7 @@ export default function AppointmentStepsSection() {
     const steps = [
         {
             number: 1,
-            title: "Select your Nearest INSAF Immigration",
+            title: "Select your Nearest Insaf Immigration",
             icon: MapPin,
             color: "bg-[#283e77]",
             description:
@@ -35,7 +35,7 @@ export default function AppointmentStepsSection() {
                     Schedule an Appointment
                     <br />
                     <span className="text-gold">
-                        with your nearest INSAF Immigration
+                        with your nearest Insaf Immigration
                     </span>
                 </h2>
 

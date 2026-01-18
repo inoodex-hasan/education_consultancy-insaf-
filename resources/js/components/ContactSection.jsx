@@ -97,7 +97,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                     href={`tel:${
                                         primaryOffice?.phone?.replace(
                                             /\s+/g,
-                                            ""
+                                            "",
                                         ) || "+8801711222333"
                                     }`}
                                     className="text-gray-600 text-sm hover:text-[#283e77] transition"
@@ -117,11 +117,11 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                 </h3>
                                 <a
                                     href={`mailto:${
-                                        primaryOffice?.email || "info@insaf.com"
+                                        primaryOffice?.email || "info@Insaf.com"
                                     }`}
                                     className="text-gray-600 text-sm hover:text-[#283e77] transition"
                                 >
-                                    {primaryOffice?.email || "info@insaf.com"}
+                                    {primaryOffice?.email || "info@Insaf.com"}
                                 </a>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                             onSubmit={submit}
                             className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
                         >
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                                 <div>
                                     <label className="block text-gray-700 font-semibold mb-2 text-sm">
                                         Full Name
@@ -168,7 +168,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                         onChange={(e) =>
                                             setData(
                                                 "Email_address",
-                                                e.target.value
+                                                e.target.value,
                                             )
                                         }
                                         className={`w-full px-5 py-3 border ${
@@ -186,7 +186,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                 </div>
                             </div>
 
-                            <div className="mb-8">
+                            <div className="">
                                 <label className="block text-gray-700 font-semibold mb-2 text-sm">
                                     Phone Number (Whatsapp)
                                 </label>
@@ -206,11 +206,11 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                 )}
                             </div>
 
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                                 {/* Office Selection */}
-                                <div className="mt-2">
+                                <div className="mt-4">
                                     <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                                        Your Nearest INSAF Office{" "}
+                                        Your Nearest Insaf Office{" "}
                                         <span className="text-red-500">*</span>
                                     </label>
                                     <select
@@ -218,7 +218,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                         onChange={(e) =>
                                             setData("office_id", e.target.value)
                                         }
-                                        className={`w-full px-4 py-1.5 border ${
+                                        className={`w-full px-4 py-3 border ${
                                             errors.office_id
                                                 ? "border-red-500"
                                                 : "border-gray-300"
@@ -243,9 +243,9 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                 </div>
 
                                 {/* District Selection - Now matching the Office design */}
-                                <div className="mt-2">
+                                <div className="mt-4">
                                     <label className="block text-sm font-medium text-gray-700 mb-2 font-mont">
-                                        District{" "}
+                                        Your Location
                                         <span className="text-red-500">*</span>
                                     </label>
                                     <select
@@ -253,10 +253,10 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                         onChange={(e) =>
                                             setData(
                                                 "district_id",
-                                                e.target.value
+                                                e.target.value,
                                             )
                                         }
-                                        className={`w-full px-4 py-1.5 border ${
+                                        className={`w-full px-4 py-3 border ${
                                             errors.district_id
                                                 ? "border-red-500"
                                                 : "border-gray-300"
@@ -284,7 +284,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                                 </div>
                             </div>
 
-                            <div className="mb-8">
+                            <div className="mb-4">
                                 <label className="block text-gray-700 font-semibold mb-2 text-sm">
                                     Your Message
                                 </label>
@@ -311,7 +311,7 @@ const ContactSection = ({ primaryOffice, offices, districts }) => {
                             <button
                                 type="submit"
                                 disabled={processing}
-                                className="w-full md:w-auto px-12 py-4 bg-[#283e77] text-white font-bold rounded-lg hover:bg-[#1e2f5a] transition flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full md:w-auto px-12 py-4 bg-[#283e77] text-white font-bold rounded-lg hover:bg-[#1e2f5a] transition flex items-center cursor-pointer justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <Send size={20} />
                                 {processing ? "Sending..." : "Send Message"}

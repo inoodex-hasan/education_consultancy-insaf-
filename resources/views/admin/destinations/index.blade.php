@@ -53,6 +53,7 @@
                                             <th>Country</th>
                                             <th>Image</th>
                                             <th>Cover Photo</th>
+                                            <th>Order Position</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -81,6 +82,7 @@
                                                         N/A
                                                     @endif
                                                 </td>
+                                                <td>{{ $destination->order_list }}</td>
                                                 <td>
                                                     @if ($destination->is_active)
                                                         <div class="badge badge-success">Active</div>

@@ -67,12 +67,14 @@ const BlogSection = ({ all_blogs }) => {
 
                             {/* Subtext */}
                             <p className="text-xl text-gray-200 max-w-lg">
-                                Welcome to Insaf Immigration blog—your trusted
-                                guide for everything you need to know about
-                                studying and living Down Under. From expert
-                                insights on universities and visas to inspiring
-                                student success stories, we’re here to help you
-                                take the next step toward your dream.
+                                Welcome to the Insaf Immigration Blog, your
+                                go-to guide for study abroad opportunities from
+                                Bangladesh. Discover expert advice on
+                                universities, courses, student visas, and
+                                country-specific requirements, along with
+                                inspiring student success stories that help you
+                                take the next step toward your global education
+                                dream.
                             </p>
                         </div>
 

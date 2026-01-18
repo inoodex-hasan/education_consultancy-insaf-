@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
     {
           Inertia::share([
         'destinations' => fn () =>
-            Destination::where('is_active', 1)
-                ->select('id', 'country', 'slug', 'image')
+            Destination::orderBy('order_list', 'asc')
+                ->select('id', 'country', 'slug', 'image', 'order_list')
                 ->get(),
 
         'scholarships' => fn () =>

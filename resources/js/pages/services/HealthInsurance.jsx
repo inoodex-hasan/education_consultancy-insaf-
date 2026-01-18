@@ -41,7 +41,9 @@ const HealthInsurance = ({ service }) => {
                             {/* Main Heading */}
                             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                                 Health Insurance Services for Students Abroad –
-                                Insaf Immigration
+                                <span className="text-gold">
+                                    Insaf Immigration
+                                </span>
                             </h2>
 
                             {/* Subtext */}
@@ -145,7 +147,7 @@ const HealthInsurance = ({ service }) => {
 
                         {/* RIGHT FORM – becomes sticky on lg+ screens */}
                         <div className="lg:sticky lg:top-8 lg:h-fit order-1 lg:order-2">
-                            <div className="bg-white rounded-xl border-gray-200/70 p-6 lg:p-8">
+                            <div className="bg-white rounded-xl border-gray-200/70  lg:p-8">
                                 <Form />
                             </div>
                         </div>

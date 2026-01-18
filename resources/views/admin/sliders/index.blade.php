@@ -42,6 +42,7 @@
                                             <th class="width: 20px">Title</th>
                                             <th>Subtitle</th>
                                             <th>Url</th>
+                                            {{-- <th>Cta Button</th> --}}
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -56,10 +57,10 @@
                                                 </td>
                                                 <td>
                                                     <strong>{{ Str::limit($slider->title ?? 'N/A', 30) }}
-                                                    {{-- @if ($slider->button_text)
-                                                        <br><small class="text-primary">Button:
-                                                            {{ $slider->button_text }}</small>
-                                                    @endif --}}
+                                                        @if ($slider->cta_button)
+                                                            <br><small class="text-primary">Button:
+                                                                {{ $slider->cta_button }}</small>
+                                                        @endif
                                                 </td>
                                                 <td>{{ Str::limit($slider->subtitle ?? 'N/A', 30) }}</td>
                                                 <td>{{ Str::limit($slider->url ?? 'N/A', 30) }}</td>

@@ -34,15 +34,15 @@ const WhyChooseUs = ({ Why_Choose_Us }) => {
             setCounters({
                 students: Math.min(
                     Math.floor(targets.students * progress),
-                    targets.students
+                    targets.students,
                 ),
                 institutions: Math.min(
                     Math.floor(targets.institutions * progress),
-                    targets.institutions
+                    targets.institutions,
                 ),
                 years: Math.min(
                     Math.floor(targets.years * progress),
-                    targets.years
+                    targets.years,
                 ),
                 visaRate: Number((targets.visaRate * progress).toFixed(1)),
             });
@@ -104,7 +104,7 @@ const WhyChooseUs = ({ Why_Choose_Us }) => {
             <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative ">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold text-blue mb-4 font-roboto">
-                        Why Choose INSAF Immigration ?
+                        Why Choose Insaf Immigration ?
                     </h2>
                     <p className="text-lg font-mont text-gray-600 max-w-lg mx-auto leading-[1.1]">
                         Trusted by thousands of students worldwide. Your dream

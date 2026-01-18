@@ -84,6 +84,16 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
+                                        <label for="order_list">Order Position</label>
+                                        <input type="number" name="order_list" id="order_list"
+                                            class="form-control @error('order_list') is-invalid @enderror"
+                                            value="{{ old('order_list', '0') }}" min="0" required>
+                                        @error('order_list')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <label>Status</label>
                                         <select name="is_active" class="form-control">
                                             <option value="1" {{ old('is_active', '1') == '1' ? 'selected' : '' }}>

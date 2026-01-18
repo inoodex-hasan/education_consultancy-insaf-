@@ -22,7 +22,7 @@ const Footer = () => {
         {
             id: 1,
             title: "About us",
-            url: "/about-insaf",
+            url: "/about-Insaf",
         },
         {
             id: 2,
@@ -247,7 +247,7 @@ const Footer = () => {
                                         </li>
                                         <li>
                                             <a
-                                                href="https://www.instagram.com/insaf_immigration/"
+                                                href="https://www.instagram.com/Insaf_immigration/"
                                                 target="_blank"
                                             >
                                                 <Instagram className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />

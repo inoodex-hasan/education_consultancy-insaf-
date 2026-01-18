@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Destination;
-use App\Models\DestinationItem;
-use App\Models\DestinationItemSection;
-use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\{Destination, DestinationItem, DestinationItemSection, WhyChooseUs};
 use Inertia\Inertia;
 
 class StudyDestinationController extends Controller
@@ -42,6 +39,7 @@ public function show($slug)
 
     $destination_items = DestinationItem::with('sections')
         ->where('destination_id', $destination->id)
+        ->orderBy('created_at')
         ->get();
 
     return Inertia::render('StudyInDestination', [

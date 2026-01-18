@@ -27,7 +27,8 @@ class SliderController extends Controller
             'image'       => 'required|image|mimes:jpeg,png,jpg,webp|max:5120',
             'subtitle'    => 'nullable|string',
             'is_active'   => 'required|boolean',
-            'url'         => 'nullable|url'
+            'url'         => 'nullable|url',
+            'cta_button'  => 'nullable|string'
         ]);
 
         $data = $request->all();
@@ -57,7 +58,8 @@ class SliderController extends Controller
             'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'subtitle'    => 'nullable|string',
             'is_active'   => 'required|boolean',
-            'url'         => 'nullable|url'
+            'url'         => 'nullable|url',
+            'cta_button'  => 'nullable|string'
         ]);
 
         $data = $request->all();

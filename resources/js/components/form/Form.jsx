@@ -40,7 +40,7 @@ const Form = () => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100">
+        <div className="bg-white w-full rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100">
             <h3 className="text-2xl font-bold text-blue mb-4 text-center font-mont">
                 Register with Us to Take the Next Step
             </h3>
@@ -220,7 +220,7 @@ const Form = () => {
                     {/* Office & Destination */}
                     <div className="mt-2">
                         <label className="block text-sm font-medium text-gray-700  mb-2 font-mont">
-                            Your Nearest INSAF Office{" "}
+                            Your Nearest Insaf Office{" "}
                             <span className="text-red-500">*</span>
                         </label>
                         <select

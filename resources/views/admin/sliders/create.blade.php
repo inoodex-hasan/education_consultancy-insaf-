@@ -79,6 +79,17 @@
                                         @enderror
                                     </div>
 
+                                    <div class="form-group col-md-9">
+                                        <label>Cta Button <span class="text-danger">*</span></label>
+                                        <input type="text" name="cta_button"
+                                            class="form-control @error('cta_button') is-invalid @enderror"
+                                            value="{{ old('cta_button') }}">
+
+                                        @error('cta_button')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
                                 </div>
 
                                 <div class="mt-4">

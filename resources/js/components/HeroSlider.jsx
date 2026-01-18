@@ -19,7 +19,7 @@ const HeroSlider = ({ slider }) => {
                     modules={[Pagination, Autoplay]}
                     spaceBetween={0}
                     slidesPerView={1}
-                    speed={1000}
+                    speed={2000}
                     transition={{ duration: 1500 }}
                     pagination={{
                         clickable: true,
@@ -79,7 +79,7 @@ const HeroSlider = ({ slider }) => {
                                                     rel="noopener noreferrer"
                                                     className="py-2.5 sm:py-3 lg:py-3.5 px-3.5 sm:px-4 lg:px-[18px] text-subtitle3 sm:text-subtitle2 lg:text-subtitle1 font-subtitle3 sm:font-subtitle2 lg:font-subtitle1 rounded-[20px] border-2 border-primary-light text-primary-light hover:text-white hover:bg-primary-light transition-all duration-300 ease-in cursor-pointer"
                                                 >
-                                                    Apply Now
+                                                    {slide?.cta_button}
                                                 </a>
                                             </div>
                                         </div>

@@ -29,7 +29,7 @@ const AwardAndAchievement = ({ awards }) => {
 
                             {/* Main Heading */}
                             <h2 className="text-5xl md:text-5xl font-bold leading-tight">
-                                INSAF Immigration: Shining with Prestigious
+                                Insaf Immigration: Shining with Prestigious
                                 Awards!
                             </h2>
                             {/* Subtext */}

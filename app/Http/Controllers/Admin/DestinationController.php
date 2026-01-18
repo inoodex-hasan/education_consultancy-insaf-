@@ -32,6 +32,7 @@ public function store(Request $request)
         'cover_photo' => 'required|image|mimes:jpeg,png,jpg,webp|max:5120',
         'country'     => 'required|string|max:255',
         'description' => 'nullable|string',
+        'order_list' => 'required|integer|min:0|unique:destinations,order_list',
         'is_active'   => 'nullable',
     ]);
 
@@ -126,6 +127,7 @@ public function store(Request $request)
         'cover_photo' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
         'country'     => 'required|string|max:255',
         'description' => 'nullable|string',
+        'order_list' => 'required|integer|min:0|unique:destinations,order_list,' . $destination->id,
         'is_active'   => 'nullable',
     ]);
 

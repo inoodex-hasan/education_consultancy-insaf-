@@ -28,7 +28,7 @@ import Layout from "./components/MainLayout";
 
 createInertiaApp({
     title: (title) =>
-        title ? `${title} - INSAF Immigration` : "INSAF Immigration",
+        title ? `${title} - Insaf Immigration` : "Insaf Immigration",
     resolve: (name) => {
         const pages = import.meta.glob("./pages/**/*.jsx", { eager: true });
         let page = pages[`./pages/${name}.jsx`];

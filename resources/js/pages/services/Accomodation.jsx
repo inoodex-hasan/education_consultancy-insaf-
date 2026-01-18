@@ -9,43 +9,7 @@ import FactorsSection from "../../components/srvices/FactorsSection";
 import { Link } from "@inertiajs/react";
 
 const Accomodation = ({ service }) => {
-    console.log(service);
-    //   const stats = [
-    //     { number: "22,000+", label: "Students Assisted", color: "#c3a25d" },
-    //     {
-    //       number: "550+",
-    //       label: "Institutions across 11 Countries",
-    //       color: "#283e77",
-    //     },
-    //     { number: "18+", label: "Years of Experience", color: "#c3a25d" },
-    //     { number: "9", label: "Offices across the Globe", color: "#283e77" },
-    //   ];
-    //   const accommodationProviders = [
-    //   {
-    //     id: 1,
-    //     name: "Casita",
-    //     logo: accimg,
-    //     url: "https://www.casita.com",
-    //     features: [
-    //       { icon: "📊", text: "Properties in 400+ Cities across 60+ Countries" },
-    //       { icon: "💎", text: "Low Price Guarantee" },
-    //       { icon: "✓", text: "100% Verified Listings" },
-    //       { icon: "🔔", text: "24/7 Customer Support" },
-    //     ],
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "University Living",
-    //     logo: accimg,
-    //     url: "#",
-    //     features: [
-    //       { icon: "📊", text: "65000+ Properties across 640 Cities Globally" },
-    //       { icon: "🔒", text: "Safe & Secure Options" },
-    //       { icon: "✓", text: "Verified Listings" },
-    //       { icon: "🔔", text: "24/7 Customer Support" },
-    //     ],
-    //   },
-    // ]
+    // console.log(service);
 
     return (
         <>
@@ -58,19 +22,19 @@ const Accomodation = ({ service }) => {
                 </div>
 
                 <div className="relative max-w-7xl mx-auto px-6 pt-4">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Left: Content */}
                         <div className="text-white space-y-8">
                             {/* Badge */}
                             <div className="inline-flex items-center gap-3 bg-blue/20 backdrop-blur-sm px-6 py-3 rounded-full border border-[#c3a25d]/50">
                                 <GraduationCap className="w-6 h-6 text-gold" />
                                 <span className="font-semibold text-gold">
-                                    Services
+                                    Accommodation
                                 </span>
                             </div>
 
                             {/* Main Heading */}
-                            <h2 className="text-5xl md:text-5xl font-bold leading-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                                 Find Affordable and Trusted Student
                                 Accommodations
                             </h2>
@@ -87,10 +51,10 @@ const Accomodation = ({ service }) => {
                                     href="https://wa.me/8801880942457?"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-gold hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                    className="group inline-flex items-center justify-center gap-4 px-2 md:px-10 py-5 bg-gold hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                                 >
                                     Book a FREE Consultation Now
-                                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight className="w-6 h-6 hidden md:block group-hover:translate-x-2 transition-transform" />
                                 </a>
                             </div>
                         </div>

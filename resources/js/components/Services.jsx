@@ -26,7 +26,7 @@ const services = [
         icon: ShieldCheck,
         title: "Visa Services",
         color: "yellow",
-         url: "/visa-service",
+        url: "/visa-service",
     },
     {
         icon: Stethoscope,
@@ -50,7 +50,7 @@ const Services = () => {
                     {/* Left Side - Text */}
                     <div className="order-2 lg:order-1 text-center lg:text-left">
                         <h2 className="text-3xl lg:text-5xl font-bold text-blue leading-tight">
-                            How INSAF Immigration Simplifies your Study Abroad
+                            How Insaf Immigration Simplifies your Study Abroad
                             Journey?
                         </h2>
                         <p className="mt-6 text-lg text-gray-600 leading-relaxed">
@@ -113,9 +113,16 @@ const Services = () => {
 };
 
 // Reusable Service Card Component
-const ServiceCard = ({ icon: Icon, title, delay = "0", isCenter = false , url }) => {
+const ServiceCard = ({
+    icon: Icon,
+    title,
+    delay = "0",
+    isCenter = false,
+    url,
+}) => {
     return (
-        <Link href={url}
+        <Link
+            href={url}
             data-aos="fade-up"
             data-aos-delay={delay}
             className={`group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 
@@ -133,8 +140,8 @@ const ServiceCard = ({ icon: Icon, title, delay = "0", isCenter = false , url })
               title.includes("Visa")
                   ? "bg-[#c3a25d]/10 group-hover:bg-[#c3a25d]"
                   : title.includes("Health") || title.includes("Admission")
-                  ? "bg-[#283e77]/10 group-hover:bg-[#283e77]"
-                  : "bg-pink-50 group-hover:bg-pink-100"
+                    ? "bg-[#283e77]/10 group-hover:bg-[#283e77]"
+                    : "bg-pink-50 group-hover:bg-pink-100"
           } 
           group-hover:scale-110`}
                 >
@@ -144,8 +151,8 @@ const ServiceCard = ({ icon: Icon, title, delay = "0", isCenter = false , url })
                 title.includes("Visa")
                     ? "text-[#c3a25d] group-hover:text-white"
                     : title.includes("Health") || title.includes("Admission")
-                    ? "text-[#283e77] group-hover:text-white"
-                    : "text-pink-600 group-hover:text-pink-700"
+                      ? "text-[#283e77] group-hover:text-white"
+                      : "text-pink-600 group-hover:text-pink-700"
             }`}
                     />
                 </div>

@@ -18,6 +18,7 @@ class DestinationItemController extends Controller
     public function index()
 {
     $groupedItems = DestinationItem::with('destination')
+        ->orderBy('created_at')
         ->get()
         ->groupBy(function($item) {
             return $item->destination->title;

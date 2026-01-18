@@ -38,7 +38,7 @@ export default function AboutInsaf({ aboutItems, why_choose_us }) {
                             <div className="relative group">
                                 <div className="absolute -inset-2 bg-linear-to-r from-blue to-gold rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
 
-                                <div className="relative bg-white p-4 md:p-1 rounded-3xl shadow-2xl overflow-hidden object-cover w-250 min-h-60 max-h-120">
+                                <div className="relative bg-white p-4 md:p-1 rounded-3xl shadow-2xl overflow-hidden object-cover lg:w-250 lg:min-h-60 lg:max-h-120">
                                     <img
                                         src={about}
                                         alt="PFEC Annual Retreat 2024 - We Are PFECIAN"
@@ -49,11 +49,11 @@ export default function AboutInsaf({ aboutItems, why_choose_us }) {
                                     {/* <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-8 rounded-b-2xl">
                     <div className="text-white text-center">
                       <h3 className="text-3xl md:text-5xl font-black tracking-wider">
-                        <span className="text-white">INSAF</span> Annual Retreat
+                        <span className="text-white">Insaf</span> Annual Retreat
                         2024
                       </h3>
                       <p className="text-4xl md:text-6xl font-extrabold mt-2 drop-shadow-2xl">
-                        #WE ARE INSAFIAN
+                        #WE ARE InsafIAN
                       </p>
                     </div>
                   </div> */}

@@ -35,7 +35,7 @@ const OfficeLocations = ({ offices }) => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-5xl lg:text-6xl font-bold text-[#283e77] mb-4">
-                        INSAF Immigration Offices in Bangladesh
+                        Insaf Immigration Offices in Bangladesh
                     </h2>
                     <p className="text-xl text-gray-600">
                         Visit any of our {offices.length} conveniently located
@@ -84,7 +84,7 @@ const OfficeLocations = ({ offices }) => {
                             <a
                                 href={`tel:${office.phone?.replace(
                                     /[^0-9+]/g,
-                                    ""
+                                    "",
                                 )}`}
                                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#283e77] text-white font-bold
           shadow-lg hover:bg-[#c3a25d] hover:shadow-[#c3a25d]/30 transition-all duration-500 hover:scale-105 mt-auto" // ← ADD: mt-auto

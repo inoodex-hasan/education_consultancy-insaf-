@@ -57,7 +57,7 @@ const OSHCBenefitsAccordion = () => {
                                 <button
                                     onClick={() =>
                                         setOpenIndex(
-                                            openIndex === index ? -1 : index
+                                            openIndex === index ? -1 : index,
                                         )
                                     }
                                     className="w-full px-8 py-6 flex items-center text-md cursor-pointer justify-between font-mont text-left focus:outline-none"

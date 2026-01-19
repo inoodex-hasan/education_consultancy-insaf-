@@ -49,7 +49,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name</th>
+                                            <th>Title</th>
                                             <th>Country</th>
                                             <th>Image</th>
                                             <th>Cover Photo</th>

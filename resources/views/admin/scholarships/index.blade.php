@@ -50,9 +50,11 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
+                                            <th>Subtitle</th>
                                             <th>Country</th>
                                             <th>Image</th>
-                                            <th>Description</th>
+                                            <th>Cover Photo</th>
+                                            <th>Order List</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -62,24 +64,29 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
-                                                    <strong>{{ $scholarship->title }}</strong>
-
+                                                    {{ Str::limit($scholarship->title, 20, '...') }}
                                                 </td>
+                                                <td>{{ Str::limit($scholarship->subtitle, 20, '...') }}</td>
                                                 <td>{{ $scholarship->country ?? 'N/A' }}</td>
                                                 <td>
                                                     @if ($scholarship->image)
                                                         <img src="{{ asset($scholarship->image) }}"
-                                                            alt="{{ $scholarship->title }} Image"
+                                                            alt="{{ $scholarship->country }} Image"
                                                             style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
                                                     @else
                                                         N/A
                                                     @endif
                                                 </td>
-                                                <td style="max-width:50px;">
-                                                    <div class="limit-html">
-                                                        {!! $scholarship->description ?? 'N/A' !!}
-                                                    </div>
+                                                <td>
+                                                    @if ($scholarship->cover_photo)
+                                                        <img src="{{ asset($scholarship->cover_photo) }}"
+                                                            alt="{{ $scholarship->country }} Image"
+                                                            style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+                                                    @else
+                                                        N/A
+                                                    @endif
                                                 </td>
+                                                <td>{{ $scholarship->order_list }}</td>
                                                 <td>
                                                     @if ($scholarship->is_active)
                                                         <span class="badge badge-success">Active</span>

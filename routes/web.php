@@ -48,6 +48,9 @@ Route::post('/register_form', [App\Http\Controllers\Frontend\ContactFormControll
 
 Route::post('/process-download', [DocumentDownloadController::class, 'store'])->name('document_download.store');
 
+Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('terms');
+
+Route::get('/pricacy-policy', [HomeController::class, 'policy'])->name('policy');
 
 // Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
@@ -147,15 +150,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
+    // Resources
     Route::resource('scholarships', ScholarshipController::class)->names('admin.scholarships');
-});
-
-Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('scholarship_items', ScholarshipItemController::class)->names('admin.scholarship_items');
-});
-
-Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('scholarship_item_sections', ScholarshipItemSectionController::class)->names('admin.scholarship_item_sections');
+
+    // AJAX Data Fetching Route
+    Route::get('get-scholarship-items', [ScholarshipItemSectionController::class, 'getItems'])->name('admin.get-scholarship-items');
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
@@ -207,11 +208,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::resource('privacy_policies', PrivacyPolicyController::class)->names('admin.privacy_policies');
+    Route::resource('privacy_policies', PrivacyPolicyController::class)
+        ->names('admin.privacy_policies')
+        ->only(['index', 'edit', 'update']);
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::resource('terms_conditions', TermsConditionController::class)->names('admin.terms_conditions');
+    Route::resource('terms_conditions', TermsConditionController::class)
+        ->names('admin.terms_conditions')
+        ->only(['index', 'edit', 'update']);
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {

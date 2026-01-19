@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="card-body">
-                                @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -49,7 +49,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Scholarship Item</th>
+                                            <th>Destination Item</th>
                                             <th>Description</th>
                                             <th>Images</th>
                                             <th>Created At</th>
@@ -57,43 +57,58 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($sections as $section)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $section->scholarshipItem->title ?? 'N/A' }}</td>
+                                        @forelse ($groupedByScholarship as $countryName => $sections)
+                                            @php $slugId = Str::slug($countryName); @endphp
 
-                                                <td style="max-width:200px;">
-                                                    <div class="limit-html">
-                                                        {!! $section->description !!}
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-info">{{ count($section->images ?? []) }}
-                                                        Images</span>
-                                                </td>
-                                                <td>{{ $section->created_at->format('M d, Y') }}</td>
-                                                <td>
-                                                    <a href="{{ route('admin.scholarship_item_sections.edit', $section) }}"
-                                                        class="btn btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-
-                                                    <form
-                                                        action="{{ route('admin.scholarship_item_sections.destroy', $section) }}"
-                                                        method="POST" class="d-inline"
-                                                        onsubmit="return confirm('Are you sure you want to delete this section and all associated images?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
+                                            {{-- Parent Row --}}
+                                            <tr class="table-info" style="cursor: pointer;" data-toggle="collapse"
+                                                data-target=".dest-{{ $slugId }}" aria-expanded="true">
+                                                <td colspan="6" style="font-weight: bold;">
+                                                    <i class="fas fa-chevron-down mr-2"></i> {{ $countryName }}
+                                                    <span class="badge badge-primary ml-2">{{ $sections->count() }}
+                                                        Sections</span>
+                                                    <small class="text-muted float-right">(Click to toggle)</small>
                                                 </td>
                                             </tr>
 
+                                            {{-- Child Rows --}}
+                                            @foreach ($sections as $section)
+                                                <tr class="collapse show dest-{{ $slugId }}">
+                                                    <td>{{ $loop->parent->iteration }}.{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <span class="font-weight-600">
+                                                            {{-- Corrected relation name from your controller --}}
+                                                            {{ $section->scholarshipItem->title ?? 'N/A' }}
+                                                        </span>
+                                                    </td>
+                                                    <td style="max-width:200px;">
+                                                        <div class="limit-html">{!! Str::limit(strip_tags($section->description), 50) !!}</div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-info">{{ count($section->images ?? []) }}
+                                                            Images</span>
+                                                    </td>
+                                                    <td>{{ $section->created_at->format('M d, Y') }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.scholarship_item_sections.edit', $section) }}"
+                                                            class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                        <form
+                                                            action="{{ route('admin.scholarship_item_sections.destroy', $section) }}"
+                                                            method="POST" class="d-inline"
+                                                            onsubmit="return confirm('Delete this section?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-sm btn-danger"><i
+                                                                    class="fas fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">No content sections found.</td>
+                                                <td colspan="6" class="text-center">No content sections found.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

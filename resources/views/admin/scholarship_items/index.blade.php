@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="card-body">
-                               @if (session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success alert-dismissible fade show auto-dismiss">
                                     <div class="alert-body">
                                         <button class="close" data-dismiss="alert">
@@ -48,33 +48,52 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($items as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->scholarship->title ?? 'N/A' }}</td>
-                                                <td><strong>{{ $item->title }}</strong></td>
-                                                <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                        @forelse ($groupedItems as $scholarshipTitle => $items)
+                                            @php
+                                                // Generate a unique ID for each collapse group (removing spaces/special characters)
+                                                $slugId = Str::slug($scholarshipTitle);
+                                            @endphp
 
-                                                <td>
-                                                    <a href="{{ route('admin.scholarship_items.edit', $item) }}"
-                                                        class="btn btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i> Edit
-                                                    </a>
-
-                                                    <form action="{{ route('admin.scholarship_items.destroy', $item) }}"
-                                                        method="POST" class="d-inline"
-                                                        onsubmit="return confirm('Delete this item?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
+                                            {{-- Parent Category Row --}}
+                                            <tr class="table-info" style="cursor: pointer;" data-toggle="collapse"
+                                                data-target=".group-{{ $slugId }}" aria-expanded="true">
+                                                <td colspan="5" style="font-weight: bold;">
+                                                    <i class="fas fa-chevron-down mr-2"></i> {{ $scholarshipTitle }}
+                                                    <span class="badge badge-primary ml-2">{{ $items->count() }}
+                                                        Items</span>
+                                                    <small class="text-muted float-right">(Click to toggle)</small>
                                                 </td>
                                             </tr>
+
+                                            {{-- Nested Child Rows --}}
+                                            @foreach ($items as $item)
+                                                <tr class="collapse show group-{{ $slugId }}">
+                                                    <td>{{ $loop->parent->iteration }}.{{ $loop->iteration }}</td>
+                                                    <td><span class="text-muted">Item of {{ $scholarshipTitle }}</span></td>
+                                                    <td><strong>{{ $item->title }}</strong></td>
+                                                    <td>{{ $item->created_at->format('M d, Y') }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.scholarship_items.edit', $item) }}"
+                                                            class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+
+                                                        <form
+                                                            action="{{ route('admin.scholarship_items.destroy', $item) }}"
+                                                            method="POST" class="d-inline"
+                                                            onsubmit="return confirm('Delete this item?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @empty
                                             <tr>
-                                                <td colspan="4" class="text-center">No items found.</td>
+                                                <td colspan="5" class="text-center">No scholarship items found.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

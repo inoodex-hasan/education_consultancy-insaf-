@@ -14,9 +14,6 @@
     <section class="section">
         <div class="section-header">
             <h1>Privacy Policies</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item">Policies</div>
-            </div>
         </div>
 
         <div class="section-body">
@@ -24,21 +21,14 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Privacy Policy</h4>
-                            <div class="card-header-action">
-                                <a href="{{ route('admin.privacy_policies.create') }}" class="btn btn-primary">
-                                    <i class="fas fa-plus"></i> Add New Policy
-                                </a>
-                            </div>
+                            <h4>Manage Policy Content</h4>
                         </div>
 
                         <div class="card-body">
-                                 @if (session('success'))
-                                <div class="alert alert-success alert-dismissible fade show auto-dismiss">
+                            @if (session('success'))
+                                <div class="alert alert-success alert-dismissible fade show">
                                     <div class="alert-body">
-                                        <button class="close" data-dismiss="alert">
-                                            <span>&times;</span>
-                                        </button>
+                                        <button class="close" data-dismiss="alert"><span>&times;</span></button>
                                         {{ session('success') }}
                                     </div>
                                 </div>
@@ -51,9 +41,8 @@
                                             <th>#</th>
                                             <th>Title</th>
                                             <th>Subtitle</th>
-                                            <th>Description</th>
                                             <th>Last Updated</th>
-                                            <th>Action</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,33 +51,17 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $policy->title }}</td>
                                                 <td>{{ $policy->subtitle ?? 'N/A' }}</td>
-                                                <td style="max-width:50px;">
-                                                    <div class="limit-html">
-                                                        {!! $policy->description !!}
-                                                    </div>
-                                                </td>
                                                 <td>{{ $policy->updated_at->format('Y-m-d') }}</td>
-
-                                                <td>
+                                                <td class="text-center">
                                                     <a href="{{ route('admin.privacy_policies.edit', $policy) }}"
-                                                        class="btn btn-sm btn-warning">
-                                                        <i class="fas fa-edit"></i> Edit
+                                                        class="btn btn-primary">
+                                                        <i class="fas fa-edit"></i> Edit Policy
                                                     </a>
-
-                                                    <form action="{{ route('admin.privacy_policies.destroy', $policy) }}"
-                                                        method="POST" class="d-inline"
-                                                        onsubmit="return confirm('Are you sure you want to delete this policy record?')">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash"></i> Delete
-                                                        </button>
-                                                    </form>
                                                 </td>
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="6" class="text-center">No privacy policy records found.</td>
+                                                <td colspan="5" class="text-center">No policy records found.</td>
                                             </tr>
                                         @endforelse
                                     </tbody>

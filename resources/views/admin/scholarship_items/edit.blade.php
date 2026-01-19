@@ -35,7 +35,7 @@
                                             @foreach ($scholarships as $scholarship)
                                                 <option value="{{ $scholarship->id }}"
                                                     {{ old('scholarship_id', $scholarship_item->scholarship_id) == $scholarship->id ? 'selected' : '' }}>
-                                                    {{ $scholarship->title }}
+                                                    {{ $scholarship->country }}
                                                 </option>
                                             @endforeach
                                         </select>

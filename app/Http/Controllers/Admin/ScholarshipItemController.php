@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Scholarship; 
-use App\Models\ScholarshipItem;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\{Scholarship, ScholarshipItem};
 
 class ScholarshipItemController extends Controller
 {
 
     public function index()
-    {
-        $items = ScholarshipItem::with('scholarship')->latest()->get();
-        return view('admin.scholarship_items.index', compact('items'));
-    }
+{
+    $groupedItems = ScholarshipItem::with('scholarship')
+    ->orderBy('created_at')
+    ->get()
+    ->groupBy(function($item) {
+            return $item->scholarship->country;
+        });
+    
+    return view('admin.scholarship_items.index', compact('groupedItems'));
+}
+
 
     public function create()
     {

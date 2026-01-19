@@ -69,15 +69,15 @@ export default function StudyInDestination({
                         <div className="text-white space-y-8">
                             <div className="inline-flex items-center gap-3 bg-blue/20 backdrop-blur-sm px-6 py-3 rounded-full border border-[#c3a25d]/50">
                                 <GraduationCap className="w-6 h-6 text-gold" />
-                                <span className="font-semibold text-gold">
-                                    Most Popular Destination 2026
+                                <span className="font-semibold text-gold uppercase">
+                                    {destination.title}/{destination.country}
                                 </span>
                             </div>
 
                             <h2 className="text-5xl md:text-5xl font-bold leading-tight">
                                 Study in{" "}
                                 <span className="text-[#c3a25d]">
-                                    {destination.title}
+                                    {destination.country}
                                 </span>
                                 <br />
                                 from Bangladesh

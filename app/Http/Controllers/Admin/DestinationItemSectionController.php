@@ -11,33 +11,17 @@ use App\Http\Controllers\Controller;
 class DestinationItemSectionController extends Controller
 {
 
-    // public function index()
-    // {
-    //     $sections = DestinationItemSection::with('destinationItem')
-    //         ->orderBy('destination_item_id') 
-    //         ->get();
-
-    //     return view('admin.destination_item_sections.index', compact('sections'));
-    // }
-
 public function index()
 {
     // Eager load destinationItem and its parent destination
     $sections = DestinationItemSection::with('destinationItem.destination')->get();
 
     $groupedByDestination = $sections->groupBy(function($section) {
-        return $section->destinationItem->destination->title ?? 'No Destination';
+        return $section->destinationItem->destination->country ?? 'No Destination';
     });
 
     return view('admin.destination_item_sections.index', compact('groupedByDestination'));
 }
-
-    // public function create()
-    // {
-    //     $destinationItems = DestinationItem::orderBy('title', 'asc')->get();
-
-    //     return view('admin.destination_item_sections.create', compact('destinationItems'));
-    // }
 
     public function create()
     {

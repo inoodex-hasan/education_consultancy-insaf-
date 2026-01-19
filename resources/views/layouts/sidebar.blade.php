@@ -87,7 +87,7 @@
                   <a href="#" class="nav-link has-dropdown"><i class="fas fa-shield-alt"></i>
                       <span>Privacy Policy</span></a>
                   <ul class="dropdown-menu">
-                      <li><a class="nav-link" href={{ route('admin.privacy_policies.create') }}>Add</a></li>
+                      {{-- <li><a class="nav-link" href={{ route('admin.privacy_policies.create') }}>Add</a></li> --}}
                       <li><a class="nav-link" href={{ route('admin.privacy_policies.index') }}>Manage</a></li>
                   </ul>
               </li>
@@ -95,7 +95,7 @@
                   <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-contract"></i>
                       <span>Terms Condition</span></a>
                   <ul class="dropdown-menu">
-                      <li><a class="nav-link" href={{ route('admin.terms_conditions.create') }}>Add</a></li>
+                      {{-- <li><a class="nav-link" href={{ route('admin.terms_conditions.create') }}>Add</a></li> --}}
                       <li><a class="nav-link" href={{ route('admin.terms_conditions.index') }}>Manage</a></li>
                   </ul>
               </li>
@@ -127,8 +127,7 @@
                       <li class="dropdown">
                           <a href="#" class="has-dropdown">Item Sections</a>
                           <ul class="dropdown-menu">
-                              <li><a class="nav-link"
-                                      href="{{ route('admin.destination_item_sections.create') }}">Add
+                              <li><a class="nav-link" href="{{ route('admin.destination_item_sections.create') }}">Add
                                   </a></li>
                               <li><a class="nav-link"
                                       href="{{ route('admin.destination_item_sections.index') }}">Manage </a>

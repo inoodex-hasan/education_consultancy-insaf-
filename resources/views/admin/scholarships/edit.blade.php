@@ -53,32 +53,64 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <label>Subtitle<span class="text-danger">*</span></label>
+                                        <input type="text" name="subtitle"
+                                            class="form-control @error('subtitle') is-invalid @enderror"
+                                            value="{{ old('subtitle', $scholarship->subtitle) }}" required>
+                                        @error('subtitle')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    {{-- <div class="form-group col-md-12">
                                         <label>Description</label>
                                         <textarea name="description" class="summernote @error('description') is-invalid @enderror" rows="8">{{ old('description', $scholarship->description) }}</textarea>
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
+                                    <div class="form-group col-md-12 d-flex">
+                                        <div class="form-group col-md-6">
+                                            <label> Image (for Home Page)</label>
+                                            <div class="mb-2">
+                                                <img src="{{ asset($scholarship->image) }}" alt="Current Image"
+                                                    width="150" class="img-thumbnail shadow-sm">
+                                            </div>
+                                            <input type="file" name="image"
+                                                class="form-control @error('image') is-invalid @enderror" accept="image/*">
+                                            <small class="text-muted">Leave blank to keep the current image.</small>
+                                            @error('image')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
 
-                                    <div class="form-group col-md-12">
-                                        <label>Current Image</label>
-                                        <div class="mt-2">
-                                            @if ($scholarship->image)
-                                                <img src="{{ asset($scholarship->image) }}" class="img-fluid rounded"
-                                                    style="max-width: 100px; max-height: 70px; object-fit: cover;">
-                                            @else
-                                                <p>No image currently uploaded.</p>
-                                            @endif
+                                        <div class="form-group col-md-6">
+                                            <label> Cover Photo (for Destination Header)</label>
+                                            <div class="mb-2">
+                                                <img src="{{ asset($scholarship->cover_photo) }}" alt="Current Cover"
+                                                    width="150" class="img-thumbnail shadow-sm">
+                                            </div>
+                                            <input type="file" name="cover_photo"
+                                                class="form-control @error('cover_photo') is-invalid @enderror"
+                                                accept="image/*">
+                                            <small class="text-muted">Leave blank to keep the current cover photo.</small>
+                                            @error('cover_photo')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label>Change Image <small>(leave blank to keep current)</small></label>
-                                        <input type="file" name="image"
-                                            class="form-control @error('image') is-invalid @enderror" accept="image/*">
-                                        @error('image')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        <label for="order_list">Order Position</label>
+                                        <input type="number" name="order_list"
+                                            class="form-control @error('order_list') is-invalid @enderror"
+                                            value="{{ old('order_list', $scholarship->order_list ?? '0') }}">
+
+                                        @error('order_list')
+                                            <span class="invalid-feedback" style="display: block;">
+                                                <strong>This order position is already taken. Please choose another.</strong>
+                                            </span>
                                         @enderror
                                     </div>
 

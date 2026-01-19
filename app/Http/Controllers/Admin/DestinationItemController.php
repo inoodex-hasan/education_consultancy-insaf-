@@ -21,7 +21,7 @@ class DestinationItemController extends Controller
         ->orderBy('created_at')
         ->get()
         ->groupBy(function($item) {
-            return $item->destination->title;
+            return $item->destination->country;
         });
 
     return view('admin.destination_items.index', compact('groupedItems'));

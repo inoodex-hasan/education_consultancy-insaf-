@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Models\{Destination, Faq, Office, Review, Scholarship};
+use App\Models\{Destination, Faq, Office, PrivacyPolicy, Review, Scholarship, TermsCondition};
 use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
@@ -51,6 +51,14 @@ class AppServiceProvider extends ServiceProvider
         'faqs' => fn () =>
             FAQ::select('id', 'question', 'answer')
                 ->get(),
+
+        'terms' => fn () =>
+            TermsCondition::select('id', 'title', 'subtitle', 'description')
+            -> get(),
+
+             'policy' => fn () =>
+            PrivacyPolicy::select('id', 'title', 'subtitle', 'description')
+            -> get(),
         ]);
     }
 }

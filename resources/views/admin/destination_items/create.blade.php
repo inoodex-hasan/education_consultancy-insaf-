@@ -39,7 +39,7 @@
                                             @foreach ($destinations as $dest)
                                                 <option value="{{ $dest->id }}"
                                                     {{ old('destination_id') == $dest->id ? 'selected' : '' }}>
-                                                    {{ $dest->title }}
+                                                    {{ $dest->country }}
                                                 </option>
                                             @endforeach
                                         </select>

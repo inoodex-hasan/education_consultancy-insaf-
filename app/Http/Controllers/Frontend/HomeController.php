@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\{Achievement, Blog, Destination, Event, Review, Slider, WhyChooseUs};
+use App\Models\{Achievement, Blog, Destination, Event, Review, Slider, TermsCondition, WhyChooseUs};
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -21,6 +21,7 @@ class HomeController extends Controller
         // $reviews=Review::all();
         $whyChooseUs=WhyChooseUs::all();
         $target = (int) WhyChooseUs::value('students'); 
+       
         return Inertia::render('Home',[
             'slider'=>$slider,
             'blogs'=>$blogs,
@@ -30,7 +31,7 @@ class HomeController extends Controller
             // 'all_reviews'=>$reviews,
             'successcount'=>$target,
             'whyChooseUs'=>$whyChooseUs,
-            'events'=>$events
+            'events'=>$events,
         ]);
     }
 
@@ -43,6 +44,19 @@ class HomeController extends Controller
     {
        
         return Inertia::render('Slider',compact('slider'));
+    }
+
+    // HomeController.php
+    public function terms()
+    {
+
+        return Inertia::render('TermsOfUse');
+    }
+
+     public function policy()
+    {
+
+        return Inertia::render('PrivacyPolicy');
     }
 
     // public function blog(){

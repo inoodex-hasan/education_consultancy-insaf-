@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Scholarship extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'slug', 'country', 'image', 'description', 'is_active'];
+    protected $fillable = ['title', 'subtitle', 'slug', 'country', 'image', 'cover_photo', 'order_list', 'description', 'is_active'];
 
     protected $casts = [
         'is_active' => 'boolean',

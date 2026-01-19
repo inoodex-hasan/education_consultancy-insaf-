@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-UDBIZ848.css",
+    "file": "assets/app-CiU-AM5J.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,13 +9,13 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-Dc3yLQxM.js",
+    "file": "assets/app-CrVSFjqL.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-UDBIZ848.css"
+      "assets/app-CiU-AM5J.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
@@ -104,10 +104,6 @@
   "resources/js/assets/destinations/canada.png": {
     "file": "assets/canada-CJOMo-DZ.png",
     "src": "resources/js/assets/destinations/canada.png"
-  },
-  "resources/js/assets/destinations/detials1.webp": {
-    "file": "assets/detials1-DwssdaJc.webp",
-    "src": "resources/js/assets/destinations/detials1.webp"
   },
   "resources/js/assets/destinations/indonesia.webp": {
     "file": "assets/indonesia-D7NYdyuK.webp",

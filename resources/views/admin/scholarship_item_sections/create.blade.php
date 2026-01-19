@@ -32,21 +32,22 @@
                                 @csrf
 
                                 <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Select Scholarship <span class="text-danger">*</span></label>
+                                        <select id="scholarship_select" class="form-control select2" required>
+                                            <option value="">-- Choose Scholarship --</option>
+                                            @foreach ($scholarships as $dest)
+                                                <option value="{{ $dest->id }}">{{ $dest->country }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="form-group col-md-6">
-                                        <label>Parent Scholarship Item <span class="text-danger">*</span></label>
-                                        <select name="scholarship_item_id"
+                                        <label>Scholarship Item <span class="text-danger">*</span></label>
+                                        <select name="scholarship_item_id" id="item_select"
                                             class="form-control @error('scholarship_item_id') is-invalid @enderror"
                                             required>
-                                            <option value="">-- Select Item --</option>
-                                            @foreach ($scholarshipItems as $item)
-                                                <option value="{{ $item->id }}"
-                                                    {{ old('scholarship_item_id') == $item->id ? 'selected' : '' }}>
-                                                    {{ $item->title }}
-                                                    {{-- (Scholarship:
-                                                    {{ $item->scholarship->title ?? 'N/A' }}) --}}
-                                                </option>
-                                            @endforeach
+                                            <option value="">-- Select Scholarship First --</option>
                                         </select>
                                         @error('scholarship_item_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -69,17 +70,12 @@
                                             <div class="invalid-feedback d-block">{{ $message }}</div>
                                         @enderror
                                     </div>
-
                                 </div>
 
                                 <div class="mt-4">
-                                    <button type="submit" class="btn btn-primary btn-lg">
-                                        Save Section
-                                    </button>
-                                    <a href="{{ route('admin.scholarship_item_sections.index') }}"
-                                        class="btn btn-secondary btn-lg ml-2">
-                                        Cancel
-                                    </a>
+                                    <button type="submit" class="btn btn-primary btn-lg">Save Section</button>
+                                    <a href="{{ route('admin.destination_item_sections.index') }}"
+                                        class="btn btn-secondary btn-lg ml-2">Cancel</a>
                                 </div>
                             </form>
                         </div>
@@ -89,3 +85,41 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#scholarship_select').on('change', function() {
+                var scholarshipId = $(this).val();
+                var itemSelect = $('#item_select');
+
+                // Clear the dropdown
+                itemSelect.empty().append('<option value="">-- Loading... --</option>');
+
+                if (scholarshipId) {
+                    $.ajax({
+                        url: "{{ route('admin.get-scholarship-items') }}", // Create this route
+                        type: "GET",
+                        data: {
+                            scholarship_id: scholarshipId
+                        },
+                        success: function(data) {
+                            itemSelect.empty().append(
+                                '<option value="">-- Select Scholarship Item --</option>');
+                            $.each(data, function(key, item) {
+                                itemSelect.append('<option value="' + item.id + '">' +
+                                    item.title + '</option>');
+                            });
+                        },
+                        error: function() {
+                            itemSelect.empty().append(
+                                '<option value="">-- Error loading items --</option>');
+                        }
+                    });
+                } else {
+                    itemSelect.empty().append('<option value="">-- Select Scholarship First --</option>');
+                }
+            });
+        });
+    </script>
+@endpush

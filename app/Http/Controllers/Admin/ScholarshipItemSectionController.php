@@ -3,28 +3,40 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\ScholarshipItem;
-use App\Models\ScholarshipItemSection;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\{Scholarship, ScholarshipItem, ScholarshipItemSection};
+use App\Http\Controllers\Controller;
 
 class ScholarshipItemSectionController extends Controller
 {
-    public function index()
+  public function index()
+{
+    // Eager load destinationItem and its parent destination
+    $sections = ScholarshipItemSection::with('scholarshipItem.scholarship')->get();
+
+    $groupedByScholarship = $sections->groupBy(function($section) {
+        return $section->scholarshipItem->scholarship->country ?? 'No scholarship';
+    });
+
+    return view('admin.scholarship_item_sections.index', compact('groupedByScholarship'));
+}
+
+public function getItems(Request $request)
+{
+    // Fetch items belonging to the selected scholarship
+    $items = ScholarshipItem::where('scholarship_id', $request->scholarship_id)
+        ->select('id', 'title')
+        ->get();
+
+    return response()->json($items);
+}
+
+     public function create()
     {
-        $sections = ScholarshipItemSection::with('scholarshipItem.scholarship')
-            ->latest() 
-            ->get();
-
-        return view('admin.scholarship_item_sections.index', compact('sections'));
-    }
-
-    public function create()
-    {
-        $scholarshipItems = ScholarshipItem::with('scholarship')->orderBy('title', 'asc')->get();
-
-        return view('admin.scholarship_item_sections.create', compact('scholarshipItems'));
+        $scholarships = Scholarship::orderBy('title')->get();
+        // We don't need to pass all items anymore, as we'll fetch them dynamically
+        return view('admin.scholarship_item_sections.create', compact('scholarships'));
     }
 
     public function store(Request $request)

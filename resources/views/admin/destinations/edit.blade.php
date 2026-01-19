@@ -53,13 +53,13 @@
                                         @enderror
                                     </div>
 
-                                    <div class="form-group col-md-12">
+                                    {{-- <div class="form-group col-md-12">
                                         <label>Description</label>
                                         <textarea name="description" rows="6" class="summernote @error('description') is-invalid @enderror">{{ old('description', $destination->description) }}</textarea>
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group col-md-6">
                                         <label> Image (for Home Page)</label>

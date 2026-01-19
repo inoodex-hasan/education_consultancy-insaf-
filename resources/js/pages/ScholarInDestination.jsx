@@ -35,18 +35,12 @@ export default function ScholarInDestination({
                             </span>
                         </div>
 
-                        <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                            Scholarship in{" "}
-                            <span className="text-[#c3a25d]">
-                                {scholarship.country}
-                            </span>
+                        <h1 className="text-5xl lg:text-5xl font-bold leading-tight mb-6">
+                            {scholarship.title}
                         </h1>
 
                         <div className="flex items-center gap-2 text-gray-300 mb-8 text-xl">
-                            <MapPin className="w-6 h-6 text-[#c3a25d]" />
-                            <span>
-                                {scholarship.country || "International"}
-                            </span>
+                            <span>{scholarship.subtitle}</span>
                         </div>
 
                         <button
@@ -62,10 +56,10 @@ export default function ScholarInDestination({
 
                     {/* Right Side: Hero Image from Scholarship Table */}
                     <div className="relative z-10">
-                        <div className="relative rounded-[3rem] overflow-hidden border-[12px] border-white/5 shadow-2xl">
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-800 min-h-[300px] flex items-center justify-center">
                             <img
-                                src={`/${scholarship.image}`}
-                                alt={`Explore ${scholarship.title}`}
+                                src={`/${scholarship.cover_photo}`}
+                                alt={`Explore ${scholarship.country}`}
                                 className="w-full h-auto lg:h-[550px] object-cover transition-transform duration-700 hover:scale-105"
                             />
                         </div>
@@ -84,7 +78,7 @@ export default function ScholarInDestination({
                                     Navigation
                                 </h3>
                                 <nav className="space-y-2">
-                                    <button
+                                    {/* <button
                                         onClick={() =>
                                             window.scrollTo({
                                                 top: 0,
@@ -94,7 +88,7 @@ export default function ScholarInDestination({
                                         className="w-full text-left text-gray-600 hover:text-[#c3a25d] px-4 py-3 rounded-xl transition-all text-sm font-bold bg-slate-50 border-l-4 border-[#c3a25d]"
                                     >
                                         Overview
-                                    </button>
+                                    </button> */}
                                     {scholarship_items?.map((item) => (
                                         <button
                                             key={item.id}
@@ -178,7 +172,7 @@ export default function ScholarInDestination({
                                                                             className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
                                                                         />
                                                                     </div>
-                                                                )
+                                                                ),
                                                             )}
                                                         </div>
                                                     )}

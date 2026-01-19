@@ -17,6 +17,7 @@ class ScholarshipController extends Controller
                       ->first();
         $scholarships = Scholarship::where('is_active', 1)
             ->select('id', 'title', 'slug', 'country', 'image')
+            ->orderBy('created_at')
             ->get();
 
         return Inertia::render('Scholarship', [

@@ -11,7 +11,7 @@ import Modal from "./Modal";
 import { Link } from "@inertiajs/react";
 
 const HeroSlider = ({ slider }) => {
-    // const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
             <div className="swiper w-full h-full mt-[50px] sm:mt-[61px] xl:mt-[79px] homeSlider  ">
@@ -73,14 +73,17 @@ const HeroSlider = ({ slider }) => {
                                                 </p>
                                             </div>
                                             <div className="flex gap-5 justify-start items-center">
-                                                <a
-                                                    href={slide?.url}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
+                                                <button
+                                                    onClick={() =>
+                                                        setIsModalOpen(true)
+                                                    }
+                                                    // href={slide?.url}
+                                                    // target="_blank"
+                                                    // rel="noopener noreferrer"
                                                     className="py-2.5 sm:py-3 lg:py-3.5 px-3.5 sm:px-4 lg:px-[18px] text-subtitle3 sm:text-subtitle2 lg:text-subtitle1 font-subtitle3 sm:font-subtitle2 lg:font-subtitle1 rounded-[20px] border-2 border-primary-light text-primary-light hover:text-white hover:bg-primary-light transition-all duration-300 ease-in cursor-pointer"
                                                 >
                                                     {slide?.cta_button}
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -90,9 +93,9 @@ const HeroSlider = ({ slider }) => {
                 </Swiper>
                 <div className="container swiper-pagination lg:flex lg:flex-col lg:gap-2.5 lg:items-end lg:right-0! lg:absolute! lg:top-[40%]! lg:left-auto! lg:max-w-3xl!"></div>
             </div>
-            {/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <Form />
-            </Modal> */}
+            </Modal>
         </>
     );
 };

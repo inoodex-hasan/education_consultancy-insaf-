@@ -56,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
             TermsCondition::select('id', 'title', 'subtitle', 'description')
             -> get(),
 
-             'policy' => fn () =>
+        'policy' => fn () =>
             PrivacyPolicy::select('id', 'title', 'subtitle', 'description')
             -> get(),
         ]);

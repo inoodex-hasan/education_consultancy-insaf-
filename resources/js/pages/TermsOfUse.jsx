@@ -4,31 +4,26 @@ export default function TermsOfUse({ terms }) {
     // console.log(terms[0]);
     return (
         <>
-            <div className="min-h-screen bg-white">
-                {/* Hero Section */}
-                <section className="bg-gradient-to-b from-[#283e77] to-[#1e2e5a] py-24 px-6">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <div className="bg-white text-gray-800 p-8 lg:p-12">
+                <div className="container mx-auto">
+                    <section className="border-b-4 border-gold pb-8 mb-12 text-center mt-16">
+                        <h1 className="text-4xl md:text-5xl font-bold text-blue mb-4 font-mont">
                             {terms[0].title}
                         </h1>
-                        <p className="text-xl text-white/90">
+                        <p className="text-lg md:text-xl font-mont">
                             {terms[0].subtitle}
                         </p>
-                        <div className="mt-8 h-1 w-32 bg-[#c3a25d] mx-auto"></div>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Main Content */}
-                <section className="py-16 px-6 lg:py-24">
-                    <div className="max-w-4xl mx-auto prose prose-lg">
+                    <section className="mb-12">
                         <div
                             className="leading-relaxed text-md font-mont"
                             dangerouslySetInnerHTML={{
                                 __html: terms[0].description,
                             }}
                         />
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </>
     );

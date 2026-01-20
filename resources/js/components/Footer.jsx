@@ -132,12 +132,13 @@ const Footer = () => {
                                     deliver approved visas for top global
                                     destinations. Our expert team handles
                                     everything from course selection to visa
-                                    approval with precision and speed. With
+                                    approval with precision and speed...
+                                    {/* With
                                     transparent processes, strong university
                                     networks, and proven success, we lead where
                                     others follow. If you are serious about
                                     studying abroad, Insaf Immigration is the
-                                    only name you need to trust.
+                                    only name you need to trust. */}
                                 </p>
                                 <div className="flex justify-start items-center gap-[30px]">
                                     <a href="https://www.facebook.com/">

@@ -362,11 +362,17 @@ const Form = () => {
                     />
                     <label className="ml-3 text-sm text-gray-600 font-mont">
                         By clicking, you agree to our{" "}
-                        <a href="/privacy" className="text-blue-600 underline">
+                        <a
+                            href="/privacy-policy"
+                            className="text-blue-600 underline"
+                        >
                             Privacy Policy
                         </a>{" "}
                         &{" "}
-                        <a href="/terms" className="text-blue-600 underline">
+                        <a
+                            href="/terms-and-conditions"
+                            className="text-blue-600 underline"
+                        >
                             Terms
                         </a>{" "}
                         <span className="text-red-500">*</span>

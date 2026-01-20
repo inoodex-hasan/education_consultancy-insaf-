@@ -66,7 +66,7 @@ const Footer = () => {
             url: "/accomodation",
         },
         { id: 34, title: "Visa Service", url: "/visa-service" },
-        { id: 34, title: "Privacy Policy", url: "/pricacy-policy" },
+        { id: 34, title: "Privacy Policy", url: "/privacy-policy" },
         { id: 34, title: "Terms and Conditions", url: "/terms-and-conditions" },
     ];
     const { offices } = usePage().props;

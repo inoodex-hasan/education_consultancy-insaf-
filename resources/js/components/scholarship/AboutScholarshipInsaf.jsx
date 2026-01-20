@@ -51,19 +51,16 @@ export default function AboutScholarshipInsaf({ successcount }) {
                 {/* Description */}
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <p className="text-lg leading-relaxed text-gray-700">
-                        Beginning in 2006, Insaf Immigration's expertise in
-                        student migration consultancy evolved from a single
-                        Melbourne office to a{" "}
-                        <span className="font-semibold text-gold">
-                            multinational presence
-                        </span>
-                        , spanning{" "}
-                        <span className="font-semibold text-gold">
-                            Australia, Bangladesh, Sri Lanka, and India
-                        </span>
-                        . We now proudly represent international educational
-                        institutions, consistently turning students’ dreams into
-                        their reality.
+                        Insaf Education Consultancy is a trusted education
+                        guidance platform dedicated to helping students achieve
+                        their academic and career goals. We provide professional
+                        counseling and personalized support for students seeking
+                        higher education opportunities in Bangladesh and abroad.
+                        Our services include university selection, admission
+                        processing, scholarship guidance, and visa assistance.
+                        We aim to simplify the education process and empower
+                        students with the right information, expert advice, and
+                        continuous support to build a successful future.
                     </p>
                 </div>
 

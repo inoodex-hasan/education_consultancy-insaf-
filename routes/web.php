@@ -50,7 +50,7 @@ Route::post('/process-download', [DocumentDownloadController::class, 'store'])->
 
 Route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('terms');
 
-Route::get('/pricacy-policy', [HomeController::class, 'policy'])->name('policy');
+Route::get('/privacy-policy', [HomeController::class, 'policy'])->name('policy');
 
 // Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 

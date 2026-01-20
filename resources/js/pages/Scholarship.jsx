@@ -146,7 +146,7 @@ export default function Scholarship({
                 </div>
             </section>
             <CounselingSection />
-            <SuccessGallery successcount={successcount} />
+            {/* <SuccessGallery successcount={successcount} /> */}
             <AboutScholarshipInsaf successcount={successcount} />
         </>
     );

@@ -1,128 +1,145 @@
 import React from "react";
+import { Link } from "@inertiajs/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Link } from "@inertiajs/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const UpcomingEvents = ({ events = [] }) => {
-    const sortedEvents = [...events].sort((a, b) => 
-        new Date(b.start_time) - new Date(a.start_time)
-    );
-
+const UpcomingEvents = ({ events }) => {
     const formatAMPM = (dateTime) => {
         if (!dateTime) return "";
+        // Normalize 'T' separator to space: "2026-01-07T10:00:00" → "2026-01-07 10:00:00"
         const cleanDateTime = dateTime.replace("T", " ");
         const parts = cleanDateTime.split(" ");
         if (parts.length < 2) return "";
-        const [hours, minutes] = parts[1].split(":");
+        const timePart = parts[1]; // e.g., "10:00:00"
+        const [hours, minutes] = timePart.split(":");
         let hour = parseInt(hours, 10);
         const ampm = hour >= 12 ? "PM" : "AM";
-        hour = hour % 12 || 12;
-        return `${hour}:${minutes} ${ampm}`;
+        hour = hour % 12;
+        hour = hour || 12; // 0 → 12 for midnight
+        return `${hour}:${minutes.padStart(2, "0")} ${ampm}`;
     };
 
-    if (sortedEvents.length === 0) return null;
+    const shouldShowNavigation = events.length >= 4;
 
     return (
-        <section className="py-20 lg:py-28 bg-linear-to-b from-white via-[#283e77]/4 to-white overflow-hidden">
-            <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
-                
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl font-bold mb-6 text-[#283e77]">
-                        Upcoming Events
-                    </h2>
-                </div>
+        <section className="py-12 bg-blue">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl text-white font-bold text-center mb-10">
+                    Upcoming Events
+                </h2>
 
-                <Swiper
-                    modules={[Autoplay, Navigation, Pagination]}
-                    spaceBetween={30}
-                    slidesPerView={1}
-                    centeredSlides={true}
-                    /* --- CRITICAL FIXES FOR DISAPPEARING SLIDES --- */
-                    loop={sortedEvents.length > 1}
-                    // This forces Swiper to create enough clones for the loop
-                    loopAdditionalSlides={3} 
-                    // Ensures the slider doesn't get stuck
-                    watchSlidesProgress={true} 
-                    /* ---------------------------------------------- */
-                    autoplay={{ delay: 4000, disableOnInteraction: false }}
-                    navigation={{
-                        prevEl: ".event-prev",
-                        nextEl: ".event-next",
-                    }}
-                    pagination={{ clickable: true }}
-                    breakpoints={{
-                        768: { 
-                            slidesPerView: 3, 
-                            centeredSlides: false 
-                        },
-                        1024: { 
-                            slidesPerView: 3, 
-                            centeredSlides: false 
-                        },
-                    }}
-                    className="events-swiper !pb-14"
-                >
-                    {sortedEvents.map((event) => (
-                        // Use event.id as key to help Swiper clones stay stable
-                        <SwiperSlide key={`event-${event.id}`}>
-                            {({ isActive }) => (
-                                <div
-                                    className={`group relative bg-white rounded-2xl shadow-xl transition-all duration-700 border border-gray-100 overflow-hidden h-full
-                                        ${isActive 
-                                            ? "scale-105 z-10 border-[#283e77]/20 shadow-2xl" 
-                                            : "scale-95 opacity-50"
-                                        }
-                                    `}
+                <div className="relative">
+                    {/* Custom Navigation Buttons - only shown when ≥ 4 events */}
+                    {shouldShowNavigation && (
+                        <>
+                            <button className="award-prev absolute left-0 top-1/2 text-blue -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg transition hover:bg-gray-100">
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
                                 >
-                                    <div className="relative h-60 overflow-hidden">
-                                        <img
-                                            src={event.photo_path}
-                                            alt={event.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                    </div>
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M15 19l-7-7 7-7"
+                                    />
+                                </svg>
+                            </button>
 
-                                    <div className="p-8 text-center">
-                                        <Link href={`/event/${event.id}`}>
-                                            <h4 className="text-2xl font-bold mb-4 text-[#283e77]">
-                                                {event.title}
-                                            </h4>
-                                        </Link>
-                                        
-                                        <div className="space-y-3 inline-block text-left text-gray-600">
-                                            <p className="flex items-center gap-3">
-                                                <span>🕒</span>
-                                                <span className="text-sm font-medium">
-                                                    {formatAMPM(event.start_time)} - {formatAMPM(event.end_time)}
-                                                </span>
-                                            </p>
-                                            <p className="flex items-center gap-3">
-                                                <span>📍</span>
-                                                <span className="text-sm font-medium truncate max-w-[200px]">
-                                                    {event.location}
-                                                </span>
-                                            </p>
-                                        </div>
+                            <button className="award-next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white text-blue rounded-full p-3 shadow-lg transition hover:bg-gray-100">
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </button>
+                        </>
+                    )}
+
+                    <Swiper
+                        modules={[Autoplay, Navigation, Pagination]}
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        loop={shouldShowNavigation}
+                        autoplay={
+                            shouldShowNavigation
+                                ? { delay: 4000, disableOnInteraction: false }
+                                : false
+                        }
+                        navigation={
+                            shouldShowNavigation
+                                ? {
+                                      prevEl: ".award-prev",
+                                      nextEl: ".award-next",
+                                  }
+                                : false
+                        }
+                        pagination={{ clickable: true }}
+                        breakpoints={{
+                            640: { slidesPerView: 2 },
+                            768: { slidesPerView: 3 },
+                            1024: { slidesPerView: 3 },
+                            1280: { slidesPerView: 3 },
+                        }}
+                        className="awards-swiper py-10"
+                    >
+                        {events.map((event) => (
+                            <SwiperSlide
+                                key={event.id}
+                                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                            >
+                                {/* Banner Image */}
+                                <div
+                                    className="relative h-64 bg-contain bg-no-repeat bg-center"
+                                    style={{
+                                        backgroundImage: `url(${
+                                            event.photo_path ||
+                                            "/fallback-image.jpg"
+                                        })`,
+                                    }}
+                                />
+
+                                {/* Event Details */}
+                                <div className="p-6">
+                                    <Link href={`/event/${event.id}`}>
+                                        <h4
+                                            className="text-xl font-semibold mb-4 hover:text-blue-800 transition"
+                                            style={{ color: "#283e77" }}
+                                        >
+                                            {event.title}
+                                        </h4>
+                                    </Link>
+                                    <div className="space-y-3 text-gray-700">
+                                        <p className="flex items-center gap-2">
+                                            <span className="text-blue-800 font-medium">
+                                                🕒
+                                            </span>
+                                            {formatAMPM(event.start_time)}
+                                        </p>
+                                        <p className="flex items-center gap-2">
+                                            <span className="text-blue-800 font-medium">
+                                                📍
+                                            </span>
+                                            Venue: {event.location}
+                                        </p>
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-full h-1.5 bg-[#283e77] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
                                 </div>
-                            )}
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
-                {/* Navigation Buttons */}
-                <div className="flex justify-center gap-8 mt-6">
-                    <button className="event-prev w-14 h-14 cursor-pointer rounded-full bg-[#283e77] text-white flex items-center justify-center shadow-xl hover:bg-[#c3a25d] transition-all">
-                        ←
-                    </button>
-                    <button className="event-next w-14 h-14 rounded-full cursor-pointer bg-[#283e77] text-white flex items-center justify-center shadow-xl hover:bg-[#c3a25d] transition-all">
-                        →
-                    </button>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </section>

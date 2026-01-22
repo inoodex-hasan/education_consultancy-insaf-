@@ -42,7 +42,7 @@ class BlogController extends Controller
             $data['slug'] = $originalSlug . '-' . $i++;
         }
         
-        $data['status'] = $request->has('status');
+        $data['status'] = $request->boolean('status');
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
@@ -87,7 +87,7 @@ class BlogController extends Controller
             unset($data['slug']); 
         }
 
-        $data['status'] = $request->has('status');
+        $data['status'] = $request->boolean('status');
 
         if ($request->hasFile('image')) {
             if ($blog->image && File::exists(public_path($blog->image))) {

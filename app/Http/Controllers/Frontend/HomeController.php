@@ -12,10 +12,10 @@ class HomeController extends Controller
     public function index()
     {
         // sleep(3);
-        $blogs=Blog::all();
-        $events=Event::all();
-        $dest=Destination::all();
-        $study_abroad=Destination::all();
+        $blogs=Blog::where('status',1)->get();
+        $events=Event::where('is_active',1)->get();
+        $dest=Destination::where('is_active',1)->get();
+        $study_abroad=Destination::where('is_active',1)->get();
         $slider=Slider::all();
         $achievements=Achievement::all();
         // $reviews=Review::all();

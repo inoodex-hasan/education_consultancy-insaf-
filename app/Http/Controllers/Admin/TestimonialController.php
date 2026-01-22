@@ -34,7 +34,7 @@ class TestimonialController extends Controller
         ]);
 
         $data = $request->except(['_token']);
-        $data['status'] = $request->has('status'); 
+        $data['status'] = $request->boolean('status'); 
 
         if ($request->hasFile('image_path')) {
             $file = $request->file('image_path');
@@ -66,7 +66,7 @@ class TestimonialController extends Controller
         ]);
 
         $data = $request->except(['_token', '_method']);
-        $data['status'] = $request->has('status'); 
+        $data['status'] = $request->boolean('status'); 
 
         if ($request->hasFile('image_path')) {
             if ($testimonial->image_path && File::exists(public_path($testimonial->image_path))) {

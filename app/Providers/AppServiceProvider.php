@@ -25,11 +25,13 @@ class AppServiceProvider extends ServiceProvider
         'destinations' => fn () =>
             Destination::orderBy('order_list', 'asc')
                 ->select('id', 'country', 'slug', 'image', 'order_list')
+                ->where('is_active', 1)
                 ->get(),
 
         'scholarships' => fn () =>
             Scholarship::where('is_active', 1)
                 ->select('country', 'slug', 'title', 'image')
+                ->where('is_active', 1)
                 ->get(),
 
         'offices' => fn () =>

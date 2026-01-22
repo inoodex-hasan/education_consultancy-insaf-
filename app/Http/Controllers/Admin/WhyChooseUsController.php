@@ -31,7 +31,7 @@ class WhyChooseUsController extends Controller
         ]);
 
         $data = $request->all();
-        $data['is_active'] = $request->has('is_active');
+        $data['is_active'] = $request->boolean('is_active');
 
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadFile($request->file('image'));

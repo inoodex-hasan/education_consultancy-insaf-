@@ -32,7 +32,7 @@ class AchievementController extends Controller
         ]);
 
         $data = $request->except(['_token']);
-        $data['status'] = $request->has('status');
+        $data['status'] = $request->boolean('status');
 
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
@@ -61,7 +61,7 @@ class AchievementController extends Controller
         ]);
 
         $data = $request->except(['_token', '_method']);
-        $data['status'] = $request->has('status');
+        $data['status'] = $request->boolean('status');
 
         if ($request->hasFile('photo_path')) {
             if ($achievement->photo_path && File::exists(public_path($achievement->photo_path))) {

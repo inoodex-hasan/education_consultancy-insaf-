@@ -47,7 +47,7 @@ class AdmissionController extends Controller
         ]);
         
         $data = $request->all();
-        $data['is_active'] = $request->has('is_active');
+        $data['is_active'] = $request->boolean('is_active');
 
         $admission->update($data);
 

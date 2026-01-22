@@ -70,7 +70,7 @@ public function store(Request $request)
     }
 
     // 5. Handle Status
-    $data['is_active'] = $request->has('is_active');
+    $data['is_active'] = $request->boolean('is_active');
 
     // 6. Create Record
     Destination::create($data);
@@ -133,7 +133,7 @@ public function store(Request $request)
         $data['cover_photo'] = 'uploads/destinations/' . $filename;
     }
 
-    $data['is_active'] = $request->has('is_active');
+    $data['is_active'] = $request->boolean('is_active');
 
     $destination->update($data);
 

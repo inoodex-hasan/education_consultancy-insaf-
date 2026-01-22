@@ -36,7 +36,7 @@ class EventController extends Controller
         ]);
 
         $data = $request->all();
-        $data['is_active'] = $request->has('is_active');
+        $data['is_active'] = $request->input('is_active', 0);
 
         if ($request->hasFile('photo_path')) {
             $file = $request->file('photo_path');
@@ -70,7 +70,7 @@ class EventController extends Controller
         ]);
 
         $data = $request->all();
-        $data['is_active'] = $request->has('is_active');
+        $data['is_active'] = $request->input('is_active', 0);
 
         if ($request->hasFile('photo_path')) {
             if ($event->photo_path && file_exists(public_path($event->photo_path))) {

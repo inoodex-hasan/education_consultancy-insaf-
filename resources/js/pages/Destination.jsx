@@ -8,15 +8,15 @@ export default function Destination({ destinaton_study_abroad }) {
     return (
         <>
             <section className="py-24 px-6 bg-linear-to-b from-white to-slate-50 overflow-hidden">
-                <div className="max-w-7xl mx-auto">
+                <div className="container mx-auto">
                     {/* Header with Decorative Lines */}
                     <div className="text-center mb-16 relative">
                         <div className="absolute inset-0 flex items-center justify-center opacity-10">
                             <GraduationCap className="w-32 h-32 text-blue" />
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold text-blue mb-4 relative">
-                            Study Abroad with{" "}
+                        <h2 className="text-3xl md:text-5xl font-bold text-blue mb-4 relative">
+                            Study Abroad with
                             <span className="text-gold">Insaf Immigration</span>
                         </h2>
                         <p className="text-2xl font-semibold text-gray-800 mb-3">

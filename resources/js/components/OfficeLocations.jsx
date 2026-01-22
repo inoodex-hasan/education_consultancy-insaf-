@@ -34,7 +34,7 @@ const OfficeLocations = ({ offices }) => {
             <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-[#283e77] mb-4">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-[#283e77] mb-4">
                         Insaf Immigration Offices in Bangladesh
                     </h2>
                     <p className="text-xl text-gray-600">

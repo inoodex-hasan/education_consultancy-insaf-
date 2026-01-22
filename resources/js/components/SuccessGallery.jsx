@@ -40,13 +40,13 @@ const SuccessGallery = ({ successcount }) => {
     // }, []);
 
     return (
-        <section className="py-24 lg:py-22 bg-linear-to-br from-blue/5 via-white to-gold/5 overflow-hidden relative">
+        <section className="py-20 lg:py-22 bg-linear-to-br from-blue/5 via-white to-gold/5 overflow-hidden relative">
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-20 left-20 w-96 h-96 bg-gold/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue/10 rounded-full blur-3xl animate-pulse delay-700"></div>
             </div>
 
-            <div className="container mx-auto px-6 lg:px-8 max-w-7xl relative">
+            <div className="container mx-auto px-6 lg:px-8 relative">
                 <div className="text-center mb-16">
                     <h2 className="text-6xl lg:text-5xl font-black text-blue mb-4">
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-gold via-[#d4b86b] to-gold">
@@ -65,7 +65,7 @@ const SuccessGallery = ({ successcount }) => {
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={30}
-                    slidesPerView={2}
+                    slidesPerView={1}
                     loop={true}
                     autoplay={{
                         delay: 3000,
@@ -106,7 +106,7 @@ const SuccessGallery = ({ successcount }) => {
                     <a
                         href="https://wa.me/8801880942457"
                         target="_blank"
-                        className="inline-flex items-center gap-4 px-12 py-6 rounded-full bg-blue text-white text-xl font-bold 
+                        className="inline-flex items-center gap-4 px-12 py-6 rounded-full bg-blue text-white text-lg md:text-xl font-bold 
               shadow-2xl hover:bg-[#c3a25d] hover:shadow-[#c3a25d]/30 transition-all duration-500 hover:scale-110"
                     >
                         Be the Next Success Story

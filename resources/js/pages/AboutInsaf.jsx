@@ -38,7 +38,7 @@ export default function AboutInsaf({ aboutItems, why_choose_us }) {
                             <div className="relative group">
                                 <div className="absolute -inset-2 bg-linear-to-r from-blue to-gold rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
 
-                                <div className="relative bg-white p-4 md:p-1 rounded-3xl shadow-2xl overflow-hidden object-cover lg:w-250 lg:min-h-60 lg:max-h-120">
+                                <div className="relative bg-white p-1 md:p-1 rounded-3xl shadow-2xl overflow-hidden object-cover lg:w-250 lg:min-h-60 lg:max-h-120">
                                     <img
                                         src={about}
                                         alt="PFEC Annual Retreat 2024 - We Are PFECIAN"

@@ -28,22 +28,22 @@ const AwardAndAchievement = ({ awards }) => {
                             </div>
 
                             {/* Main Heading */}
-                            <h2 className="text-5xl md:text-5xl font-bold leading-tight">
+                            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
                                 Insaf Immigration: Shining with Prestigious
                                 Awards!
                             </h2>
                             {/* Subtext */}
-                            <p className="text-xl text-gray-200 max-w-lg">
+                            <p className="text-lg md:text-xl text-gray-200 max-w-lg">
                                 Our efforts have been recognized with many
                                 prestigious accolades over the years
                             </p>
                             {/* CTA Button */}
-                            <div className="flex flex-col sm:flex-row gap-6 pt-6">
+                            <div className="flex flex-col sm:flex-row gap-1 md:gap-6 pt-6">
                                 <a
                                     href="https://wa.me/8801880942457?"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#c3a25d] hover:bg-[#d4b870] text-white font-bold text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+                                    className="group inline-flex items-center justify-center gap-1 md:gap-4 px-3 md:px-10 py-5 bg-[#c3a25d] hover:bg-[#d4b870] text-white font-bold text-md md:text-lg rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                                 >
                                     Book a FREE Consultation Now
                                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />

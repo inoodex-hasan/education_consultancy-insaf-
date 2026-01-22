@@ -76,49 +76,15 @@ export default function WhyStudyAbroad() {
                     <div className="relative flex justify-center lg:justify-end">
                         <div className="relative">
                             {/* Decorative Background Shape */}
-                            <div className="absolute -inset-8 bg-linear-to-br from-blue/10 to-[#c3a25d]/10 rounded-3xl blur-3xl -z-10" />
 
                             {/* Main Image (Replace with your actual image) */}
                             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                                 <img
                                     src={studyabroad}
                                     alt="Happy student studying abroad"
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-full object-contain"
                                 />
-
-                                {/* Gold Frame Corners */}
-                                <div className="absolute top-0 left-0 w-24 h-24 border-l-8 border-t-8 border-gold rounded-tl-3xl" />
-                                <div className="absolute top-0 right-0 w-24 h-24 border-r-8 border-t-8 border-gold rounded-tr-3xl" />
-                                <div className="absolute bottom-0 left-0 w-24 h-24 border-l-8 border-b-8 border-gold rounded-bl-3xl" />
-                                <div className="absolute bottom-0 right-0 w-24 h-24 border-r-8 border-b-8 border-gold rounded-br-3xl" />
                             </div>
-
-                            {/* Floating Badge */}
-                            <div className="absolute -top-6 -left-6 bg-blue text-white px-6 py-3 rounded-full font-bold shadow-xl flex items-center gap-2">
-                                <GraduationCap className="w-6 h-6" />
-                                Dream Big
-                            </div>
-
-                            {/* Airplane Trail */}
-                            <svg
-                                className="absolute -top-12 -right-12 w-32 h-32 opacity-60"
-                                viewBox="0 0 100 100"
-                                fill="none"
-                            >
-                                <path
-                                    d="M 20 70 Q 50 30, 80 60"
-                                    stroke="#c3a25d"
-                                    strokeWidth="4"
-                                    strokeLinecap="round"
-                                    strokeDasharray="6,8"
-                                />
-                                <path
-                                    d="M 70 55 L 85 60 L 78 70"
-                                    fill="#c3a25d"
-                                    stroke="#c3a25d"
-                                    strokeWidth="2"
-                                />
-                            </svg>
                         </div>
                     </div>
                 </div>

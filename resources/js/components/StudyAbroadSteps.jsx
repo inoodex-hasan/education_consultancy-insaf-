@@ -52,7 +52,7 @@ const StudyAbroadSteps = () => {
             <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-4xl font-bold text-blue mb-4">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-blue mb-4">
                         Study Abroad in Just 5 Simple Steps
                     </h2>
                     <p className="text-lg text-gray-600 max-w-3xl mx-auto">

@@ -41,7 +41,7 @@ const Header = () => {
         {
             id: 3,
             title: "Our Services",
-            url: "/",
+            url: "#",
             child: [
                 {
                     id: 31,
@@ -59,9 +59,8 @@ const Header = () => {
         },
         {
             id: 4,
-            title: "Resources",
-            url: "/",
-            child: [{ id: 41, title: "Blogs", url: "/blogs" }],
+            title: "Blogs",
+            url: "/blogs",
         },
 
         {
@@ -108,12 +107,12 @@ const Header = () => {
                                 <div className="flex items-center gap-1 py-6">
                                     <Link
                                         href={navItem.url}
-                                        className="text-lg font-medium text-gray-800 hover:text-blue transition-colors"
+                                        className="text-lg cursor-pointer font-medium text-gray-800 hover:text-blue transition-colors"
                                     >
                                         {navItem.title}
                                     </Link>
                                     {navItem.child && (
-                                        <FaAngleDown className="text-sm text-black" />
+                                        <FaAngleDown className="text-sm cursor-pointer text-black" />
                                     )}
                                 </div>
 

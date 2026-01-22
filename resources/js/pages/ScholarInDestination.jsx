@@ -25,7 +25,7 @@ export default function ScholarInDestination({
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#c3a25d]/30 rounded-full blur-[120px] -mr-40 -mt-40" />
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div className="relative container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left Side: Text Content */}
                     <div className="text-white z-10">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-[#c3a25d]/30 mb-8">
@@ -35,11 +35,11 @@ export default function ScholarInDestination({
                             </span>
                         </div>
 
-                        <h1 className="text-5xl lg:text-5xl font-bold leading-tight mb-6">
+                        <h1 className="text-3xl lg:text-5xl font-bold leading-tight mb-6">
                             {scholarship.title}
                         </h1>
 
-                        <div className="flex items-center gap-2 text-gray-300 mb-8 text-xl">
+                        <div className="flex items-center gap-2 text-gray-300 mb-8 text-lg md:text-xl">
                             <span>{scholarship.subtitle}</span>
                         </div>
 

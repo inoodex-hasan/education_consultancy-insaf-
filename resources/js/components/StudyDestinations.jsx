@@ -40,11 +40,11 @@ const StudyDestinations = ({ destinations }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
-            <section className="py-30 lg:py-28 bg-linear-to-b from-white via-blue-50/30 to-white overflow-hidden">
+            <section className="py-20 lg:py-28 bg-linear-to-b from-white via-blue-50/30 to-white overflow-hidden">
                 <div className="container mx-auto px-6 lg:px-8  ">
                     {/* Heading */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl lg:text-5xl font-bold text-blue mb-4">
+                        <h2 className="text-3xl lg:text-5xl font-bold text-blue mb-4">
                             Gain Access to Top Institutions across the Globe
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -91,7 +91,7 @@ const StudyDestinations = ({ destinations }) => {
                                     </div>
 
                                     {/* Content */}
-                                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div className="absolute bottom-0 left-0 right-0  p-4 md:p-8 text-white translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
                                         <h3 className="text-2xl font-bold mb-1">
                                             {dest.country}
                                         </h3>
@@ -102,7 +102,7 @@ const StudyDestinations = ({ destinations }) => {
                                         <Link
                                             // href={route("destinations/slug")}
                                             href={`/destination/${dest.slug}`}
-                                            className="inline-flex items-center gap-2 text-white font-medium border-b-2 border-gold pb-1 hover:gap-4 transition-all duration-300"
+                                            className="inline-flex items-center gap-[5px] md:gap-2 text-white font-medium border-b-2 border-gold pb-1 hover:gap-4 transition-all duration-300"
                                         >
                                             Learn More
                                             <svg

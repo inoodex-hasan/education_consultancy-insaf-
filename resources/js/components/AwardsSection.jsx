@@ -13,10 +13,10 @@ const AwardsSection = ({ achievement }) => {
             <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-5xl font-bold mb-6 text-blue">
+                    <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-blue">
                         Awards & Achievements
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                         Recognized by the world's top universities for
                         excellence in student recruitment and support.
                     </p>
@@ -25,7 +25,7 @@ const AwardsSection = ({ achievement }) => {
                 {/* Awards Slider */}
                 <Swiper
                     modules={[Autoplay, Navigation, Pagination]}
-                    spaceBetween={30}
+                    spaceBetween={10}
                     slidesPerView={2}
                     loop={true}
                     autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -33,12 +33,12 @@ const AwardsSection = ({ achievement }) => {
                         prevEl: ".award-prev",
                         nextEl: ".award-next",
                     }}
-                    pagination={{ clickable: true }}
+                    // pagination={{ clickable: true }}
                     breakpoints={{
-                        640: { slidesPerView: 3 },
-                        768: { slidesPerView: 3 },
-                        1024: { slidesPerView: 3 },
-                        1280: { slidesPerView: 3 },
+                        640: { slidesPerView: 3, spaceBetween: 10 },
+                        768: { slidesPerView: 3, spaceBetween: 15 },
+                        1024: { slidesPerView: 3, spaceBetween: 20 },
+                        1280: { slidesPerView: 3, spaceBetween: 30 },
                     }}
                     className="awards-swiper"
                 >
@@ -92,12 +92,12 @@ const AwardsSection = ({ achievement }) => {
 
                 {/* CTA Button */}
                 <div className="text-center mt-12">
-                    <Link href='/award-and-achievement'
-                        
+                    <Link
+                        href="/award-and-achievement"
                         className="inline-flex items-center gap-3 px-10 py-5 rounded-full 
             bg-gradient-to-r from-[#283e77] to-[#1e2d5a] text-white font-bold text-lg 
             shadow-2xl hover:from-[#c3a25d] hover:to-[#d4b86b] transition-all duration-500 hover:scale-105"
-            >
+                    >
                         Explore All Achievements
                     </Link>
                 </div>

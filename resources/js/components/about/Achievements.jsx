@@ -12,44 +12,6 @@ import {
 import map from "../../assets/about/map.jpg";
 
 export default function Achievements({ whyChooseUs }) {
-    // console.log(whyChooseUs);
-    const stats = [
-        {
-            icon: Users,
-            value: "22,000+",
-            label: "Students Assisted",
-            color: "gold",
-        },
-        {
-            icon: GraduationCap,
-            value: "550+",
-            label: "Partner Institutions",
-            color: "blue",
-        },
-        {
-            icon: Trophy,
-            value: "96.7%",
-            label: "Visa Success Rate",
-            color: "gold",
-        },
-        {
-            icon: Crown,
-            value: "18+",
-            label: "Years of Excellence",
-            color: "blue",
-        },
-    ];
-
-    const locations = [
-        { name: "Dhaka", top: "45%", left: "52%" },
-        { name: "Chittagong", top: "78%", left: "68%" },
-        { name: "Barisal", top: "65%", left: "55%" },
-    ];
-
-    // students
-    // partners
-    // visa_grants
-    // years
     return (
         <section className="py-24 px-6 lg:px-8 bg-gray-200">
             <div className="max-w-7xl mx-auto">
@@ -65,9 +27,9 @@ export default function Achievements({ whyChooseUs }) {
                     </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Left: Stats Grid */}
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* item two  */}
                         <div className="group relative bg-blue backdrop-blur-lg rounded-3xl p-10 text-center border border-white/20 hover:border-[#c3a25d]/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-4">
                             {/* Glow Effect */}

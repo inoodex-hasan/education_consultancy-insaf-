@@ -1,21 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import slidesvg from "../assets/slider/sliderSvg.svg";
-import { RiShieldStarFill } from "react-icons/ri";
 import "swiper/css";
 import "swiper/css/pagination";
 import Form from "./form/Form";
 
 import Modal from "./Modal";
-import { Link } from "@inertiajs/react";
 
 const HeroSlider = ({ slider }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const swiperRef = useRef(null);
+
+    useEffect(() => {
+        if (!swiperRef.current) return;
+
+        const slides = swiperRef.current.querySelectorAll(
+            ".swiper-slide > div:first-child",
+        );
+        let maxHeight = 0;
+
+        slides.forEach((slide) => {
+            slide.style.height = "auto"; // reset first
+            maxHeight = Math.max(maxHeight, slide.scrollHeight);
+        });
+
+        slides.forEach((slide) => {
+            slide.style.height = `${maxHeight}px`;
+        });
+    }, [slider]);
     return (
         <>
             <div className="swiper w-full h-full mt-[50px] sm:mt-[61px] xl:mt-[79px] homeSlider  ">
                 <Swiper
+                    ref={swiperRef}
                     modules={[Pagination, Autoplay]}
                     spaceBetween={0}
                     slidesPerView={1}
@@ -49,15 +68,8 @@ const HeroSlider = ({ slider }) => {
                                         >
                                             <div className="flex flex-col gap-5 sm:gap-2.5">
                                                 <div className="flex flex-col gap-5">
-                                                    {/* <div className="flex justify-center lg:justify-start items-center lg:items-start gap-2">
-                                                        <RiShieldStarFill className="mt-1" />
-                                                        <p className="font-medium text-lg ">
-                                                            Plan Your dream trip
-                                                            with us
-                                                        </p>
-                                                    </div> */}
                                                     <div className="flex flex-col gap-[9px]">
-                                                        <h1 className="text-center lg:text-left text-[58px] font-bold  leading-[1.1]">
+                                                        <h1 className="text-center lg:text-left text-3xl  md:text-[58px] font-bold  leading-[1.1]">
                                                             {slide?.title}
                                                         </h1>
 
@@ -68,7 +80,7 @@ const HeroSlider = ({ slider }) => {
                                                         />
                                                     </div>
                                                 </div>
-                                                <p className="text-center lg:text-left text-[19px]  font-body">
+                                                <p className="text-center lg:text-left text-md md:text-[19px]  font-body">
                                                     {slide?.subtitle}
                                                 </p>
                                             </div>
@@ -77,9 +89,6 @@ const HeroSlider = ({ slider }) => {
                                                     onClick={() =>
                                                         setIsModalOpen(true)
                                                     }
-                                                    // href={slide?.url}
-                                                    // target="_blank"
-                                                    // rel="noopener noreferrer"
                                                     className="py-2.5 sm:py-3 lg:py-3.5 px-3.5 sm:px-4 lg:px-[18px] text-subtitle3 sm:text-subtitle2 lg:text-subtitle1 font-subtitle3 sm:font-subtitle2 lg:font-subtitle1 rounded-[20px] border-2 border-primary-light text-primary-light hover:text-white hover:bg-primary-light transition-all duration-300 ease-in cursor-pointer"
                                                 >
                                                     {slide?.cta_button}

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\{Auth, Route};
 use App\Http\Controllers\DemoController;
-use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DestinationController, DestinationItemController, DestinationItemSectionController, DocumentController, DocumentDownloadController, DocumentDownloadFormController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
+use App\Http\Controllers\Admin\{AboutController, AboutItemController, AccommodationController, AccommodationItemController, AccommodationItemSectionController, AchievementController, AdmissionController, AdmissionItemController, AdmissionItemSectionController, BlogController, ContactFormController as AdminContactFormController, ContactUsController, DashboardController, DestinationController, DestinationItemController, DestinationItemSectionController, DocumentController, DocumentDownloadController, DocumentDownloadFormController, EventController, EventItemController, EventItemSectionController, FaqController, HealthController, HealthItemController, HealthItemSectionController, OfficeController, PartnerController, PrivacyPolicyController, ReviewController, ScholarshipController, ScholarshipItemController, ScholarshipItemSectionController, SettingController, SliderController, TeamController, TermsConditionController, TestimonialController, VisaController, VisaItemController, VisaItemSectionController, WhyChooseUsController};
 use App\Http\Controllers\Frontend\{AboutUsController, BlogController as FrontendBlogController, ContactController, ContactFormController, EventController as FrontendEventController, HomeController, ReviewController as FrontendReviewController, ServicesController, StudyDestinationController};
 use Inertia\Inertia;
 
@@ -59,7 +59,7 @@ Route::get('/privacy-policy', [HomeController::class, 'policy'])->name('policy')
 // })->name('dashboard');
 
 Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])
-     ->name('dashboard');
+    ->name('dashboard');
 
 Route::post('/logout', function () {
     Auth::logout();
@@ -118,7 +118,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // Your AJAX Route (Inside the group for security)
     Route::get('/get-items-by-destination/{destination_id}', [DestinationItemSectionController::class, 'getItems'])
-         ->name('admin.get_items_by_destination');
+        ->name('admin.get_items_by_destination');
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
@@ -232,5 +232,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
-    Route::resource('document_download_form', controller: DocumentDownloadController::class)->names('admin.document_download_form');        
+    Route::resource('document_download_form', controller: DocumentDownloadController::class)->names('admin.document_download_form');
+});
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('settings', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin.settings.index');
+    Route::post('settings', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin.settings.update');
 });

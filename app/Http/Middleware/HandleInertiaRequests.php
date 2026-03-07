@@ -15,14 +15,15 @@ class HandleInertiaRequests extends Middleware
      */
     protected $rootView = 'app';
 
-public function share(Request $request): array
-{
-    return array_merge(parent::share($request), [
-        'flash' => [
-            'success' => fn () => $request->session()->get('success'),
-            'download_url' => fn () => $request->session()->get('download_url'),
-            'error'   => fn () => $request->session()->get('error'),
-        ],
-    ]);
-}
+    public function share(Request $request): array
+    {
+        return array_merge(parent::share($request), [
+            'siteSettings' => \App\Models\Setting::first(),
+            'flash' => [
+                'success' => fn() => $request->session()->get('success'),
+                'download_url' => fn() => $request->session()->get('download_url'),
+                'error' => fn() => $request->session()->get('error'),
+            ],
+        ]);
+    }
 }

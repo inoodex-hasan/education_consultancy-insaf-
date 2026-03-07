@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>@yield('title')</title>
-    <link rel="icon" type="image/png" href="{{ asset('logo-insaf-2.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset($siteSettings->favicon ?? 'logo-insaf-2.png') }}">
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">

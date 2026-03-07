@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 19, 2026 at 12:53 PM
+-- Generation Time: Mar 07, 2026 at 07:11 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.26
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `abouts` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -53,11 +53,11 @@ INSERT INTO `abouts` (`id`, `title`, `description`, `is_active`, `created_at`, `
 CREATE TABLE `about_items` (
   `id` bigint UNSIGNED NOT NULL,
   `about_id` bigint UNSIGNED NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `images` json DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `about_items`
@@ -74,8 +74,8 @@ INSERT INTO `about_items` (`id`, `about_id`, `description`, `images`, `created_a
 
 CREATE TABLE `accommodations` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -97,7 +97,7 @@ INSERT INTO `accommodations` (`id`, `title`, `description`, `is_active`, `create
 CREATE TABLE `accommodation_items` (
   `id` bigint UNSIGNED NOT NULL,
   `accommodation_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -118,11 +118,11 @@ INSERT INTO `accommodation_items` (`id`, `accommodation_id`, `title`, `created_a
 CREATE TABLE `accommodation_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `accommodation_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `accommodation_item_sections`
@@ -139,9 +139,9 @@ INSERT INTO `accommodation_item_sections` (`id`, `accommodation_item_id`, `image
 
 CREATE TABLE `achievements` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `photo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -180,8 +180,8 @@ INSERT INTO `achievements` (`id`, `title`, `description`, `photo_path`, `status`
 
 CREATE TABLE `admissions` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -203,7 +203,7 @@ INSERT INTO `admissions` (`id`, `title`, `description`, `is_active`, `created_at
 CREATE TABLE `admission_items` (
   `id` bigint UNSIGNED NOT NULL,
   `admission_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -231,11 +231,11 @@ INSERT INTO `admission_items` (`id`, `admission_id`, `title`, `created_at`, `upd
 CREATE TABLE `admission_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `admission_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `admission_item_sections`
@@ -261,10 +261,10 @@ INSERT INTO `admission_item_sections` (`id`, `admission_item_id`, `images`, `des
 
 CREATE TABLE `blogs` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` date DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -279,7 +279,7 @@ INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `date`, `sta
 (1, 'How to Plan Your Child’s Study Abroad Journey: A StepbyStep Guide for Parents', 'how-to-plan-your-childs-study-abroad-journey-a-stepbystep-guide-for-parents', 'uploads/blogs/1768374345-UsyHOsxFj9.png', 'Summary<br>Sending your child abroad for higher education is one of the most important decisions a parent<br>can make. For Bangladeshi parents, the process can feel overwhelming due to visa<br>requirements, country selection, financial planning, and safety concerns.<br>This step-by-step guide will help you plan your child’s study abroad journey confidently, while<br>avoiding common mistakes. With the right planning and guidance from a trusted student visa<br>agency in Bangladesh, your child’s international education dream can become a successful<br>reality.<br>Step 1: Understand Your Child’s Goals and Strengths<br>Before choosing a country or university, parents must clearly understand:<br>• Your child’s academic background<br>• Career goals<br>• English proficiency (IELTS or non-IELTS options)<br>• Budget and financial capability<br>Different countries offer different advantages. For example:<br>• Malaysia &amp; Malta offer affordable education• Australia, UK, and Canada offer strong post-study work opportunities<br>• Europe &amp; Russia provide quality education at lower costs<br>A professional education consultant can help align your child’s goals with the right destination.<br>Step 2: Choose the Right Country and University<br>Choosing the wrong country or institution is one of the biggest mistakes parents make.<br>When selecting a study destination, consider:<br>• Tuition fees and living costs<br>• Student visa success rate<br>• Part-time work opportunities<br>• Safety and Bangladeshi student community<br>• Post-study career opportunities<br>At Insaf Immigration, we help parents select recognized universities with high visa approval<br>rates, ensuring a safe and secure future for students.<br>Step 3: Plan Your Budget Smartly<br>Financial planning is crucial for studying abroad.<br>Costs usually include:<br>• Tuition fees<br>• Visa processing fees<br>• Accommodation<br>• Health insurance<br>• Air ticket and travel expenses<br>Many parents worry about paying large amounts before visa approval. That’s why choosing a<br>trusted student visa agency in Bangladesh is important.<br>Insaf Immigration offers transparent pricing and flexible payment options, including programs<br>where payment is required after visa approval for selected countries.<br>Step 4: Prepare Documents Carefully<br>Proper documentation plays a major role in visa success.Common required documents include:<br>• Academic certificates and transcripts<br>• Passport<br>• Bank statements<br>• Sponsor documents<br>• Statement of Purpose (SOP)<br>• Offer letter from the university<br>Even a small mistake can lead to visa rejection. Our experienced visa experts at Insaf<br>Immigration carefully review and prepare every document to minimize risks.<br>Step 5: Understand Student Visa Requirements<br>Each country has different student visa rules.<br>Some key considerations:<br>• IELTS vs non-IELTS visa options<br>• Financial proof requirements<br>• Interview preparation<br>• Medical and police clearance<br>For Bangladeshi students, visa success depends heavily on proper counseling and application<br>strategy. Working with a professional student visa consultant significantly increases approval<br>chances.<br>Step 6: Focus on Safety, Accommodation, and Support<br>Parents are naturally concerned about their child’s safety abroad.<br>Before departure, ensure:<br>• Confirmed accommodation<br>• Airport pickup arrangements<br>• Health insurance coverage<br>• Local student supportInsaf Immigration provides pre-departure guidance, air ticket support, and airport pickup<br>services, so students can settle smoothly in a new country.<br>Step 7: Choose a Trusted Student Visa Agency in Bangladesh<br>The most important step is choosing the right education consultancy.<br>A reliable agency should offer:<br>• Honest counseling<br>• University and country transparency<br>• High visa success rate<br>• Post-visa support<br>• Clear communication with parents<br>Insaf Immigration is a trusted student visa agency in Bangladesh, helping students study in<br>Australia, UK, Canada, Malaysia, Europe, Russia, Malta, Cyprus, and more.<br>Our mission is simple: to turn your child’s global education dream into reality with integrity and<br>expertise.<br>Final Thoughts for Parents<br>Planning your child’s study abroad journey requires patience, knowledge, and expert guidance.<br>With the right preparation and a trusted partner, you can ensure a smooth and successful future<br>for your child.<br>If you are a parent looking for safe, affordable, and successful study abroad options, Insaf<br>Immigration is here to guide you every step of the way.', '2025-12-10', 1, '2025-12-10 06:49:00', '2026-01-14 01:05:45'),
 (3, 'Cost of Living in Malaysia for Bangladeshi Students', 'cost-of-living-in-malaysia-for-bangladeshi-students', 'uploads/blogs/1768373926-hxM5F5ELFK.png', '<p><span style=\"font-weight: normal;\">Summary</span><br><span style=\"font-weight: normal;\">Malaysia is a popular choice for Bangladeshi students due to its reputable universities,</span><br><span style=\"font-weight: normal;\">affordable tuition, and diverse culture. Understanding living costs enables students and families</span><br><span style=\"font-weight: normal;\">to budget effectively. This guide offers an up-to-date overview of typical expenses to help</span><br><span style=\"font-weight: normal;\">Bangladeshi students plan their finances confidently.</span></p><p><span style=\"font-weight: normal;\"></span><br>Overall Monthly and Yearly Cost of Living in Malaysia for Bangladeshi Students</p><p><span style=\"font-weight: normal;\">Malaysia offers Bangladeshi students a lower cost of living than most Western countries.</span><br><span style=\"font-weight: normal;\">Monthly expenses typically range from BDT 15000 to 20000, depending on lifestyle, city, and</span><br><span style=\"font-weight: normal;\">accommodation. Excluding tuition, annual living costs are usually BDT 160000 to 250000.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Accommodation Costs for Bangladeshi Students in Malaysia</span></p><p><span style=\"font-weight: normal;\">Accommodation is a major expense for students in Malaysia. Options include on-campus</span><br><span style=\"font-weight: normal;\">hostels, off-campus shared apartments, and homestays. On-campus hostels cost MYR 300–800</span><br><span style=\"font-weight: normal;\">(BDT 7,000–18,500) per month and offer basic amenities and security. Off-campus shared flats</span><br><span style=\"font-weight: normal;\">range from MYR 600–1,500 (BDT 13,500–34,500) monthly, with higher rents in cities like Kuala</span><br><span style=\"font-weight: normal;\">Lumpur. Homestays, costing MYR 800–1,200 (BDT 18,500–27,600) per month, often include</span><br><span style=\"font-weight: normal;\">meals and provide a valuable cultural experience.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Food and Groceries Expenses for Bangladeshi Students<br></span><br><span style=\"font-weight: normal;\">Malaysia offers affordable and diverse cuisine. Campus canteens and street food stalls serve</span><br><span style=\"font-weight: normal;\">meals for MYR 5–12 (BDT 115–275) each. A typical monthly food budget, including groceries, is</span><br><span style=\"font-weight: normal;\">MYR 400–800 (BDT 9,200–18,400). Cooking at home, especially in shared apartments, helps</span><br><span style=\"font-weight: normal;\">reduce costs, though dining out is also economical. Grocery staples are moderately priced, halal</span><br><span style=\"font-weight: normal;\">options are common, and Bangladeshi grocers are present in most university cities.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Transportation Costs for Students<br></span><br><span style=\"font-weight: normal;\">Public transport in Malaysia is affordable and convenient. Bus and metro rides cost MYR 1–4</span><br><span style=\"font-weight: normal;\">(BDT 23–92) one-way. Most students allocate MYR 100–150 (BDT 2,300–3,500) per month for</span><br><span style=\"font-weight: normal;\">travel, covering daily commutes and occasional city trips. Students in cities like Kuala Lumpur</span><br><span style=\"font-weight: normal;\">and Penang can access discounts and season passes. Ride-hailing apps such as Grab are</span><br><span style=\"font-weight: normal;\">available for short trips, though frequent use raises monthly expenses.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Utility Bills, Mobile, and Internet Expenses<br></span><br><span style=\"font-weight: normal;\">Monthly utility bills—including electricity, water, and internet—typically add up to MYR 150–</span><br><span style=\"font-weight: normal;\">250 (BDT 3,500–5,800). Most rented rooms and campus accommodations include basic utility</span><br><span style=\"font-weight: normal;\">costs in the rent, though air conditioning and high-speed broadband may be charged extra.</span><br><span style=\"font-weight: normal;\">Prepaid mobile phone plans in Malaysia are budget-friendly: data and calling packages start at</span><br><span style=\"font-weight: normal;\">MYR 30 (BDT 690) per month, with WhatsApp and local calls widely used. Broadband internet at</span><br><span style=\"font-weight: normal;\">residences can cost another MYR 60–120 (BDT 1,400–2,800) per month, depending on speed</span><br><span style=\"font-weight: normal;\">and package.</span></p><p><span style=\"font-weight: normal;\"></span><br><span style=\"font-weight: normal;\">Health Insurance, Medical, and Personal Expenses<br></span><br><span style=\"font-weight: normal;\">Health insurance is mandatory for international students and costs MYR 400–500 (BDT 9,000–</span><br><span style=\"font-weight: normal;\">11,500) per year. Routine doctor visits are MYR 40–80 (BDT 900–1,800) per appointment. Most</span><br><span style=\"font-weight: normal;\">universities offer on-campus clinics and emergency support. Personal expenses, including</span><br><span style=\"font-weight: normal;\">clothing, haircuts, entertainment, and social activities, average MYR 200–400 (BDT 4,600–9,200)</span><br><span style=\"font-weight: normal;\">per month, depending on lifestyle.<br></span><br><span style=\"font-weight: normal;\">Additional Costs: Books, Supplies, and Recreation</span></p><p><span style=\"font-weight: normal;\">Students should budget MYR 500–1,000 annually (BDT 11,500–23,000) for textbooks and</span><br><span style=\"font-weight: normal;\">academic supplies. Recreational activities, such as movies, gym memberships, and short trips,</span><br><span style=\"font-weight: normal;\">may add MYR 100–300 (BDT 2,300–7,000) per month. Participating in clubs and campus events</span><br><span style=\"font-weight: normal;\">enhances the study abroad experience.</span></p><p><span style=\"font-weight: normal;\"><br></span><br><span style=\"font-weight: normal;\">Tips for Bangladeshi Students to Manage Living Costs in Malaysia<br></span><br><span style=\"font-weight: normal;\">• Share accommodation with classmates to split rent and utilities.</span><br><span style=\"font-weight: normal;\">• Use your student ID for discounts on transport, entertainment, and shopping.</span><br><span style=\"font-weight: normal;\">• Cook at home and buy groceries in bulk from local or Bangladeshi markets.</span><br><span style=\"font-weight: normal;\">• Take advantage of free campus facilities: libraries, study spaces, and sometimes sports</span><br><span style=\"font-weight: normal;\">centers.</span><br><span style=\"font-weight: normal;\">• Plan monthly budgets and record spending to avoid surprises.<br></span><br><span style=\"font-weight: normal;\">Conclusion: Budgeting for Your Study Life in Malaysia<br></span><br><span style=\"font-weight: normal;\">The cost of living in Malaysia for Bangladeshi students in 2025 is significantly lower compared to</span><br><span style=\"font-weight: normal;\">many other top study-abroad countries. With careful planning and lifestyle adjustments, most</span><br><span style=\"font-weight: normal;\">students find their monthly budget between MYR 1,500 and MYR 2,600 (BDT 35,000–60,000)</span><br><span style=\"font-weight: normal;\">covers all essentials. Malaysia remains one of the smartest destinations for Bangladeshi</span><br><span style=\"font-weight: normal;\">students wishing to combine affordability, quality education, and a multicultural experience in</span><br><span style=\"font-weight: normal;\">Southeast Asia.</span></p>', '2026-01-14', 1, '2026-01-07 01:30:27', '2026-01-14 00:58:46'),
 (4, 'Smart Financial Planning Tips to Fund Your Study Abroad Dreams', 'smart-financial-planning-tips-to-fund-your-study-abroad-dreams', 'uploads/blogs/1768374286-9Wp7UPhoRN.png', '<p>Summary<br>Studying abroad feels big and expensive. It is also possible with a clear plan.<br>Most families get stuck because they don’t know where to start. They also miss many costs<br>beyond tuition.<br>We’ve guided hundreds of Bangladeshi families through this. In this guide, you’ll learn how toprice the full budget, choose the right funding mix, and time money decisions so you study with<br>confidence, not stress.<br>Understanding the Real Cost — Why This Matters<br>Know the full bill—tuition, living (often 40–50%), setup, and “hidden” extras—before you apply.<br>When you see the true total and add a 20–25% buffer, you prevent mid-study money shocks<br>and protect your visa plan.<br>Your full study budget includes:<br>Academic costs<br>Tuition and mandatory university fees. Application fees ($50–$200 per university). Student<br>services and lab or studio fees where needed.<br>Living costs<br>Housing, food, transport, phone, utilities, and simple leisure. For most students, living costs are<br>40–50% of the total budget.<br>One-time setup<br>Visa and related fees. Health insurance (usually compulsory). Flights. Initial housing deposits.<br>Basic items for your room. A laptop if you need one.<br>Hidden costs<br>Currency swings (plan +10–15%). Medical expenses not fully covered by your plan. Urgent trips<br>home. Extra certifications or licensing.<br>What it means in real numbers<br>• Bachelor’s (3 years): about BDT 25–60 lakhs total, depending on country and city.<br>• Master’s (1–2 years): about BDT 15–40 lakhs total for most fields.<br>Counsellor Advice: Add a 20–25% buffer to whatever total you calculate. This protects your plan<br>from exchange rate moves and surprise costs.<br>Build a Budget the Right Way<br>Price everything in the university’s currency from official pages, then convert to BDT at your<br>bank’s selling rate. Recheck before each payment and compare cities, because location and<br>timing can change totals by lakhs<br>When to Start (age-wise plan you can follow)Your timeline decides what’s realistic: how much to save, which tests to take, and when to<br>apply. With age-specific actions, each year moves you closer to the goal without last-minute<br>pressure.<br>Class 6–8 (ages 12–14)<br>Begin a small, regular education saving. Even BDT 5,000–10,000/month helps. Build English and<br>digital skills. Explore countries and subjects together.<br>Class 9–10 (ages 15–16)<br>Increase monthly savings and make it automatic. Map IELTS/SAT timelines. Shortlist universities<br>and programs. Build a profile with projects and volunteering<br>Class 11–12 (ages 17–18)<br>Maximise savings and target scholarships. Compare value cities and 1-year vs 2-year programs.<br>Explore education loans early if needed. Pick universities with strong international student<br>support.<br>Already graduated<br>A gap term/year can help. Improve test scores, gain experience, and save more. Look for rolling<br>intakes and pathway routes if you need a smoother start.<br>Counsellor Advice: Early planners often keep loans to 30–40% of total costs. Late planners still<br>succeed with a strict budget and smart picks.<br>Create a Funding Mix that Fits Your Family<br>One source is risky; a balanced mix spreads pressure and keeps cash flow steady. You’ll size<br>savings, scholarships, part-time work, and a gap loan so EMIs stay comfortable after graduation.<br>Family savings<br>This is the base. Every taka saved now reduces future debt.<br>Scholarships<br>Best value because they don’t need repayment. Full awards are rare, but partial awards (BDT 1–<br>5 lakhs) reduce stress in a big way.<br>Education loan<br>Use it to cover the real gap after savings and scholarships. Borrow with a clear post-study<br>repayment plan.Part-time work<br>Most countries allow part-time work. Treat it as support for living costs, not tuition.<br>Build Your Education Fund (simple systems that work)<br>Big totals feel heavy, but systems make saving light. A dedicated account, auto-transfers, small<br>yearly increases, and occasional windfalls grow the fund without straining monthly life.<br>• Start small, grow yearly. Regular saving beats short bursts.<br>• Use a dedicated account. Keep education money separate and visible.<br>• Automate transfers. Same day each month.<br>• Invite family support. Grandparents and relatives can contribute during festivals instead<br>of gifts.<br>• Add windfalls. Bonuses and Eid funds go straight to the education account.<br>• Consider safe places. Term deposits or government savings schemes help the fund grow<br>with low risk.<br>• Track progress. A simple chart keeps everyone motivated.<br>Example: Saving BDT 15,000/month for 8 years builds about BDT 14.4 lakhs even without<br>investment returns. If you start with BDT 10,000 and add BDT 1,000 each year, you’ll reach more<br>with the same family budget.<br>Expert Tip: Increase your savings 10–15% each year. Small annual jumps protect you from<br>education inflation.<br>Scholarships: raise your odds with a clean system<br>Scholarships directly cut what you pay and how much you borrow. Starting 12–18 months early<br>with a tracker, strong grades, and a focused SOP lifts your success rate fast.<br>Where to look<br>University entrance and department awards (often best odds). Country-specific options for<br>Bangladeshi students. Field-based awards (engineering, health, design). Local or private awards<br>with lighter competition.<br>How to apply well<br>Start 12–18 months early. Keep grades strong and collect proof of projects, internships, and<br>leadership. Write a focused SOP that links your story and goals to the program. Ask referees<br>early and share your draft SOP/CV with them.Tracking sheet (use this)<br>• Scholarship name and link<br>• Award value<br>• Eligibility and key criteria<br>• Required documents<br>• Deadline and status<br>Counsellor Advice: Even BDT 2–5 lakhs in partial awards makes a real difference. Apply broadly.<br>Rejections are normal—keep going.<br>Education Loans Without Fear<br>Loans bridge the gap, but unclear terms create long stress. When you know rate, tenure, EMI<br>start, and prepayment rules, you borrow only what you need and keep EMIs within 15–20% of<br>income.<br>When a loan makes sense<br>You have a clear career path with decent starting salaries. Savings and scholarships are not<br>enough. You understand interest, tenure, and start of EMI.<br>Questions to ask any lender<br>What is the interest rate and how is it calculated? When do repayments start? What is<br>the maximum tenure? Are there early payment penalties? Do you need a guarantor or<br>collateral?<br>Smart borrowing rules<br>• Borrow only for the gap.<br>• Keep EMIs within 15–20% of expected starting income.<br>• Check the total payback over the full tenure.<br>• File every loan document neatly.<br>Illustration: A BDT 10 lakh loan at 12% for 10 years costs about BDT 17.4 lakhs in total. Shorter<br>tenures reduce interest.<br>Expert Tip: If possible, repay a little early. Even small extra payments cut total interest.<br>When a loan makes senseGood timing turns into real savings. Paying in tranches near due dates and scheduling fees and<br>scholarships early reduces FX risk and avoids rush penalties.<br>Currency exchange<br>Do not convert everything at once. Pay in planned tranches near due dates. Keep your 20–25%<br>buffer for rate swings.<br>Payment timing<br>Pay application fees early. Follow tuition deadlines closely. Set aside visa fees in advance.<br>Budget pre-departure costs 2–3 months before travel.<br>Scholarship timing<br>Research 12–18 months ahead. Start applications 6–9 months before deadlines. Aim to<br>submit 2–4 weeks early.<br>Counsellor Advice: Keep one shared family calendar with all money dates, document dates, and<br>exam dates.<br>Common Mistakes (and quick fixes)<br>Most plans fail from the same faults: budgeting only tuition, over-borrowing, or ignoring<br>exchange swings. Spot them early, add a buffer, pay in tranches, and keep documents clean to<br>stay on track.<br>• Budgeting only tuition → Add living, insurance, visa, flights, and a 20–25% buffer.<br>• Starting late → Start now, even with small monthly amounts.<br>• Relying on one scholarship → Apply to many; partials add up.<br>• Borrowing too much → Match EMIs to realistic salaries.<br>• Ignoring exchange risk → Pay in tranches.<br>• Poor records → Keep every invoice, receipt, and SWIFT copy.<br>• Choosing costly cities without reason → Pick value locations that still match your goals.<br>• No emergency fund → Keep 3–6 months of living costs aside.<br>Practical Implementation (step-by-step you can use today)<br>Advice works only when it becomes dated tasks. A shared family calendar for savings, tests,<br>fees, and visas keeps everyone aligned and turns plans into steady progress.This month<br>• Calculate a full budget for three destinations (with buffer).<br>• Open a dedicated education savings account and set an auto transfer.<br>• List 5–10 scholarships with links and deadlines.<br>• Hold a family meeting to agree roles and monthly amounts.<br>Next 3 months<br>• Keep savings regular; increase if possible.<br>• Improve English seriously.<br>• Deep-dive on programs and entry rules.<br>• Plan IELTS/SAT dates.<br>• Line up referees for future applications.<br>Next 6–12 months<br>• Raise savings step by step.<br>• Take required tests.<br>• Submit early-deadline scholarships.<br>• Compare loan options only for the gap.<br>12+ months before departure<br>• Send university applications.<br>• Apply for remaining scholarships.<br>• Secure a loan if needed.<br>• Plan currency tranches with your bank.<br>• Start the visa process on time.<br>Strong ConclusionYou can fund an overseas degree with calm planning and steady action. Start with a full budget,<br>pick a funding mix that fits your family, save every month, and keep documents clean.<br>If you want a personalized roadmap—with dates, duties, and budgets—Insaf Immigration can<br>build it with you. Book a session and let’s turn your plan into a clear, step-by-step path you can<br>follow with confidence.</p>', '2026-01-07', 1, '2026-01-07 01:46:13', '2026-01-14 01:04:46'),
-(5, 'Study in Malaysia from Bangladesh – A Complete Guide for Students & Parents', 'study-in-malaysia-from-bangladesh-a-complete-guide-for-students-parents', 'uploads/blogs/1768735431-uRrk6MAbx3.png', '<p>Malaysia has become one of the top study abroad destinations for Bangladeshi students due to its affordable tuition fees, English-medium education, fast visa processing, and Muslim-<br>friendly lifestyle. Every year, thousands of students from Bangladesh choose Malaysia for Diploma, Bachelor’s, and Master’s programs because it offers international education without<br>high financial pressure.<br>In this detailed guide, Insaf Immigration explains everything you need to know about studying in Malaysia from Bangladesh.<br><br>Why Malaysia Is Ideal for Bangladeshi Students?<br>Malaysia offers a perfect balance of quality education, affordability, and safety. Key reasons include:</p><p>• English is the main medium of instruction<br>• Low tuition fees compared to UK, Australia, and Canada<br>• High Malaysia student visa approval rate<br>• Fast and simple visa processing<br>• Modern campuses and global university partnerships<br>• Muslim-friendly environment and halal food availability<br>• Safe cities and multicultural society<br>Malaysia is especially suitable for first-time international students.<br></p><p><br>Education System in Malaysia<br>Malaysia follows an internationally recognized education system supported by the Malaysian Qualifications Framework (MQF).<br>Students can choose from:<br>• Diploma programs<br>• Bachelor’s degrees<br>• Master’s programs<br>• Professional certifications<br>Many Malaysian universities have UK and Australian branch campuses, allowing students to earn globally recognized degrees at a much lower cost.<br><br>Top Universities in Malaysia<br>Malaysia hosts many reputable institutions such as:<br>• MAHSA University<br>• INTI International University<br>• Asia Pacific University (APU)<br>• Binary University<br>• Segi University<br>• Genovasi University<br>Insaf Immigration works with approved and visa-friendly universities only.<br><br>Popular Courses to Study in Malaysia<br>Bangladeshi students prefer Malaysia for career-oriented programs such as:<br>• Business Administration &amp; Management<br>• Accounting &amp; Finance</p><p>• Information Technology (IT)<br>• Computer Science<br>• Hospitality &amp; Tourism Management<br>• Engineering<br>• Digital Marketing<br>• Health Sciences &amp; Nursing<br>These courses offer strong job prospects both locally and internationally.<br></p><p><br>IELTS Requirement for Malaysia Study Visa<br>Malaysia offers very flexible English language requirements. Options include:<br>• MOI (Medium of Instruction) acceptance<br>• Low IELTS score acceptance<br>• English foundation programs<br>• Study options without IELTS<br>Insaf Immigration specializes in non-IELTS Malaysia study visa solutions, making Malaysia accessible for many Bangladeshi students.<br><br>Cost of Studying in Malaysia<br>Malaysia is one of the most affordable study abroad destinations.<br>Estimated costs:<br>• Tuition fees: BDT 3.5 – 6 lakh per year<br>• Living cost: BDT 30,000 – 45,000 per month<br>This makes Malaysia ideal for middle-income families.<br></p><p><br>Malaysia Student Visa Process from Bangladesh<br>The Malaysia student visa process is straightforward when handled professionally.<br>Required documents usually include:<br>• Offer letter<br>• Academic certificates<br>• Financial proof<br>• Medical and health screeningWith expert guidance, visa approval chances are very high.<br>Work Opportunities for Students in Malaysia<br>International students can work part-time during semester breaks.<br>Benefits:<br>• Support personal expenses<br>• Gain international work exposure<br>• Improve communication and professional skills<br><br>Why Choose Insaf Immigration for Malaysia?<br>As a trusted student visa agency in Bangladesh, Insaf Immigration offers:<br>• Honest counseling<br>• Approved university admission<br>• Non-IELTS options<br>• Strong visa documentation<br>• High Malaysia visa success rate<br><br>Final Words<br>If you are planning to study in Malaysia from Bangladesh, Malaysia offers quality education, affordability, and safety in one destination.<br>Contact Insaf Immigration today for expert guidance.</p>', '2026-01-18', 1, '2026-01-18 05:23:51', '2026-01-18 05:23:51'),
+(5, 'Study in Malaysia from Bangladesh – A Complete Guide for Students & Parents', 'study-in-malaysia-from-bangladesh-a-complete-guide-for-students-parents', 'uploads/blogs/1768735431-uRrk6MAbx3.png', '<p>Malaysia has become one of the top study abroad destinations for Bangladeshi students due to its affordable tuition fees, English-medium education, fast visa processing, and Muslim-<br>friendly lifestyle. Every year, thousands of students from Bangladesh choose Malaysia for Diploma, Bachelor’s, and Master’s programs because it offers international education without high financial pressure.<br>In this detailed guide, Insaf Immigration explains everything you need to know about studying in Malaysia from Bangladesh.<br><br><h5><b style=\"color: rgb(8, 82, 148);\">Why Malaysia Is Ideal for Bangladeshi Students?</b></h5>Malaysia offers a perfect balance of quality education, affordability, and safety. Key reasons include:</p><p>• English is the main medium of instruction<br>• Low tuition fees compared to UK, Australia, and Canada<br>• High Malaysia student visa approval rate<br>• Fast and simple visa processing<br>• Modern campuses and global university partnerships<br>• Muslim-friendly environment and halal food availability<br>• Safe cities and multicultural society<br>Malaysia is especially suitable for first-time international students.<br></p><p><br>Education System in Malaysia<br>Malaysia follows an internationally recognized education system supported by the Malaysian Qualifications Framework (MQF).<br>Students can choose from:<br>• Diploma programs<br>• Bachelor’s degrees<br>• Master’s programs<br>• Professional certifications<br>Many Malaysian universities have UK and Australian branch campuses, allowing students to earn globally recognized degrees at a much lower cost.<br><br>Top Universities in Malaysia<br>Malaysia hosts many reputable institutions such as:<br>• MAHSA University<br>• INTI International University<br>• Asia Pacific University (APU)<br>• Binary University<br>• Segi University<br>• Genovasi University<br>Insaf Immigration works with approved and visa-friendly universities only.<br><br>Popular Courses to Study in Malaysia<br>Bangladeshi students prefer Malaysia for career-oriented programs such as:<br>• Business Administration &amp; Management<br>• Accounting &amp; Finance</p><p>• Information Technology (IT)<br>• Computer Science<br>• Hospitality &amp; Tourism Management<br>• Engineering<br>• Digital Marketing<br>• Health Sciences &amp; Nursing<br>These courses offer strong job prospects both locally and internationally.<br></p><p><br>IELTS Requirement for Malaysia Study Visa<br>Malaysia offers very flexible English language requirements. Options include:<br>• MOI (Medium of Instruction) acceptance<br>• Low IELTS score acceptance<br>• English foundation programs<br>• Study options without IELTS<br>Insaf Immigration specializes in non-IELTS Malaysia study visa solutions, making Malaysia accessible for many Bangladeshi students.<br><br>Cost of Studying in Malaysia<br>Malaysia is one of the most affordable study abroad destinations.<br>Estimated costs:<br>• Tuition fees: BDT 3.5 – 6 lakh per year<br>• Living cost: BDT 30,000 – 45,000 per month<br>This makes Malaysia ideal for middle-income families.<br></p><p><br>Malaysia Student Visa Process from Bangladesh<br>The Malaysia student visa process is straightforward when handled professionally.<br>Required documents usually include:<br>• Offer letter<br>• Academic certificates<br>• Financial proof<br>• Medical and health screeningWith expert guidance, visa approval chances are very high.<br>Work Opportunities for Students in Malaysia<br>International students can work part-time during semester breaks.<br>Benefits:<br>• Support personal expenses<br>• Gain international work exposure<br>• Improve communication and professional skills<br><br>Why Choose Insaf Immigration for Malaysia?<br>As a trusted student visa agency in Bangladesh, Insaf Immigration offers:<br>• Honest counseling<br>• Approved university admission<br>• Non-IELTS options<br>• Strong visa documentation<br>• High Malaysia visa success rate<br><br>Final Words<br>If you are planning to study in Malaysia from Bangladesh, Malaysia offers quality education, affordability, and safety in one destination.<br>Contact Insaf Immigration today for expert guidance.</p>', '2026-01-18', 1, '2026-01-18 05:23:51', '2026-01-22 15:36:06'),
 (6, 'Study in Malta from Bangladesh – Complete Guide to Affordable European Education', 'study-in-malta-from-bangladesh-complete-guide-to-affordable-european-education', 'uploads/blogs/1768735575-HEHfgpxVf1.png', '<p>Malta is quickly becoming one of the most popular European study destinations for Bangladeshi students due to its English-speaking environment, EU-recognized qualifications, work opportunities, and high visa success rate. For students who want to study in Europe without high costs, Malta is a smart and strategic choice.<br>In this complete guide, Insaf Immigration explains everything about studying in Malta from Bangladesh.<br><br>Why Study in Malta?<br>Malta offers European education with real-world benefits.<br>Key reasons students choose Malta:<br>• English as an official language<br>• EU-recognized degrees<br>• Affordable tuition fees<br>• Study plus work opportunities<br>• High Malta student visa success rate<br>• Safe and student-friendly lifestyle<br>Malta is ideal for students seeking European exposure with career growth.<br><br>Education System in Malta<br>Malta follows the Malta Qualifications Framework (MQF), aligned with European education standards.<br>Students can pursue:<br>• Diploma &amp; Advanced Diploma<br>• Bachelor’s degrees<br>• Master’s programs<br>Programs are career-focused and practical, preparing students for the European job market.<br><br>Popular Courses to Study in Malta<br>Top courses for Bangladeshi students include:<br>• Business Management<br>• Strategic Management &amp; Leadership<br>• Hospitality &amp; Tourism Management<br>• Accounting &amp; Finance<br>• Information Technology (IT)<br>• Digital Marketing<br>• Health &amp; Social Care<br>These courses offer strong employment opportunities.<br><br>IELTS Requirement for Malta Study Visa<br>Malta provides flexible English requirements:<br>• MOI accepted<br>• Low IELTS accepted<br>• Foundation programs available<br>Insaf Immigration offers non-IELTS and low-IELTS Malta study visa solutions.<br><br>Cost of Studying in Malta<br>Malta is more affordable than many EU countries.<br>Estimated costs:<br>• Tuition fees: EUR 3,500 – 8,000 per year<br>• Living cost: EUR 500 – 800 per month<br>Students can manage expenses through part-time work.</p><p>Work Opportunities in Malta<br>International students are allowed to:<br>• Work part-time during studies<br>• Gain European job experience<br>• Support living costs<br>Many students work in hospitality, retail, and service sectors.<br><br>Malta Student Visa Process from Bangladesh<br>The Malta student visa process requires:<br>• Offer letter<br>• Financial proof<br>• Academic documents<br>• Health insurance<br>Professional handling significantly increases approval chances.<br><br>Life in Malta for Bangladeshi Students<br>Malta offers:<br>• Safe cities<br>• Multicultural society<br>• Warm Mediterranean climate<br>• Supportive student environment<br>Why Choose Insaf Immigration for Malta?<br>Insaf Immigration provides:<br>• Approved institution selection<br>• Strong visa file preparation<br>• Honest guidance<br>• High Malta visa success rate<br><br>Final Words</p><p>If you want affordable European education with work opportunities, Malta is an excellent choice.<br>Contact Insaf Immigration today to start your Malta journey.</p>', '2026-01-18', 1, '2026-01-18 05:26:15', '2026-01-18 05:26:15'),
 (7, 'Study in Malta with Work Opportunities: A Smart European Choice for Bangladeshi Students', 'study-in-malta-with-work-opportunities-a-smart-european-choice-for-bangladeshi-students', 'uploads/blogs/1768735691-EmwLgv8QSG.png', '<p>Malta is quickly emerging as one of the most student-friendly and affordable European study destinations for Bangladeshi students. With its English-speaking environment, EU-recognized qualifications, flexible visa rules, and legal work opportunities, Malta offers the perfect balance between quality education and career growth.<br>In this blog, Insaf Immigration explains why studying in Malta can be a life-changing decision for Bangladeshi students planning to study in Europe.<br><br>Education System and Global Recognition<br>Malta follows the Malta Qualifications Framework (MQF), which is aligned with the European Qualifications Framework (EQF). This ensures that degrees obtained in Malta are recognized<br>across Europe and many other countries worldwide.<br><br>Students can pursue:<br>• Diploma &amp; Advanced Diploma<br>• Bachelor’s Degree<br>• Master’s Degree<br>• Professional qualifications<br>Malta’s education system focuses on practical skills and employability, making graduates job- ready.<br><br>Study and Work Opportunities in Malta<br>One of the biggest attractions of Malta is the opportunity to work while studying.<br>International students can:<br>• Work part-time during their studies<br>• Support living expenses<br>• Gain European work experience<br>• Build professional networks<br>This makes Malta an excellent option for students looking for study plus work in Europe.<br><br>Why Choose Insaf Immigration for Study in Malta?<br>Insaf Immigration is a trusted student visa consultancy in Bangladesh, offering:<br>• Expert counseling for Malta study programs<br>• Approved institution selection<br>• Strong visa file preparation<br>• Transparent and ethical service<br>• High Malta student visa success rate<br>We guide students from initial counseling to visa approval and pre-departure support.<br><br>Final Words<br>If you are planning to study in Europe from Bangladesh, Malta offers a smart, affordable, and career-focused pathway. With quality education, work opportunities, and EU recognition, Malta is an excellent destination for ambitious students.<br>Contact Insaf Immigration today to start your Malta study journey with confidence.</p>', '2026-01-18', 1, '2026-01-18 05:28:11', '2026-01-18 05:28:11');
 
@@ -290,8 +290,8 @@ INSERT INTO `blogs` (`id`, `title`, `slug`, `image`, `description`, `date`, `sta
 --
 
 CREATE TABLE `cache` (
-  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -302,8 +302,8 @@ CREATE TABLE `cache` (
 --
 
 CREATE TABLE `cache_locks` (
-  `key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `owner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `expiration` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -315,12 +315,12 @@ CREATE TABLE `cache_locks` (
 
 CREATE TABLE `contact_forms` (
   `id` bigint UNSIGNED NOT NULL,
-  `Full_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Email_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Phone_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Full_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email_address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Phone_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district_id` bigint UNSIGNED NOT NULL,
   `office_id` bigint UNSIGNED NOT NULL,
-  `Message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -344,16 +344,16 @@ CREATE TABLE `contact_us` (
   `id` bigint UNSIGNED NOT NULL,
   `destination_id` bigint UNSIGNED NOT NULL,
   `office_id` bigint UNSIGNED NOT NULL,
-  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `question_1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `question_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question_2` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `district` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -362,7 +362,13 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`id`, `destination_id`, `office_id`, `first_name`, `last_name`, `email`, `phone`, `question_1`, `question_2`, `created_at`, `updated_at`, `district`, `address`) VALUES
 (18, 3, 2, 'Md', 'Hasan', 'email+fakedata39240@gmail.com', '0120202020', 'IELTS', 'Self-funded', '2025-12-31 06:23:18', '2025-12-31 06:23:18', '', ''),
-(19, 7, 2, 'Corine', 'Dickinson', 'your.email+fakedata17969@gmail.com', '257-985-8458', 'IELTS', 'Scholarship', '2026-01-08 00:19:42', '2026-01-08 00:19:42', 'Howell', '6561 Mittie Expressway');
+(19, 7, 2, 'Corine', 'Dickinson', 'your.email+fakedata17969@gmail.com', '257-985-8458', 'IELTS', 'Scholarship', '2026-01-08 00:19:42', '2026-01-08 00:19:42', 'Howell', '6561 Mittie Expressway'),
+(21, 10, 3, 'Mimbas', 'Bin Anas', 'mimbas208@gmail.com', '1603065694', 'Not taken yet', 'Family Support', '2026-01-21 22:23:56', '2026-01-21 22:23:56', 'Dhaka', '103/2,South Mugdapara,Dhaka - 1214'),
+(22, 3, 2, 'Roy', 'Roy barua', 'roybarua86@gmail.com', '1817899289', 'PTE', 'Family Support', '2026-01-28 22:02:33', '2026-01-28 22:02:33', 'Chattogram', 'Bahaddarhat, Chattogram'),
+(23, 10, 2, 'Tamim Mohammad', 'Reza', 'tamimmohammadreza12@gmail.com', '01749067917', 'Not taken yet', 'Family Support', '2026-02-10 21:49:05', '2026-02-10 21:49:05', 'Cox’s Bazar', 'New Baharchora, Airport Road, Cox\'s 6'),
+(24, 10, 3, 'Sajjad', 'Hossain', 'rifat62513@gmail.com', '1326-982828', 'IELTS', 'Family Support', '2026-02-21 03:59:49', '2026-02-21 03:59:49', 'Cumilla', '328/Ka, Kaptan Bazar, Cumilla'),
+(25, 10, 2, 'Shohel', 'Barua', 'shohelbaruaramu@gmail.com', '1840165719', 'Not taken yet', 'Scholarship', '2026-02-22 13:16:09', '2026-02-22 13:16:09', 'Chittagong', 'Ramu Haitopi,upazila Ramu,  Ramu Cox’s Bazar'),
+(26, 6, 2, 'Upoma', 'Bhattacharjee', 'bhattacharjeeupoma285@gmail.com', '01604482361', 'Not taken yet', 'Scholarship', '2026-02-23 11:45:14', '2026-02-23 11:45:14', 'Chattogram', 'Raozan, Chattogram');
 
 -- --------------------------------------------------------
 
@@ -373,11 +379,11 @@ INSERT INTO `contact_us` (`id`, `destination_id`, `office_id`, `first_name`, `la
 CREATE TABLE `destinations` (
   `id` bigint UNSIGNED NOT NULL,
   `order_list` int UNSIGNED NOT NULL DEFAULT '0',
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -411,7 +417,7 @@ INSERT INTO `destinations` (`id`, `order_list`, `title`, `image`, `slug`, `count
 CREATE TABLE `destination_items` (
   `id` bigint UNSIGNED NOT NULL,
   `destination_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -551,11 +557,11 @@ INSERT INTO `destination_items` (`id`, `destination_id`, `title`, `created_at`, 
 CREATE TABLE `destination_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `destination_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `destination_item_sections`
@@ -795,9 +801,9 @@ CREATE TABLE `documents` (
   `id` bigint UNSIGNED NOT NULL,
   `destination_id` bigint UNSIGNED DEFAULT NULL,
   `scholarship_id` bigint UNSIGNED DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mime_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'application/pdf',
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mime_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'application/pdf',
   `file_size` bigint NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -820,12 +826,12 @@ INSERT INTO `documents` (`id`, `destination_id`, `scholarship_id`, `name`, `file
 
 CREATE TABLE `document_download_contact_forms` (
   `id` bigint UNSIGNED NOT NULL,
-  `first_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `district` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `destination_id` bigint UNSIGNED DEFAULT NULL,
   `scholarship_id` bigint UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -838,7 +844,14 @@ CREATE TABLE `document_download_contact_forms` (
 
 INSERT INTO `document_download_contact_forms` (`id`, `first_name`, `last_name`, `email`, `phone`, `district`, `address`, `destination_id`, `scholarship_id`, `created_at`, `updated_at`) VALUES
 (16, 'Brandi', 'Stroman', 'your.email+fakedata49127@gmail.com', '715-085-2169', 'Hilll', '731 Arnoldo Manor', 7, NULL, '2026-01-10 00:47:24', '2026-01-10 00:47:24'),
-(18, 'Theron', 'Hettinger', 'your.email+fakedata76671@gmail.com', '680-312-4033', 'Bosco', '100 Legros Meadows', 3, NULL, '2026-01-10 02:20:06', '2026-01-10 02:20:06');
+(18, 'Theron', 'Hettinger', 'your.email+fakedata76671@gmail.com', '680-312-4033', 'Bosco', '100 Legros Meadows', 3, NULL, '2026-01-10 02:20:06', '2026-01-10 02:20:06'),
+(19, 'aefaef', 'dafadf', 'afasfa@gmail.com', '18634639673', 'afaef', 'sdfgsd', 7, NULL, '2026-01-20 13:06:05', '2026-01-20 13:06:05'),
+(20, 'cfaf', 'faa', 'asfasdf@gmail.com', '93748917-313', 'qerq', 'asf', 10, NULL, '2026-02-04 10:17:23', '2026-02-04 10:17:23'),
+(21, 'Sheikh Mohammad Sagor', 'Ahmmed', 'smsagor1994@gmail.com', '1920324003', 'Dhaka', 'Hoglagaon, Sreenagar, Munshiganj', 10, NULL, '2026-02-04 11:29:50', '2026-02-04 11:29:50'),
+(22, 'Sheikh Mohammad Sagor', 'Ahmmed', 'smsagor1994@gmail.com', '1920324003', 'Dhaka', 'Hoglagaon, Sreenagar, Munshiganj', 10, NULL, '2026-02-04 11:29:53', '2026-02-04 11:29:53'),
+(23, 'Jamal', 'Uddin', 'ju32343@gmail.com', '1720371081', 'Cumilla', '328/Ka, Kaptan Bazar, Cumilla', 10, NULL, '2026-02-22 03:56:49', '2026-02-22 03:56:49'),
+(24, 'Jamal', 'Uddin', 'ju32343@gmail.com', '1720371081', 'Cumilla', '328/Ka, Kaptan Bazar, Cumilla', 10, NULL, '2026-02-22 03:57:09', '2026-02-22 03:57:09'),
+(25, 'Jamal', 'Uddin', 'ju32343@gmail.com', '1720371081', 'Cumilla', '328/Ka, Kaptan Bazar, Cumilla', 10, NULL, '2026-02-22 03:57:16', '2026-02-22 03:57:16');
 
 -- --------------------------------------------------------
 
@@ -848,14 +861,14 @@ INSERT INTO `document_download_contact_forms` (`id`, `first_name`, `last_name`, 
 
 CREATE TABLE `events` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `photo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
   `end_date` date DEFAULT NULL,
-  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -877,7 +890,7 @@ INSERT INTO `events` (`id`, `title`, `description`, `photo_path`, `start_date`, 
 CREATE TABLE `event_items` (
   `id` bigint UNSIGNED NOT NULL,
   `event_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -898,11 +911,11 @@ INSERT INTO `event_items` (`id`, `event_id`, `title`, `created_at`, `updated_at`
 CREATE TABLE `event_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `event_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `event_item_sections`
@@ -919,11 +932,11 @@ INSERT INTO `event_item_sections` (`id`, `event_item_id`, `images`, `description
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -935,8 +948,8 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `faqs` (
   `id` bigint UNSIGNED NOT NULL,
-  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -958,8 +971,8 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `healths` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -981,7 +994,7 @@ INSERT INTO `healths` (`id`, `title`, `description`, `is_active`, `created_at`, 
 CREATE TABLE `health_items` (
   `id` bigint UNSIGNED NOT NULL,
   `health_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1007,11 +1020,11 @@ INSERT INTO `health_items` (`id`, `health_id`, `title`, `created_at`, `updated_a
 CREATE TABLE `health_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `health_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `health_item_sections`
@@ -1033,8 +1046,8 @@ INSERT INTO `health_item_sections` (`id`, `health_item_id`, `images`, `descripti
 
 CREATE TABLE `jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `queue` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `attempts` tinyint UNSIGNED NOT NULL,
   `reserved_at` int UNSIGNED DEFAULT NULL,
   `available_at` int UNSIGNED NOT NULL,
@@ -1048,13 +1061,13 @@ CREATE TABLE `jobs` (
 --
 
 CREATE TABLE `job_batches` (
-  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `total_jobs` int NOT NULL,
   `pending_jobs` int NOT NULL,
   `failed_jobs` int NOT NULL,
-  `failed_job_ids` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `options` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `failed_job_ids` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `options` mediumtext COLLATE utf8mb4_unicode_ci,
   `cancelled_at` int DEFAULT NULL,
   `created_at` int NOT NULL,
   `finished_at` int DEFAULT NULL
@@ -1068,7 +1081,7 @@ CREATE TABLE `job_batches` (
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1144,7 +1157,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (65, '2026_01_18_122836_order_list_to_destinations_table', 53),
 (66, '2026_01_18_122837_order_list_to_destinations_table', 54),
 (67, '2026_01_19_060107_add_fields_to_scholarships_table', 55),
-(68, '2026_01_19_082410_add_subtitle_to_scholarships_table', 56);
+(68, '2026_01_19_082410_add_subtitle_to_scholarships_table', 56),
+(69, '2026_03_07_070244_create_settings_table', 57);
 
 -- --------------------------------------------------------
 
@@ -1154,11 +1168,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `offices` (
   `id` bigint UNSIGNED NOT NULL,
-  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_primary` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1181,9 +1195,9 @@ INSERT INTO `offices` (`id`, `location`, `country`, `address`, `phone`, `email`,
 
 CREATE TABLE `partners` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `photo_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1203,8 +1217,8 @@ INSERT INTO `partners` (`id`, `title`, `description`, `photo_path`, `is_active`,
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1216,11 +1230,11 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1235,9 +1249,9 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `privacy_policies` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1257,9 +1271,9 @@ INSERT INTO `privacy_policies` (`id`, `title`, `subtitle`, `description`, `creat
 
 CREATE TABLE `privileges` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1286,10 +1300,10 @@ CREATE TABLE `privilege_role` (
 
 CREATE TABLE `reviews` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci,
+  `image_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1326,8 +1340,8 @@ INSERT INTO `reviews` (`id`, `title`, `subtitle`, `content`, `image_path`, `is_a
 
 CREATE TABLE `roles` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1340,15 +1354,15 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `scholarships` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `order_list` int NOT NULL DEFAULT '0',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cover_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1376,7 +1390,7 @@ INSERT INTO `scholarships` (`id`, `title`, `slug`, `country`, `description`, `or
 CREATE TABLE `scholarship_items` (
   `id` bigint UNSIGNED NOT NULL,
   `scholarship_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1472,11 +1486,11 @@ INSERT INTO `scholarship_items` (`id`, `scholarship_id`, `title`, `created_at`, 
 CREATE TABLE `scholarship_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `scholarship_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `scholarship_item_sections`
@@ -1566,11 +1580,11 @@ INSERT INTO `scholarship_item_sections` (`id`, `scholarship_item_id`, `images`, 
 --
 
 CREATE TABLE `sessions` (
-  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_agent` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_activity` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1579,7 +1593,127 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('xNTSqX5kMZbmTzwP6Milk6CLRTD9TukZRrWcuE1t', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRTdtS0piUlVDcnFrRmRjWW02WGJDZ1RLb0xxMDFiY1dteTJ5U0cyWiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjMzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvc2Nob2xhcnNoaXAiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTA6InR5cm8tbG9naW4iO2E6MTp7czo3OiJjYXB0Y2hhIjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1768827161);
+('0g9Qlsf2bwSSSkM7hAUTD4Ij95POtfeaWHxwyviR', NULL, '69.63.189.37', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUjZYRm53dGU3MDgwSXhGb0RFQWZkV3V5VzJqQk9rWFFhdlR1RGtDNyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772828385),
+('1Ed4m69mE7CpRwipSVWvc9H7HjmGw3TUcQBBI32P', NULL, '69.63.189.24', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib3ZGb3puenR6MWRMdHN5Ujh0OG91ODQxRjUwSFFmdHNPMnQ5Rk95YiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772816839),
+('1FnQPaD0mMwnoWU9XfuAhSWZ3VHWraFy3ZdcxZOX', NULL, '72.14.201.130', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidm5na1BvY0ZWQnNiNXRIQmdtd01FZ2F5WTJ2ekVER3g3Q25UWmJydyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772797656),
+('1T2gw9Bk040Vw1LMXdRPI2v9Lhf0ovfIt8ybqhUW', NULL, '31.13.103.4', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYWFqbndGbGx3TFB3Z0c5VExmRWw5S3pubnZVdThzYnhBY0k2c2dkWSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802055),
+('1u98Cjp70asjU4yvm4Sa2JoJQz6ZxujazkOWPqbQ', NULL, '167.99.34.25', 'Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidGdxYkV3elk0SHFTaFVCSHI5MHFBb0VEeUJiWjF1MlBHdThMYTJLTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772850792),
+('2lsOVTuiqhRDYv4xoUqZHc8w4GrA4X1c220aQYy1', NULL, '173.252.95.9', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMm96MEFPUzR6SmFtbXNWSW1PZGFva2t1VE9hek9BZEk0VFp0QzlQQyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802288),
+('2rtTO3ubbUVQxJx1b7T5FYfhUVAjZDyaTBuaaXhS', NULL, '31.13.103.5', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidmRKdWFwSWpxT1I4Wm8yQUVoVDZGYzJ5YnV5RDBwY3l0Zm81S1FJdyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802098),
+('2V7cvKugKMItOWVGNhYMeOxa3Idju5WKkDKNdVrm', NULL, '43.242.38.106', 'Mozilla/5.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidTNBZDh3RVRuVTNkNjdJdjZVQ3BNOElIeWpUZXpXUHFhNUVDcEhBSCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772799311),
+('3d380mTNSxceuMXx4ebbHpag4gOlzk2FOXuy2KU2', NULL, '31.13.115.9', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRHVFZlhQSFdndnREYVM3ejdNY2p6cHNZcllrcjJ0cVE1OHg1MHRPViI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772802263),
+('3D7JQuwcKr8yQ6BKMvXZUobwIlPrh84LoxjUJs2N', NULL, '37.111.215.87', 'Mozilla/5.0 (Linux; U; Android 16; en-bd; CPH2711 Build/BP2A.250605.015) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.6422.72 Mobile Safari/537.36 HeyTapBrowser/45.13.8.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM3c5Tm1tR0Q2RGRMTkxHSEtDVkN4RWFQbVMwM25ZVWZiQXJIY24xeSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772805543),
+('3jxHHeziWdzqIRSz0023Q7Csz8BEs9zdE11hLGu2', NULL, '203.159.90.180', '', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVUp3bWxCejdiOTFEWk42c21rSnMwaDB1eXg2M2xNOVlIb0lvTXhMUCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772847160),
+('3mPS1YhEMABUojhwt5T3U89BPVSRX4K32RAwTfij', NULL, '173.252.95.4', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUUFKWHJJWFdSWHhyTEtuT0k0V3FPN210aXkxUFh2SnRTZ29iaHNIMCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772841472),
+('4GU26JxmvB2mKS7CLn1elbhCVe3SY2DzskqnW5Os', NULL, '103.88.141.59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:148.0) Gecko/20100101 Firefox/148.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWktzRUNpSUdUN3k2T2F4Y3VaTUVWb0x3aTV2MDByOVlpdnB5VzFVUiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772865905),
+('4pgVMVMbSAq52CKgLhY7bOm5U9lz53TzSSWRi7ue', NULL, '54.39.6.78', 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRFBRVjEzd3dwcFFKcUNmbUVrSklaRUlVR2dGRUE0VGV0UUZObVB2eSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772819656),
+('5I5bws0HqH4hx5nOeiU2h6Z89yTtuicgqR3xPQ6w', NULL, '17.246.15.36', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQVFlMk5BcjEyMnIydnQyN2NuVmJ4MmZ4dU9FUUNwdDRoTW5OWmZhayI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzY6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vZXZlbnQvNSI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1772840117),
+('63Ec4RZ3yRqjAEO8eQ7W2rxLV9cYtSb8Cisq2RLN', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSVl6aHhtWGFjZjNXWktwVkxsZVg1RlUwa0FiZEZtZXNiYWpuTVFqayI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772815063),
+('6id1vpxoESD1jnXgZ4ZA52IGT4w9o1QoMSO1T0Mr', NULL, '31.13.127.36', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibFpMam1ONGtiT0s2SGppbEtRbFpVUkRacDVlUGdDQ0lnVXBtRXpVbSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772816856),
+('6lbG1IEQ7OTYq4TigjcX148FpWH9G0bKGXRBvDBT', NULL, '173.252.83.2', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOVR2Vms5S2NJRkdlcjRUWUVXdllmaklNTDZlWnNsRkVpNlRQd0ZDZSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772828383),
+('6LVBbMZN4u3YLn8tmAEqH5yKwaveXpOciV67SfvP', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoic3V3NHl0Vjhoa2phb3NHUFQ4Z05PZ20zOXVhYnA5RWRLMkNMbEFlViI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM2OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vc2V0dGluZ3MiO3M6NToicm91dGUiO3M6MjA6ImFkbWluLnNldHRpbmdzLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxMDoidHlyby1sb2dpbiI7YToxOntzOjc6ImNhcHRjaGEiO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1772867424),
+('6qBwi5iRMfJH8hfa86hKBLWOmBWV26XA1jI37mFj', NULL, '18.236.100.170', 'Mozilla/5.0 (Macintosh; PPC Mac OS X 10.10; rv:48.0) Gecko/20100101 Firefox/48.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNmhpRVRrMjI4bXhIMjU2OUFBTGxITVVScmhwWVZVdVhFem9sYUhQZiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772804017),
+('73plcPvlxgPMBvlL4C5jyRzG6yy57yDbT5TWCJmg', NULL, '85.254.114.204', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicnZ6NGJXbGJkeTc5b2xNWVVwVlN4M0NVYVVGM0dYODBMWHhZVUtEYSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDc6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAvY3lwcnVzIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772804004),
+('7bBHOxpw7ySdVmpWx2QwMnXJq5r52caRgmXxJIuu', NULL, '66.220.149.44', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiT1FzWHJPbnBtVThielRwWFZpdWJUSms5SWZkY2h5c1dWWTZJTHNLRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802065),
+('83xLeut3cYVHcYldNznv6YySGTSOE4TMoBVc7Ba2', NULL, '43.242.38.106', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMktLOGxJZjhtRjNUMndGbDY0MHBkNlpINFJWZzJvSjZWQUczVVN5RCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772799314),
+('8ILRIhKeOneaA4hDLIjcxzBMA12Ko24lspp64M9T', NULL, '154.29.14.89', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMFFrdWhNSzVBamVjVG9Kb0JmWE9NN0dxOUdVVDdzS0t0MUN6WVBSSSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772813327),
+('8lgWAbPXnLQD4nByG82fnzIWy5RATb0u8d14z2gu', NULL, '149.143.158.74', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic3FlVzlBZWhPaTVtampMNVRMeGFBY1RsRzdFeVd4YUZyNndTVUpUVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772825757),
+('96MdclNE4oSJmJcnV5qTVWqvms7C2IQbCFKZkJl8', NULL, '31.13.115.10', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYmI0cUlGUVpOMWtjSGxoZGRjcnR6Y0hERkJGUlhjZEpaWnZGM0RlcyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772817438),
+('AF4fUAzwWBW07PtKR2nYCIqgSpAQm05O2ueNN1H2', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOGU3OWNEczdIVHZWNEVzTUkxSVBWNXpvVXpSUXVpRnpoVU13NTlzUiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772824999),
+('aSi0VM3OccQwdqKKHqawr6x8Kkv4Nq7OgPFEWJ36', NULL, '23.98.142.182', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicnhBaGFWZEJyOGRjMnQ5TURSNzNPM1Q0QTNzU2U3ZGZoR2xTQlpSWCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDc6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAvY3lwcnVzIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772803418),
+('aXB3z53YBEZupUgpqQgY86IpRZzCKRFtEpFTGBrl', NULL, '31.13.127.48', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYjl5WVBGekUzWEYwVk8yWjhCZTZ5T0JSMXhBeE9ET2xmQXpSWmlxVCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802043),
+('bDFDkKDFJ7lLI21FsbEe5QrUdFUPGxdcftQR6Im4', NULL, '69.63.189.116', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVnloR2lwb0VQNHRuR3JkZGkyUFozYjFZVlRHcFRDUUt1NzZwbFNhTyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802081),
+('BWGu3KYAzxe0bdUNA5T160LwyavXIH4FNAIm5mNp', NULL, '103.253.47.161', 'Mozilla/5.0 (Linux; Android 15; Infinix X6886 Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/144.0.7559.107 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/546.0.0.42.66;IABMV/1;]', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMHh4S0Mxb0txQUIyUXY1QklGN3htUmtFS3k2bDFlekZwWDJ6dGxLdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MTgxOiJodHRwczovL3d3dy5pbnNhZmltbWlncmF0aW9uLmNvbS8/ZmJjbGlkPUl3WlhoMGJnTmhaVzBDTVRFQWMzSjBZd1poY0hCZmFXUU1NelV3TmpnMU5UTXhOekk0QUFFZUlKc0JaUVhlRHJyMFp5cjhQUlJaLXRwNkM1S3cyTVNLN2d3UUVVVnhWdVZIcWR0OHBzVjZZUE5PMzhnX2FlbV9aOTBSWDJCY1NjOUZsOHVldGpVaGtBIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772800731),
+('C8Hf4e9tuszQ0GSCwp5ioZFPWIwlNAiLGF2Eqo4J', NULL, '104.37.31.233', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVTZMRTFaanI2bkQxVU10cHZCRmhjVzRweXhLVjBNWjZOZmxZbDNRaiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772806487),
+('CCacEKxdggBpHlPRLB1VholgcUcqKSi1iMg1sKFw', NULL, '31.13.115.12', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicFU2UVR2TmkwQW5QZFVvMUJRaTI0VjU0V2ZWNno5bGNsRjJjT2N1diI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772843727),
+('CKldWuemxLWXrac87YpcjAidFEHsKYWhLFCNOpy1', NULL, '47.128.45.231', 'Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; Bytespider; spider-feedback@bytedance.com)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOE4yeHV6YlJ5enZkYWxRMkJIaWxzNGppTFoyUUVVOEtXNkJQYzhhViI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTM6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL3NjaG9sYXJzaGlwL21hbGF5c2lhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772846527),
+('CrxDbP4j260Rfc0h52eU4QG5MKMQbsKOyTuWLbXC', NULL, '52.53.179.161', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibUN2VFFRYXQ5OXBvSUZiNTVVSllqSXpRWnpuRFVkYzRPdHR0aXFPNCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772841074),
+('EEysM8cmwy5C749Tm8iv44InJJfbIG9AdFT7llbr', NULL, '43.165.70.220', 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidnJGVENwRG9IcUQ4NFl4Ump6bUtVSlY3b0VFMGZoeHBVamY0YW1mUyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772806410),
+('EFJW2Z1jvPv66VpAphgkn0erXG5GqE8KS9XmaLqJ', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidWlrNktBMmZCVVBUdk94WkhkRDc4ckt0cmNRU2tpRlAzbURSUHBoTSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772824999),
+('EiU7npt967GCvrfNmnp126rpxxU4ZrjUNxoZ5F2D', NULL, '180.153.236.26', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0; 360Spider', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVElpalVRd0lvZlJJQ1JNRGs3cm1FVHhGOUxIS2t5UzJjOUJhWmhMZyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772816582),
+('ElyAADX9ZB7MrrLJ5fy6iFQ2eeEbTHWCjq53FML7', NULL, '173.252.79.4', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNGlJbnc1aGlHbXY4d1ZVUW00Q0tybnRiNXBrTnc4YkZYOUhBYjFiTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802977),
+('fOtSNjQ6vkhhz8VhDYbKHo8WhKpUrXLoCrNY9j1n', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVGI0Rkl0NEVQZkF4bXN2ZnQ3eUxOQlFBalFiYkRHUjRtMlhZNzlUQyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772824999),
+('Fvjf5l4FdDQNUdtnTpjG4NPdY8KYpkAbJ0MDKjHt', NULL, '47.128.22.78', 'Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; Bytespider; spider-feedback@bytedance.com)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidEtSdk56TjJxM2dpWDBERGN1b1QxcnhsWjZGUlQ4NURCdEhBSVdVcSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTM6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL3NjaG9sYXJzaGlwL21hbGF5c2lhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772863337),
+('gKF39uVvJEZ9XLnkTC96rWMG5gY8Ig8FxBcQ1iQs', NULL, '45.41.133.213', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYVdoakF5dXRyaUVhRUlEZU1HQjFlSTRGRXJTR0E4VjhiYVdtaG52MSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772826412),
+('GOLhx3OGpFtNsRg139tuQ0x8amj86ZyLHIPo30hU', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/139.0.7258.5 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNE9NR3B4T2R1cmZ5cGRLcmo1OWxJeGgyS1dUZHZ2TGZ5TWRzS1BFMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772825025),
+('gOYHCf7BL476NTzgfpR6TW1hlKDxgjJl89QaZc2e', NULL, '195.178.110.64', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic2NXVVBGOFRYaFlweVRmOThXMVliZ0xCVlpkUHZKSHZ5MlhPNWJQdSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772844730),
+('H4KG8Nm3FxRMGTKmK8Zzu84Ha7qdoW9kDtEY3dFu', NULL, '43.135.133.241', 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTTc2cWtCb0ZRRG52Um1LMThpVHVOb3h4c1VEMkt4TU1CUDBud1JTMiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772815757),
+('hoRduuFwQDd6KM2joCstPQYCUWe7R8EUavPXx8OU', NULL, '103.74.134.191', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMDh4MndTdDRnMTl6V2JQckNrQWF4Q3ZLeXNwTnFUNXlhd3lDOXRqSSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTM6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL3NjaG9sYXJzaGlwL21hbGF5c2lhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772799419),
+('hZdXrBR6OhKDRuzQRwfH0j3ChdW0VDvd6bTZElpy', NULL, '31.13.127.56', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTGFNcU5LMEJRQlk5Y3BkVzFaVm1IMXg4SDBUbzc4UkUxYTZuOTk1YSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772843742),
+('IkXZq1jp0DuOybboTZojHKbb41PKlrd8Wd8PDj1R', NULL, '173.252.87.26', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV3dzMnlLdGw4SmZ0bnpTUlJoRDdVMmM3NWpIMGZISmE5R1lKbnoxUyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772828983),
+('iw0xz8iOYqRtWPxez7plAqrGV1D6tmG7JpJYzKGj', NULL, '37.111.247.47', 'Mozilla/5.0 (Linux; Android 13; itel S667LN Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/145.0.7632.120 Mobile Safari/537.36[FBAN/EMA;FBLC/en_US;FBAV/501.0.0.12.103;FBCX/modulariab;]', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiakp4M29UYWpITVRoYlBMNlJldEZYZXhxeGdqS1RtV2JUbUtrYm9rUSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MTg1OiJodHRwczovL3d3dy5pbnNhZmltbWlncmF0aW9uLmNvbS8/ZmJjbGlkPUl3WlhoMGJnTmhaVzBDTVRFQWMzSjBZd1poY0hCZmFXUVBNamMxTWpVME5qa3lOVGs0TWpjNUFBRWV6WU8yOGFrYjl6MjZtcXFDSm1oMjVQbGtyeVljS28wanZHN0JfSXluSG5vMUlubDZTOGlpLXp1VDBLMF9hZW1fby1YUUdlcVh0a1RoOUoxS3VVMmk3USI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1772797133),
+('IZpqUjnToZbUCWloRn0KpNsly3f7cm1Pqv5LTbzg', NULL, '31.13.115.7', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWDUyN0pyN1ZHYklEVXFqZVp4NlFlcWxqNUFEc0lVWVJPY0xYYXczMCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772800770),
+('j5sIeImznqIVm4xL1Ze4tQM4bfqMYz6xTqNJKYDI', NULL, '173.252.83.116', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSXVnQTVqbVFpM3lpQXZxTDhLSmdoMnRqQXpyYTFRZ2tYbVV2UjR2YiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772840873),
+('joCLAlMxAaWuLCoAaJtDVDiLYpWASZ2PmlqJr0S5', NULL, '173.252.107.20', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUlhkNXJiWUE3QkdzT2F0bmZUM0d6Q01zMksydUZ2eFB3WWdkOE9CVCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772828381),
+('KDi744re8WSWaANOE56KvpM8vcnrEYYr7ENYizir', NULL, '103.77.188.233', 'Mozilla/5.0 (Linux; Android 15; V2333 Build/AP3A.240905.015.A2_NNCS; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/145.0.7632.122 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/549.0.0.61.62;IABMV/1;]', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib01jSjdGU0dLdnB6UFVPTk5GWlV0WlF1UE85alg4MzlYaEdxYzhvQSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MTgxOiJodHRwczovL3d3dy5pbnNhZmltbWlncmF0aW9uLmNvbS8/ZmJjbGlkPUl3WlhoMGJnTmhaVzBDTVRFQWMzSjBZd1poY0hCZmFXUU1NelV3TmpnMU5UTXhOekk0QUFFZXBOQjRYU2J5dDVwVTdkc3U2aDB4akZaMVFrQ1kzM25pTjN4WVJWRG03cEpNWE1hbEt2N3pkQ3pEVFdnX2FlbV9zNzc4WTM4TzBvWjlnbmpVTTM5TURnIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772796208),
+('KXa7O28VBn7ZoCifmbodvfzkE8jttRrB86vzxwgB', NULL, '198.235.24.84', 'Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTDB3cUN3dVA0S25Dcm9HaUExZWF1Vm9aTGtETFJlVlprQ2F4bXowQSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772827953),
+('LawcXEjPgJ1rUBJrFtM1bN826wqR2tgQf749zEsF', NULL, '66.220.149.61', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibURmSURLdWdOZTQxUEg1aFA5akFOYk9iYmhDamZmOVlvZnlHemtKNCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772821913),
+('legX0gkVZBRFI2fpxOnf0PjizkTgLPR7XhQynr3m', NULL, '73.211.184.115', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieEd3a3p6RmJmSE52Y3dvNUJaQ3dKalJWN0ZLeTVXZ2l4OThZMWtuSiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772825757),
+('LpPEGKxyclVSAIrpBw939FAZSA40G4kDQ1OlVAuw', NULL, '52.167.144.216', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0.1938.76 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicDFWTmowUDRYVDVFUXVOb25OVHZ3YUpYV2dwZzcwZGFkNjlWdk1aaSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772857584),
+('m8wWUpeYi9OkC6Ag5xyCm6cSmVCY5MK2rYSCw4QG', NULL, '173.252.82.19', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTEdHTHBBN0V1Q05YYU9HQjJiOWhaT0g1NDF3SHJOdUpCT2l6YXRJbiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802074),
+('mT5wuMEw39PdYacPVSqJh7F6NDwXub0VAkcYIS71', NULL, '57.141.2.62', 'meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoid2dBSmFCbmUxcUp5eldobURTeVFEQm5BUnpLczIxU3F3QUNjVVZpTiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDk6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAvbWFsYXlzaWEiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772823049),
+('My1xMzqw5rXLsWAVzbf3j3paDBq693hF1ywWbhmZ', NULL, '173.252.70.17', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUnVINnQycUw3OTM4N29HZUt1ZDVBWWV5OEJXRmJYUHhqNkJISGFXRyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802086),
+('N9pwA42nPEKRUSjmRAGCAG0NRyNSuxzgY3qqNqx3', NULL, '173.252.87.62', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRWRFMVNZWGxmSmZyUUw3QTRlaDhQenBoNUZjWDUzY2NnT3N5eW81byI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772816836),
+('nf1QdcNb5ffLOpgTM1KTEM8g1D2lDcO2A35p2ujl', NULL, '43.157.150.69', 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblRxS0d0WUZ6YUtXQjBCRkpFZG14eDExaFN0NFNYNkZ5d3F3WUZjYiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772856325),
+('NmfzcJkRVerjjp8mb9atyFHYmPqeJEtgfP0xoC2R', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib250SUw3UFFRd0hFREhDeGY2ZEVtdTNLT0ZBeWhjQzlOQWhPUlRWbyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772815063),
+('Nq7mOCmyVSzCH4umrwK3YxG7syWQ8mEpBlIcDdMM', NULL, '185.247.137.176', 'Mozilla/5.0 (compatible; InternetMeasurement/1.0; +https://internet-measurement.com/)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYVpJMGpFV1d0NDcyQ3J3TWlROHl2cm9kblVKaVJpSzRiSGdVekw1VCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772864711),
+('oI0nuKcLX1owpv3NtDMLEX8JmKFKUPjFuJkxJsXu', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMHhCa1pPTWhiQ2xRaW9EOFhHTEo0Ylc4VDNmSEd2dG9FNENITXVJbyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772824999),
+('OrKdSlcIJm7qX59ynl9OI4FhINKkVEvUR96cJNPe', NULL, '43.135.135.57', 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWUxFbXlzYlg2UDJaR3RXeXV0MWVnVWRjazJQZnJ4ZnkxYjBVMXRxbSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772841415),
+('oZV47OvMYk8J7cXojD3CPNTLm1XeKePeAdxo3pdH', NULL, '69.63.189.28', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib1pnNXNEcHpjaXl6djdyTVZjTjhZNHRDMzZBWWtINUpCTXFRRFVnUiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772840872),
+('qCIhDb8d2A9piOaOo7dtdN8fY95JsWDeYgNmOMVD', NULL, '170.23.17.28', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieFYxUjFsR0FPNXRROEhUNEpTNW1zcDhTZFlrWUtGMlZaZ1FWZHN6OSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772843969),
+('QDVoCXUqAyOhwo4IcYLCydFPOU7WTe5CAnlOFst0', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/139.0.7258.5 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUllQQklDME9NaEF3U2hwZVhlYXdzdTJxRjBtUEhsaFhFdnp4b0ZCYiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772824643),
+('rmTMTgyx3HFj33lMu4R1WJlEmdIw3GPaL7phMrGq', NULL, '74.7.243.248', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.3; +https://openai.com/gptbot)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNFMwTnR0UFB3MGZoN29IMm1WUEhYamRraHpKaHR0WXRKWDljd2VmZSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772812966),
+('s1vfRIzJBQgqpTqZDtPe7RzH8U3MlVLxfjnsJvGU', NULL, '157.55.39.51', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0.1938.76 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVmF2YVJnWFR3bHpZdjlZWWtDaG9CQ3Q0OWhocUtnTzNTbXVRcHlEUyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772843876),
+('SGtAYFcVoaLXrQn8GlrYkwsVdGCIvcCPY2K7lJ90', NULL, '162.120.184.34', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiN2xqYVZCZGhMdGR3NmFGNUhWS2UyVWpDQnpNdTBweXFyTHdFMkpoMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772825402),
+('tgeLQo8hVORzgJkeDCQJDnPNTm6nzBSO8P3hHb1E', NULL, '180.153.236.44', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0; 360Spider', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNEgzSGtMMkxLWlBtMTdkanQ2UHRmZzVBZlF6SVcwMTVOTjV2djhRNCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772796661),
+('tKkppk2gLUj1u4agM15E4s8imLLOpkekTCKyyqdq', NULL, '66.220.149.4', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiR0FxWXNBN3dGdXpnVE9sZE92TVdhM1FGN1phV2ZJdW5nZGIwSHhlSCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772844436),
+('TKnPFoe8fdp9em3XHCgu0Wx68V3i9b5NGVRLRGcV', NULL, '173.252.83.115', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZEQ4dlNiQ0dUZTR5QXhZNnVBeFRhNVBUVkUwSTVPalZ5bm9vdXJRaCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802055),
+('tqozL9fOxKrlwzJmLbUarRTOPK7lAMuI4oacFeVC', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWUt3d0g4eW5iWlRURmcyNzdVWHB5WWJ4SURGelA1MHY4anZLMExJcSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772815063),
+('TSCYc8YsQ3pBqDxmrJQivnAEtEwBWghQFaAlfSTI', NULL, '103.88.141.59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOU5SY0tTdXIyY1RPTEhhYUlySkxQY0JsNGdrR2NlREkyVFlzUjhtTCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772865853),
+('Ulxy0eZhowNbvXFzcELqppEUVJpUXIyTLnriQpd4', NULL, '103.88.141.59', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibW01c0VkUklLYkFBVEVOUmZlZXdMSWR2TVpVcDFlYWptc0hUdUw4biI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzQ6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vbG9naW4iO3M6NToicm91dGUiO3M6MTY6InR5cm8tbG9naW4ubG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjEwOiJ0eXJvLWxvZ2luIjthOjE6e3M6NzoiY2FwdGNoYSI7YToxOntzOjU6ImxvZ2luIjtpOjY7fX19', 1772865995),
+('urtlhwRtvi4nHgtHwIgNCw3EudlTpTFDHu4SYr4q', NULL, '198.235.24.154', 'Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZHVad0NDUXBrc09SSWdDQmJLOWRXaWxYS0o5U0hHS3RBRHFndjFtaSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772851739),
+('Uvap9iGDFs23XUJOjxBWtX9tN9J35gYYqtdnkOBX', NULL, '103.112.64.124', 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/23C71 Safari/604.1 [FBAN/FBIOS;FBAV/550.0.0.34.65;FBBV/890804754;FBDV/iPhone14,5;FBMD/iPhone;FBSN/iOS;FBSV/26.2.1;FBSS/3;FBID/phone;FBLC/en_GB;FBOP/5;FBRV/899866847;IABMV/1]', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoienRpdVRUSnRiMG1PVXEzYVhMZTRJZk1PdGVyQnZKOE93T0hJWTFHMiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MTc4OiJodHRwczovL3d3dy5pbnNhZmltbWlncmF0aW9uLmNvbS8/ZmJjbGlkPUl3WlhoMGJnTmhaVzBDTVRFQWMzSjBZd1poY0hCZmFXUUtOall5T0RVMk9ETTNPUUFCSHVtR3libUpfSml1QnV3RjhScS12eW01NWE3UEVjUFA3SnhTQ1VBaHkxa0R1ZlQ4SGYtYjdOY2lFdGZnX2FlbV9jemtoZEFIR25LSzRfLXQtYTFrTDZ3IjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772798300),
+('uzA0SCa3ugzArKEQxE7WGNmP8C5iIDwXBnOLLeyT', NULL, '173.252.79.113', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRU9sZWF2ZU9ZaDh1SDVWOFo2ZWhucE05ejQxdHQzNW45R0Z3SDkyRyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772840899),
+('VAXNSBDSJy5lSLy8e5ULW2orwEQR7ig8JYhFF595', NULL, '20.227.140.37', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNDQyUlpZTnR5RjU4djc4eHVMNkpwclNHRkwwQ1dCNEFhZEwyOVZMbyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDc6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAvY3lwcnVzIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772834422),
+('vQlgduZnKOwsa7K8srygU28XN4E1VRdKIl1nBCb2', NULL, '104.143.84.54', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYzRtNWZUclNjRHFUS2kxemQ0ZDhhWFlrMWlqZ1FRR3A2TGJ6NFhGQiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772815063),
+('W5x2WLYRrIodfQ28LPZxiY75F61amno6BxU996Id', NULL, '72.14.201.130', 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ1hMNUtoamE1ZHo4TzRBbXFjUUZONlZXUWYzczdHazJwWW1QQzFJZSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772797607),
+('Wk41g2t0mWxBmJk2LaQeFtR7XTyHcLCToeBr0SjA', NULL, '74.7.242.184', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.3; +https://openai.com/searchbot', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiM0UzSHkxenpaUklHcjJ6cjE1aVVTdHBwUTRGWVY2aWpSZ2VaS1FuRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDc6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAvY3lwcnVzIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772834819),
+('WOVTy8r5jb8hqGHyiGjlofoxVgQqamoUDqJkUwd3', NULL, '84.37.243.192', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWVRPVjBKMFJnSXZGRkRGTDU2OVpqcWZaeWJ6S3B2cEd5bkJ0bUZRMiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772825848),
+('xCfkgqbbE8PeEpuknm7LEDhlyddUXdF1lfXqcHip', NULL, '66.220.149.31', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiV205T1EzVGV6d2Z5cUFFNGlMMEtiNWtYbEpvUTVjWHFqalMzQ2ZBMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772859801),
+('XcoxbmwAs6IVOg5P0mo6RCFbK8VDeZynAz836ovP', NULL, '45.153.100.195', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidGdwRFRBcTFxVElrTTZuaEI4N2RTUXBObDBycmlKTlVoQkZ4VkQ0QyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772800922),
+('XNBGlDhqAy8iRjmpxcI6bW3K2xfq78sMuhniyWrO', NULL, '54.39.6.189', 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ2tsREtHNFRrNzVBb2tzYlo5eWVsNm5ydG1SdzR0U1ZPSTltQmFUSiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772832649),
+('xrKcvRF34LGOkr2HKu3Aeb1m2yHhcqL6BE4W3h0W', NULL, '69.171.249.115', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVFRBemY1d1Rrdm5QSXB2Z2VLeldKcmhRUm9wUlcxc3NmQjBWN2tJZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772802261),
+('xUNi0500USrtNh3sjLYAnjF7M5omQUj10WU6hDq1', NULL, '69.171.230.1', 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWnBvNHV4ZE5aQlR6azB5RVRVSVppNGRubVEzc0J6R0JMYWpzcnVzOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772828404),
+('XysYcp0v1Ska6NcNR0wyZk5QBSKLvDqaSGT4P6n7', NULL, '223.15.245.170', 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNE1uRFJPVDJUcUcwejRoQU0xbWxYcm5kbDlNQ1p1alA5bjN2cVVuaSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772822275),
+('YmmrewhhRYcs86tKVAxwN7yglNsgH1xSOrejQs0V', NULL, '157.55.39.49', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/116.0.1938.76 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiS0JLanVsZ1VpOUZHd0xsUEhBRWNEVWpEdTRYQ3lnaGM0ZllhOXNjeSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDA6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20vc2Nob2xhcnNoaXAiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772814546),
+('YRxuvnCK7RBW1E72cZwtIn8r2chaLa72jZfbIuMu', NULL, '172.120.26.222', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaGNCVDFpUU82Y0JRSHpKY3l4RWdPZnN1RDUxYVJEYzBiZzUxeDR5SSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772806487),
+('Z179Fc2M6jMvTubTlFzmr68v0P8qw1tPDlOJkhO9', NULL, '67.173.231.155', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQkQxSEVHSGFienBMT1IwVU5wQ0Q5c1BsbEdnQ1dmc09CNkdDczFCRCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772811906),
+('Z5RRHeNtkt0hc09QrFTbKThIYBcYeSjG5WxMwvcu', NULL, '108.177.67.193', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Gemini-Deep-Research; +https://gemini.google/overview/deep-research/) Chrome/135.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTW9vaEIyY2dJVkN4cVdNRm9rTlgyMm1wSjU3ZHhwTVRtb1RJcUY0RCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772837685),
+('z8E4huNhoa4f7uRcMa1pCiDIO39uiaI7jKvK8sEc', NULL, '148.113.128.182', 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTVFyQWdXSGJTOUhJanRwTklLMmRNOEZ3NnVpaHB3eThTT2k0WFBZOCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tIjtzOjU6InJvdXRlIjtzOjQ6ImhvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772859679),
+('zIZjiQOULeVXAKoIyKCOBlOdFdzSgs2WwYkzyTVJ', NULL, '54.39.89.6', 'Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVVo2QlpwcHZPTEVEdVF1Wk1sV085TlltdWJuSGtMaFU3cDNSTnB4VyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHBzOi8vaW5zYWZpbW1pZ3JhdGlvbi5jb20iO3M6NToicm91dGUiO3M6NDoiaG9tZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1772796511),
+('zneiLMEpVMymFVJ3WZ7QwKBLPO9A6RXia91ln2tb', NULL, '85.254.131.133', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieEZtdXZJMlVuMmNKZ3dKTDhLZlhud3JSNUxDMXBjbXdkdE9kdjAxeCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NTA6Imh0dHBzOi8vd3d3Lmluc2FmaW1taWdyYXRpb24uY29tL2Rlc3RpbmF0aW9uL21hbHRhIjtzOjU6InJvdXRlIjtOO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1772811927);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `site_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `favicon`, `logo`, `site_name`, `created_at`, `updated_at`) VALUES
+(1, 'uploads/settings/favicon-1772867424.png', 'uploads/settings/logo-1772867424.png', NULL, '2026-03-07 01:09:28', '2026-03-07 01:10:24');
 
 -- --------------------------------------------------------
 
@@ -1589,13 +1723,13 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `sliders` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` text COLLATE utf8mb4_unicode_ci,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `cta_button` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -1616,10 +1750,10 @@ INSERT INTO `sliders` (`id`, `title`, `subtitle`, `image`, `is_active`, `created
 
 CREATE TABLE `teams` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `photo_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1630,10 +1764,10 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `designation`, `photo_path`, `content`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Asraful Islam Sakib', 'Chief Executive Officer', 'uploads/team/1768390605-faCy7eDsVV.png', 'Founded Insaf Immigration with a strong belief that global education should be transparent, affordable, and accessible for every student.<br>Recognized by international universities and partners for ethical consultancy and outstanding student recruitment performance.<br>Committed to building long-term student success through honest guidance, strategic planning, and global partnerships.', 1, '2025-12-10 23:23:06', '2026-01-14 05:36:45'),
-(2, 'Mohammad Faisal', 'Chief Accountant', 'uploads/team/1768390654-C1EWD6PZVv.png', '<p>Oversees all financial operations of Insaf Immigration with accuracy, integrity, and full regulatory compliance.<br>Ensures transparent handling of student payments, university fees, and international transactions.<br>Maintains strict compliance with tax regulations, audit requirements, and financial governance standards.</p>', 1, '2026-01-14 05:37:34', '2026-01-14 05:37:34'),
-(3, 'Lutfur Kabir Rana', 'Senior Consultant (HRM)', 'uploads/team/1768390704-MMbGyE1pFG.png', '<p>Provides strategic HR leadership, policy development, and workforce planning aligned with organizational goals.<br>Brings strong expertise in recruitment, talent management, employee relations, and performance management systems<br>Acts as a trusted advisor to leadership on employee engagement, retention, and HR strategy.</p>', 1, '2026-01-14 05:38:24', '2026-01-14 05:38:24'),
-(4, 'Rasel Shikder', 'Senior Country Director (Bangladesh)', 'uploads/team/1768390769-AlkVTYOK0f.png', '<p>Brings extensive experience in international education management, student recruitment, and partner relations.</p><p>Oversees university partnerships, visa processing standards, and local compliance requirements.<br>Ensures service excellence, brand integrity, and consistent student success across the country.</p>', 1, '2026-01-14 05:39:29', '2026-01-14 05:39:29');
+(1, 'Asraful Islam Sakib', 'Chief Executive Officer', 'uploads/team/1768390605-faCy7eDsVV.png', '<ul><li>Founded Insaf Immigration with a strong belief that global education should be transparent, affordable, and accessible for every student.<br><br></li><li>Recognized by international universities and partners for ethical consultancy and outstanding student recruitment performance.<br><br></li><li>Committed to building long-term student success through honest guidance, strategic planning, and global partnerships.</li></ul>', 1, '2025-12-10 23:23:06', '2026-01-19 18:26:52'),
+(2, 'Mohammad Faisal', 'Chief Accountant', 'uploads/team/1768390654-C1EWD6PZVv.png', '<ul><li>Oversees all financial operations of Insaf Immigration with accuracy, integrity, and full regulatory compliance.<br><br></li><li>Ensures transparent handling of student payments, university fees, and international transactions.<br><br></li><li>Maintains strict compliance with tax regulations, audit requirements, and financial governance standards.</li></ul>', 1, '2026-01-14 05:37:34', '2026-01-19 18:27:08'),
+(3, 'Lutfur Kabir Rana', 'Senior Consultant (HRM)', 'uploads/team/1768390704-MMbGyE1pFG.png', '<ul><li>Provides strategic HR leadership, policy development, and workforce planning aligned with organizational goals.<br><br></li><li>Brings strong expertise in recruitment, talent management, employee relations, and performance management systems<br><br></li><li>Acts as a trusted advisor to leadership on employee engagement, retention, and HR strategy.</li></ul>', 1, '2026-01-14 05:38:24', '2026-01-19 18:26:43'),
+(4, 'Rasel Shikder', 'Senior Country Director (Bangladesh)', 'uploads/team/1768390769-AlkVTYOK0f.png', '<ul><li>Brings extensive experience in international education management, student recruitment, and partner relations.<br><br></li><li>Oversees university partnerships, visa processing standards, and local compliance requirements.<br><br></li><li>Ensures service excellence, brand integrity, and consistent student success across the country.</li></ul>', 1, '2026-01-14 05:39:29', '2026-01-19 18:27:25');
 
 -- --------------------------------------------------------
 
@@ -1643,9 +1777,9 @@ INSERT INTO `teams` (`id`, `name`, `designation`, `photo_path`, `content`, `is_a
 
 CREATE TABLE `terms_conditions` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1655,7 +1789,7 @@ CREATE TABLE `terms_conditions` (
 --
 
 INSERT INTO `terms_conditions` (`id`, `title`, `subtitle`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Terms and Conditions  Insaf Immigration', 'January 18, 2024', '<p>Welcome to Insaf Immigration. By accessing our website or using our services, you agree to comply with and be bound by the following Terms and Conditions. If you do not agree with any part of these terms, you should not use our website or services.<br><br>1. Acceptance of Terms<br>By using Insaf Immigration services or website, you acknowledge that you have read, understood, and agree to these Terms and Conditions, including any updates we may make in the future.<br><br>2. Services Provided<br>Insaf Immigration offers the following services:<br>• Immigration and student visa consultancy<br>• Study abroad consultation and application assistance<br>• University admission guidance<br>• Health insurance support<br>• Airport pickup and travel assistance<br>We aim to provide accurate information and guidance; however, approval of visas, admissions, or related services is subject to government and institutional decisions, which are beyond our control.<br><br>3. Use of Website<br>You agree to use our website and services for lawful purposes only. Prohibited activities include, but are not limited to:<br>• Using our website to submit false, misleading, or fraudulent information<br>• Attempting to gain unauthorized access to our systems<br>• Uploading harmful content, viruses, or malware<br>• Interfering with the operation of our website<br><br>4. User Responsibilities<br>As a user, you are responsible for:<br>• Providing accurate and complete personal information<br>• Keeping your account login credentials confidential<br>• Monitoring your application and communication with us<br>Insaf Immigration is not responsible for delays or losses resulting from incorrect, incomplete, or outdated information provided by users.<br><br>5. Payment and Fees<br>All services provided by Insaf Immigration may require fees as per our pricing.<br>• Payments must be made in advance or as agreed in the service contract.<br>• All fees are non-refundable, unless otherwise stated.<br>• We reserve the right to change service fees at any time, with prior notice.<br><br>6. Intellectual Property<br>All content on this website, including text, images, graphics, logos, and videos, is the property of Insaf Immigration or its partners and is protected by copyright laws.<br>• You may not reproduce, distribute, or use any content without our written consent.<br>• Unauthorized use may result in legal action.<br><br>7. Third-Party Links<br>Our website may include links to third-party websites for your convenience. We are not responsible for the content, services, or privacy practices of these websites. Accessing such websites is at your own risk.<br><br>8. Limitation of Liability<br>Insaf Immigration provides guidance and support based on information available at the time. We do not guarantee visa approvals, admission confirmations, or any third-party services.<br>• We are not liable for direct, indirect, or consequential damages arising from the use of our services.<br>• Users agree to indemnify Insaf Immigration against any claims arising from misuse of our services or website.<br><br>9. Privacy<br>Your personal information is collected and used according to our Privacy Policy. By using our services, you consent to the collection, use, and storage of your information as described.<br><br>10. Modifications to Terms<br>We reserve the right to update or modify these Terms and Conditions at any time.<br>• Updates will be posted on this page with a revised Effective Date.<br>• Continued use of our services after changes constitutes acceptance of the new terms.<br><br>11. Governing Law<br>These Terms and Conditions are governed by the laws of Bangladesh. Any disputes arising from these terms or our services will be subject to the jurisdiction of the courts of Bangladesh.<br><br>12. Contact Us<br>If you have questions, concerns, or clarifications about these Terms and Conditions, please<br>contact us:<br>Insaf Immigration<br>Email: insafimmigration@gmail.com<br>Phone: 01880-942457<br>Address: Haque Tower (Opposite of BRB Hospital), Level 6, Panthapath, Dhaka</p>', '2025-12-13 05:15:02', '2026-01-19 06:32:57');
+(1, 'Terms & Conditions - Insaf Immigration', 'January 18, 2024', '<p>Welcome to Insaf Immigration. By accessing our website or using our services, you agree to comply with and be bound by the following Terms and Conditions. If you do not agree with any part of these terms, you should not use our website or services.<br><br>1. Acceptance of Terms<br>By using Insaf Immigration services or website, you acknowledge that you have read, understood, and agree to these Terms and Conditions, including any updates we may make in the future.<br><br>2. Services Provided<br>Insaf Immigration offers the following services:<br>• Immigration and student visa consultancy<br>• Study abroad consultation and application assistance<br>• University admission guidance<br>• Health insurance support<br>• Airport pickup and travel assistance<br>We aim to provide accurate information and guidance; however, approval of visas, admissions, or related services is subject to government and institutional decisions, which are beyond our control.<br><br>3. Use of Website<br>You agree to use our website and services for lawful purposes only. Prohibited activities include, but are not limited to:<br>• Using our website to submit false, misleading, or fraudulent information<br>• Attempting to gain unauthorized access to our systems<br>• Uploading harmful content, viruses, or malware<br>• Interfering with the operation of our website<br><br>4. User Responsibilities<br>As a user, you are responsible for:<br>• Providing accurate and complete personal information<br>• Keeping your account login credentials confidential<br>• Monitoring your application and communication with us<br>Insaf Immigration is not responsible for delays or losses resulting from incorrect, incomplete, or outdated information provided by users.<br><br>5. Payment and Fees<br>All services provided by Insaf Immigration may require fees as per our pricing.<br>• Payments must be made in advance or as agreed in the service contract.<br>• All fees are non-refundable, unless otherwise stated.<br>• We reserve the right to change service fees at any time, with prior notice.<br><br>6. Intellectual Property<br>All content on this website, including text, images, graphics, logos, and videos, is the property of Insaf Immigration or its partners and is protected by copyright laws.<br>• You may not reproduce, distribute, or use any content without our written consent.<br>• Unauthorized use may result in legal action.<br><br>7. Third-Party Links<br>Our website may include links to third-party websites for your convenience. We are not responsible for the content, services, or privacy practices of these websites. Accessing such websites is at your own risk.<br><br>8. Limitation of Liability<br>Insaf Immigration provides guidance and support based on information available at the time. We do not guarantee visa approvals, admission confirmations, or any third-party services.<br>• We are not liable for direct, indirect, or consequential damages arising from the use of our services.<br>• Users agree to indemnify Insaf Immigration against any claims arising from misuse of our services or website.<br><br>9. Privacy<br>Your personal information is collected and used according to our Privacy Policy. By using our services, you consent to the collection, use, and storage of your information as described.<br><br>10. Modifications to Terms<br>We reserve the right to update or modify these Terms and Conditions at any time.<br>• Updates will be posted on this page with a revised Effective Date.<br>• Continued use of our services after changes constitutes acceptance of the new terms.<br><br>11. Governing Law<br>These Terms and Conditions are governed by the laws of Bangladesh. Any disputes arising from these terms or our services will be subject to the jurisdiction of the courts of Bangladesh.<br><br>12. Contact Us<br>If you have questions, concerns, or clarifications about these Terms and Conditions, please<br>contact us:<br>Insaf Immigration<br>Email: insafimmigration@gmail.com<br>Phone: 01880-942457<br>Address: Haque Tower (Opposite of BRB Hospital), Level 6, Panthapath, Dhaka</p>', '2025-12-13 05:15:02', '2026-01-19 06:32:57');
 
 -- --------------------------------------------------------
 
@@ -1665,11 +1799,11 @@ INSERT INTO `terms_conditions` (`id`, `title`, `subtitle`, `description`, `creat
 
 CREATE TABLE `testimonials` (
   `id` bigint UNSIGNED NOT NULL,
-  `quote` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `student_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quote` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `student_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1692,15 +1826,15 @@ INSERT INTO `testimonials` (`id`, `quote`, `student_name`, `designation`, `image
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `suspended_at` timestamp NULL DEFAULT NULL,
-  `suspension_reason` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+  `suspension_reason` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1708,7 +1842,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `suspended_at`, `suspension_reason`) VALUES
-(1, 'Inoodex', 'hello@inoodex.com', NULL, '$2y$12$WY3ZDqc79mI0dv9X6rkJhuuCKjhAUM0Kr.7FFQH.6Xoza22mM6.Za', 'sudgC6JkNmy1cg19ys2HEJmSmw4We7GKoK49Gz2UzLzGwdUqVb5HgWNb0apz', '2025-12-09 23:03:03', '2025-12-09 23:03:03', NULL, NULL);
+(1, 'Inoodex', 'hello@inoodex.com', NULL, '$2y$12$WY3ZDqc79mI0dv9X6rkJhuuCKjhAUM0Kr.7FFQH.6Xoza22mM6.Za', '9SJVsHPjppbKDdq9RB2RtM9FwMNgMQqDmpjCOZWIVOTUk0RZoRzLSweKwWC1', '2025-12-09 23:03:03', '2025-12-09 23:03:03', NULL, NULL),
+(2, 'rizalmulyono', 'erizalabas@gmail.com', NULL, '$2y$12$Lk3TRxYHf1JLc676LaK5Ae8EtYpD4Migi9Qjpwo3LEwucGSHNInRu', NULL, '2026-02-17 20:50:07', '2026-02-17 20:50:07', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1732,8 +1867,8 @@ CREATE TABLE `user_roles` (
 
 CREATE TABLE `visas` (
   `id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -1755,7 +1890,7 @@ INSERT INTO `visas` (`id`, `title`, `description`, `is_active`, `created_at`, `u
 CREATE TABLE `visa_items` (
   `id` bigint UNSIGNED NOT NULL,
   `visa_id` bigint UNSIGNED NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1788,11 +1923,11 @@ INSERT INTO `visa_items` (`id`, `visa_id`, `title`, `created_at`, `updated_at`) 
 CREATE TABLE `visa_item_sections` (
   `id` bigint UNSIGNED NOT NULL,
   `visa_item_id` bigint UNSIGNED NOT NULL,
-  `images` json DEFAULT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `visa_item_sections`
@@ -1826,7 +1961,7 @@ CREATE TABLE `why_choose_us` (
   `partners` int NOT NULL DEFAULT '0',
   `visa_grants` int NOT NULL DEFAULT '0',
   `years` int NOT NULL DEFAULT '0',
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -2147,6 +2282,12 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
@@ -2225,7 +2366,7 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `about_items`
 --
 ALTER TABLE `about_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `accommodations`
@@ -2243,7 +2384,7 @@ ALTER TABLE `accommodation_items`
 -- AUTO_INCREMENT for table `accommodation_item_sections`
 --
 ALTER TABLE `accommodation_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `achievements`
@@ -2267,7 +2408,7 @@ ALTER TABLE `admission_items`
 -- AUTO_INCREMENT for table `admission_item_sections`
 --
 ALTER TABLE `admission_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -2285,7 +2426,7 @@ ALTER TABLE `contact_forms`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `destinations`
@@ -2303,7 +2444,7 @@ ALTER TABLE `destination_items`
 -- AUTO_INCREMENT for table `destination_item_sections`
 --
 ALTER TABLE `destination_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `districts`
@@ -2327,13 +2468,13 @@ ALTER TABLE `documents`
 -- AUTO_INCREMENT for table `document_download_contact_forms`
 --
 ALTER TABLE `document_download_contact_forms`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `event_items`
@@ -2345,7 +2486,7 @@ ALTER TABLE `event_items`
 -- AUTO_INCREMENT for table `event_item_sections`
 --
 ALTER TABLE `event_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -2375,7 +2516,7 @@ ALTER TABLE `health_items`
 -- AUTO_INCREMENT for table `health_item_sections`
 --
 ALTER TABLE `health_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -2387,7 +2528,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `offices`
@@ -2453,7 +2594,13 @@ ALTER TABLE `scholarship_items`
 -- AUTO_INCREMENT for table `scholarship_item_sections`
 --
 ALTER TABLE `scholarship_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
@@ -2483,7 +2630,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_roles`
@@ -2507,7 +2654,7 @@ ALTER TABLE `visa_items`
 -- AUTO_INCREMENT for table `visa_item_sections`
 --
 ALTER TABLE `visa_item_sections`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `why_choose_us`

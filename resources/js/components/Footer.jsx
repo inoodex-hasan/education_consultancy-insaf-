@@ -264,6 +264,27 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            {/* Copyright Section */}
+            <div className="bg-white border-t border-gray-200">
+                <div className="container py-5 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
+                    <p className="text-gray-600 text-sm">
+                        © {new Date().getFullYear()} Insaf Immigration. All
+                        Rights Reserved.
+                    </p>
+
+                    <p className="text-gray-500 text-sm">
+                        Developed by{" "}
+                        <a
+                            href="https://inoodex.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-gold hover:underline"
+                        >
+                            Inoodex
+                        </a>
+                    </p>
+                </div>
+            </div>
         </footer>
     );
 };

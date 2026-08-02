@@ -88,7 +88,7 @@
 
                                     <div class="form-group col-md-12">
                                         <label>Description <span class="text-danger">*</span></label>
-                                        <textarea name="description" rows="10" class="summernote @error('description') is-invalid @enderror" required>{{ old('description', $blog->description) }}</textarea>
+                                        <textarea name="description" rows="10" class="summernote @error('description') is-invalid @enderror">{{ old('description', $blog->description) }}</textarea>
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

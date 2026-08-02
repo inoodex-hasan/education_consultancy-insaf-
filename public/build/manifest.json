@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-Dn22R4og.css",
+    "file": "assets/app-Cu20d5Nh.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,17 +9,17 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-B2REQUOB.js",
+    "file": "assets/app-CN4gMgP1.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "css": [
       "assets/app-BeB_gp9X.css",
-      "assets/app-Dn22R4og.css"
+      "assets/app-Cu20d5Nh.css"
     ],
     "assets": [
       "assets/cover-BeBC8b2A.jpg",
-      "assets/destination-Dd2pusNt.webp",
+      "assets/destination-C5bfMn8o.webp",
       "assets/steps-O7R3fM6H.png",
       "assets/study-BXyPNztG.png",
       "assets/sliderSvg-D7FIsUv9.svg",
@@ -94,7 +94,7 @@
     "src": "resources/js/assets/destination.png"
   },
   "resources/js/assets/destination.webp": {
-    "file": "assets/destination-Dd2pusNt.webp",
+    "file": "assets/destination-C5bfMn8o.webp",
     "src": "resources/js/assets/destination.webp"
   },
   "resources/js/assets/destinations/australia.png": {

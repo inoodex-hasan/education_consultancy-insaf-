@@ -348,6 +348,11 @@ $(function() {
           ]
         })
         .then(function(editor) {
+          // Real-time sync on data change
+          editor.model.document.on('change:data', function() {
+            textarea.value = editor.getData();
+          });
+          // Form submit sync
           var form = textarea.closest('form');
           if (form) {
             form.addEventListener('submit', function() {

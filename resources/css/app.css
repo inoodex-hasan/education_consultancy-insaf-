@@ -177,3 +177,128 @@ iframe {
 .animate-marquee2 {
     animation: marquee2 30s linear infinite;
 }
+
+/* Rich Text / CKEditor Content Styling */
+.prose, .rich-text {
+    color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.prose p, .rich-text p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.prose h1, .rich-text h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1e2d5c;
+    line-height: 1.25;
+}
+
+.prose h2, .rich-text h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+    color: #1e2d5c;
+    line-height: 1.3;
+}
+
+.prose h3, .rich-text h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1e2d5c;
+    line-height: 1.4;
+}
+
+.prose h4, .rich-text h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1e2d5c;
+}
+
+.prose ul, .rich-text ul {
+    list-style-type: disc;
+    padding-left: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.prose ol, .rich-text ol {
+    list-style-type: decimal;
+    padding-left: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.prose li, .rich-text li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.prose strong, .prose b, .rich-text strong, .rich-text b {
+    font-weight: 700;
+    color: #111827;
+}
+
+.prose em, .prose i, .rich-text em, .rich-text i {
+    font-style: italic;
+}
+
+.prose a, .rich-text a {
+    color: #283e77;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.prose a:hover, .rich-text a:hover {
+    color: #c3a25d;
+}
+
+.prose blockquote, .rich-text blockquote {
+    border-left: 4px solid #c3a25d;
+    padding-left: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-style: italic;
+    color: #4b5563;
+    background-color: #f9fafb;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin: 1.75rem 0;
+}
+
+.prose table, .rich-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.prose th, .prose td, .rich-text th, .rich-text td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.prose th, .rich-text th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+    color: #111827;
+}
+
+.prose img, .rich-text img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 1.75rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}

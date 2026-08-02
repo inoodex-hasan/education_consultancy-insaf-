@@ -134,6 +134,9 @@
     <!-- Page Specific JS File -->
     {{--
     <script src="{{asset('assets/js/page/index-0.js')}}"></script> --}}
+    <!-- CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>

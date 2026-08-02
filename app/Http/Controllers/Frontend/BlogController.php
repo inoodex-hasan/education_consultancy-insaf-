@@ -25,13 +25,21 @@ class BlogController extends Controller
     // }
 
     public function blogDetails($slug)
-{
-    // 1. Ensure the slug exists in the 'blogs' table
-    $blog = Blog::where('slug', $slug)->firstOrFail(); 
+    {
+        // 1. Ensure the slug exists in the 'blogs' table
+        $blog = Blog::where('slug', $slug)->firstOrFail(); 
 
-    // 2. Ensure the string 'BlogDetails' matches your filename in resources/js/Pages/
-    return Inertia::render('BlogDetails', [
-        'blog' => $blog
-    ]);
-}
+        // 2. Fetch related blogs excluding current post
+        $relatedBlogs = Blog::where('id', '!=', $blog->id)
+            ->where('status', 1)
+            ->latest('date')
+            ->take(3)
+            ->get();
+
+        // 3. Render BlogDetails with related blogs
+        return Inertia::render('BlogDetails', [
+            'blog' => $blog,
+            'related_blogs' => $relatedBlogs
+        ]);
+    }
 }

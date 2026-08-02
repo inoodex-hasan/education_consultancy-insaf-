@@ -336,7 +336,30 @@ $(function() {
     $('.chat-content').getNiceScroll(0).doScrollTop($('.chat-content').height());
   }
 
-  if(jQuery().summernote) {   
+  if (typeof ClassicEditor !== 'undefined') {
+    document.querySelectorAll('.summernote, .ckeditor').forEach(function(textarea) {
+      ClassicEditor
+        .create(textarea, {
+          toolbar: [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'link', '|',
+            'bulletedList', 'numberedList', 'blockQuote', '|',
+            'insertTable', 'undo', 'redo'
+          ]
+        })
+        .then(function(editor) {
+          var form = textarea.closest('form');
+          if (form) {
+            form.addEventListener('submit', function() {
+              textarea.value = editor.getData();
+            });
+          }
+        })
+        .catch(function(error) {
+          console.error('CKEditor Error:', error);
+        });
+    });
+  } else if(jQuery().summernote) {   
     $(".summernote").summernote({
        dialogsInBody: true,
       minHeight: 250,

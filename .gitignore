@@ -1,24 +1,59 @@
-*.log
-.DS_Store
-# .env
+# Environment & Secret files
+.env
+.env.*
+!.env.example
 .env.backup
 .env.production
-.phpactor.json
-.phpunit.result.cache
-/.fleet
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
+
+# Database dumps & local database files
+*.sql
+*.sqlite
+*.sqlite-journal
+education_consultancy.sql
+
+# Node & Package dependencies
 /node_modules
-# /public/build
+/vendor
+/auth.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Public build assets & storage links
+/public/build
 /public/hot
 /public/storage
+
+# Storage & Runtime logs/cache
+*.log
 /storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/storage/logs/*
 /storage/pail
-/vendor
+
+# Caches & Test Results
+.phpunit.result.cache
+/.phpunit.cache
+.phpactor.json
+
+# IDE & Editor specific files
+/.idea
+/.vscode
+/.zed
+/.fleet
+/.nova
+*.code-workspace
+*.swp
+*.swo
+
+# OS System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 Homestead.json
 Homestead.yaml
-Thumbs.db

@@ -76,7 +76,7 @@ export default function BlogDetails({ blog }) {
                         <img 
                             src={`/${blog.image}`} 
                             alt={blog.title} 
-                            className="w-full h-[450px] object-cover rounded-2xl shadow-lg"
+                            className="w-full h-auto rounded-2xl shadow-lg"
                         />
                     </div>
                 )}

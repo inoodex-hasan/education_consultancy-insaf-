@@ -71,11 +71,11 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <strong>{{ $blog->title }}</strong>
+                                                    <strong>{{ Str::limit($blog->title, 50) }}</strong>
                                                 </td>
                                                 <td style="max-width:200px;">
                                                     <div class="limit-html">
-                                                        {!! $blog->description !!}
+                                                        {!! Str::limit($blog->description, 100) !!}
                                                     </div>
                                                 </td>
                                                 <td>{{ $blog->date ? $blog->date->format('M d, Y') : 'N/A' }}</td>

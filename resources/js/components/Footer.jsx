@@ -242,7 +242,7 @@ const Footer = () => {
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.youtube.com/@InsafImmigration">
+                                            <a href="https://www.youtube.com/@InsafImmigrationOfficial">
                                                 <Youtube className="text-black/80 cursor-pointer hover:text-blue transition-all duration-150" />
                                             </a>
                                         </li>

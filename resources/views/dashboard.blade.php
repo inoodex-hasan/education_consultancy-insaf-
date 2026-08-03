@@ -72,7 +72,6 @@
                 </a>
             </div>
 
-
             <!-- Scholarships -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <a href="{{ route('admin.scholarships.index') }}">
@@ -91,7 +90,6 @@
                     </div>
                 </a>
             </div>
-
 
             <!-- Team Members -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -112,7 +110,6 @@
                 </a>
             </div>
 
-
             <!-- Partners -->
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <a href="{{ route('admin.partners.index') }}">
@@ -126,6 +123,120 @@
                             </div>
                             <div class="card-body">
                                 {{ $partners }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blogs -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.blogs.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-primary">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Blogs</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $blogs }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Events -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.events.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-info">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Events</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $events }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Contact Forms / Inquiries -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.contact_form.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-warning">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Inquiries</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $contact_forms }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Documents -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.documents.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-success">
+                            <i class="fas fa-file-download"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Documents</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $documents }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.testimonials.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-danger">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Testimonials</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $testimonials }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- FAQs -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{ route('admin.faqs.index') }}">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-dark">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>FAQs</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $faqs }}
                             </div>
                         </div>
                     </div>

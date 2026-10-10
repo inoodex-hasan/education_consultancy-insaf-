@@ -71,7 +71,7 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $event->title }}</td>
-                                                <td>{{ $event->location ?? 'N/A' }}</td>
+                                                <td>{{ Str::limit($event->location, 30) ?? 'N/A' }}</td>
                                                 <td>
                                                     {{ $event->start_date ? \Carbon\Carbon::parse($event->start_date)->format('d M Y') : 'N/A' }}
                                                 </td>
